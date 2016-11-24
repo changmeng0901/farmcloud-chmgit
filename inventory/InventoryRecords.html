@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 
-    <title>库存档案</title>
+    <title>盘点记录</title>
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-select.min.css" />
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-datetimepicker.css" />
@@ -42,14 +42,14 @@
             	<!-- 库存左侧二级导航 -->
                 <div class="inbentory_level_wap">
                     <div class="inbentory_level">
-                        <strong class="inben_first inben_first1 in_cur">
+                        <strong class="inben_first inben_first1">
                             <a href="javascript:;" onClick="window.open('InventoryFile.html','_self')" ><i class="icon_L icon_kcda"></i>库存档案</a>
                         </strong>
                         <strong class="inben_first inben_first2">
                             <a href="javascript:;"><i class="icon_L icon_rkgl"></i>入库管理</a><b class="b_arrow"></b>
                         </strong>
                         <ol class="inben_second">
-                            <li class="sed_item sed_item" onClick="window.open('StorageDetail.html','_self')" ><i class="icon_sed"></i>入库明细</li>
+                            <li class="sed_item" onClick="window.open('StorageDetail.html','_self')" ><i class="icon_sed"></i>入库明细</li>
                             <li class="sed_item"><i class="icon_sed"></i>入库单</li>
                         </ol>
                         <strong class="inben_first inben_first2">
@@ -70,7 +70,7 @@
                             <a href="javascript:;"><i class="icon_L icon_pdgl"></i>盘点管理</a><b class="b_arrow"></b>
                         </strong>
                         <ol class="inben_second">
-                            <li class="sed_item"><i class="icon_sed"></i>盘点记录</li>
+                            <li class="sed_item sed_cur" onClick="window.open('InventoryRecords.html','_self')"><i class="icon_sed"></i>盘点记录</li>
                             <li class="sed_item"><i class="icon_sed"></i>盘点单</li>
                         </ol>
                     </div>
@@ -80,141 +80,134 @@
                 <!-- 库存档案右侧 -->
                 <div class="inbentory_content">
                     <div class="breadNav_wap clear">
-                        <div class="breadNav_lt" style="margin-left:20px;"><a href="#">加工</a><span>&gt;</span><strong>库存档案</strong></div>
+                        <div class="breadNav_lt" style="margin-left:20px;"><a href="#">加工</a><span>&gt;</span><a href="#">库存</a><span>&gt;</span><strong>盘点记录</strong></div>
                     </div>
                     <div class="inbentory_search_wap">
                     	<!-- 库存档案搜索头部 -->
                     	<div class="search_header clear">
-                            <div class="search_selected fl">
-                                <dl style="width:265px;" class="se_selt180 fl">
-                                    <dt style="width:80px;">仓库</dt>
-                                    <dd class="inline_block bootSelt180">
-                                        <select class="selectpicker" style="display: none;">
-                                            <option selected="selected">全部</option>
-                                            <option>仓库1</option>
-                                            <option>仓库2</option>
-                                        </select>
-                                    </dd>
-                                </dl>
-                                <dl style="width:265px;" class="se_selt180 fl">
-                                    <dt style="width:80px;">物料类型</dt>
-                                    <dd class="inline_block bootSelt180">
-                                        <select class="selectpicker" style="display: none;">
-                                            <option selected="selected">全部</option>
-                                            <option>原料</option>
-                                            <option>商品</option>
-                                            <option>辅料</option>
-                                            <option>自定义物料</option>
-                                        </select>
-                                    </dd>
-                                </dl>
+                        	<div class="clear">
+                                <div class="search_selected fl">
+                                    <dl style="width:265px;" class="se_selt180 fl">
+                                        <dt style="width:80px;">仓库</dt>
+                                        <dd class="inline_block bootSelt180">
+                                            <select class="selectpicker" style="display: none;">
+                                                <option selected="selected">全部</option>
+                                                <option>仓库1</option>
+                                                <option>仓库2</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                    <dl style="width:265px;" class="se_selt180 fl">
+                                        <dt style="width:80px;">物料类型</dt>
+                                        <dd class="inline_block bootSelt180">
+                                            <select class="selectpicker" style="display: none;">
+                                                <option selected="selected">全部</option>
+                                                <option>原料</option>
+                                                <option>商品</option>
+                                                <option>辅料</option>
+                                                <option>自定义物料</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="search_selected fl">
+                                    <dl style="width:470px;" class="se_selt180 fl">
+                                        <dt style="width:80px;">盘点时间</dt>
+                                        <dd class="inline_block bootSelt180">
+                                            <div class="bootData220 fl">
+                                                <div class="input-append date form_datetime " style="position:relative;" >
+                                                <input size="26" type="text" value="" readonly style="border-radius:4px;"> 
+                                                <span class="add-on" style="position:absolute; right:10px; top:10px;"><i class="icon-th" style="margin:0;"></i></span>
+                                                </div>
+                                            </div>
+                                            <span class="fl pl5 pr5" style="line-height:34px;">--</span>
+                                            <div class="bootData220 fl">
+                                                <div class="input-append date form_datetime " style="position:relative;" >
+                                                <input size="26" type="text" value="" readonly style="border-radius:4px;"> 
+                                                <span class="add-on" style="position:absolute; right:10px; top:10px;"><i class="icon-th" style="margin:0;"></i></span>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
                             </div>
-                            <div class="search_selected fl">
-                                <dl style="width:265px;" class="se_selt180 fl">
-                                    <dt style="width:80px;">经办人</dt>
-                                    <dd class="inline_block bootSelt180">
-                                        <select class="selectpicker" style="display: none;">
-                                            <option selected="selected">全部</option>
-                                            <option>经办人1</option>
-                                            <option>经办人2</option>
-                                        </select>
-                                    </dd>
-                                </dl>
-                                <dl style="width:265px;" class="se_selt180 fl">
-                                    <dt style="width:80px;">来源</dt>
-                                    <dd class="inline_block bootSelt180">
-                                        <select class="selectpicker" style="display: none;">
-                                            <option selected="selected">全部</option>
-                                            <option>来源1</option>
-                                            <option>来源2</option>
-                                        </select>
-                                    </dd>
-                                </dl>
-                            </div>
-                            <div class="search_selected clear">
-                                <dl style="width:340px;" class="se_selt180">
-                                    <dt style="width:80px;">搜索</dt>
-                                    <dd class="inline_block bootSelt180">
-                                        <input type="text" style="width:180px;font-size:12px;" value="物料名称/批次编号/物料编号" class="form-control mr5 fl">
-                                        <input type="button" value="搜索" class="btn btn-primary">
-                                    </dd>
-                                </dl>
-                                <a class="fr" style="margin-top:8px;" href="#"><img src="../images/commons/icon_exportExcel.jpg" /></a>
+                            <div class="clear" style="position:relative; padding-right:100px;">
+                                <div class="search_selected fl">
+                                    <dl style="width:265px;" class="se_selt180 fl">
+                                        <dt style="width:80px;">操作人</dt>
+                                        <dd class="inline_block bootSelt180">
+                                            <select class="selectpicker" style="display: none;">
+                                                <option selected="selected">全部</option>
+                                                <option>操作人1</option>
+                                                <option>操作人2</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="search_selected fl">
+                                    <dl style="width:340px;" class="se_selt180 fl">
+                                        <dt style="width:80px;">搜索</dt>
+                                        <dd class="inline_block bootSelt180">
+                                            <input type="text" style="width:180px;font-size:12px;" value="物料名称/批次编号/物料编号" class="form-control mr5 fl">
+                                            <input type="button" value="搜索" class="btn btn-primary">
+                                        </dd>
+                                    </dl>
+                                    <a class="fr" style="position:absolute; right:0; bottom:13px; margin-top:8px;" href="#"><img src="../images/commons/icon_exportExcel.jpg" /></a>
+                                </div>
                             </div>
                         </div>
                         <!-- 库存档案搜索列表 -->
                         <table class="inventory_modal_table mt20" width="100%" cellpadding="0" cellspacing="0">
                         	<tr>
                             	<th>序号</th>
-                                <th>物料编号</th>
-                                <th>物料名称</th>
-                                <th>物料规格</th>
-                                <th>物料等级</th>
+                                <th>盘点批次</th>
                                 <th>仓库</th>
-                                <th>单价(元)</th>
-                                <th>库存数量</th>
-                                <th>冷冻数量</th>
-                                <th>可销售数量</th>
+                                <th>操作人</th>
+                                <th>盘点时间</th>
                                 <th>操作</th>
                             </tr>
                             <tr class="odd">
                             	<td>1</td>
                                 <td>YL201601280001</td>
-                                <td>金桔</td>
-                                <td>500g/袋</td>
-                                <td>特殊一等品</td>
-                                <td>2号</td>
-                                <td>￥10.00</td>
-                                <td>80.0</td>
-                                <td>15.0</td>
-                                <td>65.0</td>
+                                <td>2号仓库</td>
+                                <td>张明明</td>
+                                <td>2016/06/17 12:00</td>
                                 <td>
-                                	<a class="icon_link" title="查看" href="#"><img src="../images/commons/tableIco_view2.png" /></a>
+                                	<a class="icon_link" title="查看" href=".html"><img src="../images/commons/tableIco_view2.png" /></a>
+                                    <a class="icon_link" title="打印" href="#"><img src="../images/commons/tableIco_print2.png" /></a>
                                 </td>
                             </tr>
                             <tr class="even">
                             	<td>2</td>
                                 <td>YL201601280001</td>
-                                <td>金桔</td>
-                                <td>500g/袋</td>
-                                <td>特殊一等品</td>
-                                <td>2号</td>
-                                <td>￥10.00</td>
-                                <td>80.0</td>
-                                <td>15.0</td>
-                                <td>65.0</td>
+                                <td>2号仓库</td>
+                                <td>张明明</td>
+                                <td>2016/06/17 12:00</td>
                                 <td>
-                                	<a class="icon_link" title="查看" href="#"><img src="../images/commons/tableIco_view2.png" /></a>
+                                	<a class="icon_link" title="查看" href=".html"><img src="../images/commons/tableIco_view2.png" /></a>
+                                    <a class="icon_link" title="打印" href="#"><img src="../images/commons/tableIco_print2.png" /></a>
                                 </td>
                             </tr>
                             <tr class="odd">
-                            	<td>3</td>
+                            	<td>1</td>
                                 <td>YL201601280001</td>
-                                <td>金桔</td>
-                                <td>500g/袋</td>
-                                <td>特殊一等品</td>
-                                <td>2号</td>
-                                <td>￥10.00</td>
-                                <td>80.0</td>
-                                <td>15.0</td>
-                                <td>65.0</td>
+                                <td>2号仓库</td>
+                                <td>张明明</td>
+                                <td>2016/06/17 12:00</td>
                                 <td>
-                                	<a class="icon_link" title="查看" href="#"><img src="../images/commons/tableIco_view2.png" /></a>
+                                	<a class="icon_link" title="查看" href=".html"><img src="../images/commons/tableIco_view2.png" /></a>
+                                    <a class="icon_link" title="打印" href="#"><img src="../images/commons/tableIco_print2.png" /></a>
                                 </td>
                             </tr>
                             <tr class="even">
-                            	<td>4</td>
+                            	<td>2</td>
                                 <td>YL201601280001</td>
-                                <td>金桔</td>
-                                <td>500g/袋</td>
-                                <td>特殊一等品</td>
-                                <td>2号</td>
-                                <td>￥10.00</td>
-                                <td>80.0</td>
-                                <td>15.0</td>
-                                <td>65.0</td>
+                                <td>2号仓库</td>
+                                <td>张明明</td>
+                                <td>2016/06/17 12:00</td>
                                 <td>
-                                	<a class="icon_link" title="查看" href="#"><img src="../images/commons/tableIco_view2.png" /></a>
+                                	<a class="icon_link" title="查看" href=".html"><img src="../images/commons/tableIco_view2.png" /></a>
+                                    <a class="icon_link" title="打印" href="#"><img src="../images/commons/tableIco_print2.png" /></a>
                                 </td>
                             </tr>
                         </table>
