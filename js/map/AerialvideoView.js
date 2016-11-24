@@ -4,7 +4,15 @@ var flightPath;
 var FirstMarker,
 		LastMarker,
 		AnimateMarker,
-		playTimer;
+		playTimer,
+		scrollZoom;
+		
+var iframeSearch = location.search.split("&");
+var getGroupId = iframeSearch[0].split("=")[1];
+var getTestUrl = iframeSearch[1].split("=")[1];
+var ParameterMethod,
+		pageUrl;
+
 //(8)地图航线
 ;(function ($) {
 	/**
@@ -42,16 +50,25 @@ var FirstMarker,
 		},
 		getFlightPlanSite: function () {
 
-			var ParameterMethod = AerialVideoView.makeParameterMethod("aerial.video.group.data"),
-				groupId = AerialVideoView.makeParameterField("group_id","17");
+			//var iframeSearch = location.search.split("&");
+			//var groupId = iframeSearch[0].split("=")[1];
+			//var testUrl = iframeSearch[1].split("=")[1];
 
-			var url = "http://192.168.21.55:8080/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
+			
+			ParameterMethod = AerialVideoView.makeParameterMethod("aerial.video.group.data"),
+			groupId = AerialVideoView.makeParameterField("group_id",getGroupId);
+			pageUrl = getTestUrl +"/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
 
+
+			//var ParameterMethod = AerialVideoView.makeParameterMethod("aerial.video.group.data"),
+				//groupId = AerialVideoView.makeParameterField("group_id",groupId);
+
+			//var url = testUrl +"/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
 
 			 $.ajax({
 			 	type: "GET",
 			 	timeout: 1000,
-			 	url: url,
+			 	url: pageUrl,
 			 	dataType: "jsonp",
 			 	jsonp: 'callback',
 			 	success: function(response) {
@@ -59,7 +76,11 @@ var FirstMarker,
 			 		//alert(response.invoke_result);
 			 		//groupInfo(response.groupstr);
 			 		//console.log(response.groupstr.list);
+					//response.base_id
+					
+					
 					AerialVideoView.initializeGoogelMaps(response.groupstr.list);
+					loadZyMap(response.groupstr.list[0].base_id);
 
 					var groupstr = response.groupstr;
 					var enterpriseInfoData = {
@@ -73,7 +94,8 @@ var FirstMarker,
 						business_card_introduce:groupstr.business_card_introduce,
 						description : groupstr.list[0].description,
 						file_url : groupstr.list[0].file_url,
-						id :  groupstr.list[0].id
+						id :  groupstr.list[0].id,
+						base_id : groupstr.list[0].base_id
 					 };
 					 //alert(groupstr.list[0].file_url)
 					 
@@ -99,6 +121,7 @@ var FirstMarker,
 				sliderItemStr  += "<li class='item video-url "+ currentStyle+
 								  "' data-video-url='"+ data[item].file_url +
 								  "' data-id='"+ data[item].id +
+								 "' base-id='"+ data[item].base_id +
 								  "' data-description='"+ data[item].description +"'>"+
 								  "<img class='mn_pic' src='"+ data[item].thumbnail_image_url +"' />"+
 								  "<p class='text_con'><img class='icon_mn' src='../images/map/icon_mnplay.png' />"+data[item].aerial_name+
@@ -126,6 +149,11 @@ var FirstMarker,
 			
 			var scriptAdd = "<script> var vID = 'HLSPlayer2';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf?autostart=true&loop=-1';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+data.file_url+"';a.init('videoimg');<\/script>";
 			$("#HLSPlayer2").html(scriptAdd);
+			/*var scriptAdd = "<script> var vID = 'example-video';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf?autostart=true&loop=-1';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+data.file_url+"';a.init('videoimg');<\/script>";
+			$("#example-video").html(scriptAdd);*/
+			/*var scriptAdd  = '<video id="example-video" class="video-js vjs-default-skin" controls><source src="'+data.file_url+'" type="application/x-mpegURL"/></video>';
+			alert(data.file_url)
+			$("#AerialPlayer").html(scriptAdd);*/
 
 		},
 		initBindDomEvent: function(){
@@ -135,22 +163,33 @@ var FirstMarker,
 				var that = $(this);				
 				that.addClass('icur').siblings().removeClass('icur');
 				
-				var ParameterMethod = AerialVideoView.makeParameterMethod("aerial.track.data"),
-				groupId = AerialVideoView.makeParameterField("aerial_video_id", that.attr('data-id') );
+				//var ParameterMethod = AerialVideoView.makeParameterMethod("aerial.track.data"),
+				//groupId = AerialVideoView.makeParameterField("aerial_video_id", that.attr('base-id') );
+				ParameterMethod = AerialVideoView.makeParameterMethod("aerial.track.data"),
+				groupId = AerialVideoView.makeParameterField("aerial_video_id",that.attr('data-id'));
+				pageUrl = getTestUrl +"/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
 
-				var url = "http://192.168.21.55:8080/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
+				//var url = "http://192.168.21.55:8080/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
 	
 				$.ajax({
 					type: "GET",
 					timeout: 1000,
-					url: url,
+					url: pageUrl,
 					dataType: "jsonp",
 					jsonp: 'callback',
 					success: function(response) {
 						//console.log(JSON.stringify(response))
+						console.log(response.trackstr)
 						AerialVideoView.initializeGoogelMaps(response.trackstr);
+						
+						loadZyMap(response.trackstr[0].base_id);
+						
 						var scriptAdd = "<script> var vID = 'HLSPlayer2';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf?autostart=true&loop=-1';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+that.attr("data-video-url")+"';a.init('videoimg');<\/script>";
 						$("#HLSPlayer2").html(scriptAdd);
+						/*var scriptAdd = "<script> var vID = 'example-video';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf?autostart=true&loop=-1';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+that.attr("data-video-url")+"';a.init('videoimg');<\/script>";
+						$("#example-video").html(scriptAdd);*/
+						/*var scriptAdd  = '<video id="example-video" class="video-js vjs-default-skin" controls><source src="'+that.attr("data-video-url")+'" type="application/x-mpegURL"/></video>';
+						$("#AerialPlayer").html(scriptAdd);*/
 						$("#scene_description").html(that.attr("data-description"));
 						
 					},
@@ -222,6 +261,10 @@ var FirstMarker,
 				  "min-height" : 500 - oHeaderH -IESpace,
 					  "height" : oWindowH - oHeaderH  -IESpace
 			});
+			/*$("#example-video").css({
+				  "min-height" : 500 - oHeaderH -IESpace,
+					  "height" : oWindowH - oHeaderH  -IESpace
+			});*/
 			$("#danmuarea").css({
 				  "min-height" : 500 - oHeaderH -IESpace,
 					  "height" : oWindowH - oHeaderH  -IESpace
@@ -249,14 +292,16 @@ var FirstMarker,
 				abLen = data[0].track_list;
 				
 				
-
+			var bounds = new google.maps.LatLngBounds();
+			
+			
 			for (var indx in data) {
 				var list = data[indx].track_list;
 				for (var item in list) {
 					var gps = list[item].GPS;
-					console.log(gps);
 					gps = gps.replace(/[()]/g, "");
 					gps = gps.split(",");
+					
 					var temp = new google.maps.LatLng( parseFloat(gps[1]), parseFloat(gps[0]) );
 					var tempLat =  parseFloat(gps[1]);
 					var tempLing = parseFloat(gps[0]);
@@ -264,6 +309,9 @@ var FirstMarker,
 					tempAlt = tempAlt.split(":");  
 					tempAlt = tempAlt[1]
 					
+					bounds.extend(temp);
+					scrollZoom = getBoundsZoomLevel(bounds);
+										
 					flightPlanSite.push( temp );
 					arrLat.push( tempLat );
 					arrLing.push( tempLing );
@@ -302,7 +350,12 @@ var FirstMarker,
 			else{
 				map.setOptions(myOptions);
 			}
-
+			if(!bounds.isEmpty()){
+						scrollZoom = getBoundsZoomLevel(bounds);
+						if(typeof(scrollZoom) != "undefined" && scrollZoom >0)
+							map.setZoom(scrollZoom);
+					}
+					//console.log(scrollZoom)
 			if(typeof(flightPath)=="undefined"){
 				flightPath = new google.maps.Polyline({//类型为直线的
 					path: flightPlanSite,
@@ -323,6 +376,7 @@ var FirstMarker,
 				});
 			}else{
 				FirstMarker.setPosition(flightPlanSite[0]);
+				
 			}
 			
 			if(typeof(LastMarker)=="undefined"){
@@ -350,15 +404,17 @@ var FirstMarker,
 			clearInterval(playTimer);
 			var index_ = 0;
 			var myoverlay = new MyOverlay(map);
+			
 			var po;
 			var aPosition;
 			function timeout(){
 				if( index_ < flightPlanSite.length ){
 					
 					myoverlay = new MyOverlay(map);
-					po = myoverlay.getProjection();
+					
 					
 					aPosition = flightPlanSite[index_];
+					po = myoverlay.getProjection();
 					var point = po.fromLatLngToContainerPixel(aPosition);
 					//console.log(point.y)
 					point.y = point.y+17;

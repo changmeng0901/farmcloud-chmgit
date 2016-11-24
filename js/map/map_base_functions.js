@@ -1,5 +1,5 @@
 //加载地图
-/*function gMapInit(domObj, laglntArr) {
+/*(1)function gMapInit(domObj, laglntArr) {
 	var point = makeLatLng(laglntArr);
 	var mapOptions = {
 		center: point,

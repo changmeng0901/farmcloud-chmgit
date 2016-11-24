@@ -200,6 +200,9 @@ body{
 	display:none;
 	}
 /*视频主体*/
+.video-js{
+	width:100%;
+	}
 .video_main_wap{
 	position:relative;
 	min-width:1000px;

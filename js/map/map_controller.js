@@ -9,13 +9,13 @@ var ajaxRoot="";
 var googleMap_center = [];
 var iframeSearch = location.search.split("&");
 var farme_baseID = iframeSearch[0].split("=")[1];
-googleMap_center.push(iframeSearch[1].split("=")[1]);
-googleMap_center.push(iframeSearch[2].split("=")[1]);
+//googleMap_center.push(iframeSearch[1].split("=")[1]);
+//googleMap_center.push(iframeSearch[2].split("=")[1]);
 
-assetRoot=iframeSearch[3].split("=")[1];
+assetRoot=iframeSearch[1].split("=")[1];
 ajaxRoot=assetRoot+'/rest/1.0/service?v=1.0&format=json&sign=5C21760DB93BB7B1A2CD0A9BE6B1E67E';
 
-window.onload = function() {
+function loadZyMap(farme_baseID){
 	//gMapInit(document.getElementById("map-canvas"), googleMap_center);
 	google.maps.event.addListenerOnce(map, 'idle', function() {
 		var overlay = new MyOverlay(map);
@@ -65,6 +65,9 @@ window.onload = function() {
 
 	}
 };
+
+
+
 MyOverlay.prototype = new google.maps.OverlayView();
 MyOverlay.prototype.onAdd = function() { }
 MyOverlay.prototype.onRemove = function() { }
@@ -95,8 +98,8 @@ function loadC1(markstr) {
 		};
 		if(!bounds.isEmpty()){
 			calcZoom = getBoundsZoomLevel(bounds);
-			if(typeof(calcZoom) != "undefined" && calcZoom >0)
-				map.setZoom(calcZoom);
+			//if(typeof(calcZoom) != "undefined" && calcZoom >0)
+			//	map.setZoom(calcZoom);
         }
 		drawingPolygon(k1Arr, markstr[i]['color'], 1);
 		var k1Marker = setMarker([markstr[i].coordinateX, markstr[i].coordinateY], markstr[i].name);
