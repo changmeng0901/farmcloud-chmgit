@@ -12,12 +12,31 @@ var getGroupId = iframeSearch[0].split("=")[1];
 var getTestUrl = iframeSearch[1].split("=")[1];
 var ParameterMethod,
 		pageUrl;
+		
+	var player; 	
+	
+var index_ = 0;	
 
+var po;
+var aPosition;		
+var myoverlay;
+var scriptAdd;
+var point;
+var latPo;
+
+
+
+			var flightPlanSite = [],
+				arrLat = [],
+				arrLing = [],
+				arrAlt = [],
+				arrISO = [],
+				arrEV = [];
 //(8)地图航线
 ;(function ($) {
 	/**
 	* author: 前端小菜鸟
-	* date: 2016-07-12
+	* date: 2016-07-12 
 	* resizeFn 		  ==> 初始化窗口
 	* playlistAnimate ==> 播放列表定时器设置
 	* getFlightPlanSite ==> 初始化调用后端接口api，获取数据
@@ -29,17 +48,16 @@ var ParameterMethod,
 	
 
 	var zObj = {};
-	var flightPlanSite;
-	var dataFlightPlanSite;
+	var headerLen;
 
 	var AerialVideoView = {
 		init: function () {
-			AerialVideoView.resizeFn();
-			$(window).resize( AerialVideoView.resizeFn );
 			AerialVideoView.playlistAnimate();
 			AerialVideoView.initBindDomEvent()
 			//AerialVideoView.sliderMapBar();
 			AerialVideoView.getFlightPlanSite();
+			AerialVideoView.resizeFn();
+			$(window).resize( AerialVideoView.resizeFn );
 		},
 		makeParameterMethod: function (string) {
 			var Method = '&method=' + string;
@@ -49,37 +67,20 @@ var ParameterMethod,
 			return encodeURI('&field={"data":{"' + IDtype + '":"' + ID + '"}}');
 		},
 		getFlightPlanSite: function () {
-
-			//var iframeSearch = location.search.split("&");
-			//var groupId = iframeSearch[0].split("=")[1];
-			//var testUrl = iframeSearch[1].split("=")[1];
-
 			
 			ParameterMethod = AerialVideoView.makeParameterMethod("aerial.video.group.data"),
 			groupId = AerialVideoView.makeParameterField("group_id",getGroupId);
 			pageUrl = getTestUrl +"/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
 
-
-			//var ParameterMethod = AerialVideoView.makeParameterMethod("aerial.video.group.data"),
-				//groupId = AerialVideoView.makeParameterField("group_id",groupId);
-
-			//var url = testUrl +"/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
-
-			 $.ajax({
+			$.ajax({
 			 	type: "GET",
 			 	timeout: 1000,
 			 	url: pageUrl,
 			 	dataType: "jsonp",
 			 	jsonp: 'callback',
 			 	success: function(response) {
-			 		//var data=$.parseJSON(response)
-			 		//alert(response.invoke_result);
-			 		//groupInfo(response.groupstr);
-			 		//console.log(response.groupstr.list);
-					//response.base_id
 					
-					
-					AerialVideoView.initializeGoogelMaps(response.groupstr.list);
+					AerialVideoView.initializeGoogelMaps(response.groupstr.list,0);
 					loadZyMap(response.groupstr.list[0].base_id);
 
 					var groupstr = response.groupstr;
@@ -97,8 +98,6 @@ var ParameterMethod,
 						id :  groupstr.list[0].id,
 						base_id : groupstr.list[0].base_id
 					 };
-					 //alert(groupstr.list[0].file_url)
-					 
 					 
 					 
 					 AerialVideoView.enterpriseInfoModal(enterpriseInfoData);
@@ -117,6 +116,7 @@ var ParameterMethod,
 			var $playlistList = $('.playlist_list'),
 				sliderItemStr = '';
 			for (var item in data) {
+				
 				currentStyle = item == 0 ? 'icur' : '';
 				sliderItemStr  += "<li class='item video-url "+ currentStyle+
 								  "' data-video-url='"+ data[item].file_url +
@@ -147,13 +147,20 @@ var ParameterMethod,
 				$('.item_scence').hide();	
 			}
 			
-			var scriptAdd = "<script> var vID = 'HLSPlayer2';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf?autostart=true&loop=-1';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+data.file_url+"';a.init('videoimg');<\/script>";
-			$("#HLSPlayer2").html(scriptAdd);
-			/*var scriptAdd = "<script> var vID = 'example-video';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf?autostart=true&loop=-1';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+data.file_url+"';a.init('videoimg');<\/script>";
-			$("#example-video").html(scriptAdd);*/
-			/*var scriptAdd  = '<video id="example-video" class="video-js vjs-default-skin" controls><source src="'+data.file_url+'" type="application/x-mpegURL"/></video>';
-			alert(data.file_url)
-			$("#AerialPlayer").html(scriptAdd);*/
+			//头部计算
+			var oWindowW = $(window).width();
+			var oWindowH = $(window).height();
+			if(oWindowW<1280){
+				$(".item_EV").hide();
+				$(".item_ISO").hide();
+			}else{
+				$(".item_EV").show();
+				$(".item_ISO").show();	
+			}
+			headerLen = $(".video_header_list2 li:visible").length;
+			$(".video_header_list2 li:visible").css("width", parseInt($(".video_header_list2").width()/headerLen) )
+
+			AerialVideoView.creatVideo(data.file_url);//初始化，创建视频插件
 
 		},
 		initBindDomEvent: function(){
@@ -163,8 +170,6 @@ var ParameterMethod,
 				var that = $(this);				
 				that.addClass('icur').siblings().removeClass('icur');
 				
-				//var ParameterMethod = AerialVideoView.makeParameterMethod("aerial.track.data"),
-				//groupId = AerialVideoView.makeParameterField("aerial_video_id", that.attr('base-id') );
 				ParameterMethod = AerialVideoView.makeParameterMethod("aerial.track.data"),
 				groupId = AerialVideoView.makeParameterField("aerial_video_id",that.attr('data-id'));
 				pageUrl = getTestUrl +"/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
@@ -179,18 +184,30 @@ var ParameterMethod,
 					jsonp: 'callback',
 					success: function(response) {
 						//console.log(JSON.stringify(response))
-						console.log(response.trackstr)
-						AerialVideoView.initializeGoogelMaps(response.trackstr);
-						
+						//console.log(response.trackstr)
+						AerialVideoView.initializeGoogelMaps(response.trackstr,0);
+
 						loadZyMap(response.trackstr[0].base_id);
-						
-						var scriptAdd = "<script> var vID = 'HLSPlayer2';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf?autostart=true&loop=-1';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+that.attr("data-video-url")+"';a.init('videoimg');<\/script>";
-						$("#HLSPlayer2").html(scriptAdd);
-						/*var scriptAdd = "<script> var vID = 'example-video';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf?autostart=true&loop=-1';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+that.attr("data-video-url")+"';a.init('videoimg');<\/script>";
-						$("#example-video").html(scriptAdd);*/
-						/*var scriptAdd  = '<video id="example-video" class="video-js vjs-default-skin" controls><source src="'+that.attr("data-video-url")+'" type="application/x-mpegURL"/></video>';
-						$("#AerialPlayer").html(scriptAdd);*/
-						$("#scene_description").html(that.attr("data-description"));
+						if( that.attr("data-description")!= ''){
+							$('.item_scence').show();	
+							$('#scene_description').html(that.attr("data-description"));
+						}else{
+							$('.item_scence').hide();	
+						}
+						//头部计算
+						var oWindowW = $(window).width();
+						var oWindowH = $(window).height();
+						if(oWindowW<1280){
+							$(".item_EV").hide();
+							$(".item_ISO").hide();
+						}else{
+							$(".item_EV").show();
+							$(".item_ISO").show();	
+						}
+						headerLen = $(".video_header_list2 li:visible").length;
+						$(".video_header_list2 li:visible").css("width", parseInt($(".video_header_list2").width()/headerLen) )
+
+						AerialVideoView.creatVideo2(that.attr("data-video-url"));//左侧菜单点击时，每次都得重新创建一次视频插件，否则会出问题
 						
 					},
 					error: function(e) {
@@ -257,14 +274,10 @@ var ParameterMethod,
 				//"min-height" : $(document).height() - oHeaderH -IESpace,
 					  "height" :  oWindowH - oHeaderH  -IESpace
 			});
-			$("#HLSPlayer2").css({
+			$("#video_block").css({
 				  "min-height" : 500 - oHeaderH -IESpace,
 					  "height" : oWindowH - oHeaderH  -IESpace
 			});
-			/*$("#example-video").css({
-				  "min-height" : 500 - oHeaderH -IESpace,
-					  "height" : oWindowH - oHeaderH  -IESpace
-			});*/
 			$("#danmuarea").css({
 				  "min-height" : 500 - oHeaderH -IESpace,
 					  "height" : oWindowH - oHeaderH  -IESpace
@@ -275,21 +288,24 @@ var ParameterMethod,
 			oWindowH < 500 ? $(".pano_dialog").addClass("pano_top") : 	$(".pano_dialog").removeClass("pano_top")
 			
 			//头部计算
-			var headerLen = $(".video_header_list2 li").length;
-			$(".video_header_list2 li").css("width", parseInt($(".video_header_list2").width()/headerLen) )
+			if(oWindowW<1280){
+				$(".item_EV").hide();
+				$(".item_ISO").hide();
+			}else{
+				$(".item_EV").show();
+				$(".item_ISO").show();	
+			}
+			headerLen = $(".video_header_list2 li:visible").length;
+			$(".video_header_list2 li:visible").css("width", parseInt($(".video_header_list2").width()/headerLen) )
 
 		},
-		initializeGoogelMaps: function (data) {
+		initializeGoogelMaps: function (data,index_) {
+			flightPlanSite=[];
 			if(data[0].track_list == ""){
 				$(".aerial_map").hide();
 				return;
 			}else
 				$(".aerial_map").show();
-			var flightPlanSite = [],
-				arrLat = [],
-				arrLing = [],
-				arrAlt = [],
-				abLen = data[0].track_list;
 				
 				
 			var bounds = new google.maps.LatLngBounds();
@@ -306,16 +322,20 @@ var ParameterMethod,
 					var tempLat =  parseFloat(gps[1]);
 					var tempLing = parseFloat(gps[0]);
 					var tempAlt = list[item].BAROMETER;
+					var tempISO = list[item].ISO.split(":")[1];
+					var tempEV = list[item].EV.split(":")[1];
 					tempAlt = tempAlt.split(":");  
 					tempAlt = tempAlt[1]
 					
 					bounds.extend(temp);
 					scrollZoom = getBoundsZoomLevel(bounds);
 										
-					flightPlanSite.push( temp );
-					arrLat.push( tempLat );
-					arrLing.push( tempLing );
-					arrAlt.push( tempAlt );
+					flightPlanSite.push( temp );//x和y
+					arrLat.push( tempLat );//x
+					arrLing.push( tempLing );//y
+					arrAlt.push( tempAlt );//海拔
+					arrISO.push( tempISO );//ISO
+					arrEV.push( tempEV );//EV
 				}
 			}
 
@@ -324,6 +344,8 @@ var ParameterMethod,
 			LatPlanSite = arrLat;
 			LingPlanSite = arrLing;
 			AltPlanSite = arrAlt;
+			ISOPlanSite = arrISO;
+			EVPlanSite = arrEV;
 
 			var myLatLng = flightPlanSite[0];
 			var myOptions = {
@@ -356,6 +378,7 @@ var ParameterMethod,
 							map.setZoom(scrollZoom);
 					}
 					//console.log(scrollZoom)
+			//alert(flightPlanSite)
 			if(typeof(flightPath)=="undefined"){
 				flightPath = new google.maps.Polyline({//类型为直线的
 					path: flightPlanSite,
@@ -395,49 +418,123 @@ var ParameterMethod,
 					map: map,
 				});
 			}
+					
 			
-			
-			
-			
-
 			flightPath.setMap( map );
-			clearInterval(playTimer);
-			var index_ = 0;
-			var myoverlay = new MyOverlay(map);
 			
-			var po;
-			var aPosition;
-			function timeout(){
-				if( index_ < flightPlanSite.length ){
-					
-					myoverlay = new MyOverlay(map);
-					
-					
-					aPosition = flightPlanSite[index_];
-					po = myoverlay.getProjection();
-					var point = po.fromLatLngToContainerPixel(aPosition);
-					//console.log(point.y)
-					point.y = point.y+17;
-					var latPo = po.fromContainerPixelToLatLng(point)
-					AnimateMarker.setPosition( latPo );
-					map.setCenter(latPo);
-					//var aPosition = flightPlanSite[index_];
-					//AnimateMarker.setPosition( aPosition );
-					//map.setCenter(aPosition);
-					$("#longitude").html( LatPlanSite[index_] );
-					$("#latitude").html( LingPlanSite[index_] );
-					$('#altitude').html( AltPlanSite[index_]+'米' );
-					index_++;
-				}else{
-					clearInterval( playTimer );
-				}
-			}
-			playTimer = setInterval(function(){
-				timeout();
-			},1000);
+			myoverlay = new MyOverlay(map);
+							
+		
+				
+				
+			
 
+		},
 
+		creatVideo : function(videoURL){
+			
+			scriptAdd  = '<video id="example-video" class="video-js vjs-default-skin vjs-big-play-centered" controls><source src="'+videoURL+'" type="application/x-mpegURL"/></video>';
+			$("#video_block").html(scriptAdd);
+			player = videojs("example-video");
+			player.pause();
+					
+					function timeout(){
+							index_=Math.round(player.currentTime());//获取到视频的当前时间，即播放进度
+							if( index_ < flightPlanSite.length ){
+								console.log(flightPlanSite.length)
+								console.log(index_)
+								//myoverlay = new MyOverlay(map);
+								
+								
+								aPosition = flightPlanSite[index_];//获取坐标，之后动态滑点每次都居中
+								po = myoverlay.getProjection();
+								point = po.fromLatLngToContainerPixel(aPosition);
+								point.y = point.y+17;
+								latPo = po.fromContainerPixelToLatLng(point)
+								AnimateMarker.setPosition( latPo );
+								map.setCenter(latPo);
+								$("#longitude").html( LatPlanSite[index_] );
+								$("#latitude").html( LingPlanSite[index_] );
+								$('#altitude').html( AltPlanSite[index_]+'米' );
+								$("#isoitude").html( ISOPlanSite[index_] );
+								$("#evitude").html( EVPlanSite[index_] );
+								index_++;
+							}else{
+								clearInterval( playTimer );
+							}
+						}
+						playTimer = setTimeout(function(){
+							timeout();
+						},1000);
+			player.on('pause',function(){
+				clearTimeout(playTimer);
+				index_=Math.round(player.currentTime());
+			});
 
+			
+			
+				
+			player.on('play',function(){
+				
+					playTimer = setInterval(function(){
+						timeout();
+					},1000);
+				
+			})	
+			
+		},
+		creatVideo2 : function(videoURL){
+			player.dispose();//清理
+			scriptAdd  = '<video id="example-video" class="video-js vjs-default-skin vjs-big-play-centered" controls><source src="'+videoURL+'" type="application/x-mpegURL"/></video>';
+			$("#video_block").html(scriptAdd);
+			player = videojs("example-video");
+			player.pause();
+			clearInterval( playTimer );
+					
+					function timeout(){
+							index_=Math.round(player.currentTime());
+							if( index_ < flightPlanSite.length ){
+								console.log(flightPlanSite.length)
+								console.log(index_)
+								//myoverlay = new MyOverlay(map);
+								
+								
+								aPosition = flightPlanSite[index_];//获取坐标，之后动态滑点每次都居中
+								po = myoverlay.getProjection();
+								point = po.fromLatLngToContainerPixel(aPosition);
+								point.y = point.y+17;
+								latPo = po.fromContainerPixelToLatLng(point)
+								AnimateMarker.setPosition( latPo );
+								map.setCenter(latPo);
+								$("#longitude").html( LatPlanSite[index_] );
+								$("#latitude").html( LingPlanSite[index_] );
+								$('#altitude').html( AltPlanSite[index_]+'米' );
+								$("#isoitude").html( ISOPlanSite[index_] );
+								$("#evitude").html( EVPlanSite[index_] );
+								index_++;
+							}else{
+								clearInterval( playTimer );
+							}
+						}
+						playTimer = setTimeout(function(){
+							timeout();
+						},1000);
+			player.on('pause',function(){
+				clearInterval(playTimer);
+				index_=Math.round(player.currentTime());
+			});
+			
+			
+			
+				
+			player.on('play',function(){
+				
+					
+					playTimer = setInterval(function(){
+						timeout();
+					},1000);
+				
+			})	
 		},
 		playlistAnimate: function () {
 				var onoffBtn = true;
@@ -496,13 +593,3 @@ var ParameterMethod,
 	AerialVideoView.init();
 })($);
 
-/*window.onerror = function(errorMessage, scriptURI, lineNumber,columnNumber,errorObj) {
-	try{
-		
-		console.log("閿欒淇℃伅锛�" , errorMessage);
-		console.log("鍑洪敊鏂囦欢锛�" , scriptURI);
-		console.log("鍑洪敊琛屽彿锛�" , lineNumber);
-		console.log("鍑洪敊鍒楀彿锛�" , columnNumber);
-		console.log("閿欒璇︽儏锛�" , errorObj);
-	}catch(e){}
- }*/

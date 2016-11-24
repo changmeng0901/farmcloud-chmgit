@@ -323,7 +323,7 @@ function farmeInfoShow(obj) {
 		map.setZoom(16);
 	map.setCenter(obj.getPosition());
 	var parentData = obj.parentData;
-	$(".mengb").show();
+	//(1)$(".mengb").show();
 	setPopOutDivPosition("#farmInfoD");
 	$("#farmInfoD h2").html(parentData.name);
 	$("#farmInfoD .farmpic img").attr("src", parentData.baseImageUrl); //之前是baseImageUrl
@@ -334,8 +334,8 @@ function farmeInfoShow(obj) {
 }
 //
 function showInfoWindow(obj) {
-	$(".mengb").show();
-	$("#map_loading").show();
+	//(1)$(".mengb").show();
+	//(2)$("#map_loading").show();
 	if (obj.realPlantLength > 0) { //有种植物
 		ajaxConfig({
 			url: ajaxRoot + makeParameter_Method('realplant') + makeParameter_Field("tunnel_info_id", obj.tunnelInfoId),
@@ -566,8 +566,8 @@ function addTunnelInfo(json) {
 }
 //
 function showDeviceInfoWindow(json) {
-	$(".mengb").show();
-	$("#map_loading").show();
+	//(1)$(".mengb").show();
+	//(2)$("#map_loading").show();
 	var deviceType = json.device_;
 	var device_type_id = parseInt(json.device_type_id);
 	//console.log(deviceType)

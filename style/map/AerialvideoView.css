@@ -50,7 +50,7 @@ body{
 	padding:0 20px;
 	}
 .video_header_list .item2{
-	padding:11px 5px;
+	padding:11px 0px;
 	}
 .video_header_list .onoff{
 	width:28px;
@@ -60,6 +60,8 @@ body{
 .video_header_list .qy_logo{
 	width:132px;
 	height:38px;
+	vertical-align:top;
+	margin-top:4px;
 	}
 .video_header_list .jd_cor{
 	display:inline-block;
@@ -200,8 +202,34 @@ body{
 	display:none;
 	}
 /*视频主体*/
+#AerialPlayer{
+	position:relative;
+	}
+#AerialPlayer .mark{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:5;
+	width:100%;
+	height:100%;
+	background:url(../../images/commons/opacity_b50.png);
+	opacity:0.5;
+	}
+#AerialPlayer .mark i{
+	width: 30px;
+	height: 30px;
+	background: url(../../images/commons/loading.gif) no-repeat center center;
+	position: absolute;
+	left: 50%;
+	margin-left: -15px;
+	top: 50%;
+	margin-top: -15px;
+	z-index: 6;
+	border-radius: 5px;
+	}
 .video-js{
 	width:100%;
+	height:100%;
 	}
 .video_main_wap{
 	position:relative;
@@ -218,6 +246,7 @@ body{
 	position:absolute;
 	left:20px;
 	bottom:50px;
+	z-index:6;
 	width:390px;
 	height:210px;
 	padding:1px;
@@ -225,6 +254,7 @@ body{
 	border-radius:10px;
 	box-sizing:border-box;
 	background-color:#fff;
+	overflow:hidden;
 	}
 .smallbtn_map{
 	position:absolute;
@@ -245,7 +275,7 @@ body{
 	position:absolute;
 	left:20px;
 	bottom:50px;
-	z-index:2;
+	z-index:6;
 	width:50px;
 	height:50px;
 	cursor:pointer;
@@ -978,6 +1008,7 @@ body.modal-open{
 .video_header_list .qy_logo{
 	width:96px;
 	height:28px;
+	margin-top:9px;
 	}
 .video_header_list .jd_cor{
 	width:66px;

@@ -43,10 +43,22 @@
                     <span class="gd_cor" id="altitude">47.9米</span>
                 </p>
             </li>
+            <li class="item2 item_ISO">
+                <p class="p_text">
+                    <img class="km_icon" src="../images/map/AerialvideoView_ISO.png" />
+                    <span class="iso_cor">100</span>
+                </p>
+            </li>
             <li class="item2">
                 <p class="p_text">
                     <img class="km_icon" src="../images/map/AerialvideoView_km.png" />
                     <span class="km_cor">1/400</span>
+                </p>
+            </li>
+            <li class="item2 item_EV">
+                <p class="p_text">
+                    <img class="sm_icon" src="../images/map/AerialvideoView_EV.png" />
+                    <span class="ev_cor">+1</span>
                 </p>
             </li>
             <li class="item2">
@@ -78,10 +90,14 @@
     <!--(3)视频主体-->
     <div class="video_main_wap">
         <!-- 观学视频开始 -->
-        <div id="AerialPlayer">                           
+        <!--<div id="AerialPlayer">                           
             <div class="video" id="HLSPlayer2">
 				<script type="text/javascript" src="../js/ffdshow/hls.min.js"></script>
             </div>
+        </div>-->
+        <div id="AerialPlayer">  
+        	<!--<span class="mark"><i></i></span>-->
+        	<div id="video_block"></div>
         </div>
         <!--航拍地图-->
         <div class="aerial_map">
@@ -197,7 +213,7 @@
 
 
 <p class="mengb" style="display:none;"><!--灰色蒙版层--></p>
-<span id="map_loading" style="display:none;"></span>
+<span id="map_loading" style="display:none-;"></span>
 
 <!--（0-1）企业名片模态框-->
 <div class="modal fade" id="CardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -267,6 +283,35 @@
 <script type="text/javascript" src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="../js/map/map_base_functions.js"></script>
 <script type="text/javascript" src="../js/map/map_controller.js"></script>
+	<!--[if lt IE 9]>
+	<script src="../js/videojsPlugvideojs-ie8.js"></script>
+	<![endif]-->
+    <script src="../js/videojsPlug/video.js"></script>
+	<script src="../js/videojsPlug/videojs-contrib-hls.js"></script>
+	<script src="../js/videojsPlug/m3u8-parser.js"></script>
+	<script>
+		//videojs.options.flash.swf = "video-js.swf";
+
+		/*var player = videojs("example-video");
+		//player.hls("http://farmeasy.cn/video/1030/1509/playlist.m3u8");
+		player.play(); 
+		//var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls;
+
+		function pause(){
+			player.pause();
+		}
+
+		function play(){
+			player.play();
+		}
+
+		player.on('play', function(event) {
+			alert(1);
+		});
+		player.on('pause', function(event) {
+			alert(player.currentTime());
+		});*/
+	</script>
 <script type="text/javascript" src="../js/map/AerialvideoView.js"></script>
 
 </body>
