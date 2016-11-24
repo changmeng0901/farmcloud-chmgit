@@ -7,6 +7,7 @@
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-select.min.css" />
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-datetimepicker.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/skinBlue.css" />
     <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
     <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
     <link type="text/css" rel="stylesheet" href="../style/inventory/InventoryFile.css" />
@@ -49,29 +50,29 @@
                             <a href="javascript:;"><i class="icon_L icon_rkgl"></i>入库管理</a><b class="b_arrow"></b>
                         </strong>
                         <ol class="inben_second">
-                            <li class="sed_item sed_cur" onClick="window.open('StorageDetail.html','_self')" ><i class="icon_sed"></i>入库明细</li>
-                            <li class="sed_item"><i class="icon_sed"></i>入库单</li>
+                            <li class="sed_item" onClick="window.open('StorageDetail.html','_self')" ><i class="icon_sed"></i>入库明细</li>
+                            <li class="sed_item" onClick="window.open('StockIn.html','_self')" ><i class="icon_sed"></i>入库单</li>
                         </ol>
                         <strong class="inben_first inben_first2">
                             <a href="javascript:;"><i class="icon_L icon_ckgl"></i>出库管理</a><b class="b_arrow"></b>
                         </strong>
                         <ol class="inben_second">
-                            <li class="sed_item"><i class="icon_sed"></i>出库明细</li>
-                            <li class="sed_item"><i class="icon_sed"></i>出库单</li>
+                            <li class="sed_item sed_cur" onClick="window.open('OutStorageDetail.html','_self')"  ><i class="icon_sed"></i>出库明细</li>
+                            <li class="sed_item" onClick="window.open('StockOut.html','_self')" ><i class="icon_sed"></i>出库单</li>
                         </ol>
                         <strong class="inben_first inben_first2">
                             <a href="javascript:;"><i class="icon_L icon_zkgl"></i>在库管理</a><b class="b_arrow"></b>
                         </strong>
                         <ol class="inben_second">
-                            <li class="sed_item"><i class="icon_sed"></i>过期预警</li>
-                            <li class="sed_item"><i class="icon_sed"></i>调拨单</li>
+                            <li class="sed_item" onClick="window.open('ExpireWarning.html','_self')"><i class="icon_sed"></i>过期预警</li>
+                            <li class="sed_item" onClick="window.open('AllocationBill.html','_self')" ><i class="icon_sed"></i>调拨单</li>
                         </ol>
                         <strong class="inben_first inben_first2">
                             <a href="javascript:;"><i class="icon_L icon_pdgl"></i>盘点管理</a><b class="b_arrow"></b>
                         </strong>
                         <ol class="inben_second">
-                            <li class="sed_item"><i class="icon_sed"></i>盘点记录</li>
-                            <li class="sed_item"><i class="icon_sed"></i>盘点单</li>
+                            <li class="sed_item" onClick="window.open('AccountRecords.html','_self')"><i class="icon_sed"></i>盘点记录</li>
+                            <li class="sed_item" onClick="window.open('AccountBill .html','_self')" ><i class="icon_sed"></i>盘点单</li>
                         </ol>
                     </div>
                     <i class="collapse_btn"></i>
@@ -187,7 +188,7 @@
                                 <td>张明明</td>
                                 <td>2016/06/17 12:00</td>
                                 <td>
-                                	<a class="icon_link" title="商品入库" href="#"><img src="../images/commons/tableIco_storage2.png" /></a>
+                                	<a class="icon_link" title="商品入库" href="GoodsStorage.html"><img src="../images/commons/tableIco_storage2.png" /></a>
                                 	<a class="icon_link" title="查看" href="OutStorageDetailRecords.html"><img src="../images/commons/tableIco_view2.png" /></a>
                                     <a class="icon_link" title="编辑" href="#"><img src="../images/commons/tableIco_edit2.png" /></a>
                                     <a class="icon_link" title="删除" href="#"><img src="../images/commons/tableIco_delect2.png" /></a>
@@ -278,10 +279,14 @@
 
 
 <script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
+<!--[if IE 8]>
+<script type="text/javascript" src="../js/bootstrap/respond.js"></script>
+<![endif]-->
 <script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap/bootstrap-select.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap/bootstrap-datetimepicker.js"></script>
 <script type="text/javascript" src="../js/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
 <script type="text/javascript" src="../js/inventory/InventoryFile.js"></script>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 
-    <title>入库详细记录</title>
+    <title>盘点详细记录</title>
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-select.min.css" />
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-datetimepicker.css" />
@@ -43,29 +43,21 @@
                 <!-- 入库详细记录右侧 -->
                 <div class="inbentory_content">
                     <div class="breadNav_wap clear">
-                        <div class="breadNav_lt" style="margin-left:20px;"><a href="#">加工</a><span>&gt;</span><a href="StorageDetail.html">入库明细</a><span>&gt;</span><strong>入库明细记录</strong></div>
+                        <div class="breadNav_lt" style="margin-left:20px;"><a href="#">加工</a><span>&gt;</span><a href="AccountRecords.html">盘点记录</a><span>&gt;</span><strong>盘点详细信息</strong></div>
                     </div>
                     <div class="inbentory_search_wap">
                     <!-- 物料信息 -->
                     	<div class="material_infor_title clear">
-                        	<strong class="text_title">入库信息</strong>
-                            <a href="StorageDetail.html" class="btn btn-default fr">返回</a>
+                        	<strong class="text_title">盘点信息</strong>
+                            <a href="AccountRecords.html" class="btn btn-default fr">返回</a>
                         </div>
                         <div class="material_table clear">
                         	<dl class="li_item col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             	<dt class="dl_dt">
-                                	<img src="../images/inventory/StorageDetailRecords_icon1.png" />入库编号
+                                	<img src="../images/inventory/StorageDetailRecords_icon1.png" />盘点编号
                                 </dt>
                                 <dd class="dl_dd">
                                 	<p class="text_num">RK2016010100001</p>
-                                </dd>
-                            </dl>
-                        	<dl class="li_item col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            	<dt class="dl_dt">
-                                	<img src="../images/inventory/StorageDetailRecords_icon2.png" />入库类型
-                                </dt>
-                                <dd class="dl_dd">
-                                	<p class="text_num">生产入库</p>
                                 </dd>
                             </dl>
                             <dl class="li_item col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -78,15 +70,15 @@
                             </dl>
                             <dl class="li_item col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             	<dt class="dl_dt">
-                                	<img src="../images/inventory/StorageDetailRecords_icon4.png" />经<span class="space_harf12"></span>办<span class="space_harf12"></span>人
+                                	<img src="../images/inventory/StorageDetailRecords_icon4.png" />操<span class="space_harf12"></span>作<span class="space_harf12"></span>人
                                 </dt>
                                 <dd class="dl_dd">
                                 	<p class="text_num">张明明</p>
                                 </dd>
                             </dl>
-                            <dl class="li_item col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        	<dl class="li_item col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             	<dt class="dl_dt">
-                                	<img src="../images/inventory/StorageDetailRecords_icon5.png" />入库时间
+                                	<img src="../images/inventory/StorageDetailRecords_icon5.png" />盘点时间
                                 </dt>
                                 <dd class="dl_dd">
                                 	<p class="text_num">2016/06/17 12:20</p>
@@ -108,68 +100,53 @@
                         <table class="inventory_modal_table mt20" width="100%" cellpadding="0" cellspacing="0">
                         	<tr>
                             	<th>序号</th>
-                                <th>批次编号</th>
+                                <th>物料编号</th>
                                 <th>物料名称</th>
                                 <th>来源</th>
-                                <th>等级</th>
-                                <th>规格</th>
-                                <th>保质期</th>
-                                <th>入库数量</th>
-                                <th>入库总重量（kg）</th>
-                                <th>单价（元）</th>
-                                <th>小计（元）</th>
+                                <th>单位规格</th>
+                                <th>库存数量</th>
+                                <th>实盘数量</th>
+                                <th>损益数量</th>
                             </tr>
                             <tr class="odd">
                             	<td>1</td>
                                 <td>YL201601280001</td>
                                 <td>金桔</td>
                                 <td>A-1</td>
-                                <td>一等品</td>
                                 <td>100g/包</td>
-                                <td>30天</td>
-                                <td>15.0</td>
-                                <td>50.0</td>
-                                <td>￥2.30</td>
-                                <td>￥230</td>
+                                <td>50</td>
+                                <td>35</td>
+                                <td>-15.0</td>
                             </tr>
                             <tr class="even">
                             	<td>1</td>
                                 <td>YL201601280001</td>
                                 <td>金桔</td>
                                 <td>A-1</td>
-                                <td>一等品</td>
                                 <td>100g/包</td>
-                                <td>30天</td>
-                                <td>15.0</td>
-                                <td>50.0</td>
-                                <td>￥2.30</td>
-                                <td>￥230</td>
+                                <td>50</td>
+                                <td>35</td>
+                                <td>-15.0</td>
                             </tr>
                             <tr class="odd">
                             	<td>1</td>
                                 <td>YL201601280001</td>
                                 <td>金桔</td>
                                 <td>A-1</td>
-                                <td>一等品</td>
                                 <td>100g/包</td>
-                                <td>30天</td>
-                                <td>15.0</td>
-                                <td>50.0</td>
-                                <td>￥2.30</td>
-                                <td>￥230</td>
+                                <td>50</td>
+                                <td>35</td>
+                                <td>-15.0</td>
                             </tr>
                             <tr class="even">
                             	<td>1</td>
                                 <td>YL201601280001</td>
                                 <td>金桔</td>
                                 <td>A-1</td>
-                                <td>一等品</td>
                                 <td>100g/包</td>
-                                <td>30天</td>
-                                <td>15.0</td>
-                                <td>50.0</td>
-                                <td>￥2.30</td>
-                                <td>￥230</td>
+                                <td>50</td>
+                                <td>35</td>
+                                <td>-15.0</td>
                             </tr>
                         </table>
                         <div class="pageModel_wap" style="padding:50px 0 30px;">

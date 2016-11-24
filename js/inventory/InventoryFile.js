@@ -3,13 +3,13 @@
 $(function(){
 	
 	// (1)获取焦点和失去焦点状态
-    $('input[type=text]').focus(function(){
+    $('input[type=text],textarea').focus(function(){
         var txt_value = $(this).val();
         if(txt_value==this.defaultValue){
             $(this).val("");    
         };  
     });
-    $('input[type=text]').blur(function(){
+    $('input[type=text],textarea').blur(function(){
         var txt_value = $(this).val();
         if(txt_value==""){
             $(this).val(this.defaultValue); 
@@ -30,6 +30,7 @@ $(function(){
 		maxView: 2,		
 		pickerPosition: "bottom-left"
 	});
+
 	
 	//(3)库存模板下的左侧二级菜单
 	var menuOnOff = true;
@@ -57,14 +58,23 @@ $(function(){
 		}	
 	});
 	
+	
+	
+	
 	//(4)计算主体高度及折叠按钮居中
+	var IESpace = 0;//为了解决ie8大屏出滚动条问题，html和body差4PX
+	if( $(document).height() > $(window).height() ){
+		IESpace	= 4;
+	}else{
+		IESpace	=0
+	}
 	$('.inbentory_level').css({ 
-		'min-height' : oWindowH - 60,
-		    'height' : $(document).height() - 60 
+		'min-height' : oWindowH - 60 -IESpace,
+		    'height' : $(document).height() - 60  -IESpace
 	});
 	$('.inbentory_file_main').css({ 
-		'min-height' : oWindowH - 60,
-		    'height' : $(document).height() - 60 
+		'min-height' : oWindowH - 60 -IESpace,
+		    'height' : $(document).height() - 60 -IESpace
 	});
 	if( oWindowH < 400 ){
 		$('.collapse_btn').css( 'top' , 220 );
@@ -97,6 +107,53 @@ $(function(){
 		$(this).parents('.inben_second').siblings().find('.sed_item').removeClass('sed_cur');
 	});
 	
+	//(7)出库流水入库页面的--原料出库展开和收缩状态
+	$('#ylck_btn').click(function(){
+		if(	$(this).hasClass('ylck_hide') ){ 
+			$(this).removeClass('ylck_hide') ;
+			$('#ylck_content').slideDown();
+		}else{ 
+			$(this).addClass('ylck_hide');
+			$('#ylck_content').slideUp();
+		}
+	});
+	
+
+	// (8)模态框--物料列表全选功能
+	$('input[class="iCheck"]').iCheck({
+		checkboxClass: 'icheckbox_minimal-blue'
+	});
+	$('.material_list input[aa]').on('ifClicked', function(){ //全选
+		if (this.checked) {
+			$(this).attr("aa","unchecked");
+			$(this).parents('tr').siblings().find('input[bb]').iCheck('uncheck');
+			$(this).parents('tr').siblings().find('input[bb]').attr("bb","unchecked");
+		} else {
+			$(this).attr("aa","checked");
+			$(this).parents('tr').siblings().find('input[bb]').iCheck('check');
+			$(this).parents('tr').siblings().find('input[bb]').attr("bb","checked");
+		}
+	});
+	$('.material_list input[bb]').on('ifClicked', function(){ //取消全选
+		if (this.checked) {
+			$(this).attr("bb","unchecked");
+			$(this).parents('tr').siblings().find('input[aa]').iCheck('uncheck');
+		} else {
+			$(this).attr("bb","checked");
+			var len = $(this).parents('tr').siblings().find('input[bb=checked]').length;
+			if(len == $('.material_list input[bb]').length-1){
+				$(this).parents('tr').siblings().find('input[aa]').iCheck('check');	
+			}
+		}
+	});
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	$(window).resize(function(e) {
@@ -126,14 +183,21 @@ $(function(){
 			}	
 		});
 		
+		
 		//(4)计算主体高度及折叠按钮居中
+		var IESpace = 0; //为了解决ie8大屏出滚动条问题，html和body差4PX
+		if( $(document).height() > $(window).height() ){
+			IESpace	= 4;
+		}else{
+			IESpace	=0
+		}
 		$('.inbentory_level').css({ 
-			'min-height' : oWindowH - 60,
-				'height' : $(document).height() - 60 
+			'min-height' : oWindowH - 60 -IESpace,
+				'height' : $(document).height() - 60 -IESpace
 		});
 		$('.inbentory_file_main').css({ 
-			'min-height' : oWindowH - 60,
-				'height' : $(document).height() - 60 
+			'min-height' : oWindowH - 60 -IESpace,
+				'height' : $(document).height() - 60 -IESpace
 		});
 		$('.collapse_btn').css( 'top' , parseInt(oWindowH/2) + $(window).scrollTop() );
 		if( oWindowH < 400 ){
@@ -156,3 +220,30 @@ $(function(){
 	
 	
 });
+
+
+	//(6)扫描条码按钮状态
+	function scancode( obj , scanNo ){
+		if( $(obj).hasClass(scanNo) ){
+			$( obj ).removeClass( scanNo );		
+		}else{	
+			$( obj ).addClass( scanNo );
+		}
+	}
+	
+	//(9)入库单添加物料模态框
+	function MaterialModalShow( obj , oParent ){
+		//点击添加新物料按钮，物料框显示
+		$( oParent ).show()
+	}
+	function MaterialModalHide( obj , oParent ){
+		//点击添加新物料按钮，物料框隐藏
+		$( oParent ).hide();
+	}
+	function delectMaterItem( obj , oParent){
+		//新增物料弹框中删除
+		$( obj ).parents( oParent ).remove();	
+	}
+	
+
+	

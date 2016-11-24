@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 
-    <title>入库详细记录</title>
+    <title>库存详细记录</title>
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-select.min.css" />
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-datetimepicker.css" />
@@ -40,136 +40,156 @@
             </td> 
             <td valign="top">
             <div class="inbentory_file_main">
-                <!-- 入库详细记录右侧 -->
+                <!-- 库存档案右侧 -->
                 <div class="inbentory_content">
                     <div class="breadNav_wap clear">
-                        <div class="breadNav_lt" style="margin-left:20px;"><a href="#">加工</a><span>&gt;</span><a href="StorageDetail.html">入库明细</a><span>&gt;</span><strong>入库明细记录</strong></div>
+                        <div class="breadNav_lt" style="margin-left:20px;"><a href="#">加工</a><span>&gt;</span><a href="InventoryFile.html">库存档案</a><span>&gt;</span><strong>库存详细记录</strong></div>
+                    </div>
+                    
+                    <div class="inbentory_search_wap">
+                    	<!-- 物料信息 -->
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                        	<td>
+                            	<div class="clear">
+                                	<p class="material_name inline_block mr10">金桔</p>
+                                    <p class="material_code inline_block mr25">YL201601280001</p>
+                                    <p class="material_class inline_block">特殊一等品</p>
+                                </div>
+                                <p class="material_size mt15">物料规格：<span>公斤</span></p>
+                            </td>
+                            <td>
+                            	<div class="fr">
+                                    <dl class="material_number">
+                                        <dt>
+                                            <span class="color_b">120</span>
+                                        </dt>
+                                        <dd>
+                                            <p class="p_text1">Stock quantity</p>
+                                            <p class="p_text2">库存数量</p>
+                                        </dd>
+                                    </dl>
+                                    <dl class="material_number">
+                                        <dt>
+                                            <span class="color_g">50</span>
+                                        </dt>
+                                        <dd>
+                                            <p class="p_text1">Freezing amount</p>
+                                            <p class="p_text2">冻结数量</p>
+                                        </dd>
+                                    </dl>
+                                    <dl class="material_number">
+                                        <dt>
+                                            <span class="color_y">80</span>
+                                        </dt>
+                                        <dd>
+                                            <p class="p_text1">Sales volume</p>
+                                            <p class="p_text2">可销售数量</p>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </td>
+                        </table>
+                        <!-- 物料信息 -->
                     </div>
                     <div class="inbentory_search_wap">
-                    <!-- 物料信息 -->
-                    	<div class="material_infor_title clear">
-                        	<strong class="text_title">入库信息</strong>
-                            <a href="StorageDetail.html" class="btn btn-default fr">返回</a>
+                    	<!-- 库存档案搜索头部 -->
+                    	<div class="search_header clear">
+                            <div class="search_selected fl">
+                                <dl style="width:265px;" class="se_selt180 fl">
+                                    <dt style="width:80px;">仓库</dt>
+                                    <dd class="inline_block bootSelt180">
+                                        <select class="selectpicker" style="display: none;">
+                                            <option selected="selected">全部</option>
+                                            <option>仓库1</option>
+                                            <option>仓库2</option>
+                                        </select>
+                                    </dd>
+                                </dl>
+                                <dl style="width:340px;" class="se_selt180 fl">
+                                    <dt style="width:80px;">搜索</dt>
+                                    <dd class="inline_block bootSelt180">
+                                        <input type="text" style="width:180px;font-size:12px;" value="请输入批次编号" class="form-control mr5 fl">
+                                        <input type="button" value="搜索" class="btn btn-primary">
+                                    </dd>
+                                </dl>
+                            </div>
                         </div>
-                        <div class="material_table clear">
-                        	<dl class="li_item col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            	<dt class="dl_dt">
-                                	<img src="../images/inventory/StorageDetailRecords_icon1.png" />入库编号
-                                </dt>
-                                <dd class="dl_dd">
-                                	<p class="text_num">RK2016010100001</p>
-                                </dd>
-                            </dl>
-                        	<dl class="li_item col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            	<dt class="dl_dt">
-                                	<img src="../images/inventory/StorageDetailRecords_icon2.png" />入库类型
-                                </dt>
-                                <dd class="dl_dd">
-                                	<p class="text_num">生产入库</p>
-                                </dd>
-                            </dl>
-                            <dl class="li_item col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            	<dt class="dl_dt">
-                                	<img src="../images/inventory/StorageDetailRecords_icon3.png" />仓<span class="space_two12"></span>库
-                                </dt>
-                                <dd class="dl_dd">
-                                	<p class="text_num">1号仓库</p>
-                                </dd>
-                            </dl>
-                            <dl class="li_item col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            	<dt class="dl_dt">
-                                	<img src="../images/inventory/StorageDetailRecords_icon4.png" />经<span class="space_harf12"></span>办<span class="space_harf12"></span>人
-                                </dt>
-                                <dd class="dl_dd">
-                                	<p class="text_num">张明明</p>
-                                </dd>
-                            </dl>
-                            <dl class="li_item col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            	<dt class="dl_dt">
-                                	<img src="../images/inventory/StorageDetailRecords_icon5.png" />入库时间
-                                </dt>
-                                <dd class="dl_dd">
-                                	<p class="text_num">2016/06/17 12:20</p>
-                                </dd>
-                            </dl>
-                            <dl class="li_item col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            	<dt class="dl_dt">
-                                	<img src="../images/inventory/StorageDetailRecords_icon6.png" />备<span class="space_two12"></span>注
-                                </dt>
-                                <dd class="dl_dd">
-                                	<p class="text_num">这里是好多的备注，大概有200字，但是不会超过200个字。这里是好多的备注，大概有200字，但是不会超过200个字。这里是好多的备注，大概有200字，但是不会超过200个字。</p>
-                                </dd>
-                            </dl>
-                        </div>
-                    <!-- 物料信息 -->
-                    </div>
-                    <div class="inbentory_search_wap">
-                    <!-- 该物料在库存中的全部流水记录列表 -->
+                        <!-- 库存档案搜索列表 -->
                         <table class="inventory_modal_table mt20" width="100%" cellpadding="0" cellspacing="0">
                         	<tr>
                             	<th>序号</th>
                                 <th>批次编号</th>
-                                <th>物料名称</th>
                                 <th>来源</th>
-                                <th>等级</th>
-                                <th>规格</th>
+                                <th>所属基地</th>
                                 <th>保质期</th>
-                                <th>入库数量</th>
-                                <th>入库总重量（kg）</th>
-                                <th>单价（元）</th>
-                                <th>小计（元）</th>
+                                <th>规格</th>
+                                <th>经办人</th>
+                                <th>仓库</th>
+                                <th>出入库日期</th>
+                                <th>出入库数量</th>
+                                <th>冻结数量</th>
+                                <th>订单编号</th>
+                                <th>冻结时间</th>
                             </tr>
                             <tr class="odd">
                             	<td>1</td>
                                 <td>YL201601280001</td>
-                                <td>金桔</td>
                                 <td>A-1</td>
-                                <td>一等品</td>
+                                <td>小汤山</td>
+                                <td>100天</td>
                                 <td>100g/包</td>
-                                <td>30天</td>
+                                <td>张明明</td>
+                                <td>1号仓库</td>
+                                <td>2016/06/22</td>
                                 <td>15.0</td>
-                                <td>50.0</td>
-                                <td>￥2.30</td>
-                                <td>￥230</td>
+                                <td>65.0</td>
+                                <td>DD201601011110</td>
+                                <td>2016/06/22</td>
                             </tr>
                             <tr class="even">
                             	<td>1</td>
                                 <td>YL201601280001</td>
-                                <td>金桔</td>
                                 <td>A-1</td>
-                                <td>一等品</td>
+                                <td>小汤山</td>
+                                <td>100天</td>
                                 <td>100g/包</td>
-                                <td>30天</td>
+                                <td>张明明</td>
+                                <td>1号仓库</td>
+                                <td>2016/06/22</td>
                                 <td>15.0</td>
-                                <td>50.0</td>
-                                <td>￥2.30</td>
-                                <td>￥230</td>
+                                <td>65.0</td>
+                                <td>DD201601011110</td>
+                                <td>2016/06/22</td>
                             </tr>
                             <tr class="odd">
                             	<td>1</td>
                                 <td>YL201601280001</td>
-                                <td>金桔</td>
                                 <td>A-1</td>
-                                <td>一等品</td>
+                                <td>小汤山</td>
+                                <td>100天</td>
                                 <td>100g/包</td>
-                                <td>30天</td>
+                                <td>张明明</td>
+                                <td>1号仓库</td>
+                                <td>2016/06/22</td>
                                 <td>15.0</td>
-                                <td>50.0</td>
-                                <td>￥2.30</td>
-                                <td>￥230</td>
+                                <td>65.0</td>
+                                <td>DD201601011110</td>
+                                <td>2016/06/22</td>
                             </tr>
                             <tr class="even">
                             	<td>1</td>
                                 <td>YL201601280001</td>
-                                <td>金桔</td>
                                 <td>A-1</td>
-                                <td>一等品</td>
+                                <td>小汤山</td>
+                                <td>100天</td>
                                 <td>100g/包</td>
-                                <td>30天</td>
+                                <td>张明明</td>
+                                <td>1号仓库</td>
+                                <td>2016/06/22</td>
                                 <td>15.0</td>
-                                <td>50.0</td>
-                                <td>￥2.30</td>
-                                <td>￥230</td>
+                                <td>65.0</td>
+                                <td>DD201601011110</td>
+                                <td>2016/06/22</td>
                             </tr>
                         </table>
                         <div class="pageModel_wap" style="padding:50px 0 30px;">
@@ -195,13 +215,16 @@
                                             </table>
                                         </div>
                                     </td>
+                                    <td class="pl5">
+                                    	<a class="btn btn-default" href="InventoryFile.html">返回</a>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
-                    <!-- 该物料在库存中的全部流水记录列表 -->
+                        <!-- 库存档案搜索列表 -->
                     </div>
                 </div>
-                <!-- 入库详细记录右侧 -->
+                <!-- 库存档案右侧 -->
             </div>   
             </td>    
     	</tr>  

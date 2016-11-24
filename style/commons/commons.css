@@ -2,7 +2,6 @@
 /* CSS Document */
 /*农场云项目的公用板块样式 */
 
-
 /* margin-top */
 .mt5{ margin-top:5px;}
 .mt10{ margin-top:10px;}
@@ -148,7 +147,7 @@ display: inline-block;	height: 14px;	line-height: 14px;	margin-top: 1px; vertica
 .octicon-search02 { background:url(../../images/commons/cjsearch_bg.png) no-repeat; display: block; float: left; height: 13px; left: 8px; position: absolute; top: 10px; width: 13px; z-index: 3;}
 .search_selected{ padding: 5px 0;}
 .se_selt180{ width: 180px;}
-.se_selt180 dt{ float: left; width: 80px; line-height: 34px; padding-right: 10px; font-weight:normal; text-align: right;}
+.se_selt180 dt{ float: left; width: 80px; line-height: 34px; padding-right: 10px; font-weight:normal; text-align: right; box-sizing:border-box;}
 .se_selt180 dd{ float: left;}
 /* 前面带下拉的搜索框 */
 .input_select .bootstrap-select{ margin-right:-1px;}

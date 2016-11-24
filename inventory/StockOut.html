@@ -1,0 +1,474 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+    <title>出库单</title>
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-select.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-datetimepicker.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/skinBlue.css" />
+    <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/inventory/InventoryFile.css" />
+
+</head>
+
+<body>
+<div class="top">
+	<div class="logo"><img src="../images/commons/logo_01.jpg" width="200" height="60" /></div>
+</div>
+
+<div class="content">
+    <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+    	<tr>
+        	<td class="left_c" valign="top" width="76">
+            <!--左边开始-->
+            <div class="left_c1">
+                <ul class="left_cul">
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_zy.png" width="77" height="69" /></a></li>
+                    <li class="left_culi on"><a href="#"><img src="../images/commons/left_jh.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_sc.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_xs.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_jiagong.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_lvli.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_fx.png" width="77" height="69" /></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!--左边结束-->
+            </td> 
+            <td valign="top">
+            <div class="inbentory_file_main">
+            	<!-- 库存左侧二级导航 -->
+                <div class="inbentory_level_wap">
+                    <div class="inbentory_level">
+                        <strong class="inben_first inben_first1">
+                            <a href="javascript:;" onClick="window.open('InventoryFile.html','_self')" ><i class="icon_L icon_kcda"></i>库存档案</a>
+                        </strong>
+                        <strong class="inben_first inben_first2">
+                            <a href="javascript:;"><i class="icon_L icon_rkgl"></i>入库管理</a><b class="b_arrow"></b>
+                        </strong>
+                        <ol class="inben_second">
+                            <li class="sed_item" onClick="window.open('StorageDetail.html','_self')" ><i class="icon_sed"></i>入库明细</li>
+                            <li class="sed_item" onClick="window.open('StockIn.html','_self')" ><i class="icon_sed"></i>入库单</li>
+                        </ol>
+                        <strong class="inben_first inben_first2">
+                            <a href="javascript:;"><i class="icon_L icon_ckgl"></i>出库管理</a><b class="b_arrow"></b>
+                        </strong>
+                        <ol class="inben_second">
+                            <li class="sed_item" onClick="window.open('OutStorageDetail.html','_self')"  ><i class="icon_sed"></i>出库明细</li>
+                            <li class="sed_item sed_cur" onClick="window.open('StockOut.html','_self')" ><i class="icon_sed"></i>出库单</li>
+                        </ol>
+                        <strong class="inben_first inben_first2">
+                            <a href="javascript:;"><i class="icon_L icon_zkgl"></i>在库管理</a><b class="b_arrow"></b>
+                        </strong>
+                        <ol class="inben_second">
+                            <li class="sed_item" onClick="window.open('ExpireWarning.html','_self')"><i class="icon_sed"></i>过期预警</li>
+                            <li class="sed_item" onClick="window.open('AllocationBill.html','_self')" ><i class="icon_sed"></i>调拨单</li>
+                        </ol>
+                        <strong class="inben_first inben_first2">
+                            <a href="javascript:;"><i class="icon_L icon_pdgl"></i>盘点管理</a><b class="b_arrow"></b>
+                        </strong>
+                        <ol class="inben_second">
+                            <li class="sed_item" onClick="window.open('AccountRecords.html','_self')"><i class="icon_sed"></i>盘点记录</li>
+                            <li class="sed_item" onClick="window.open('AccountBill .html','_self')" ><i class="icon_sed"></i>盘点单</li>
+                        </ol>
+                    </div>
+                    <i class="collapse_btn"></i>
+                </div>
+                <!-- 库存左侧二级导航 -->
+                <!-- 库存档案右侧 -->
+                <div class="inbentory_content">
+                    <div class="breadNav_wap clear">
+                        <div class="breadNav_lt" style="margin-left:20px;"><a href="#">加工</a><span>&gt;</span><a href="#">库存</a><span>&gt;</span><strong>出库单</strong></div>
+                    </div>
+                    <div class="inbentory_search_wap">
+                    <!-- 商品入库 -->
+                        <div class="search_header search_header2 clear">
+                        	<div class="clear">
+                                <div class="search_selected fl">
+                                    <dl style="width:265px;" class="se_selt180 fl">
+                                        <dt style="width:80px;">物料类型</dt>
+                                        <dd class="inline_block bootSelt180">
+                                            <select class="selectpicker" style="display: none;">
+                                                <option selected="selected">全部</option>
+                                                <option>原料</option>
+                                                <option>商品</option>
+                                                <option>辅料</option>
+                                                <option>自定义物料</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                    <dl style="width:265px;" class="se_selt180 fl">
+                                        <dt style="width:80px;">出库类型</dt>
+                                        <dd class="inline_block bootSelt180">
+                                            <select class="selectpicker" style="display: none;">
+                                                <option selected="selected">全部</option>
+                                                <option>出库类型1</option>
+                                                <option>出库类型2</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="search_selected fl">
+                                    <dl style="width:265px;" class="se_selt180 fl">
+                                        <dt style="width:80px;">仓库</dt>
+                                        <dd class="inline_block bootSelt180">
+                                            <select class="selectpicker" style="display: none;">
+                                                <option selected="selected">全部</option>
+                                                <option>仓库1</option>
+                                                <option>仓库2</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                    <dl style="width:265px;" class="se_selt180 fl">
+                                        <dt style="width:80px;">经办人</dt>
+                                        <dd class="inline_block bootSelt180">
+                                            <select class="selectpicker" style="display: none;">
+                                                <option selected="selected">全部</option>
+                                                <option>经办人1</option>
+                                                <option>经办人2</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="clear">
+                                <div class="search_selected fl">
+                                    <dl style="width:265px;" class="se_selt180 fl">
+                                        <dt style="width:80px;">出库日期</dt>
+                                        <dd class="inline_block bootSelt180">
+                                            <div class="fl" style="width:180px;">
+                                                <div class="input-append date form_datetime " style="position:relative;" >
+                                                <input size="26" type="text" value="" readonly style="border-radius:4px;"> 
+                                                <span class="add-on" style="position:absolute; right:10px; top:3px;"><i class="icon-th" style="margin:0;"></i></span>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <textarea class="danju_textarea fl">暂无备注信息</textarea>
+                                </div>
+                                <div class="search_selected fl" style="margin-left:38px;">
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#AddMaterial">添加物料</button>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="inventory_modal_table mt20" width="100%" cellpadding="0" cellspacing="0" style="min-width:1120px-;">
+                        	<tr>
+                            	<th width="5%">序号</th>
+                                <th width="8%">物料编号</th>
+                                <th width="10%"> 物料名称 <a class="scancode_btn scan_no" onClick="scancode(this,'scan_no')" href="javascript:;">扫描条码</a></th>
+                                <th width="8%">批次编号</th>
+                                <th width="8%">物料等级</th>
+                                <th width="6%">来源</th>
+                                <th width="8%">单位规格</th>
+                                <th width="6%">出库量</th>
+                                <th width="10%">出库总重量（kg）</th>
+                                <th width="8%">保质期（天）</th>
+                                <th width="9%">物料单价（元）</th>
+                                <th width="9%">物料总价（元）</th>
+                                <th>操作</th>
+                            </tr>
+                            <tr class="odd">
+                            	<td class="td_line">1</td>
+                                <td class="td_line">YL201601280001</td>
+                                <td class="td_line">金桔</td>
+                                <td class="td_line">YL201601280001</td>
+                                <td class="td_line">一等品</td>
+                                <td class="td_line">A-1</td>
+                                <td class="td_line">10.00</td>
+                                <td class="td_line">80.0</td>
+                                <td class="td_line">80.0</td>
+                                <td class="td_line">15.0</td>
+                                <td class="td_line">65.0</td>
+                                <td class="td_line">65.0</td>
+                                <td>
+                                	<a class="icon_link" href="javascript:;"><img src="../images/commons/tableIco_delect2.png" /></a>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                            	<td class="td_line">2</td>
+                                <td class="td_line">YL201601280001</td>
+                                <td class="td_line">金桔</td>
+                                <td class="td_line">YL201601280001</td>
+                                <td class="td_line">一等品</td>
+                                <td class="td_line">A-1</td>
+                                <td class="td_line">10.00</td>
+                                <td class="td_line">80.0</td>
+                                <td class="td_line">80.0</td>
+                                <td class="td_line">15.0</td>
+                                <td class="td_line">65.0</td>
+                                <td class="td_line">65.0</td>
+                                <td>
+                                	<a class="icon_link" href="javascript:;"><img src="../images/commons/tableIco_delect2.png" /></a>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                            	<td class="td_line">3</td>
+                                <td class="td_line">YL201601280001</td>
+                                <td class="td_line">金桔</td>
+                                <td class="td_line">YL201601280001</td>
+                                <td class="td_line">一等品</td>
+                                <td class="td_line">A-1</td>
+                                <td class="td_line">10.00</td>
+                                <td class="td_line">80.0</td>
+                                <td class="td_line">80.0</td>
+                                <td class="td_line">15.0</td>
+                                <td class="td_line">65.0</td>
+                                <td class="td_line">65.0</td>
+                                <td>
+                                	<a class="icon_link" href="javascript:;"><img src="../images/commons/tableIco_delect2.png" /></a>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                            	<td class="td_line">4</td>
+                                <td class="td_line">YL201601280001</td>
+                                <td class="td_line">金桔</td>
+                                <td class="td_line">YL201601280001</td>
+                                <td class="td_line">一等品</td>
+                                <td class="td_line">A-1</td>
+                                <td class="td_line">10.00</td>
+                                <td class="td_line">80.0</td>
+                                <td class="td_line">80.0</td>
+                                <td class="td_line">15.0</td>
+                                <td class="td_line">65.0</td>
+                                <td class="td_line">65.0</td>
+                                <td>
+                                	<a class="icon_link" href="javascript:;"><img src="../images/commons/tableIco_delect2.png" /></a>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                            	<td class="td_line">5</td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td></td>
+                            </tr>
+                            <tr class="even">
+                            	<td class="td_line">6</td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td></td>
+                            </tr>
+                            <tr class="odd">
+                            	<td class="td_line">7</td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td></td>
+                            </tr>
+                            <tr class="even">
+                            	<td class="td_line">8</td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td class="td_line"></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <div class="total_price mt10">
+                        	合计<p class="text_name">出库总重量：<em>40.0</em>kg</p>
+                            <p class="text_name">物料总价：<em>￥260.00</em>元</p>
+                        </div>
+                        <div class="pt10" style="text-align:right;">
+                        	<a class="btn btn-primary" href="#">提交</a>
+                            <a class="btn btn-default" href="#">取消</a>
+                        </div>
+                    <!-- 商品入库 -->
+                    </div>
+                </div>
+                <!-- 库存档案右侧 -->
+            </div>   
+            </td>    
+    	</tr>  
+   </table> 
+</div>
+
+
+<!-- 添加物料模态框 -->
+<div class="modal fade" id="AddMaterial" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal-dialog material_dialog">
+    <!--(1)添加物料内容-->
+    <div class="modal-content">
+        <div class="modal-header clear">
+            <h4 class="modal-title fl">选择物料</h4>
+            <i class="i_close" data-dismiss="modal"></i>
+        </div>
+        <div class="modal-body modal_body">
+            <!--搜索-->
+            <div class="search_header mb15 clear">
+                <div class="search_selected clear">
+                    <div class="public-search fl">
+                        <span class="octicon-search02"></span>
+                        <input class="form-control nw300 srarchfont" type="text" value="请输入物料编号/物料名称">
+                    </div>
+                    <button class="btn btn-primary fl ml5" type="button">搜索</button>
+                </div>
+            </div>
+            <!--物料列表-->
+            <table class="material_list" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th><input class="iCheck" type="checkbox" aa="unchecked" /></th>
+                    <th width="190">物料编号</th>
+                    <th width="160">物料名称</th>
+                    <th width="160">单位规格</th>
+                    <th width="160">库存数量</th>
+                </tr>
+                <tr>
+                    <td class="bg1"><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                    <td>YL201601280001</td>
+                    <td>金桔</td>
+                    <td>300g/包</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td class="bg1"><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                    <td>YL201601280001</td>
+                    <td>金桔</td>
+                    <td>300g/包</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td class="bg1"><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                    <td>YL201601280001</td>
+                    <td>金桔</td>
+                    <td>300g/包</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td class="bg1"><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                    <td>YL201601280001</td>
+                    <td>金桔</td>
+                    <td>300g/包</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td class="bg1"><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                    <td>YL201601280001</td>
+                    <td>金桔</td>
+                    <td>300g/包</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td class="bg1"><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                    <td>YL201601280001</td>
+                    <td>金桔</td>
+                    <td>300g/包</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td class="bg1"><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                    <td>YL201601280001</td>
+                    <td>金桔</td>
+                    <td>300g/包</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td class="bg1"><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                    <td>YL201601280001</td>
+                    <td>金桔</td>
+                    <td>300g/包</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td class="bg1"><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                    <td>YL201601280001</td>
+                    <td>金桔</td>
+                    <td>300g/包</td>
+                    <td>10.00</td>
+                </tr>
+                <tr>
+                    <td class="bg1"><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                    <td>YL201601280001</td>
+                    <td>金桔</td>
+                    <td>300g/包</td>
+                    <td>10.00</td>
+                </tr>
+            </table>
+            <!--分页-->
+            <div style="padding-top:20px;" class="pageModel_wap">
+                <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <div style="width:auto;">
+                                <table cellspacing="0" cellpadding="0" class="pageModel">
+                                    <tbody><tr>
+                                        <td>
+                                            <span class="page_num page_first"><a id="firstPage" href="#">首页</a></span>
+                                            <span class="page_num"><a href="#">&lt;&lt;</a></span>
+                                            <span class="page_num page_Cur"><a href="#">1</a></span>
+                                            <span class="page_num "><a href="#">2</a></span>
+                                            <span class="page_num "><a href="#">3</a> </span>
+                                            <span class="page_num "><a href="#">4</a></span>
+                                            <span class="page_num "><a href="#">5</a></span>
+                                            <span class="page_num"><a href="#">&gt;&gt;</a></span>
+                                            <span class="page_num"><a id="lastPage" href="#">尾页</a></span>
+                                            <span class="page_num page_last"><a>共35页</a></span>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--分页-->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">添加物料</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+        </div>
+    </div>
+    <!--(1)添加物料内容-->
+</div>
+</div>
+
+
+<script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
+<!--[if IE 8]>
+<script type="text/javascript" src="../js/bootstrap/respond.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
+<script type="text/javascript" src="../js/inventory/InventoryFile.js"></script>
+
+</body>
+</html>
+
+
