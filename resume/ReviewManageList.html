@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>履历--评论管理列表</title>
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-select.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/skinBlue.css" />
+    <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/resume/ReviewManageList.css" />
+</head>
+
+<body>
+<div class="top">
+	<div class="logo"><img src="../images/commons/logo_01.jpg" width="200" height="60" /></div>
+</div>
+
+<div class="content">
+    <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+    	<tr>
+        	<td class="left_c" valign="top" width="76">
+            <!--左边开始-->
+            <div class="left_c1">
+                <ul class="left_cul">
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_zy.png" width="77" height="69" /></a></li>
+                    <li class="left_culi on"><a href="#"><img src="../images/commons/left_jh.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_sc.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_xs.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_jiagong.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_lvli.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_fx.png" width="77" height="69" /></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!--左边结束-->
+            </td>           
+	
+            <td valign="top">
+            <div class="right_c" style="min-height:30px; padding-bottom:15px; padding-top:15px;">
+            	<!-- 面包屑导航 开始 -->
+                <div class="breadNav_wap mb15 clear">
+                    <div class="breadNav_lt"><a href="#">履历</a><span>&gt;</span><strong>处理记录</strong></div>
+                    <div class="breadNav_rt" style="margin-bottom:-1px; margin-top:1px;">
+                        <ul class="resumeList clear">
+                            <li>
+                                <a href="#"><img src="../images/commons/cm_lsllIco01.jpg"/>履历设计</span></a>
+                            </li>
+                            <li class="cur">
+                                <a href="#"><img src="../images/commons/lvliyl-ico1.jpg" /><span>履历预览</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="../images/commons/cm_lsllIco02.jpg" /><span>履历制作</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search_header clear" style="padding-right:150px;">
+                    <div class="search_header_lt">
+                        <div class="public-search fl mr5">
+                            <span class="octicon-search02"></span>
+                            <input type="text" style="width:280px;" value="请输入评论内容搜索" class="form-control">
+                        </div>
+                    </div>
+                    <div class="search_selected fl">
+                        <dl style="width:230px;" class="se_selt180 fl">
+                            <dt style="width:50px;">评分</dt>
+                            <dd class="inline_block bootSelt180">
+                                <select class="selectpicker" style="display: none;">
+                                    <option selected="selected">全部</option>
+                                    <option>好评</option>
+                                    <option>中评</option>
+                                    <option>差评</option>
+                                </select>
+                            </dd>
+                        </dl>
+                        <dl style="width:265px;" class="se_selt180 fl">
+                            <dt style="width:80px;">所属履历</dt>
+                            <dd class="inline_block bootSelt180">
+                                <select class="selectpicker" style="display: none;">
+                                    <option selected="selected">全部</option>
+                                    <option>温室大棚</option>
+                                </select>
+                            </dd>
+                        </dl>
+                        <input type="button" value="搜索" class="btn btn-primary">
+                    </div>
+                    <div class="search_header_rt">
+                    	<input type="button" value="批量删除" class="btn btn-default" id="batch_delete">
+                    </div>
+                </div>
+                <!-- 评论管理列表内容 -->
+                <div class="table_modal comment_table mt15">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th width="5%"><input class="iCheck" type="checkbox" aa="unchecked" /></th>
+                        <th width="19%">所属履历</th>
+                        <th width="16%">评分</th>
+                        <th width="30%">评论内容</th>
+                        <th width="20%">评论日期</th>
+                        <th width="10%">操作</th>
+                    </tr>
+                    <tr class="trItem odd">
+                        <td><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                        <td>温室蔬菜大棚-茉莉花茶1</td>
+                        <td>差评</td>
+                        <td>环境很差，服务不好</td>
+                        <td>2016/05/17</td>
+                        <td><img class="icon_delete" onClick="deleteRecord(this,'.trItem')" src="../images/commons/icon_delect.png" /></td>
+                    </tr>
+                    <tr class="trItem even">
+                        <td><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                        <td>温室蔬菜大棚-茉莉花茶2</td>
+                        <td>差评</td>
+                        <td>环境很差，服务不好</td>
+                        <td>2016/05/17</td>
+                        <td><img class="icon_delete" onClick="deleteRecord(this,'.trItem')" src="../images/commons/icon_delect.png" /></td>
+                    </tr>
+                    <tr class="trItem odd">
+                        <td><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                        <td>温室蔬菜大棚-茉莉花茶3</td>
+                        <td>差评</td>
+                        <td>环境很差，服务不好</td>
+                        <td>2016/05/17</td>
+                        <td><img class="icon_delete" onClick="deleteRecord(this,'.trItem')" src="../images/commons/icon_delect.png" /></td>
+                    </tr>
+                    <tr class="trItem even">
+                        <td><input class="iCheck" type="checkbox" bb="unchecked" /></td>
+                        <td>温室蔬菜大棚-茉莉4</td>
+                        <td>差评</td>
+                        <td>环境很差，服务不好</td>
+                        <td>2016/05/17</td>
+                        <td><img class="icon_delete" onClick="deleteRecord(this,'.trItem')" src="../images/commons/icon_delect.png" /></td>
+                    </tr>
+                </table>
+                </div>
+                <div class="pageModel_wap" style="margin:50px 0;">
+                    <table cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <div style="width:auto;">
+                                    <table cellspacing="0" cellpadding="0" class="pageModel">
+                                        <tr>
+                                            <td>
+                                                <span class="page_num page_first page_Cur"><a href="#">1</a></span>
+                                                <span class="page_num "><a href="#">2</a></span>
+                                                <span class="page_num "><a href="#">3</a> </span>
+                                                <span class="page_num "><a href="#">4</a></span>
+                                                <span class="page_num "><a href="#">5</a></span>
+                                                <span class="page_num"><a href="#">&gt;&gt;</a></span>
+                                                <span class="page_num"><a href="#" id="lastPage">尾页</a></span>
+                                                <span class="page_num page_last"><a>共35页</a></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 评论管理列表内容 --> 
+            </div>
+            </td>    
+		</tr>  
+    
+   </table> 
+</div>
+
+<script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
+<script type="text/javascript" src="../js/resume/ReviewManageList.js"></script>
+</body>
+</html>
+
