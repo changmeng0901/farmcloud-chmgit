@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+.c66{color: #666666}
+/* 义田帮手企业认证样式 */
+.c_top{width: 100%; height: auto;}
+.c_top .c_pic{width: 328px; height: 328px; border: 1px solid #e0e0e0; position: relative;}
+.c_top .c_pic .pics{width: 328px; height: 328px;}
+.c_top .c_pic .vip{width: 108px; height: 108px; position: absolute; top:-6px; left: -6px;}
+.c_top .c_right{padding-left: 25px;}
+.c_top .c_right h2{font-size: 22px; height: 36px; line-height: 36px; font-weight: normal; color: #333333; margin-bottom: 10px;}
+.c_top .c_right .line{font-size: 14px; height: 40px; line-height: 40px;}
+.c_top .c_right .line .cff{font-size: 20px; color: #ff6433;}
+.c_top .c_right .line input{border:1px solid #45b0ec; width: 60px; height: 30px; line-height: 30px; text-align: center;}
+.c_top .c_right .p_btn{width: 230px; height: 38px; line-height: 38px;  text-align: center; font-size: 14px; background-color: #45b0ec; border-radius: 4px; margin-top: 10px;}
+.c_top .c_right .p_btn a{width: 230px; height: 38px; color: #fff; display: inline-block;}
+.agree{padding: 10px 0;}
+.agree .icheckbox_minimal-blue{float: left; margin-right: 10px;}
+/*免责声明*/
+.border{position: relative; width: 100%; height: 40px; border-bottom: 1px solid #dddddd; margin-bottom: 40px;}
+.c_title{position: absolute; top:30px; background-color: #fff; width: 94px; height: 20px; font-size: 18px; color: #1a1a1a; font-weight: normal; text-align: center;}
+.c_title .strip{float: left; width: 3px; height: 20px; background-color: #06b1e9;}
+.c_content{padding: 35px 24px; border-radius: 4px; border: 1px solid #e0e0e0; color: #666666; font-size: 14px; line-height: 28px; margin-bottom: 25px;}
+.c_content.pt15{padding-top: 15px;}
+.c_content .c_icon{height: 44px; line-height: 44px; color: #696969; font-size: 16px;}
+.c_content .c_icon img{vertical-align: -5px;}
+.table{padding: 20px 50px 10px;}
+.table td{text-align: center;}
+.table td p{font-size: 14px; color: #767070;}
+.gif{padding-top: 30px; padding-left: 50px;}
+.ytyp{position: relative; padding-right: 30px; padding-top: 70px; box-sizing:border-box; height: 495px;}
+.ytyp p{margin-bottom: 20px;}
+.yp_btn{width: 250px; height: 50px; line-height: 50px; text-align: center; border-radius: 3px; background-color: #a4d668; margin-right:20px; position: absolute; left: 50%; margin-left: -125px;}
+.yp_btn a{width: 250px; height: 50px; color: #fff; display: inline-block;}
