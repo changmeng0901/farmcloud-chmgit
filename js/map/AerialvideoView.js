@@ -102,6 +102,9 @@ var onoffBtn = true;
 						loadZyMap(response.groupstr.list[0].base_id);
 						zyghOnoff = false;
 					}
+					if( response.groupstr.assets_show == "1" ){
+						zyghOnoff = false;
+					}
 
 					var groupstr = response.groupstr;
 					var enterpriseInfoData = {
@@ -290,9 +293,8 @@ var onoffBtn = true;
 							$('#gyitude').html("--");
 						}
 
-						if( zyghOnoff == false ){
+						if( zyghOnoff == false && list!="" ){
 							loadZyMap(response.trackstr[0].base_id);
-							zyghOnoff = true;
 						}
 						
 						if( that.attr("data-description")!= ''){
