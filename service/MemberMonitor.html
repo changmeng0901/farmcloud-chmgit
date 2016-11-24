@@ -1,0 +1,364 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+    <title>四季田景编辑</title>
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/skinBlue.css" />
+    <link type="text/css" rel="stylesheet" href="../style/picklist/jquery-picklist.css"  />
+    <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/service/MemberMonitor.css" />
+
+</head>
+
+<body>
+<div class="top">
+	<div class="logo"><img src="../images/commons/logo_01.jpg" width="200" height="60" /></div>
+</div>
+
+<div class="content">
+    <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+    	<tr>
+        	<td class="left_c" valign="top" width="76">
+            <!--左边开始-->
+            <div class="left_c1">
+                <ul class="left_cul">
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_zy.png" width="77" height="69" /></a></li>
+                    <li class="left_culi on"><a href="#"><img src="../images/commons/left_jh.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_sc.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_xs.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_jiagong.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_lvli.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_fx.png" width="77" height="69" /></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!--左边结束-->
+            </td> 
+            <td valign="top">
+            <div class="member_monitor_main">
+            <!-- SPGS会员监控 -->
+                <div class="breadNav_wap clear mb30">
+                    <div class="breadNav_lt"><a href="#">增值服务</a><span>&gt;</span><strong>SPGS会员监控</strong></div>
+                </div>
+                <!-- 会员列表 -->
+            	<div class="allSetting_wap mb30">
+                	<div class="allSetting_hd clear">
+                    	<h3><img src="../images/service/MemberMonitor_icon1.png" />会员列表</h3>
+                        <div class="fr">
+                        	<input type="button" class="btn btn-default sm_btn" data-target="#MemberMonitorModal" data-toggle="modal" value="添加会员监控" />
+                        </div>
+                    </div>
+                    <div class="memberPic_bd">
+                    	<table width="100%" cellpadding="0" cellspacing="0">
+                        	<tr class="member_tr">
+                            	<td width="100">
+                                	<img class="member_img" src="../images/service/MemberMonitor_pic1.png" />
+                                </td>
+                                <td width="18%">
+                                	<p class="member_des">张三</p>
+                                </td>
+                                <td>
+                                	联系方式<input type="text" class="member_ipt form-control">
+                                </td>
+                                <td width="240">
+                                	<span class="member_btn">种植信息</span>
+                                    <span class="member_btn" data-target="#ApplianceModal" data-toggle="modal">物联网设备</span>
+                                    <span class="member_btn" onclick="MemberDelete(this,'.member_tr')">删除</span>
+                                </td>
+                            </tr>
+                            <tr class="member_tr">
+                                <td width="100">
+                                    <img class="member_img" src="../images/service/MemberMonitor_pic2.jpg" />
+                                </td>
+                                <td width="18%">
+                                    <p class="member_des">张三</p>
+                                </td>
+                                <td>
+                                    联系方式<input type="text" class="member_ipt form-control">
+                                </td>
+                                <td width="240">
+                                    <span class="member_btn">种植信息</span>
+                                    <span class="member_btn" data-target="#ApplianceModal" data-toggle="modal">物联网设备</span>
+                                    <span class="member_btn" onclick="MemberDelete(this,'.member_tr')">删除</span>
+                            </tr>
+                            <tr class="member_tr">
+                                <td width="100">
+                                    <img class="member_img" src="../images/service/MemberMonitor_pic2.jpg" />
+                                </td>
+                                <td width="18%">
+                                    <p class="member_des">张三</p>
+                                </td>
+                                <td>
+                                    联系方式<input type="text" class="member_ipt form-control">
+                                </td>
+                                <td width="240">
+                                    <span class="member_btn">种植信息</span>
+                                    <span class="member_btn" data-target="#ApplianceModal" data-toggle="modal">物联网设备</span>
+                                    <span class="member_btn" onclick="MemberDelete(this,'.member_tr')">删除</span>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- SPGS设置 -->
+                <div class="allSetting_wap mb30">
+                	<div class="allSetting_hd clear">
+                    	<h3><img src="../images/service/MemberMonitor_icon2.png" />SPGS设置</h3>
+                    </div>
+                    <div class="spgsSetting_bd">
+                    	<ul class="spgsSetting_list clear">
+                        	<li class="spgs_item">
+                            	<dl data-toggle="tooltip" title="为全景添加背景音乐">
+                                	<dt>
+                                    	<img class="icon_img" src="../images/service/MemberMonitor_icon4.png" />LOGO：
+                                    </dt>
+                                    <dd>
+                                    	<div class="star_using">
+                                        	<input class="iCheck" type="checkbox" starusing="unchecked" />启用
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="spgs_item">
+                            	<dl data-toggle="tooltip" title="打开全景时默认显示说一说">
+                                	<dt>
+                                    	<img class="icon_img" src="../images/service/MemberMonitor_icon5.png" />验证登录：
+                                    </dt>
+                                    <dd>
+                                    	<div class="star_using">
+                                        	<input class="iCheck" type="checkbox" starusing="unchecked" />启用
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="spgs_item">
+                            	<dl data-toggle="tooltip" title="开场以小行星视角进入">
+                                	<dt>
+                                    	<img class="icon_img" src="../images/service/MemberMonitor_icon6.png" />登录页皮肤设置：
+                                        <p class="text_name" style="left:126px;">大田1</p>
+                                    </dt>
+                                    <dd>
+                                    	<div class="star_using">
+                                        	<input class="iCheck" type="checkbox" starusing="unchecked" />启用
+                                        </div>
+                                        <span class="setting_btn" data-target="#SkinsetModal" data-toggle="modal">设置&gt;</span>
+                                    </dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 分享设置 -->
+                <div class="allSetting_wap">
+                	<div class="allSetting_hd clear">
+                    	<h3><img src="../images/service/MemberMonitor_icon3.png" />分享设置</h3>
+                    </div>
+                    <div class="shareSetting_bd">
+                    	<table width="100%" cellpadding="0" cellspacing="0">
+                        	<tr>
+                            	<td width="50%">
+                                	<dl class="set_dl">
+                                    	<dt class="set_dt">分享标题</dt>
+                                        <dd class="set_dd">
+                                        	<input type="text" class="form-control" value="北京奥科美技术服务有限公司欣赏" maxlength="15" />
+                                        </dd>
+                                    </dl>
+                                </td>
+                                <td width="50%" rowspan="2">
+                                	<div class="code_block">
+                                    	<img src="../images/service/panorama_code.jpg" />
+                                    </div>
+                                    <p class="text_share">分享链接</p>
+                                    <dl class="set_dl" style="width:80%; padding-left:0; padding-right:120px;">
+                                    	<dt class="set_dt" style="left:inherit; right:0;width:120px; padding-right:0; ">
+                                        	<button class="btn btn-default copy_link" onclick="copyShareUrl()">复制链接</button>
+                                        </dt>
+                                        <dd class="set_dd">
+                                        	<input type="text" class="form-control" id="share_link" value="http://app.farmeasy.cn/map/PropagandasShow." style="width:100%;" />
+                                        </dd>
+                                    </dl>
+                                </td>
+                            </tr>
+                            <tr>
+                            	<td width="50%">
+                                	<dl class="set_dl">
+                                    	<dt class="set_dt">分享描述</dt>
+                                        <dd class="set_dd">
+                                        	<textarea type="text" class="form-control textarea">请输入描述内容</textarea>
+                                        </dd>
+                                    </dl>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="pt30 pb30" style="text-align:center;">
+                	<a class="btn btn-preview" href="#">预览</a>
+                	<a class="btn btn-primary" href="#">保存</a>
+                    <a class="btn btn-default" href="javascript:;" onClick="DeleteGroup()">删除</a>
+                    <a class="btn btn-default" href="#">取消</a>
+                </div>
+            <!-- SPGS会员监控 -->
+            </div>   
+            </td>    
+    	</tr>  
+   </table> 
+</div>
+
+
+<!-- (1)添加会员监控模态框 -->
+<div class="modal fade" id="MemberMonitorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog member_dialog membermonitor_dialog">
+<div class="modal-content">
+    <div class="modal-header clear">
+        <h4 class="modal-title fl">添加会员监控</h4>
+        <i class="i_close" data-dismiss="modal"></i>
+    </div>
+    <div class="modal-body modal_body">
+        <div class="msearch_block clear" style="padding-bottom:19px;border-bottom:1px solid #ededed;">
+            <div class="public-search fl mr5"><span class="octicon-search02"></span>
+                <input type="text" value="请输入会员名称" class="form-control nw200 srarchfont">
+            </div>
+            <button type="button" class="btn btn-primary">搜索</button>
+        </div>
+        <ul class="member_list">
+            <li onclick="MonitorSelect(this,'m_cur')">
+                <p class="text_text"><img src="../images/service/MemberMonitor_icon7.png">会员姓名</p>
+                <p class="text_name">张三</p>
+                <p class="text_text"><img src="../images/service/MemberMonitor_icon8.png">联系电话</p>
+                <p class="text_phone">--</p>
+            </li>
+            <li class="m_cur" onclick="MonitorSelect(this,'m_cur')">
+                <p class="text_text"><img src="../images/service/MemberMonitor_icon7.png">会员姓名</p>
+                <p class="text_name">张三</p>
+                <p class="text_text"><img src="../images/service/MemberMonitor_icon8.png">联系电话</p>
+                <p class="text_phone">0454-6892745</p>
+            </li>
+            <li class="m_last" onclick="MonitorSelect(this,'m_cur')">
+                <p class="text_text"><img src="../images/service/MemberMonitor_icon7.png">会员姓名</p>
+                <p class="text_name">张三</p>
+                <p class="text_text"><img src="../images/service/MemberMonitor_icon8.png">联系电话</p>
+                <p class="text_phone">0454-6892745</p>
+            </li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-target="#SaveModal" data-toggle="modal">确定</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+    </div>
+</div>
+</div>
+</div>
+<!-- (2)添加物联网设备模态框 -->
+<div class="modal fade" id="ApplianceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog member_dialog appliance_dialog">
+<div class="modal-content">
+    <div class="modal-header clear">
+        <h4 class="modal-title fl">添加物联网设备</h4>
+        <i class="i_close" data-dismiss="modal"></i>
+    </div>
+    <div class="modal-body modal_body">
+
+        <div class="msearch_block clear mb20">
+            <div class="public-search fl mr5"><span class="octicon-search02"></span>
+                <input type="text" value="请输入设备名称" class="form-control nw200 srarchfont">
+            </div>
+            <button type="button" class="btn btn-primary">搜索</button>
+        </div>
+        <select id="nonnumeric" name="nonnumeric" multiple="multiple">
+            <option value="AL">大棚1-摄像头1</option>
+            <option value="AK">大棚1-摄像头2</option>
+            <option value="AZ">大棚1-摄像头3</option>
+        </select>
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+    </div>
+</div>
+</div>
+</div>
+<!-- (3)登录页皮肤设置模态框 -->
+<div class="modal fade" id="SkinsetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog member_dialog skinset_dialog">
+<div class="modal-content">
+    <div class="modal-header clear">
+        <h4 class="modal-title fl">登录页皮肤设置</h4>
+        <i class="i_close" data-dismiss="modal"></i>
+    </div>
+    <div class="modal-body modal_body">
+
+        <ul class="slin_list">
+            <li class="s_cur" onclick="skinCur(this)">
+                <div class="skin_item">
+                    <img src="../images/service/MemberMonitor_skin0.jpg">
+                </div>
+                <p class="text_name">大田1</p>
+                <i class="skin_icon"></i>
+            </li>
+            <li onclick="skinCur(this)">
+                <div class="skin_item">
+                    <img src="../images/service/MemberMonitor_skin1.jpg">
+                </div>
+                <p class="text_name">大田2</p>
+                <i class="skin_icon"></i>
+            </li>
+            <li onclick="skinCur(this)">
+                <div class="skin_item">
+                    <img src="../images/service/MemberMonitor_skin2.jpg">
+                </div>
+                <p class="text_name">果树1</p>
+                <i class="skin_icon"></i>
+            </li>
+            <li onclick="skinCur(this)">
+                <div class="skin_item">
+                    <img src="../images/service/MemberMonitor_skin3.jpg">
+                </div>
+                <p class="text_name">果树2</p>
+                <i class="skin_icon"></i>
+            </li>
+            <li onclick="skinCur(this)">
+                <div class="skin_item">
+                    <img src="../images/service/MemberMonitor_skin4.jpg">
+                </div>
+                <p class="text_name">温室1</p>
+                <i class="skin_icon"></i>
+            </li>
+            <li onclick="skinCur(this)">
+                <div class="skin_item">
+                    <img src="../images/service/MemberMonitor_skin5.jpg">
+                </div>
+                <p class="text_name">温室2</p>
+                <i class="skin_icon"></i>
+            </li>
+        </ul>
+        
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+<script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
+<!--[if IE 8]>
+<script type="text/javascript" src="../js/bootstrap/respond.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="../js/bootstrap/bootstrap-select.min.js"></script> -->
+<script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
+<script type="text/javascript" src="../js/picklist/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../js/picklist/jquery-picklist.js"></script>
+<script type="text/javascript" src="../js/service/MemberMonitor.js"></script>
+
+</body>
+</html>
+
+
