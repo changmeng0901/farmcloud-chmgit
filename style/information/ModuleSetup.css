@@ -109,4 +109,23 @@ em{
 	background-image:url(../../images/information/ModuleSetup_deleteH.png);
 	cursor:pointer;
 	}
+.setup_item .li_default{
+	border-color:#58adf7;
+	}
+.setup_item .li_block.li_default .icon_btn{
+	position:absolute;
+	right:0;
+	top:0;
+	width:31px;
+	height:30px;
+	border-left:none;
+	background-image:url(../../images/information/ModuleSetup_quan.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	}
+.setup_item .li_block.li_default .icon_btn:hover{
+	background-color:#fff;
+	background-image:url(../../images/information/ModuleSetup_quan.png);
+	cursor: inherit;
+	}
 	
