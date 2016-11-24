@@ -2,11 +2,6 @@
 
 $(function(){
 	
-
-	$(".btn-first").text("置顶");
-	$(".btn-up").text("向上");
-	$(".btn-down").text("向下");
-	$(".btn-last").text("置底");
 	// (1)获取焦点和失去焦点状态
     $('input[type=text],textarea').focus(function(){
         var txt_value = $(this).val();

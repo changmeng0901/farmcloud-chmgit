@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+    <title>航拍视频查看</title>
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/map/AerialvideoView.css" />
+
+</head>
+<body>
+<div class="aerialvideo_body">
+    <!--(1)航拍头部-->
+    <div class="video_header_wap">
+        <ul class="video_header_list">
+            <li class="item1">
+                <img id="BarOnoff" class="onoff" src="../images/map/AerialvideoView_onoff.png" title="播放列表开关" />
+            </li>
+            <li class="item1">
+                <img class="qy_logo" src="../images/map/AerialvideoView_logo.png" />
+            </li>
+            <li class="item2">
+                <p class="p_text" title="经度">
+                    <img class="sm_icon" src="../images/map/AerialvideoView_E.png" />
+                    <span class="jd_cor">115.9025</span>
+                </p>
+            </li>
+            <li class="item2">
+                <p class="p_text" title="纬度">
+                    <img class="sm_icon" src="../images/map/AerialvideoView_N.png" />
+                    <span class="wd_cor">40.4100,18</span>
+                </p>
+            </li>
+            <li class="item2">
+                <p class="p_text" title="高度">
+                    <img class="sm_icon" src="../images/map/AerialvideoView_G.png" />
+                    <span class="gd_cor">47.9米</span>
+                </p>
+            </li>
+            <li class="item2">
+                <p class="p_text">
+                    <img class="km_icon" src="../images/map/AerialvideoView_km.png" />
+                    <span class="km_cor">1/400</span>
+                </p>
+            </li>
+            <li class="item2">
+                <p class="p_text">
+                    <img class="sm_icon" src="../images/map/AerialvideoView_gy.png" />
+                    <span class="gy_cor">F2.8</span>
+                </p>
+            </li>
+            <li class="item2">
+                <p class="p_text mp_text" data-target="#CardModal" data-toggle="modal">
+                    <img class="mp_icon" src="../images/map/AerialvideoView_mp.png" />
+                    <span class="mp_cor">企业名片</span>
+                </p>
+            </li>
+            <li class="item2">
+                <p class="p_text cj_text" data-target="#SceneModal" data-toggle="modal">
+                    <img class="cj_icon" src="../images/map/AerialvideoView_cj.png" />
+                    <span class="cj_cor">场景介绍</span>
+                </p>
+            </li>
+        </ul>
+        <i class="close_btn">
+            <img src="../images/map/AerialvideoView_close.png" />
+        </i>
+    </div>
+    
+    <!--(2)左侧播放列表-->
+    <div class="aerial_playlist">
+        <ol class="playlist_list">
+            <li class="item">
+                <img class="mn_pic" src="../images/map/test_pic1.jpg" />
+                <p class="text_con">
+                    <img class="icon_mn" src="../images/map/icon_mnplay.png" />北菜园西区全景.北菜园西区全景.rmvb
+                </p>
+                <i class="bg_opa50">
+                    <img src="../images//map/icon_bigplay.png" />
+                </i>
+            </li>
+            <li class="item">
+                <img class="mn_pic" src="../images/map/test_pic1.jpg" />
+                <p class="text_con">
+                    <img class="icon_mn" src="../images/map/icon_mnplay.png" />北菜园西区全景.北菜园西区全景.rmvb
+                </p>
+                <i class="bg_opa50">
+                    <img src="../images//map/icon_bigplay.png" />
+                </i>
+            </li>
+            <li class="item">
+                <img class="mn_pic" src="../images/map/test_pic1.jpg" />
+                <p class="text_con">
+                    <img class="icon_mn" src="../images/map/icon_mnplay.png" />北菜园西区全景.北菜园西区全景.rmvb
+                </p>
+                <i class="bg_opa50">
+                    <img src="../images//map/icon_bigplay.png" />
+                </i>
+            </li>
+        </ol>
+    </div>
+    
+    <!--(3)视频主体-->
+    <div class="video_main_wap">
+    	<div id="danmuarea">
+            <div id="danmu"></div>
+        </div>
+    </div>
+
+    <!--(4)航拍底部-->
+    <div class="video_footer_wap clear">
+        <div class="barrage_block">
+            <span class="s_text">弹幕</span>
+            <div class="switch_block fl">
+                <div class="tanmu_bar"></div>
+                <span></span>
+            </div>
+        </div>
+        <div class="barrage_set_block fl">
+        	<button class="barrage_set">设置</button>
+        	<div class="barrage_setmodal">
+            	
+            </div>
+        </div>
+        <div class="tanmu_send_block">
+            <input type="text" value="发送弹幕一起high!" class="iclass text_ipt" id="text_tanmu" />
+            <div class="btn_face"></div>
+            <button type="button" class="btn_send" onclick="send()">发送</button>
+        </div>
+        <div class="fr">
+            <p class="opt_text"><img src="../images/map/icon_opt.png" /><span>1,288</span></p>
+            <p class="share_text" data-target="#ShareModal" data-toggle="modal"><img src="../images/map/icon_share.png" />分享</p>
+        </div>
+    </div>
+    <!--(4)航拍底部-->
+</div>
+
+
+
+<!--（0-1）企业名片模态框-->
+<div class="modal fade" id="CardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog pano_dialog card_dialog">
+<div class="modal-content">
+	<div class="modal-header clear">
+        <h4 class="modal-title fl"><img src="../images/map/icon_qycard.png" />企业名片</h4>
+        <i class="i_close" data-dismiss="modal"></i>
+    </div>
+    <div class="modal-body modal_body">
+    
+        <dl class="card_dl">
+        	<dt class="card_dt">
+            	<img src="../images/map/card_logo.png" />
+            </dt>
+            <dd class="card_dd">
+            	<p class="text_name">北京北菜园农业科技发展有限公司</p>
+                <p class="text_phone"><img src="../images/map/icon_phone.png "/><span class="color_y">400-8166-589</span></p>
+                <p class="text_mail"><img src="../images/map/icon_mail.png "/><span>1010001001@acsm.com</span></p>
+                <p class="text_come"><img src="../images/map/icon_come.png "/><span>北菜园</span></p>
+                <p class="text_addr"><img src="../images/map/icon_addr.png "/><span>北京市延庆县康庄镇小丰营村委会办公楼西2000米</span></p>
+            </dd>
+        </dl>
+        <strong class="title_intro">企业介绍</strong>
+        <p class="text_intro">北菜园有机蔬菜基地位于北京的上风上水之地延庆，拥有有机认证基地470亩，实行“六统一”原则进行管理，
+        即“统一种植规划、统一育苗、统一农资供应、统一病虫防疫、统一技术指导、统一品牌销售”，实现农超对接、农宅对接，将优质农产品提供给广大市民。
+        </p>
+        
+    </div>
+</div>
+</div>
+</div>
+<!--（0-2）场景介绍模态框-->
+<div class="modal fade" id="SceneModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog pano_dialog scene_dialog">
+<div class="modal-content">
+	<i class="i_close" data-dismiss="modal"></i>
+    <div class="modal-body modal_body">
+    
+       <strong class="title_company">北京北菜园农业科技发展有限公司</strong>
+       <p class="text_company">北京北菜园农业科技发展有限公司创建于2011年，是一家专业种植有机蔬菜，从事有机农产品销售的公司。企业生产基地位于首都西北部生态涵养发展区延庆区，
+       公司拥有4个注册商标，60多个品种蔬菜的有机认证。北菜园与中科院、农科院、市植保站等合作，建立起了完善的符合有机农业标准的质量体系。
+       北菜园的有机蔬菜除了满足北京市市场的需求外，还销往天津和哈尔滨等城市。
+       </p>
+       <img class="pic_company" src="../images/map/test_pic2.jpg" />
+       <p class="text_company">公司成立以来一直秉着：诚信、创新、责任、专业的服务理念，为北京市民提供安全放心的有机农产品，其中“宅配服务”更是获得业内外一致认可。
+       我们本着诚信为主的经营理念，树立起良好的商业信誉，与众多的渠道经销商建立了长期互信的良好合作关系。
+       北菜园将继续发扬"开拓、进取"的创业精神，为热衷有机食品的消费者提供高品质的产品和服务。
+       </p>
+       
+    </div>
+</div>
+</div>
+</div>
+<!--（0-3）分享模态框-->
+<div class="modal fade" id="ShareModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog pano_dialog share_dialog">
+<div class="modal-content">
+	<i class="i_close" data-dismiss="modal"></i>
+    <div class="modal-body modal_body">
+    
+       <strong class="text_company">《北京北菜园种植基地》</strong>
+       <p class="text_tip">扫描二维码，将链接分享给好友</p>
+       <img class="code_pic" src="../images/map/code_pic1.jpg" />
+       <input class="ipt_link" type="text" value="http://app.farmeasy.cn/map/PropagandasShow." style="background-color:#fff;color:#f00;" />
+       <button class="btn_copy"><img src="../images/map/icon_copylink.png" />复制链接</button>
+       
+    </div>
+</div>
+</div>
+</div>
+<!--（0-3）分享模态框-->
+
+<script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/nicescroll/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="../js/danmu/jquery.danmu.min.js"></script>
+<script type="text/javascript" src="../js/map/AerialvideoView.js"></script>
+
+
+</body>
+</html>
+
+
+
