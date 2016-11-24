@@ -105,6 +105,7 @@ var onoffBtn = true;
 
 					var groupstr = response.groupstr;
 					var enterpriseInfoData = {
+						track_list : groupstr.list[0].track_list,
 						logo_img : groupstr.logo_img,  //企业logo
 						group_name : groupstr.group_name,
 					 	business_name: groupstr.business_name,
@@ -169,10 +170,10 @@ var onoffBtn = true;
 			if( $('#longitude').html() == '' ){ $('#longitude').html('--') }
 			if( $('#latitude').html() == '' ){ $('#latitude').html('--') }
 			if( $('#altitude').html() == '' ){ $('#altitude').html('--') }
-			if( $('#isotude').html() == '' ){ $('#isotude').html('--') }
-			if( $('#shuttertude').html() == '' ){ $('#shuttertude').html('--') }
-			if( $('#evtude').html() == '' ){ $('#evtude').html('--') }
-			if( $('#fnumtude').html() == '' ){ $('#fnumtude').html('--') }
+			if( $('#isoitude').html() == '' ){ $('#isoitude').html('--') }
+			if( $('#kmitude').html() == '' ){ $('#kmitude').html('--') }
+			if( $('#evitude').html() == '' ){ $('#evitude').html('--') }
+			if( $('#gyitude').html() == '' ){ $('#gyitude').html('--') }
 			
 			if( data.description != ''){
 				$('#scene_description').append(data.description);
@@ -191,11 +192,16 @@ var onoffBtn = true;
 			}else{
 				$('.item_qycard').hide();
 			}
-			if( data.track_show == "1"  ){
-				//如果轨迹为true就显示
-				$('.aerial_map').show();
-			}else{
+			if(data.track_list==""){
 				$('.aerial_map').hide();
+				$('.bigbtn_map').hide();
+			}else{
+				if( data.track_show == "1" ){
+					//如果轨迹为true就显示
+					$('.aerial_map').show();
+				}else{
+					$('.aerial_map').hide();
+				}
 			}
 			if( data.video_list_show == "1"  ){
 				//如果左侧列表为true就展开，否则收缩起来
@@ -259,6 +265,30 @@ var onoffBtn = true;
 						//console.log(JSON.stringify(response))
 						//console.log(response.trackstr)
 						AerialVideoView.initializeGoogelMaps(response.trackstr,0);
+						//取轨迹的第一个值，如果有初始化页面头部的值，没有显示--
+						var list = response.trackstr[0].track_list;	
+						if(list!=""){	
+							var item=0;
+							var gps = list[item].GPS;
+							gps = gps.replace(/[()]/g, "");
+							gps = gps.split(",");								
+	
+							$('#longitude').html(parseFloat(gps[0]));
+							$('#latitude').html(parseFloat(gps[1]));
+							$('#altitude').html(list[item].BAROMETER);
+							$('#isoitude').html(list[item].ISO);
+							$('#evitude').html(list[item].EV);
+							$('#kmitude').html(list[item].Shutter);
+							$('#gyitude').html(list[item].Fnum);
+						}else{
+							$('#longitude').html("--");
+							$('#latitude').html("--");
+							$('#altitude').html("--");
+							$('#isoitude').html("--");
+							$('#evitude').html("--");
+							$('#kmitude').html("--");
+							$('#gyitude').html("--");
+						}
 
 						if( zyghOnoff == false ){
 							loadZyMap(response.trackstr[0].base_id);
@@ -385,12 +415,14 @@ var onoffBtn = true;
 			flightPlanSite=[];
 			if(data[0].track_list == ""){
 				$(".aerial_map").hide();
-				return;
-			}else
-				$(".aerial_map").show();
-				$(".smallbtn_map").show();
+				$(".smallbtn_map").hide();	
 				$(".bigbtn_map").hide();
-				
+				return;
+			}else{
+				$(".aerial_map").show();
+				$(".smallbtn_map").show();	
+				$(".bigbtn_map").hide();
+			}	
 				
 			var bounds = new google.maps.LatLngBounds();
 			
@@ -546,10 +578,10 @@ var onoffBtn = true;
 								$("#longitude").html( LingPlanSite[index_] );
 								$("#latitude").html( LatPlanSite[index_] );
 								$('#altitude').html( AltPlanSite[index_]+'米' );
-								$("#isotude").html( ISOPlanSite[index_] );
-								$("#evtude").html( EVPlanSite[index_] );
-								$("#shuttertude").html( ShutterPlanSite[index_] );
-								$("#Fnumtude").html( FnumPlanSite[index_] );
+								$("#isoitude").html( ISOPlanSite[index_] );
+								$("#evitude").html( EVPlanSite[index_] );
+								$("#kmitude").html( ShutterPlanSite[index_] );
+								$("#gyitude").html( FnumPlanSite[index_] );
 								index_++;
 							}else{
 								clearInterval( playTimer );
@@ -601,10 +633,10 @@ var onoffBtn = true;
 								$("#longitude").html( LatPlanSite[index_] );
 								$("#latitude").html( LingPlanSite[index_] );
 								$('#altitude').html( AltPlanSite[index_]+'米' );
-								$("#isotude").html( ISOPlanSite[index_] );
-								$("#evtude").html( EVPlanSite[index_] );
-								$("#shuttertude").html( ShutterPlanSite[index_] );
-								$("#fnumtude").html( FnumPlanSite[index_] );
+								$("#isoitude").html( ISOPlanSite[index_] );
+								$("#evitude").html( EVPlanSite[index_] );
+								$("#kmitude").html( ShutterPlanSite[index_] );
+								$("#gyitude").html( FnumPlanSite[index_] );
 								index_++;
 							}else{
 								clearInterval( playTimer );
