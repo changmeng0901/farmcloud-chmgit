@@ -5,10 +5,11 @@
 
     <title>航拍视频查看</title>
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet" href="../style/bootstrap/skinBlue.css" />
     <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
     <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
     <link type="text/css" rel="stylesheet" href="../js/videojsPlug/video-js.css" />
+    <link type="text/css" rel="stylesheet" href="../js/danmu/videojs_ABdm.css" />
+    <link type="text/css" rel="stylesheet" href="../js/jquery-ui/jquery-ui.css" />
     <link type="text/css" rel="stylesheet" href="../style/map/AerialvideoView.css" />
 
 </head>
@@ -91,13 +92,7 @@
     <!--(3)视频主体-->
     <div class="video_main_wap">
         <!-- 观学视频开始 -->
-        <!--<div id="AerialPlayer">                           
-            <div class="video" id="HLSPlayer2">
-				<script type="text/javascript" src="../js/ffdshow/hls.min.js"></script>
-            </div>
-        </div>-->
         <div id="AerialPlayer">  
-        	<!--<span class="mark"><i></i></span>-->
         	<div id="video_block"></div>
         </div>
         <!--航拍地图-->
@@ -106,18 +101,13 @@
         	<div id="map-canvas" style="width:100%;height:100%"></div>
         </div>
         <i class="bigbtn_map"><img src="../images/map/bigbtn_map.png" /></i>
-        <!-- 弹幕 -->
-    	<div id="danmuarea" style="display:none;">
-            <div id="danmu"></div>
-        </div>
-        <!-- 弹幕 -->
     </div>
 
     <!--(4)航拍底部-->
-    <div class="video_footer_wap clear" style="display:none;">
+    <div class="video_footer_wap clear" style="display:none-;">
         <div class="barrage_block">
-            <span class="s_text">弹幕</span>
-            <div class="switch_block fl">
+            <span class="s_text" id="s_text">弹幕</span>
+            <div class="danmu_switch fl" id="danmu_switch">
                 <div class="tanmu_bar"></div>
                 <span></span>
             </div>
@@ -129,83 +119,58 @@
                 	<strong class="text_h3">我的弹幕<span>编辑自己发送的弹幕</span></strong>
                     <dl class="font_block">
                     	<dt class="text_h4">字号</dt>
-                        <dd>
-                            <span class="f_big f_cur">大</span>
-                            <span class="f_medium">中</span>
-                            <span class="f_small">小</span>
+                        <dd id="font_set">
+                            <span class="f_big" data-barrage-size="30">大</span>
+                            <span class="f_medium" data-barrage-size="20">中</span>
+                            <span class="f_small" data-barrage-size="10">小</span>
                         </dd>
                     </dl>
                     <dl class="color_block">
                         <dt class="clear">
                             <p class="text_h4 fl">颜色</p>
                             <div class="fr">
-                                <input type="text" value="#FFFFFF" class="ipt_link fl" />
-                                <span class="xs_cor fl"></span>
+                                <input type="text" value="#FFFFFF" class="ipt_link fl" id="Color_InputSet" />
+                                <span class="xs_cor fl" id="Color_XsSet" style="color:#f00-;"></span>
                             </div>
                         </dt>
                         <dd>
-                        	<div class="color_list">
-                            	<span class="bgcor1 dq_cor"></span>
-                                <span class="bgcor2"></span>
-                                <span class="bgcor3"></span>
-                                <span class="bgcor4"></span>
-                                <span class="bgcor5"></span>
+                        	<div class="color_list" id="Color_ListSet" style="display:block;">
+                            	<span class="bgcor1 dq_cor" data-barrage-color="FCF400"><i></i></span>
+                                <span class="bgcor2" data-barrage-color="F50900"><i></i></span>
+                                <span class="bgcor3" data-barrage-color="FFFFFF"><i></i></span>
+                                <span class="bgcor4" data-barrage-color="000000"><i></i></span>
+                                <span class="bgcor5" data-barrage-color="F79B00"><i></i></span>
                                 
-                                <span class="bgcor6"></span>
-                                <span class="bgcor7"></span>
-                                <span class="bgcor8"></span>
-                                <span class="bgcor9"></span>
-                                <span class="bgcor10"></span>
+                                <span class="bgcor6" data-barrage-color="4AFF00"><i></i></span>
+                                <span class="bgcor7" data-barrage-color="53FCFF"><i></i></span>
+                                <span class="bgcor8" data-barrage-color="3488F7"><i></i></span>
+                                <span class="bgcor9" data-barrage-color="8B00FF"><i></i></span>
+                                <span class="bgcor10" data-barrage-color="F66600"><i></i></span>
                                 
-                                <span class="bgcor11"></span>
-                                <span class="bgcor12"></span>
-                                <span class="bgcor13"></span>
-                                <span class="bgcor14"></span>
-                                <span class="bgcor15"></span>
+                                <span class="bgcor11" data-barrage-color="F60498"><i></i></span>
+                                <span class="bgcor12" data-barrage-color="900086"><i></i></span>
+                                <span class="bgcor13" data-barrage-color="61058B"><i></i></span>
+                                <span class="bgcor14" data-barrage-color="2913AB"><i></i></span>
+                                <span class="bgcor15" data-barrage-color="7D4F11"><i></i></span>
                                 
-                                <span class="bgcor16"></span>
-                                <span class="bgcor17"></span>
-                                <span class="bgcor18"></span>
-                                <span class="bgcor19"></span>
-                                <span class="bgcor20"></span>
+                                <span class="bgcor16" data-barrage-color="9B6B31"><i></i></span>
+                                <span class="bgcor17" data-barrage-color="DB8C22"><i></i></span>
+                                <span class="bgcor18" data-barrage-color="90C700"><i></i></span>
+                                <span class="bgcor19" data-barrage-color="30AE1B"><i></i></span>
+                                <span class="bgcor20" data-barrage-color="279329"><i></i></span>
                             </div>
-                        </dd>
-                    </dl>
-                    <dl class="site_block">
-                    	<dt class="text_h4 clear">位置</dt>
-                        <dd class="site_list">
-                            <p class="bgsit1 dq_bg">顶部</p>
-                            <p class="bgsit2">中间</p>
-                            <p class="bgsit3">底部</p>
-                            <p class="bgsit4">随机</p>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="barrage_rt">
-                	<strong class="text_h3">弹幕显示设置</strong>
-                    <dl class="alpha_block">
-                    	<dt class="text_h4">透明度</dt>
-                        <dd>
-                            <input id="op" class="fl mr5" type="range" value="100" onchange="op()" name="op"><span class="s_num">100%</span>
-                        </dd>
-                    </dl>
-                    <i class="bg_line"></i>
-                    <dl class="tanmu_block">
-                    	<dt class="text_h4">弹幕显示</dt>
-                        <dd class="clear">
-                            <input class="iCheck" type="checkbox">屏蔽图片表情
                         </dd>
                     </dl>
                 </div>
             </div>
         </div>
         <div class="tanmu_send_block">
-            <input type="text" value="发送弹幕一起high!" class="iclass text_ipt" id="text_tanmu" />
+            <input type="text" value="发送弹幕一起high!" maxlength="50" class="iclass text_ipt" id="text_tanmu" />
             <div class="btn_face"></div>
-            <button type="button" class="btn_send" onclick="send()">发送</button>
+            <button type="button" class="btn_send" id="Send_Danmu">发送</button>
         </div>
         <div class="fr">
-            <p class="opt_text"><img src="../images/map/icon_opt.png" /><span>1,288</span></p>
+            <p class="Opt_count"><img class="icon_fx" id="Opt_btn" onoff="true" src="../images/map/icon_opt.png" /><span id="Opt_count">1,288</span></p>
             <p class="share_text" data-target="#ShareModal" data-toggle="modal"><img src="../images/map/icon_share.png" />分享</p>
         </div>
     </div>
@@ -276,7 +241,6 @@
 
 <script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
 <script type="text/javascript" src="../js/nicescroll/jquery.nicescroll.min.js"></script>
 <!--<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?sensor=false"></script>-->
 <script type="text/javascript" src="http://ditu.google.cn/maps/api/js?v=3.23&amp;key=AIzaSyB2mG9FLX3dYDFycXGkmidn-OZU-FL1rLM&amp;sensor=false&amp;libraries=drawing"></script>
@@ -288,6 +252,11 @@
     <script src="../js/videojsPlug/video.js"></script>
 	<script src="../js/videojsPlug/videojs-contrib-hls.js"></script>
 	<script src="../js/videojsPlug/m3u8-parser.js"></script>
+    
+    <script src="../js/danmu/CommentCoreLibrary.js"></script>
+	<script src="../js/danmu/BilibiliFormat.js"></script>
+	<script src="../js/danmu/videojs_ABdm.js"></script>
+    <script src="../js/jquery-ui/jquery-ui.js"></script>
 <script type="text/javascript" src="../js/map/AerialvideoView.js"></script>
 
 </body>

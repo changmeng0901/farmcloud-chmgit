@@ -207,6 +207,13 @@ body{
 .playlist_list .item.icur .bg_opa50{
 	display:none;
 	}
+.playlist_list .item .sm_Opt{
+	position:absolute;
+	left:0;
+	bottom:-20px;
+	height:0px;
+	overflow:hidden;
+	}
 /*视频主体*/
 #AerialPlayer{
 	position:relative;
@@ -309,23 +316,23 @@ body{
 	line-height:32px;
 	padding-right:10px;
 	}
-.barrage_block .switch_block{
+.barrage_block .danmu_switch{
 	margin-top:9px;
 	margin-right:15px;
 	}
-.switch_block{
+.danmu_switch{
 	position:relative;
 	width:44px;
 	height:16px;
 	}
-.switch_block .tanmu_bar{
+.danmu_switch .tanmu_bar{
 	width:44px;
 	height:16px;
 	border-radius:8px;
-	background:url(../../images/map/onoff_bg.png) no-repeat;
+	background:url(../../images/map/onoff_bg2.png) no-repeat;
 	cursor:pointer;
 	}
-.switch_block span{
+.danmu_switch span{
 	position:absolute;
 	right:0;
 	top:-4px;
@@ -337,7 +344,10 @@ body{
 	-webkit-transition: left 0.5s;	
 	-o-transition: left 0.5s;
 	}
-.switch_block span.onoff{
+.danmu_switch.onoff .tanmu_bar{
+	background:url(../../images/map/onoff_bg.png) no-repeat;
+	}
+.danmu_switch.onoff span{
 	right:inherit;
 	left:0;
 	}
@@ -396,7 +406,7 @@ body{
 	background:url(../../images/map/icon_face.png) no-repeat;
 	cursor:pointer;
 	}
-.opt_text,
+.Opt_count,
 .share_text{
 	float:left;
 	height:32px;
@@ -404,7 +414,7 @@ body{
 	margin-left:20px;
 	cursor:pointer;
 	}
-.opt_text img,
+.Opt_count img,
 .share_text img{
 	width:18px;
 	height:18px;
@@ -443,7 +453,7 @@ pre {
 	position:absolute;
 	left:-30px;
 	bottom:50px;
-	width:520px;
+	width:240px;
 	height:210px;
 	border:1px solid #343434;
 	box-sizing:border-box;
@@ -479,7 +489,6 @@ pre {
 	padding-top:10px;
 	padding-left:20px;
 	box-sizing:border-box;
-	background:url(../../images/map/barrage_line1.jpg) no-repeat right center;
 	overflow:hidden;
 	}
 .barrage_setmodal .text_h3{
@@ -543,6 +552,7 @@ pre {
 	border:1px solid #ddd;
 	box-sizing:border-box;
 	background:#c1c1c1;
+	font-size:12px;
 	color:#333;
 	}
 .color_block .xs_cor{
@@ -565,70 +575,80 @@ pre {
 	margin-bottom:2px;
 	background-color:#fff;
 	}
-.color_list .bgcor1{
+.color_list span i{
+	display:block;
+	width:100%;
+	height:100%;
+	box-sizing:border-box;
+	}
+.color_list .bgcor1 i{
 	background-color:#fcf400;
 	}
-.color_list .bgcor2{
+.color_list .bgcor2 i{
 	background-color:#f50900;
 	}
-.color_list .bgcor3{
+.color_list .bgcor3 i{
 	background-color:#ffffff;
 	}
-.color_list .bgcor4{
+.color_list .bgcor4 i{
 	background-color:#000000;
 	}
-.color_list .bgcor5{
+.color_list .bgcor5 i{
 	background-color:#f79b00;
 	}
-.color_list .bgcor6{
+.color_list .bgcor6 i{
 	background-color:#4aff00;
 	}
-.color_list .bgcor7{
+.color_list .bgcor7 i{
 	background-color:#53fcff;
 	}
-.color_list .bgcor8{
+.color_list .bgcor8 i{
 	background-color:#3488f7;
 	}
-.color_list .bgcor9{
+.color_list .bgcor9 i{
 	background-color:#8b00ff;
 	}
-.color_list .bgcor10{
+.color_list .bgcor10 i{
 	background-color:#f66600;
 	}
-.color_list .bgcor11{
+.color_list .bgcor11 i{
 	background-color:#f60498;
 	}
-.color_list .bgcor12{
+.color_list .bgcor12 i{
 	background-color:#900086;
 	}
-.color_list .bgcor13{
+.color_list .bgcor13 i{
 	background-color:#61058b;
 	}
-.color_list .bgcor14{
+.color_list .bgcor14 i{
 	background-color:#2913ab;
 	}
-.color_list .bgcor15{
+.color_list .bgcor15 i{
 	background-color:#7d4f11;
 	}
-.color_list .bgcor16{
+.color_list .bgcor16 i{
 	background-color:#9b6b31;
 	}
-.color_list .bgcor17{
+.color_list .bgcor17 i{
 	background-color:#db8c22;
 	}
-.color_list .bgcor18{
+.color_list .bgcor18 i{
 	background-color:#90c700;
 	}
-.color_list .bgcor19{
+.color_list .bgcor19 i{
 	background-color:#30ae1b;
 	}
-.color_list .bgcor20{
+.color_list .bgcor20 i{
 	background-color:#279329;
 	}
-.color_list span:hover ,
+.color_list span:hover,
 .color_list span.dq_cor{
-	border:1px solid #c4c4c5;
+	border:1px solid #fff;
 	cursor:pointer;
+	}
+.color_list span:hover i ,
+.color_list span.dq_cor i{
+	border:1px solid #000;
 	}
 .site_block{
 	float:left;
@@ -690,24 +710,52 @@ pre {
 	}
 .barrage_setmodal .barrage_rt .bg_line{
 	display:block;
-	height:14px;
+	height:36px;
 	margin-top:10px;
-	background:url(../../images/map/barrage_line2.jpg) no-repeat left center;
+	background:url(../../images/map/barrage_line2.jpg) no-repeat left bottom;
 	}
-.alpha_block input[type="range"]{
+.opacity_slider .ui-slider{
 	width:100px;
+	height:14px;
+	float:left;
+	margin-right:10px;
+	border:0;
+	box-sizing:border-box;
+	border-radius:2px;
+	background:url(../../images/map/opacityset_bg.jpg) center center;
 	}
-.alpha_block .s_num{
+.opacity_slider .ui-slider-handle{
+	width:9px;
+	height:16px;
+	top:-1px;
+	border:0;
+	box-sizing:border-box;
+	border-radius:1px;
+	background:url(../../images/map/opacityset_btn.jpg) center center;
+	}
+.opacity_slider .s_num{
+	float:left;
+	height:20px;
+	overflow:hidden;
+	margin-top:-2px;
 	color:#bec2c2;
 	}
 .tanmu_block dd{
 	line-height:18px;
 	color:#bec2c2;
 	}
-.tanmu_block .icheckbox_minimal{
+.icheckbox_face{
 	float:left;
+	width:18px;
+	height:18px;
 	margin-right:10px;
-	background-image:url(../../images/bootstrap/blue.png);
+	background-image:url(../../images/bootstrap/icon_check1.png);
+	background-repeat:no-repeat;
+	background-position:0 0;
+	cursor:pointer;
+	}
+.icheckbox_face.checked{
+	background-position:0 -36px;
 	}
 /*弹幕及弹幕设置框样式*/	
 
@@ -943,6 +991,7 @@ body.modal-open{
 	box-sizing:border-box;
 	font-size:14px;
 	color:#fff;
+	overflow:hidden;
 	}
 .share_dialog .text_company{
 	display:block;
