@@ -6,6 +6,7 @@
 
     <title>航拍视频查看</title>
     <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/skinBlue.css" />
     <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
     <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
     <link type="text/css" rel="stylesheet" href="../style/map/AerialvideoView.css" />
@@ -122,7 +123,78 @@
         <div class="barrage_set_block fl">
         	<button class="barrage_set">设置</button>
         	<div class="barrage_setmodal">
-            	
+            	<div class="barrage_lt">
+                	<strong class="text_h3">我的弹幕<span>编辑自己发送的弹幕</span></strong>
+                    <dl class="font_block">
+                    	<dt class="text_h4">字号</dt>
+                        <dd>
+                            <span class="f_big f_cur">大</span>
+                            <span class="f_medium">中</span>
+                            <span class="f_small">小</span>
+                        </dd>
+                    </dl>
+                    <dl class="color_block">
+                        <dt class="clear">
+                            <p class="text_h4 fl">颜色</p>
+                            <div class="fr">
+                                <input type="text" value="#FFFFFF" class="ipt_link fl" />
+                                <span class="xs_cor fl"></span>
+                            </div>
+                        </dt>
+                        <dd>
+                        	<div class="color_list">
+                            	<span class="bgcor1 dq_cor"></span>
+                                <span class="bgcor2"></span>
+                                <span class="bgcor3"></span>
+                                <span class="bgcor4"></span>
+                                <span class="bgcor5"></span>
+                                
+                                <span class="bgcor6"></span>
+                                <span class="bgcor7"></span>
+                                <span class="bgcor8"></span>
+                                <span class="bgcor9"></span>
+                                <span class="bgcor10"></span>
+                                
+                                <span class="bgcor11"></span>
+                                <span class="bgcor12"></span>
+                                <span class="bgcor13"></span>
+                                <span class="bgcor14"></span>
+                                <span class="bgcor15"></span>
+                                
+                                <span class="bgcor16"></span>
+                                <span class="bgcor17"></span>
+                                <span class="bgcor18"></span>
+                                <span class="bgcor19"></span>
+                                <span class="bgcor20"></span>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="site_block">
+                    	<dt class="text_h4 clear">位置</dt>
+                        <dd class="site_list">
+                            <p class="bgsit1 dq_bg">顶部</p>
+                            <p class="bgsit2">中间</p>
+                            <p class="bgsit3">底部</p>
+                            <p class="bgsit4">随机</p>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="barrage_rt">
+                	<strong class="text_h3">弹幕显示设置</strong>
+                    <dl class="alpha_block">
+                    	<dt class="text_h4">透明度</dt>
+                        <dd>
+                            <input id="op" class="fl mr5" type="range" value="100" onchange="op()" name="op"><span class="s_num">100%</span>
+                        </dd>
+                    </dl>
+                    <i class="bg_line"></i>
+                    <dl class="tanmu_block">
+                    	<dt class="text_h4">弹幕显示</dt>
+                        <dd class="clear">
+                            <input class="iCheck" type="checkbox">屏蔽图片表情
+                        </dd>
+                    </dl>
+                </div>
             </div>
         </div>
         <div class="tanmu_send_block">
@@ -214,6 +286,7 @@
 
 <script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
 <script type="text/javascript" src="../js/nicescroll/jquery.nicescroll.min.js"></script>
 <script type="text/javascript" src="../js/danmu/jquery.danmu.min.js"></script>
 <script type="text/javascript" src="../js/map/AerialvideoView.js"></script>

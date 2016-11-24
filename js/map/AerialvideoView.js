@@ -17,6 +17,11 @@ $(function(){
             $(this).val(this.defaultValue); 
         };  
     }); 
+	//(7)复选框插件
+	$('input[class=iCheck]').iCheck({
+		checkboxClass: 'icheckbox_minimal',
+		increaseArea: '20%' // optional
+	});
 
 	//(2)计算主体高度
 	var oWindowW = $(window).width();
@@ -73,7 +78,7 @@ $(function(){
 	//(5)复制链接
 	$(".btn_copy").click(function(){
 		$(".share_dialog .ipt_link").select();
-		document.execCommand("Copy");
+		//document.execCommand("Copy");
 	});
 	
 	//(6)弹幕设置
@@ -177,13 +182,13 @@ function playlistAnimate(){
 //---------------------------------------------------------------------------------------	
 //弹幕
   //一个定时器，监视弹幕时间并更新到页面上
-  function timedCount(){
+  /*function timedCount(){
     $("#time").text($("#danmu").data("nowTime"));
 
     t=setTimeout("timedCount()",50)
 
   }
-  timedCount();
+  timedCount();*/
 
 
 

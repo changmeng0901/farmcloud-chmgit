@@ -18,7 +18,7 @@ body{
 	position:absolute;
 	left:0;
 	top:0;
-	z-index:5;
+	z-index:1000;
 	width:100%;
 	height:46px;
 	background:url(../../images/commons/opacity_b50.png);
@@ -39,7 +39,7 @@ body{
 	float:left;
 	height:46px;
 	line-height:46px;
-	border-right:1px solid #6d6e72;
+	border-right:1px solid #292828;
 	}
 .video_header_list .item1{
 	padding:0 20px;
@@ -108,6 +108,7 @@ body{
 	left:0;
 	top:46px;
 	bottom:52px;
+	z-index:1000;
 	width:210px;
 	min-height:402px;
 	padding:15px;
@@ -196,7 +197,7 @@ body{
 	position:absolute;
 	left:0;
 	bottom:0;
-	z-index:5;
+	z-index:1000;
 	width:100%;
 	height:52px;
 	padding:10px 15px;
@@ -260,25 +261,6 @@ body{
 .barrage_set:hover{
 	background-color:#545454;
 	}
-.barrage_setmodal{
-	position:absolute;
-	left:-30px;
-	bottom:50px;
-	width:520px;
-	height:210px;
-	background-color:#1d1d1d;
-	font-size:14px;
-	color:#fff;
-	}
-.barrage_setmodal:before{
-	position:absolute;
-	left:50px;
-	bottom:-16px;
-	border-width:8px 8px 8px 8px;
-	border-style:solid solid solid solid;
-	border-color:#1d1d1d transparent transparent transparent;
-	content:"";
-	}
 .tanmu_send_block{
 	position:relative;
 	float:left;
@@ -336,7 +318,7 @@ body{
 	vertical-align:top;
 	}
 
-/*弹幕样式*/
+/*弹幕及弹幕设置框样式*/
 #danmuarea{
     position: relative;
 	z-index:0;
@@ -360,7 +342,278 @@ pre {
   font-size: 1em;
   line-height: 2em;
 	}
-/*弹幕样式*/	
+
+.barrage_setmodal{
+	position:absolute;
+	left:-30px;
+	bottom:50px;
+	width:520px;
+	height:210px;
+	border:1px solid #343434;
+	box-sizing:border-box;
+	background-color:#1d1d1d;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	}
+.barrage_setmodal:before{
+	position:absolute;
+	left:50px;
+	bottom:-16px;
+	z-index:1;
+	border-width:8px 8px 8px 8px;
+	border-style:solid solid solid solid;
+	border-color:#1d1d1d transparent transparent transparent;
+	content:"";
+	}
+.barrage_setmodal:after{
+	position:absolute;
+	left:50px;
+	bottom:-17px;
+	z-index:0;
+	border-width:8px 8px 8px 8px;
+	border-style:solid solid solid solid;
+	border-color:#343434 transparent transparent transparent;
+	content:"";
+	}
+.barrage_setmodal .barrage_lt{
+	float:left;
+	width:330px;
+	height:208px;
+	padding-top:10px;
+	padding-left:20px;
+	box-sizing:border-box;
+	background:url(../../images/map/barrage_line1.jpg) no-repeat right center;
+	overflow:hidden;
+	}
+.barrage_setmodal .text_h3{
+	display:block;
+	height:26px;
+	line-height:26px;
+	font-size:16px;
+	}
+.barrage_setmodal .text_h3 span{
+	padding-left:10px;
+	font-size:14px;
+	color:#bec2c2;
+	}
+.barrage_setmodal .text_h4{
+	height:22px;
+	line-height:22px;
+	margin:10px 0;
+	font-size:14px;
+	}
+.font_block{
+	float:left;
+	width:30px;
+	margin-right:26px;
+	text-align:center;
+	}
+.font_block span{
+	display:block;
+	height:30px;
+	line-height:30px;
+	margin-bottom:10px;
+	color:#bec2c2;
+	cursor:pointer;
+	}
+.font_block .f_big{
+	font-size:20px;
+	}
+.font_block .f_medium{
+	font-size:18px;
+	}
+.font_block .f_small{
+	font-size:14px;
+	}
+.font_block span:hover{
+	color:#fff;
+	}
+.font_block .f_cur,
+.font_block .f_cur:hover{
+	color:#7ab500;
+	}
+.color_block{
+	float:left;
+	width:120px;
+	margin-right:26px;
+	}
+.color_block .ipt_link{
+	width:60px;
+	height:22px;
+	line-height:20px;
+	margin:10px 0;
+	padding:0;
+	border:1px solid #ddd;
+	box-sizing:border-box;
+	background:#c1c1c1;
+	color:#333;
+	}
+.color_block .xs_cor{
+	float:left;
+	width:22px;
+	height:22px;
+	margin:10px 2px 10px 3px;
+	background-color:#ffffff;
+	}
+.color_list{
+	margin-top:10px;
+	overflow:hidden;
+	}
+.color_list span{
+	float:left;
+	width:22px;
+	height:22px;
+	box-sizing:border-box;
+	margin-right:2px;
+	margin-bottom:2px;
+	background-color:#fff;
+	}
+.color_list .bgcor1{
+	background-color:#fcf400;
+	}
+.color_list .bgcor2{
+	background-color:#f50900;
+	}
+.color_list .bgcor3{
+	background-color:#ffffff;
+	}
+.color_list .bgcor4{
+	background-color:#000000;
+	}
+.color_list .bgcor5{
+	background-color:#f79b00;
+	}
+.color_list .bgcor6{
+	background-color:#4aff00;
+	}
+.color_list .bgcor7{
+	background-color:#53fcff;
+	}
+.color_list .bgcor8{
+	background-color:#3488f7;
+	}
+.color_list .bgcor9{
+	background-color:#8b00ff;
+	}
+.color_list .bgcor10{
+	background-color:#f66600;
+	}
+.color_list .bgcor11{
+	background-color:#f60498;
+	}
+.color_list .bgcor12{
+	background-color:#900086;
+	}
+.color_list .bgcor13{
+	background-color:#61058b;
+	}
+.color_list .bgcor14{
+	background-color:#2913ab;
+	}
+.color_list .bgcor15{
+	background-color:#7d4f11;
+	}
+.color_list .bgcor16{
+	background-color:#9b6b31;
+	}
+.color_list .bgcor17{
+	background-color:#db8c22;
+	}
+.color_list .bgcor18{
+	background-color:#90c700;
+	}
+.color_list .bgcor19{
+	background-color:#30ae1b;
+	}
+.color_list .bgcor20{
+	background-color:#279329;
+	}
+.color_list span:hover ,
+.color_list span.dq_cor{
+	border:1px solid #c4c4c5;
+	cursor:pointer;
+	}
+.site_block{
+	float:left;
+	width:90px;
+	}
+.site_list{
+	padding-top:10px;
+	overflow:hidden;
+	}
+.site_list p{
+	float:left;
+	width:30px;
+	line-height:20px;
+	margin:0 15px 15px 0;
+	padding-top:20px;
+	background-image:url(../../images/map/icon_site.png);
+	background-repeat:no-repeat;
+	color:#bec2c2;
+	cursor:pointer;
+	}
+.site_list .bgsit1{
+	background-position: 0 0;
+	}
+.site_list .bgsit2{
+	background-position: 0 -44px;
+	}
+.site_list .bgsit3{
+	background-position: 0 -88px;
+	}
+.site_list .bgsit4{
+	background-position: 0 -132px;
+	}
+.site_list p:hover{
+	color:#fff;
+	}
+.site_list .dq_bg,
+.site_list .dq_bg:hover{
+	color:#7ab500;
+	}
+.site_list .bgsit1.dq_bg{
+	background-position: -34px 0;
+	}
+.site_list .bgsit2.dq_bg{
+	background-position: -34px -44px;
+	}
+.site_list .bgsit3.dq_bg{
+	background-position: -34px -88px;
+	}
+.site_list .bgsit4.dq_bg{
+	background-position: -34px -132px;
+	}
+.barrage_setmodal .barrage_rt{
+	float:left;
+	width:180px;
+	height:208px;
+	padding-top:10px;
+	padding-left:20px;
+	box-sizing:border-box;
+	}
+.barrage_setmodal .barrage_rt .bg_line{
+	display:block;
+	height:14px;
+	margin-top:10px;
+	background:url(../../images/map/barrage_line2.jpg) no-repeat left center;
+	}
+.alpha_block input[type="range"]{
+	width:100px;
+	}
+.alpha_block .s_num{
+	color:#bec2c2;
+	}
+.tanmu_block dd{
+	line-height:18px;
+	color:#bec2c2;
+	}
+.tanmu_block .icheckbox_minimal{
+	float:left;
+	margin-right:10px;
+	background-image:url(../../images/bootstrap/blue.png);
+	}
+/*弹幕及弹幕设置框样式*/	
 	
 	
 /*模态框*/
