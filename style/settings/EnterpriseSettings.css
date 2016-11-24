@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+em{ 
+	font-style:normal;
+	}
+.bootSelt80 .bootstrap-select{  width:80px;}
+.bootSelt80 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:80px;}
+.bootSelt180 .bootstrap-select{  width:180px;}
+.bootSelt180 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:180px;}
+.inline_block .bootstrap-select.btn-group .dropdown-menu{
+	max-width:100%;
+	}
+.center_btns{
+	padding: 50px 0;
+	text-align: center;
+}
+
+/* 种子投入品信息页样式 */
+.lt_c_ul li a img{
+	width:12px;
+	height:12px;
+	margin-top:14px;
+	vertical-align:top;
+	}
+.settings_content .nav li a{
+	padding: 8px 15px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #999999;
+}
+.settings_content .nav-tabs  li.active a, 
+.settings_content .nav-tabs  li.active a:hover, 
+.settings_content .nav-tabs  li.active a:focus{
+	color: #48a3d8;
+}
+.nav-tabs li .sicon{
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.nav-tabs li .icon_jcsz{
+	background-image: url(../../images/settings/qysettings_icon1-1.png);
+}
+.nav-tabs li .icon_sznc{
+	background-image: url(../../images/settings/qysettings_icon2-1.png);
+}
+.nav-tabs li .icon_scgl{
+	background-image: url(../../images/settings/qysettings_icon3-1.png);
+}
+.nav-tabs li .icon_xsgl{
+	background-image: url(../../images/settings/qysettings_icon4-1.png);
+}
+.nav-tabs li .icon_zzfw{
+	background-image: url(../../images/settings/qysettings_icon5-1.png);
+}
+.nav-tabs li.active .icon_jcsz{
+	background-image: url(../../images/settings/qysettings_icon1-2.png);
+}
+.nav-tabs li.active .icon_sznc{
+	background-image: url(../../images/settings/qysettings_icon2-2.png);
+}
+.nav-tabs li.active .icon_scgl{
+	background-image: url(../../images/settings/qysettings_icon3-2.png);
+}
+.nav-tabs li.active .icon_xsgl{
+	background-image: url(../../images/settings/qysettings_icon4-2.png);
+}
+.nav-tabs li.active .icon_zzfw{
+	background-image: url(../../images/settings/qysettings_icon5-2.png);
+}
+/*基础设置*/
+.base_main{
+	padding: 30px 20px;
+}
+.base_dl{
+	overflow: hidden;
+}
+.base_dl .dl_dt{
+	float: left;
+	width: 60px;
+	height: 40px;
+}
+.base_dl .dl_dt img{
+	width: 40px;
+	height: 40px;
+}
+.base_dl .dl_dd{
+	padding-left: 60px;
+	font-size: 12px;
+}
+.base_dl .text_stress{
+	display: block;
+	line-height: 16px;
+}
+.base_dl .text_depict{
+	margin-top: 8px;
+	line-height: 16px;
+}
+.fPicture{
+	position: relative;
+	display: inline-block;
+	width: 130px;
+	height: 130px;
+	border: 1px solid #eaeaea;
+	box-sizing: border-box;
+	margin: 10px 10px 10px 0;
+	vertical-align: top;
+}
+.fPicture .fimg{
+	width: 100%;
+	height: 100%;
+}
+.fPicture .delete{
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: none;
+	width: 34px;
+	height: 34px;
+	cursor: pointer;
+}
+.fPicture:hover .delete{
+	display: block;
+}
+.text_norm{
+	line-height: 20px;
+	color: #ff0000;
+}
+.filepic{
+	display: inline-block;
+	position: relative;
+	width: 130px;
+	height: 130px;
+	margin: 10px 10px 10px 0;
+	background: url(../../images/settings/fileImg_btn130.jpg) no-repeat;
+	vertical-align: top;
+	overflow: hidden;
+}
+.filepic input{
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 100px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	cursor: pointer;
+}
+/*数字农场*/
+.farmnum_main{
+	padding: 30px 20px;
+}
+.select_list .sitem{
+	padding: 10px 0;
+}
+.select_list .text_name{
+	float: left;
+	width: 60px;
+	height: 34px;
+	line-height: 34px;
+	padding-right: 10px;
+	box-sizing: border-box; 
+	text-align: left;
+}
+/*生产管理*/
+.product_main,
+.market_main{
+	padding: 30px 0;
+	overflow: hidden;
+}
+.product_main .col-lg-6,
+.market_main .col-lg-6{
+	position: relative;
+	min-height: 84px;
+	padding-left: 40px;
+	padding-right: 10px;
+	padding-top: 26px;
+	padding-bottom: 26px;
+}
+.product_main .col-lg-6:after,
+.market_main .col-lg-6:after{
+	position: absolute;
+	right: -2px;
+	top: 50%;
+	width: 2px ;
+	height: 90px;
+	margin-top: -45px;
+	content: "";
+	background: url(../../images/settings/qysettings_line1.png) no-repeat left center;
+}
+.prod_rline0 .col-lg-6:after{
+	background: none;
+}
+.prod_line{
+	border-bottom: 1px solid #efefef;
+	margin-bottom: -1px;
+}
+.checkradio1,
+.checkradio160{
+	float: left;
+	width: 90px;
+	height: 20px;
+	line-height: 20px;
+	padding: 5px 0;
+	box-sizing: content-box;
+}
+.checkradio160{
+	width: 160px;
+}
+.checkradio1 label,
+.checkradio160 label{
+	margin-bottom: 0;
+	padding-left: 5px;
+	font-weight: normal;
+}
+/*销售管理*/
