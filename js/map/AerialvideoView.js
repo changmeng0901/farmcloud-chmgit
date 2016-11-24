@@ -214,7 +214,7 @@ var XmlData,
 		sliderMapBar: function (data) {
 			var $playlistList = $('.playlist_list'),
 				sliderItemStr = '';
-			for (var item in data) {
+			for (var item=0;item<data.length;item++) {
 				if(data[item].good_count==''||typeof(data[item].good_count)=='undefined'){
 						//如果好评没有值，则给0
 					  	data[item].good_count=0;
