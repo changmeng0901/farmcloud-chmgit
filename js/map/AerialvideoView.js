@@ -93,7 +93,7 @@
 			var $playlistList = $('.playlist_list'),
 				sliderItemStr = '';
 				//console.log(data);
-			for (item in data) {
+			for (var item in data) {
 				//console.log(data[item].description);
 				currentStyle = item == 0 ? 'icur' : '';
 
@@ -284,7 +284,7 @@
 				  icon: lineSymbol,
 				  offset: '0',
 				  repeat: '10px'//许仙密度
-				}],
+				}]
 		    });
 
 
