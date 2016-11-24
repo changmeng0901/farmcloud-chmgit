@@ -1,4 +1,4 @@
-
+xc_zoomSet = true;	
 var map;
 var flightPath;
 var FirstMarker,
@@ -94,16 +94,8 @@ var FirstMarker,
 		sliderMapBar: function (data) {
 			var $playlistList = $('.playlist_list'),
 				sliderItemStr = '';
-				//console.log(data);
 			for (var item in data) {
-				//console.log(data[item].description);
 				currentStyle = item == 0 ? 'icur' : '';
-
-				/*sliderItemStr  += '<li class="item video-url '+ currentStyle+
-								  '" data-video-url="'+ data[item].file_url +'" data-id="'+ data[item].id +'" data-description="'+ data[item].aerial_name +'">'+
-								  '<img class="mn_pic" src="'+ data[item].thumbnail_image_url +'" />'+
-								  '<p class="text_con"><img class="icon_mn" src="../images/map/icon_mnplay.png" />'+data[item].aerial_name+
-								  '</p><i class="bg_opa50"></i></li>';*/
 				sliderItemStr  += "<li class='item video-url "+ currentStyle+
 								  "' data-video-url='"+ data[item].file_url +
 								  "' data-id='"+ data[item].id +
@@ -132,7 +124,7 @@ var FirstMarker,
 				$('.item_scence').hide();	
 			}
 			
-			var scriptAdd = "<script> var vID = 'HLSPlayer2';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+data.file_url+"';a.init('videoimg');<\/script>";
+			var scriptAdd = "<script> var vID = 'HLSPlayer2';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf?autostart=true&loop=-1';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+data.file_url+"';a.init('videoimg');<\/script>";
 			$("#HLSPlayer2").html(scriptAdd);
 
 		},
@@ -146,10 +138,8 @@ var FirstMarker,
 				var ParameterMethod = AerialVideoView.makeParameterMethod("aerial.track.data"),
 				groupId = AerialVideoView.makeParameterField("aerial_video_id", that.attr('data-id') );
 
-				//var url = "http://192.168.21.55:8080/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
+				var url = "http://192.168.21.55:8080/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
 	
-				//var scriptAdd = "<script> var vID = 'HLSPlayer2';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg'; var vHLSurl = 'http://img1.farmeasy.cn/video/20160413/ditu/playlist.m3u8';a.init('videoimg');<\/script>";   
-				//jQuery("#HLSPlayer2").html(scriptAdd);
 				$.ajax({
 					type: "GET",
 					timeout: 1000,
@@ -159,7 +149,7 @@ var FirstMarker,
 					success: function(response) {
 						//console.log(JSON.stringify(response))
 						AerialVideoView.initializeGoogelMaps(response.trackstr);
-						var scriptAdd = "<script> var vID = 'HLSPlayer2';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+that.attr("data-video-url")+"';a.init('videoimg');<\/script>";
+						var scriptAdd = "<script> var vID = 'HLSPlayer2';var vWidth = '100%';var vHeight = '100%';var vPlayer = '../ffdshow/player.swf?autostart=true&loop=-1';var vHLSset = '../ffdshow/HLS.swf';var vPic = '../images/commons/videosImg.jpg';var vHLSurl = '"+that.attr("data-video-url")+"';a.init('videoimg');<\/script>";
 						$("#HLSPlayer2").html(scriptAdd);
 						$("#scene_description").html(that.attr("data-description"));
 						
@@ -240,6 +230,10 @@ var FirstMarker,
 			$(".card_dialog .modal_body").niceScroll({cursorcolor:"#919191",cursorwidth:6,cursoropacitymax:0.7,touchbehavior:false,autohidemode:false});
 			$(".scene_dialog .modal_body").niceScroll({cursorcolor:"#919191",cursorwidth:6,cursoropacitymax:0.7,touchbehavior:false,autohidemode:false});
 			oWindowH < 500 ? $(".pano_dialog").addClass("pano_top") : 	$(".pano_dialog").removeClass("pano_top")
+			
+			//头部计算
+			var headerLen = $(".video_header_list2 li").length;
+			$(".video_header_list2 li").css("width", parseInt($(".video_header_list2").width()/headerLen) )
 
 		},
 		initializeGoogelMaps: function (data) {
@@ -253,6 +247,8 @@ var FirstMarker,
 				arrLing = [],
 				arrAlt = [],
 				abLen = data[0].track_list;
+				
+				
 
 			for (var indx in data) {
 				var list = data[indx].track_list;
@@ -283,9 +279,9 @@ var FirstMarker,
 
 			var myLatLng = flightPlanSite[0];
 			var myOptions = {
-				zoom: 16,
+				zoom: 19,
 				center: myLatLng,
-				mapTypeId: google.maps.MapTypeId.TERRAIN,
+				mapTypeId: google.maps.MapTypeId.SATELLITE,
 				mapTypeControl: true,//false表示不显示控件，即头部地图类型不显示
 				mapTypeControlOptions: {
 					style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,//HORIZONTAL_BAR普通类型
@@ -298,33 +294,21 @@ var FirstMarker,
 				scaleControl: true,
 				streetViewControl: false,// 取消街景
 	 			mapTypeControl:false,//取消地图切换
-				streetViewControlOptions: {
-					position: google.maps.ControlPosition.RIGHT_BOTTOM 
-				}
 
 			};
-			if(typeof(map) == "undefined")
-		    	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);//初始化地图
-			else
+			if(typeof(map) == "undefined"){
+		    	map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);//初始化地图
+			}
+			else{
 				map.setOptions(myOptions);
-			// Define a symbol using SVG path notation, with an opacity of 1.
-			var lineSymbol = {
-				path: 'M 0,-1 0,1',
-				strokeOpacity: 1,
-				scale: 2
-			};
+			}
+
 			if(typeof(flightPath)=="undefined"){
 				flightPath = new google.maps.Polyline({//类型为直线的
 					path: flightPlanSite,
 					strokeColor: "#FF0000",
-					//strokeOpacity: 1.0,
-					//strokeWeight: 2,
-					strokeOpacity: 0,
-					icons: [{
-					  icon: lineSymbol,
-					  offset: '0',
-					  repeat: '10px'//许仙密度
-					}]
+					strokeOpacity: 1.0,
+					strokeWeight: 2
 		    	});
 			}else{
 				flightPath.setPath(flightPlanSite);
@@ -360,15 +344,30 @@ var FirstMarker,
 			
 			
 			
+			
 
 			flightPath.setMap( map );
 			clearInterval(playTimer);
 			var index_ = 0;
+			var myoverlay = new MyOverlay(map);
+			var po;
+			var aPosition;
 			function timeout(){
 				if( index_ < flightPlanSite.length ){
-					var aPosition = flightPlanSite[index_];
-					AnimateMarker.setPosition( aPosition );
-					map.setCenter(aPosition);
+					
+					myoverlay = new MyOverlay(map);
+					po = myoverlay.getProjection();
+					
+					aPosition = flightPlanSite[index_];
+					var point = po.fromLatLngToContainerPixel(aPosition);
+					//console.log(point.y)
+					point.y = point.y+17;
+					var latPo = po.fromContainerPixelToLatLng(point)
+					AnimateMarker.setPosition( latPo );
+					map.setCenter(latPo);
+					//var aPosition = flightPlanSite[index_];
+					//AnimateMarker.setPosition( aPosition );
+					//map.setCenter(aPosition);
 					$("#longitude").html( LatPlanSite[index_] );
 					$("#latitude").html( LingPlanSite[index_] );
 					$('#altitude').html( AltPlanSite[index_]+'米' );
@@ -441,3 +440,13 @@ var FirstMarker,
 	AerialVideoView.init();
 })($);
 
+/*window.onerror = function(errorMessage, scriptURI, lineNumber,columnNumber,errorObj) {
+	try{
+		
+		console.log("閿欒淇℃伅锛�" , errorMessage);
+		console.log("鍑洪敊鏂囦欢锛�" , scriptURI);
+		console.log("鍑洪敊琛屽彿锛�" , lineNumber);
+		console.log("鍑洪敊鍒楀彿锛�" , columnNumber);
+		console.log("閿欒璇︽儏锛�" , errorObj);
+	}catch(e){}
+ }*/

@@ -15,15 +15,15 @@
 <div class="aerialvideo_body">
     <!--(1)航拍头部-->
     <div class="video_header_wap">
-        <ul class="video_header_list">
+        <ul class="video_header_list video_header_list1 fl clear">
             <li class="item1">
                 <img id="BarOnoff" class="onoff" src="../images/map/AerialvideoView_onoff.png" title="播放列表开关" />
             </li>
-            <li class="item1">
+        </ul>
+        <ul class="video_header_list video_header_list2 clear">
+            <li class="item1" style="padding-left: 0px; padding-right: 0px;">
                 <img class="qy_logo" id="qy_logo" src="../images/map/AerialvideoView_logo.png" />
             </li>
-        </ul>
-        <ul class="video_header_list" style="float:right;">
             <li class="item2">
                 <p class="p_text" title="经度">
                     <img class="sm_icon" src="../images/map/AerialvideoView_E.png" />
@@ -85,7 +85,7 @@
         <!--航拍地图-->
         <div class="aerial_map">
         	<i class="smallbtn_map"><img src="../images/map/smallbtn_map.png" /></i>
-        	<div id="map_canvas" style="width:100%;height:100%"></div>
+        	<div id="map-canvas" style="width:100%;height:100%"></div>
         </div>
         <i class="bigbtn_map"><img src="../images/map/bigbtn_map.png" /></i>
         <!-- 弹幕 -->
@@ -195,6 +195,8 @@
 </div>
 
 
+<p class="mengb" style="display:none;"><!--灰色蒙版层--></p>
+<span id="map_loading" style="display:none;"></span>
 
 <!--（0-1）企业名片模态框-->
 <div class="modal fade" id="CardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -262,7 +264,8 @@
 <script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
 <script type="text/javascript" src="../js/nicescroll/jquery.nicescroll.min.js"></script>
 <script type="text/javascript" src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
-<script type="text/javascript" src="../js/danmu/jquery.danmu.min.js"></script>
+<script type="text/javascript" src="../js/map/map_base_functions.js"></script>
+<script type="text/javascript" src="../js/map/map_controller.js"></script>
 <script type="text/javascript" src="../js/map/AerialvideoView.js"></script>
 
 </body>
