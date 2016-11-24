@@ -11,7 +11,7 @@ var FirstMarker,
 var iframeSearch = location.search.split("&");
 var getGroupId = iframeSearch[0].split("=")[1];
 var getTestUrl = iframeSearch[1].split("=")[1];
-var getEntId = iframeSearch[2].split("=")[1];
+var operTypeUrl = iframeSearch[2].split("=")[1];//1:企业航拍视频列表（查看企业所有视频） 2：航拍组视频列表（按分
 var ParameterMethod,
 		pageUrl;
 		
@@ -74,10 +74,18 @@ var onoffBtn = true;
 		makeParameterField: function (IDtype, ID) { //base_id
 			return encodeURI('&field={"data":{"' + IDtype + '":"' + ID + '"}}');
 		},
+		makeTwoParameterField: function (IDtype1, ID1,IDtype2, ID2) { //base_id
+			return encodeURI('&field={"data":{"' + IDtype1 + '":"' + ID1 + '","' + IDtype2 + '":"' + ID2 + '"}}');
+		},
 		getFlightPlanSite: function () {
 			
-			ParameterMethod = AerialVideoView.makeParameterMethod("aerial.video.group.data"),
-			groupId = AerialVideoView.makeParameterField("group_id",getGroupId);
+			ParameterMethod = AerialVideoView.makeParameterMethod("aerial.video.group.data");
+			if(operTypeUrl=="1"){//1:企业航拍视频列表（查看企业所有视频） 2：航拍组视频列表（按分组查看）
+				groupId = AerialVideoView.makeTwoParameterField("group_id","","entId",getGroupId);
+			}else if(operTypeUrl=="2"){				
+				groupId = AerialVideoView.makeTwoParameterField("group_id",getGroupId,"entId","");
+			}
+			
 			pageUrl = getTestUrl +"/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + groupId;
 
 			$.ajax({
@@ -90,12 +98,9 @@ var onoffBtn = true;
 					
 					AerialVideoView.initializeGoogelMaps(response.groupstr.list,0);
 					//zyghOnoff = true;
-					if( response.groupstr.assets_show == "1" ){
+					if( response.groupstr.assets_show == "1" && response.groupstr.list[0].track_list!="" ){
 						loadZyMap(response.groupstr.list[0].base_id);
 						zyghOnoff = false;
-					}else{
-
-						zyghOnoff = true;
 					}
 
 					var groupstr = response.groupstr;
@@ -116,6 +121,7 @@ var onoffBtn = true;
 						business_card_show : groupstr.business_card_show,  //头部企业名片显示隐藏
 						track_show : groupstr.track_show,  //轨迹显示或隐藏
 						assets_show : groupstr.assets_show,  //资源规划
+						logo_show : groupstr.logo_show,//是否显示企业LOGO
 					 };
 					 
 					 
@@ -243,9 +249,6 @@ var onoffBtn = true;
 						if( zyghOnoff == false ){
 							loadZyMap(response.trackstr[0].base_id);
 							zyghOnoff = true;
-						}else{
-
-							zyghOnoff = false;
 						}
 						
 						if( that.attr("data-description")!= ''){
