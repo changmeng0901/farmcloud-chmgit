@@ -120,8 +120,8 @@ function ABPinit2(){
 			}
 			
 
-			jQuery("#Send_Danmu").unbind("click");
-			jQuery("#Send_Danmu").bind("click",SendDanmuFn);
+			$("#Send_Danmu").unbind("click");
+			$("#Send_Danmu").bind("click",SendDanmuFn);
 
 			//发送弹幕
 			function SendDanmuFn(){
@@ -131,7 +131,8 @@ function ABPinit2(){
 				danmu_site = parseInt($('#Site_Set .dq_bg').attr('data-barrage-site'));
 				
 				if(danmu_value!='发送弹幕一起high!' && danmu_value!=''){
-					alert('位置'+$('#Site_Set .dq_bg').attr('data-barrage-site'))
+					//alert('位置'+$('#Site_Set .dq_bg').attr('data-barrage-site'));
+					$('#text_tanmu').focus();
 					someDanmakuAObj = {
 						"mode" : 1,// 弹幕类型，滚动danmu_site
 						"text" : danmu_value,//"3333这里是弹幕的内容"
@@ -141,39 +142,40 @@ function ABPinit2(){
 						"pool" : '0',
 						"border": true  // 显示边框
 					};
-					$('#text_tanmu').focus();
 					_this.cmManager.sendComment(someDanmakuAObj);
+					//-----------------------------
+					ParameterMethod = FnMethod('aerial.barrage.set');
+					ParameterField = FnField(
+											"aerial_video_id",$('.playlist_list .item.icur').attr('data-id'),
+											"stime" , Math.floor(video.currentTime),
+											"mode" , 1,//"1"$('#Site_Set .dq_bg').attr('data-barrage-site')
+											"size" ,  $('#font_set .f_cur').attr('data-barrage-size'),//"25"
+											"color" , parseInt($.fn.getHexBackgroundColor("#Color_XsSet","color"),16),  //"16777215"
+											"date" ,  "1307940958",
+											"pool" ,  "0",
+											"hash" ,  "D263bd64",
+											"content", danmu_value//danmu_value
+											);
+											//console.log(ParameterField)
+					pageUrl = getTestUrl +"/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + ParameterField;
+					$.ajax({
+						type: "GET",
+						timeout: 1000,
+						url: pageUrl,
+						dataType: "jsonp", 
+						jsonp: 'callback'
+					 });
+					
+					//-----------------------------
 
 				}else{
 					$('#text_tanmu').focus();
+					$('#text_tanmu').val('');
 					confirm('发送内容不能为空')
 				}
 				
 				
-				//-----------------------------
-				ParameterMethod = FnMethod('aerial.barrage.set');
-				ParameterField = FnField(
-										"aerial_video_id",$('.playlist_list .item.icur').attr('data-id'),
-										"stime" , Math.floor(video.currentTime),
-										"mode" , 1,//"1"$('#Site_Set .dq_bg').attr('data-barrage-site')
-										"size" ,  $('#font_set .f_cur').attr('data-barrage-size'),//"25"
-										"color" , parseInt($.fn.getHexBackgroundColor("#Color_XsSet","color"),16),  //"16777215"
-										"date" ,  "1307940958",
-										"pool" ,  "0",
-										"hash" ,  "D263bd64",
-										"content", danmu_value//danmu_value
-										);
-										//console.log(ParameterField)
-				pageUrl = getTestUrl +"/rest/1.0/aerialVideo?v=1.0&format=json"+ ParameterMethod + ParameterField;
-				$.ajax({
-					type: "GET",
-					timeout: 1000,
-					url: pageUrl,
-					dataType: "jsonp", 
-					jsonp: 'callback'
-				 });
 				
-				//-----------------------------
 				
 				
 				

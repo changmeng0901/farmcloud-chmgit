@@ -725,12 +725,10 @@ var XmlData,
 						var tempLat = GCJ02loc[1];
 						var tempLing =GCJ02loc[0];
 						var tempAlt = list[item].BAROMETER;
-						var tempISO = list[item].ISO.split(":")[1];
-						var tempEV = list[item].EV.split(":")[1];
-						var tempShutter = list[item].Shutter.split(":")[1];
-						var tempFnum = list[item].Fnum.split(":")[1];
-						tempAlt = tempAlt.split(":");  
-						tempAlt = tempAlt[1]
+						var tempISO = list[item].ISO;
+						var tempEV = list[item].EV;
+						var tempShutter = list[item].Shutter;
+						var tempFnum = list[item].Fnum;
 						
 						bounds.extend(temp);
 						scrollZoom = getBoundsZoomLevel(bounds);
