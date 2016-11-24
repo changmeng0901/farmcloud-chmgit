@@ -163,11 +163,41 @@ var onoffBtn = true;
 			
 			//@@航拍页面弹框等基础数据初始化
 			$('#qy_logo').attr('src',data.logo_img);
+			if(data.logo_img!=""){
+				if(data.logo_img.indexOf("http://img4")!=-1){
+					$("#qy_logo_li").html("<img class=\"qy_logo\" id=\"qy_logo\" src=\""+data.logo_img+"@38h.src\" />");
+				}else{
+					$("#qy_logo_li").html("<img class=\"qy_logo\" id=\"qy_logo\" src=\""+data.logo_img+"\" />");
+				}	
+			}else{
+				$('#qy_logo_li').html("<p style='font-size: 14px;font-weight: bold;color: #fff;word-break: break-all;overflow: hidden;'>"+data.business_name+"</p>");
+			}	
 			$('#qycard_name').html( data.business_name );
-			$('#qycard_phone').html( data.business_tel );
-			$('#qycard_mail').html( data.business_email );
-			$('#qycard_weibo').html( data.business_weibo );
-			$('#qycard_addr').html( data.business_address );
+			if(data.business_tel==""){
+				$('.qycard_phone').css("display","none");
+			}else{
+				$('.qycard_phone').css("display","block");
+				$('#qycard_phone').html( data.business_tel );
+			}
+			if(data.business_email==""){
+				$('.qycard_mail').css("display","none");
+			}else{
+				$('.qycard_mail').css("display","block");
+				$('#qycard_mail').html( data.business_email );
+			}
+			if(data.business_weibo==""){
+				$('.qycard_weibo').css("display","none");
+			}else{
+				$('.qycard_weibo').css("display","block");
+				$('#qycard_weibo').html( data.business_weibo );
+			}
+			if(data.business_address==""){
+				$('.qycard_addr').css("display","none");
+			}else{
+				$('.qycard_addr').css("display","block");
+				$('#qycard_addr').html( data.business_address );
+				$('#qycard_addr').attr("title",data.business_address);
+			}	
 			$('#qycard_intro').html( data.business_card_introduce );
 
 			if( $('#longitude').html() == '' ){ $('#longitude').html('--') }
