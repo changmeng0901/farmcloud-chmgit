@@ -49,6 +49,9 @@ function ABPinit2(){
 				lastPosition = video.currentTime;
 			});
 
+			//var timerDanmu;
+			//clearInterval(timerDanmu);
+			//timerDanmu = setInterval(function(){
 			video.addEventListener("timeupdate", function(){
 				if(_this.cmManager.display === false) return;
 				if(video.hasStalled){
@@ -57,6 +60,7 @@ function ABPinit2(){
 				}
 				_this.cmManager.time(Math.floor(video.currentTime * 1000));
 			});
+			//},1);
 
 			video.addEventListener("play", function(){
 				_this.cmManager.startTimer();
@@ -152,7 +156,7 @@ function ABPinit2(){
 						"text" : danmu_value,//"3333这里是弹幕的内容"
 						"stime": Math.floor(video.currentTime * 1000),//视频开始时间（用于计算弹幕的碰撞位置）_this.cmManager.startTimer()
 						"size" : $('#font_set .f_cur').attr('data-barrage-size'),//25普通大小
-						"color": "#"+$.fn.getHexBackgroundColor("#Color_XsSet","color"), //0xffffff
+						"color": $.fn.getHexBackgroundColor("#Color_XsSet","color"), //0xffffff
 						"pool" : '0',
 						"border": true  // 显示边框
 					};
