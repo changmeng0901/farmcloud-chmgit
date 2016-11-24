@@ -104,6 +104,14 @@ var XmlData,
 
 //(8)地图航线
 ;(function ($) {
+	if(operTypeUrl=="2"){
+		$("#share_link").val(getTestUrl+"/map/AerialVideo.seam?groupId="+getGroupId);
+		jQuery("#share_code_img").attr("src",getTestUrl+"/GenerateCodeImage?groupId="+getGroupId+"&type=2");
+	}else if(operTypeUrl=="1"){
+		$("#share_btn_div").hide();
+	}
+
+
 	/**
 	* author: 前端小菜鸟
 	* date: 2016-07-12 
@@ -247,6 +255,9 @@ var XmlData,
 			$('#qycard_logo').attr('src',data.logo_img);
 			
 			$('#qycard_name').html( data.business_name );
+			if(""!=data.business_name){
+				$('#share_company').html("《"+data.business_name+"》");
+			}
 			if(data.business_tel==""){
 				$('.qycard_phone').css("display","none");
 			}else{

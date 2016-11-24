@@ -169,8 +169,8 @@
             <div class="btn_face"></div>
             <button type="button" class="btn_send" id="Send_Danmu">发送</button>
         </div>
-        <div class="fr">
-            <p class="Opt_count"><img class="icon_fx" id="Opt_btn" onoff="true" src="../images/map/icon_opt.png" /><span id="Opt_count">1,288</span></p>
+        <div class="fr" id="share_btn_div">
+            <p class="Opt_count"><img class="icon_fx" id="Opt_btn" onoff="true" src="../images/map/icon_opt.png" /><span id="Opt_count"></span></p>
             <p class="share_text" data-target="#ShareModal" data-toggle="modal"><img src="../images/map/icon_share.png" />分享</p>
         </div>
     </div>
@@ -227,11 +227,11 @@
 	<i class="i_close" data-dismiss="modal"></i>
     <div class="modal-body modal_body">
     
-       <strong class="text_company">《北京北菜园种植基地》</strong>
+       <strong class="text_company" id="share_company"></strong>
        <p class="text_tip">扫描二维码，将链接分享给好友</p>
        <img class="code_pic" src="../images/map/code_pic1.jpg" />
-       <input class="ipt_link" type="text" value="http://app.farmeasy.cn/map/PropagandasShow." style="background-color:#fff;color:#f00;" />
-       <button class="btn_copy"><img src="../images/map/icon_copylink.png" />复制链接</button>
+       <input class="ipt_link" id="share_link" type="text" value="http://app.farmeasy.cn/map/PropagandasShow." style="background-color:#fff;color:#f00;" />
+       <button class="btn_copy" onclick="copyShareUrl();"><img src="../images/map/icon_copylink.png" />复制链接</button>
        
     </div>
 </div>
@@ -257,7 +257,21 @@
 	<script src="../js/danmu/BilibiliFormat.js"></script>
 	<script src="../js/danmu/videojs_ABdm.js"></script>
     <script src="../js/jquery-ui/jquery-ui.js"></script>
-<script type="text/javascript" src="../js/map/AerialvideoView.js"></script>
+    <script type="text/javascript" src="../js/map/AerialvideoView.js"></script>
+    <script type="text/javascript">
+                
+        //复制链接
+        function copyShareUrl(){
+            var Url2=document.getElementById("share_link");
+            Url2.select();
+            var supportFlag=document.execCommand("Copy");
+            if(supportFlag){
+                alert('已复制该内容');
+            }else{
+                alert('此浏览器不支持复制功能，请手动复制一下吧！');
+            }   
+        }
+    </script>
 
 </body>
 </html>
