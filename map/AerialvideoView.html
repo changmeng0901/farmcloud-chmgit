@@ -22,7 +22,7 @@
             </li>
         </ul>
         <ul class="video_header_list video_header_list2 clear">
-            <li class="item1" style="padding-left: 0px; padding-right: 0px;">
+            <li class="item1" id="qy_logo_li" style="padding-left: 0px; padding-right: 0px;">
                 <img class="qy_logo" id="qy_logo" src="../images/map/AerialvideoView_logo.png" />
             </li>
             <li class="item2">
@@ -46,28 +46,28 @@
             <li class="item2 item_ISO">
                 <p class="p_text">
                     <img class="km_icon" src="../images/map/AerialvideoView_ISO.png" />
-                    <span class="iso_cor">100</span>
+                    <span class="iso_cor" id="isotude">100</span>
                 </p>
             </li>
             <li class="item2">
                 <p class="p_text">
                     <img class="km_icon" src="../images/map/AerialvideoView_km.png" />
-                    <span class="km_cor">1/400</span>
+                    <span class="km_cor" id="shuttertude">1/400</span>
                 </p>
             </li>
             <li class="item2 item_EV">
                 <p class="p_text">
                     <img class="sm_icon" src="../images/map/AerialvideoView_EV.png" />
-                    <span class="ev_cor">+1</span>
+                    <span class="ev_cor" id="evtude">+1</span>
                 </p>
             </li>
             <li class="item2">
                 <p class="p_text">
                     <img class="sm_icon" src="../images/map/AerialvideoView_gy.png" />
-                    <span class="gy_cor">F2.8</span>
+                    <span class="gy_cor" id="fnumtude">F2.8</span>
                 </p>
             </li>
-            <li class="item2">
+            <li class="item2 item_qycard">
                 <p class="p_text mp_text" data-target="#CardModal" data-toggle="modal">
                     <img class="mp_icon" src="../images/map/AerialvideoView_mp.png" />
                     <span class="mp_cor">企业名片</span>
@@ -80,6 +80,7 @@
                 </p>
             </li>
         </ul>
+        <i class="close_btn"><img src="../images/map/AerialvideoView_close.png" /></i>
     </div>
     
     <!--(2)左侧播放列表-->
@@ -212,9 +213,6 @@
 </div>
 
 
-<p class="mengb" style="display:none;"><!--灰色蒙版层--></p>
-<span id="map_loading" style="display:none-;"></span>
-
 <!--（0-1）企业名片模态框-->
 <div class="modal fade" id="CardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-dialog pano_dialog card_dialog">
@@ -280,7 +278,8 @@
 <script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
 <script type="text/javascript" src="../js/nicescroll/jquery.nicescroll.min.js"></script>
-<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
+<!--<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?sensor=false"></script>-->
+<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?v=3.23&amp;key=AIzaSyB2mG9FLX3dYDFycXGkmidn-OZU-FL1rLM&amp;sensor=false&amp;libraries=drawing"></script>
 <script type="text/javascript" src="../js/map/map_base_functions.js"></script>
 <script type="text/javascript" src="../js/map/map_controller.js"></script>
 	<!--[if lt IE 9]>
@@ -289,29 +288,6 @@
     <script src="../js/videojsPlug/video.js"></script>
 	<script src="../js/videojsPlug/videojs-contrib-hls.js"></script>
 	<script src="../js/videojsPlug/m3u8-parser.js"></script>
-	<script>
-		//videojs.options.flash.swf = "video-js.swf";
-
-		/*var player = videojs("example-video");
-		//player.hls("http://farmeasy.cn/video/1030/1509/playlist.m3u8");
-		player.play(); 
-		//var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls;
-
-		function pause(){
-			player.pause();
-		}
-
-		function play(){
-			player.play();
-		}
-
-		player.on('play', function(event) {
-			alert(1);
-		});
-		player.on('pause', function(event) {
-			alert(player.currentTime());
-		});*/
-	</script>
 <script type="text/javascript" src="../js/map/AerialvideoView.js"></script>
 
 </body>

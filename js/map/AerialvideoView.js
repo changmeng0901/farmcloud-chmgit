@@ -1,4 +1,5 @@
-xc_zoomSet = true;	
+xc_zoomSet = true;
+var zyghOnoff = true;	
 var map;
 var flightPath;
 var FirstMarker,
@@ -10,6 +11,7 @@ var FirstMarker,
 var iframeSearch = location.search.split("&");
 var getGroupId = iframeSearch[0].split("=")[1];
 var getTestUrl = iframeSearch[1].split("=")[1];
+var getEntId = iframeSearch[2].split("=")[1];
 var ParameterMethod,
 		pageUrl;
 		
@@ -31,7 +33,13 @@ var latPo;
 				arrLing = [],
 				arrAlt = [],
 				arrISO = [],
-				arrEV = [];
+				arrEV = [],
+				arrShutter = [],
+				arrFnum = [];
+
+var onoffBtn = true;
+
+
 //(8)地图航线
 ;(function ($) {
 	/**
@@ -81,11 +89,18 @@ var latPo;
 			 	success: function(response) {
 					
 					AerialVideoView.initializeGoogelMaps(response.groupstr.list,0);
-					loadZyMap(response.groupstr.list[0].base_id);
+					//zyghOnoff = true;
+					if( response.groupstr.assets_show == "1" ){
+						loadZyMap(response.groupstr.list[0].base_id);
+						zyghOnoff = false;
+					}else{
+
+						zyghOnoff = true;
+					}
 
 					var groupstr = response.groupstr;
 					var enterpriseInfoData = {
-						logo_img : groupstr.logo_img,
+						logo_img : groupstr.logo_img,  //企业logo
 						group_name : groupstr.group_name,
 					 	business_name: groupstr.business_name,
 					 	business_tel: groupstr.business_tel,
@@ -96,7 +111,11 @@ var latPo;
 						description : groupstr.list[0].description,
 						file_url : groupstr.list[0].file_url,
 						id :  groupstr.list[0].id,
-						base_id : groupstr.list[0].base_id
+						base_id : groupstr.list[0].base_id,
+						video_list_show : groupstr.video_list_show,  //左侧视频列表展开或收缩
+						business_card_show : groupstr.business_card_show,  //头部企业名片显示隐藏
+						track_show : groupstr.track_show,  //轨迹显示或隐藏
+						assets_show : groupstr.assets_show,  //资源规划
 					 };
 					 
 					 
@@ -146,6 +165,40 @@ var latPo;
 			}else{
 				$('.item_scence').hide();	
 			}
+			if( data.logo_img == "1" ){ 
+				//如果企业、logo为true就显示
+				$('#qy_logo_li').show();
+			}else{
+				$('#qy_logo_li').hide();
+			}
+			if( data.business_card_show == "1"  ){
+				//如果头部企业名片为true就显示
+				$('.item_qycard').show();
+			}else{
+				$('.item_qycard').hide();
+			}
+			if( data.track_show == "1"  ){
+				//如果轨迹为true就显示
+				$('.aerial_map').show();
+			}else{
+				$('.aerial_map').hide();
+			}
+			if( data.video_list_show == "1"  ){
+				//如果左侧列表为true就展开，否则收缩起来
+				zObj.pTimer = setTimeout(function(){
+					$(".aerial_playlist").stop().animate({
+						"left" : 0
+					},500)
+				},700);
+				onoffBtn = false;
+			}else{
+				zObj.pTimer = setTimeout(function(){
+					$(".aerial_playlist").stop().animate({
+						"left" : -210
+					},500)
+				},700);
+				onoffBtn = true;
+			}
 			
 			//头部计算
 			var oWindowW = $(window).width();
@@ -187,7 +240,14 @@ var latPo;
 						//console.log(response.trackstr)
 						AerialVideoView.initializeGoogelMaps(response.trackstr,0);
 
-						loadZyMap(response.trackstr[0].base_id);
+						if( zyghOnoff == false ){
+							loadZyMap(response.trackstr[0].base_id);
+							zyghOnoff = true;
+						}else{
+
+							zyghOnoff = false;
+						}
+						
 						if( that.attr("data-description")!= ''){
 							$('.item_scence').show();	
 							$('#scene_description').html(that.attr("data-description"));
@@ -324,6 +384,8 @@ var latPo;
 					var tempAlt = list[item].BAROMETER;
 					var tempISO = list[item].ISO.split(":")[1];
 					var tempEV = list[item].EV.split(":")[1];
+					var tempShutter = list[item].Shutter.split(":")[1];
+					var tempFnum = list[item].Fnum.split(":")[1];
 					tempAlt = tempAlt.split(":");  
 					tempAlt = tempAlt[1]
 					
@@ -336,6 +398,8 @@ var latPo;
 					arrAlt.push( tempAlt );//海拔
 					arrISO.push( tempISO );//ISO
 					arrEV.push( tempEV );//EV
+					arrShutter.push( tempShutter );//Shutter快门
+					arrFnum.push( tempFnum );//Fnum
 				}
 			}
 
@@ -346,6 +410,8 @@ var latPo;
 			AltPlanSite = arrAlt;
 			ISOPlanSite = arrISO;
 			EVPlanSite = arrEV;
+			ShutterPlanSite = arrShutter;
+			FnumPlanSite = arrFnum;
 
 			var myLatLng = flightPlanSite[0];
 			var myOptions = {
@@ -456,8 +522,10 @@ var latPo;
 								$("#longitude").html( LatPlanSite[index_] );
 								$("#latitude").html( LingPlanSite[index_] );
 								$('#altitude').html( AltPlanSite[index_]+'米' );
-								$("#isoitude").html( ISOPlanSite[index_] );
-								$("#evitude").html( EVPlanSite[index_] );
+								$("#isotude").html( ISOPlanSite[index_] );
+								$("#evtude").html( EVPlanSite[index_] );
+								$("#shuttertude").html( ShutterPlanSite[index_] );
+								$("#Fnumtude").html( FnumPlanSite[index_] );
 								index_++;
 							}else{
 								clearInterval( playTimer );
@@ -509,8 +577,10 @@ var latPo;
 								$("#longitude").html( LatPlanSite[index_] );
 								$("#latitude").html( LingPlanSite[index_] );
 								$('#altitude').html( AltPlanSite[index_]+'米' );
-								$("#isoitude").html( ISOPlanSite[index_] );
-								$("#evitude").html( EVPlanSite[index_] );
+								$("#isotude").html( ISOPlanSite[index_] );
+								$("#evtude").html( EVPlanSite[index_] );
+								$("#shuttertude").html( ShutterPlanSite[index_] );
+								$("#fnumtude").html( FnumPlanSite[index_] );
 								index_++;
 							}else{
 								clearInterval( playTimer );
@@ -537,12 +607,12 @@ var latPo;
 			})	
 		},
 		playlistAnimate: function () {
-				var onoffBtn = true;
-				zObj.pTimer = setTimeout(function(){
-					$(".aerial_playlist").stop().animate({
-						"left" : -210
-					},500)
-				},700);
+				//var onoffBtn = true;
+				// zObj.pTimer = setTimeout(function(){
+				// 	$(".aerial_playlist").stop().animate({
+				// 		"left" : -210
+				// 	},500)
+				// },700);
 				$("#BarOnoff").click(function(){
 					clearTimeout( zObj.pTimer );
 					if( onoffBtn ){

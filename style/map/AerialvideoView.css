@@ -22,21 +22,26 @@ body{
 	z-index:1000-;
 	position:relative;
 	padding-left:68px;
+	padding-right:56px;
 	width:100%;
 	height:46px;
 	background:url(../../images/commons/opacity_b50.png)-;
 	background:#3c3f44;
 	}
 .video_header_wap .close_btn{
-	float:right;
+	position:absolute;
+	right:0;
+	top:0;
 	width:16px;
 	height:16px;
-	margin:15px 20px;
+	padding:15px 20px;
+	box-sizing:content-box;
 	cursor:pointer;
 	}
 .video_header_wap .close_btn img{
 	width:100%;
 	height:100%;
+	vertical-align:top;
 	}
 .video_header_list .item1,
 .video_header_list .item2{
@@ -44,6 +49,7 @@ body{
 	height:46px;
 	line-height:46px;
 	border-right:1px solid #292828;
+	box-sizing:border-box;
 	text-align:center;
 	}
 .video_header_list .item1{
@@ -1001,9 +1007,15 @@ body.modal-open{
 	}
 	
 		
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1280px) {
 .video_header_wap{
 	padding-left:41px;
+	padding-right:42px;
+	}
+.video_header_wap .close_btn{
+	width:12px;
+	height:12px;
+	padding:19px 15px;
 	}
 .video_header_list .qy_logo{
 	width:96px;
