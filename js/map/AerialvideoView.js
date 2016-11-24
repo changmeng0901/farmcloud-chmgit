@@ -102,6 +102,15 @@ var XmlData,
 	ColorWhitevar ,
 	ColorValue;
 
+// 判断发送弹幕的长度
+function KeyupCheck(obj){
+	var value = $(obj).val();
+	var length = value.length;
+	//假设长度限制为50
+	if(length>50){
+		alert('超过50个')
+	}
+}
 //(8)地图航线
 ;(function ($) {
 	if(operTypeUrl=="2"){
