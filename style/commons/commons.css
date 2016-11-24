@@ -228,3 +228,5 @@ display: inline-block;	height: 14px;	line-height: 14px;	margin-top: 1px; vertica
 .tip-warning-nodata .ico{ display: block; margin-bottom: 20px; text-align: center;}
 .tip-warning-nodata em{ display: block; font-size: 16px; font-style: normal; font-weight: normal; text-align: center;}
 .tip-warning-nodata p{ line-height:26px; margin-top:15px; font-size:14px; text-align:center; color: #5c5c5c;}
+/* tooltip插件--去除top样式,即头部样式和插件样式冲突 */
+.tooltip.top{ width:auto; min-width:100px; max-width:500px; height:inherit; background-image:none;}

@@ -10,6 +10,12 @@ em{
 	}
 
 /* 种子投入品信息页样式 */
+.lt_c_ul li a img{
+	width:12px;
+	height:12px;
+	margin-top:14px;
+	vertical-align:top;
+	}
 .edit_title_wap{ 
 	width:96%;
 	margin:0 auto;
