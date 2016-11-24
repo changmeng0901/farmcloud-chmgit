@@ -165,6 +165,14 @@ var onoffBtn = true;
 			$('#qycard_weibo').html( data.business_weibo );
 			$('#qycard_addr').html( data.business_address );
 			$('#qycard_intro').html( data.business_card_introduce );
+
+			if( $('#longitude').html() == '' ){ $('#longitude').html('--') }
+			if( $('#latitude').html() == '' ){ $('#latitude').html('--') }
+			if( $('#altitude').html() == '' ){ $('#altitude').html('--') }
+			if( $('#isotude').html() == '' ){ $('#isotude').html('--') }
+			if( $('#shuttertude').html() == '' ){ $('#shuttertude').html('--') }
+			if( $('#evtude').html() == '' ){ $('#evtude').html('--') }
+			if( $('#fnumtude').html() == '' ){ $('#fnumtude').html('--') }
 			
 			if( data.description != ''){
 				$('#scene_description').append(data.description);
@@ -194,15 +202,21 @@ var onoffBtn = true;
 				zObj.pTimer = setTimeout(function(){
 					$(".aerial_playlist").stop().animate({
 						"left" : 0
-					},500)
+					},500);
 				},700);
+				$('.aerial_map').stop().animate({
+						"left" : 240
+					},500);
 				onoffBtn = false;
 			}else{
 				zObj.pTimer = setTimeout(function(){
 					$(".aerial_playlist").stop().animate({
 						"left" : -210
-					},500)
+					},500);
 				},700);
+				$('.aerial_map').stop().animate({
+						"left" : 20
+					},500);
 				onoffBtn = true;
 			}
 			
@@ -309,7 +323,12 @@ var onoffBtn = true;
 			$(".smallbtn_map").click(function(){
 				$(".aerial_map").hide();
 				$(".smallbtn_map").hide();	
-				$(".bigbtn_map").show();	
+				$(".bigbtn_map").show();
+				if($(".aerial_map").css('left')=='20px'){
+					$(".bigbtn_map").css('left','20px');
+				}else{
+					$(".bigbtn_map").css('left','240px');
+				}	
 			});
 			$(".bigbtn_map").click(function(){
 				$(".aerial_map").show();
@@ -369,6 +388,8 @@ var onoffBtn = true;
 				return;
 			}else
 				$(".aerial_map").show();
+				$(".smallbtn_map").show();
+				$(".bigbtn_map").hide();
 				
 				
 			var bounds = new google.maps.LatLngBounds();
@@ -522,8 +543,8 @@ var onoffBtn = true;
 								latPo = po.fromContainerPixelToLatLng(point)
 								AnimateMarker.setPosition( latPo );
 								map.setCenter(latPo);
-								$("#longitude").html( LatPlanSite[index_] );
-								$("#latitude").html( LingPlanSite[index_] );
+								$("#longitude").html( LingPlanSite[index_] );
+								$("#latitude").html( LatPlanSite[index_] );
 								$('#altitude').html( AltPlanSite[index_]+'米' );
 								$("#isotude").html( ISOPlanSite[index_] );
 								$("#evtude").html( EVPlanSite[index_] );
@@ -624,6 +645,12 @@ var onoffBtn = true;
 								left: 0
 							}, 300)
 						}, 300);
+						$('.aerial_map').stop().animate({
+							"left" : 240
+						},500);
+						$(".bigbtn_map").stop().animate({
+							"left" : 240
+						},500);
 						onoffBtn = false;
 					}else{
 						zObj.pTimer = setTimeout(function() {
@@ -631,6 +658,12 @@ var onoffBtn = true;
 								left: -210
 							}, 300)
 						}, 300);	
+						$('.aerial_map').stop().animate({
+							"left" : 20
+						},500);
+						$(".bigbtn_map").stop().animate({
+							"left" : 20
+						},500);
 						onoffBtn = true;
 					}
 				});
@@ -641,6 +674,12 @@ var onoffBtn = true;
 								left: -210
 							}, 300)
 						}, 1000);
+					$('.aerial_map').stop().animate({
+						"left" : 20
+					},500);
+					$(".bigbtn_map").stop().animate({
+						"left" : 20
+					},500);
 					onoffBtn = true;
 				});
 				$(".aerial_playlist").mousemove(function(){
@@ -650,6 +689,12 @@ var onoffBtn = true;
 								left: 0
 							}, 300)
 						}, 300);
+					$('.aerial_map').stop().animate({
+						"left" : 240
+					},500);
+					$(".bigbtn_map").stop().animate({
+						"left" : 240
+					},500);
 					onoffBtn = false;
 				});
 				$(".aerial_playlist").mouseleave(function(){
@@ -659,6 +704,12 @@ var onoffBtn = true;
 								left: -210
 							}, 300)
 						}, 300);
+					$('.aerial_map').stop().animate({
+						"left" : 20
+					},500);
+					$(".bigbtn_map").stop().animate({
+						"left" : 20
+					},500);
 					onoffBtn = true;
 				});
 		}
