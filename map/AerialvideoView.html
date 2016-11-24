@@ -22,6 +22,8 @@
             <li class="item1">
                 <img class="qy_logo" id="qy_logo" src="../images/map/AerialvideoView_logo.png" />
             </li>
+        </ul>
+        <ul class="video_header_list" style="float:right;">
             <li class="item2">
                 <p class="p_text" title="经度">
                     <img class="sm_icon" src="../images/map/AerialvideoView_E.png" />
@@ -31,13 +33,13 @@
             <li class="item2">
                 <p class="p_text" title="纬度">
                     <img class="sm_icon" src="../images/map/AerialvideoView_N.png" />
-                    <span class="wd_cor" id="latitude ">40.4100,18</span>
+                    <span class="wd_cor" id="latitude">500.0520</span>
                 </p>
             </li>
             <li class="item2">
                 <p class="p_text" title="高度">
                     <img class="sm_icon" src="../images/map/AerialvideoView_G.png" />
-                    <span class="gd_cor">47.9米</span>
+                    <span class="gd_cor" id="altitude">47.9米</span>
                 </p>
             </li>
             <li class="item2">
@@ -58,16 +60,13 @@
                     <span class="mp_cor">企业名片</span>
                 </p>
             </li>
-            <li class="item2">
+            <li class="item2 item_scence">
                 <p class="p_text cj_text" data-target="#SceneModal" data-toggle="modal">
                     <img class="cj_icon" src="../images/map/AerialvideoView_cj.png" />
                     <span class="cj_cor">场景介绍</span>
                 </p>
             </li>
         </ul>
-        <i class="close_btn">
-            <img src="../images/map/AerialvideoView_close.png" />
-        </i>
     </div>
     
     <!--(2)左侧播放列表-->
@@ -85,8 +84,10 @@
         </div>
         <!--航拍地图-->
         <div class="aerial_map">
+        	<i class="smallbtn_map"><img src="../images/map/smallbtn_map.png" /></i>
         	<div id="map_canvas" style="width:100%;height:100%"></div>
         </div>
+        <i class="bigbtn_map"><img src="../images/map/bigbtn_map.png" /></i>
         <!-- 弹幕 -->
     	<div id="danmuarea" style="display:none;">
             <div id="danmu"></div>
@@ -218,9 +219,7 @@
             </dd>
         </dl>
         <strong class="title_intro">企业介绍</strong>
-        <p class="text_intro" id="qycard_intro">北菜园有机蔬菜基地位于北京的上风上水之地延庆，拥有有机认证基地470亩，实行“六统一”原则进行管理，
-        即“统一种植规划、统一育苗、统一农资供应、统一病虫防疫、统一技术指导、统一品牌销售”，实现农超对接、农宅对接，将优质农产品提供给广大市民。
-        </p>
+        <p class="text_intro" id="qycard_intro">北菜园有机蔬菜基地位于北京的上风上水之地延庆，拥有有机认证基地470亩，实行“六统一”原则进行管</p>
         
     </div>
 </div>
@@ -232,10 +231,8 @@
 <div class="modal-content">
 	<i class="i_close" data-dismiss="modal"></i>
     <div class="modal-body modal_body">
-    
-       <strong class="title_company">北京北菜园农业科技发展有限公司</strong>
-       <img class="pic_company" src="../images/map/test_pic2.jpg" />
-       <p class="text_company" id="scene_description"><!--公司成立以来一直秉着：诚信、创新、责任、专业的服务理念，为北京市民提供安全放心的有机农产品，其中“宅配服务”更是获得业内外一致认可。--></p>
+
+       <p class="text_company" id="scene_description"></p>
        
     </div>
 </div>
