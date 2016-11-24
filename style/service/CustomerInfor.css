@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 客户信息表格 */
+.customer-table{ border:1px solid #e2e2e2; font-size:12px;}
+.customer-table td{ border-bottom:1px solid #e2e2e2; vertical-align:top;}
+.customer-table .td-txt1{ line-height:22px; padding:9px 10px; box-sizing:border-box; background:#f0f5fb; font-weight:bold; text-align:right; color:#323232;}
+.customer-table .td-txt2{ line-height:22px; padding:9px 10px; box-sizing:border-box; text-align:left; color:#646464;}
+.customer-table .bor-rt{ border-right:1px solid #e2e2e2;}
+.customer-pic img{ float:right; width:210px; height:210px; margin:20px;}
+.mes_mailBtn{ text-align:center;}
+.nav-tabs > li > a{ color:#525252;}
+
+/* 添加红包样式 */
+.messageTable{ margin-top:24px;}
+.messageTable td{ padding-bottom:20px;}
+.modalTable_minni td{ padding-bottom:20px;}
+.messageTable .p_txt1{ float:left; line-height:34px; color:#777;}
+.bootList220 .bootLi{ float:left; padding-bottom:20px;}
+.bootTxt220{ float:left; width:220px;}
+.bootTxt220 input{ width:100%; font-size:12px;}
+.bootTextarea .area_textarea{ width:300px; height:82px; resize:none;}
+.bootData220{ float:left; width:220px;}
+.bootData220 .form_datetime{ width:100%;}
+.bootSelt220{ float:left; display:inline-block;}
+.bootSelt220 .bootstrap-select{  width:220px;}
+.bootSelt220 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:220px;}
+.bootSelt220 .bootstrap-select span{ font-size:12px; font-family:'微软雅黑';}
+.bootSelt220 .bootstrap-select > .btn{ height:34px;}
+.bootstrap-select.btn-group .dropdown-menu{ max-width:220px;}/* 下拉框最大宽度控制 */
+.datetimepicker{ margin-left:8px;}
+
+/* 领取记录样式 */
+.claim_total .c_items{ float:left; height:20px; line-height:20px; padding-right:30px; font-size:14px; color:#323232;}
+.claim_total .c_items .c_icon{ display:inline-block; width:20px; height:20px; margin-right:5px; background-image:url(../../images/service/ClaimRecord_icon1.png); background-repeat:no-repeat; vertical-align:top;}
+.claim_total .c_items .iconc1{ background-position:0 0;}
+.claim_total .c_items .iconc2{ background-position:0 -39px;}
+.claim_total .c_items .iconc3{ background-position:0 -79px;}
+

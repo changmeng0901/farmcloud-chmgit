@@ -1,0 +1,757 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+	<title>订单修改</title>
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-select.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-datetimepicker.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/skinBlue.css" />
+    <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/service/singleManage.css" />
+
+</head>
+
+<body>
+<div class="top">
+	<div class="logo"><img src="../images/commons/logo_01.jpg" width="200" height="60" /></div>
+</div>
+
+<div class="content">
+    <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+    	<tr>
+        	<td class="left_c" valign="top" width="76">
+            <!--左边开始-->
+            <div class="left_c1">
+                <ul class="left_cul">
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_zy.png" width="77" height="69" /></a></li>
+                    <li class="left_culi on"><a href="#"><img src="../images/commons/left_jh.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_sc.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_xs.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_jiagong.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_lvli.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_fx.png" width="77" height="69" /></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!--左边结束-->
+            </td>           
+	
+            <td valign="top">
+            <div class="right_c" style="min-height:30px; padding-bottom:15px; padding-top:15px;">
+            	<!-- 面包屑导航 开始 -->
+                <div class="breadNav_wap clear">
+                    <div class="breadNav_lt"><a href="#">销售</a><span>&gt;</span><a href="#">订单管理</a><span>&gt;</span><strong>下单管理</strong></div>
+                    <div class="breadNav_rt" style="margin-bottom:-1px; margin-top:1px;">
+                        <ul class="resumeList clear">
+                            <li>
+                                <a href="#"><span>客户管理</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 面包屑导航 结束 -->
+                <!-- 下单管理内容 开始 -->
+                <div class="singleManage_con">
+                    <!-- 订单信息 开始 -->
+                    <div class="orderTrack_heade mb20">
+                        <p class="mr70">订单编号：<span class="number">DD2015061200037</span></p>
+                        <p class="mr70">订单状态：<span class="statues">订单未审核</span></p>
+                        <p class="payStatues2">未支付</p>
+                    </div>
+                    <div class="orderTrack_body">
+                        <table class="tableGz" width="100%" cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th colspan="3">订单跟踪</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th width="30%" height="50" align="left" style="padding-left:70px; font-weight:bold;">处理时间</th>
+                                    <th width="45%" align="left" style="font-weight:bold;">处理信息</th>
+                                    <th width="25%" align="left" style="font-weight:bold;">操作人</th>
+                                </tr>
+                                <tr>
+                                    <td class="dateTd bg" height="50"><i class="ico_bg"></i>2015-0710 15:36</td>
+                                    <td>订单生成成功</td>
+                                    <td>张三</td>
+                                </tr>
+                                <tr>
+                                    <td class="dateTd bg" height="50"><i class="ico_bg"></i>2015-0710 15:36</td>
+                                    <td>
+                                        <div style="overflow:hidden;">
+                                        <span style="float:left;">订单审核未通过</span>
+                                        <div class="InOrdePass_tip">
+                                            <p>订单审核未通过的原因，订单审核未通过的原因，订单审核未通过的原因，订单审核未通过的原因，订单审核未通过的原因。订单审核未通过的原因，订单审核未通过的原因。</p>
+                                        </div>
+                                        </div>
+                                    </td>
+                                    <td>张三</td>
+                                </tr>
+                                <tr>
+                                    <td class="dateTd" height="50"><i class="ico_bg"></i>2015-0710 15:36</td>
+                                    <td>订单已审核</td>
+                                    <td>张三</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 客户信息 开始 -->
+                    <h2 class="titleH2">客户信息</h2>
+                    <div class="mb20 mt20">
+                        <div class="customMess_wap" style="margin-left:40px;">
+                            <div class="items itemsCur" data-dismiss="modal" style="position:relative;cursor:default;height:auto; overflow:hidden;">
+                                <p class="name" style="width:33.3%">客户姓名：<span>张三</span></p>
+                                <p class="phone" style="width:33.3%">联系方式：<span>13356829702</span></p>
+                                <p class="come" style="width:33.3%">客户来源：<span>来源</span></p>
+                                <p class="type" style="width:33.3%">客户类型：<span>类型</span></p>
+                                <p class="addresses" style="width:66.6%">工作地址：<span>北京市朝阳区万达广场6号楼3003室</span></p>
+                                <p class="name" style="width:99%">备注：<span>123</span></p>
+                                <em class="defaultIco"></em>
+                                <a href="javascript:;" data-toggle="modal" data-target="#reciseCustomModal" style="position:absolute; right:34px; bottom:4px; z-index:1; color:#fe4885;">修改</a>
+                            </div>
+                        </div> 
+                    </div>
+                    <!-- 收货人信息 开始 -->
+                    <h2 class="titleH2">收货人信息 </h2>
+                    <table class="W_addresses mb20" cellpadding="0" cellspacing="0" style="margin-left:40px;">
+                    <tr>
+                        <td>
+                            <div class="W_addresses_list">
+                                <div class="addrItems">
+                                    <div class="inner addrCur">
+                                        <div class="addr_hd">
+                                            <span class="prov">广东</span><span class="city">广州</span><span>（</span><span class="name">王小明</span><span> 收）</span>
+                                        </div>
+                                        <div class="addr_bd">
+                                            <span class="dist">天河</span><span class="street">华夏路30号富力盈通大厦1707室</span><span class="phone">13568975687</span>
+                                        </div>
+                                        <i class="curmarker"></i>
+                                    </div>
+                                    <div class="addr_toolbar">
+                                        <a class="revise" href="#">修改</a><a class="delete" href="#">删除</a><a class="setDelete" href="javascript:;">设为默认</a>
+                                    </div>
+                                </div>
+                                <div class="addrItems">
+                                    <div class="inner">
+                                        <div class="addr_hd">
+                                            <span class="prov">广东</span><span class="city">广州</span><span>（</span><span class="name">王小明</span><span> 收）</span>
+                                        </div>
+                                        <div class="addr_bd">
+                                            <span class="dist">天河</span><span class="street">华夏路30号富力盈通大厦1707室</span><span class="phone">13568975687</span>
+                                        </div>
+                                        <i class="curmarker"></i>
+                                    </div>
+                                    <div class="addr_toolbar">
+                                        <a class="revise" href="#">修改</a><a class="delete" href="#">删除</a><a class="setDelete" href="javascript:;">设为默认</a>
+                                    </div>
+                                </div>
+                                <div class="addrItems">
+                                    <div class="inner">
+                                        <div class="addr_hd">
+                                            <span class="prov">广东</span><span class="city">广州</span><span>（</span><span class="name">王小明</span><span> 收）</span>
+            
+                                        </div>
+                                        <div class="addr_bd">
+                                            <span class="dist">天河</span><span class="street">华夏路30号富力盈通大厦1707室</span><span class="phone">13568975687</span>
+                                        </div>
+                                        <i class="curmarker"></i>
+                                    </div>
+                                    <div class="addr_toolbar">
+                                        <a class="revise" href="#">修改</a><a class="delete" href="#">删除</a><a class="setDelete" href="javascript:;">设为默认</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="add_newAddresses" data-toggle="modal" data-target="#addNewAddrModal" href="javascript:;"><span></span></a>
+                        </td>
+                    </tr>
+                    </table>
+                    <!-- 配送时间 开始 -->
+                    <h2 class="titleH2">配送时间</h2>
+                    <div class="delivery_time mb20">
+                        <span class="text">配送时间：</span>
+                        <span class="search-datetime">
+                            <div class="input-append date form_datetime" >
+                            <input size="26" type="text" value="" readonly style="color:#aaa;" />
+                            <span class="add-on"><i class="icon-th"></i></span>
+                            </div>
+                        </span>
+                        <ul class="timeRadio_list">
+                            <li class="fl">
+                                <input type="radio" class="iRadio" name="testRadio" checked /><label class="iRadioLable" style="width:auto; max-width:auto;">全天</label>
+                            </li>
+                            <li class="fl">
+                                <input type="radio" class="iRadio" name="testRadio" /><label class="iRadioLable" style="width:auto; max-width:auto;">上午</label>
+                            </li>
+                            <li class="fl">
+                                <input type="radio" class="iRadio" name="testRadio" /><label class="iRadioLable" style="width:auto; max-width:auto;">下午</label>
+                            </li>
+                            <li class="fl">
+                                <input type="radio" class="iRadio" name="testRadio" /><label class="iRadioLable" style="width:auto; max-width:auto;">晚上</label>
+                            </li>
+                        </ul>  
+                    </div>
+                    <!-- 使用红包 开始 -->
+                    <h2 class="titleH2">使用红包</h2>
+                    <div class="mb20">
+                        <div class="a_voucher">
+                        	<span class="v_bg"></span>
+                            <span class="v_hook"></span>
+                            <div class="a_voucher_lt">
+                            	<p class="p_txt1">消费满100元可以使用！</p>
+                                <p class="p_txt2">有效期：2016年5月3日</p>
+                            </div>
+                            <div class="a_voucher_rt">
+                            	<span class="v_line"></span>
+                                <p class="p_txt3">5<span>元</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 付款方式 开始 -->
+                    <h2 class="titleH2">付款方式</h2>
+                    <div class="payMethod">
+                        <p class="timeRadio_list">
+                            <span class="items">
+                                <input type="radio" class="iRadio" name="testRadio2" checked /><label class="iRadioLable" style="width:auto; max-width:auto;">货到付款</label><i style="float:left; width:90px;"></i>
+                            </span>
+                            <span class="items">
+                                <input type="radio" class="iRadio" name="testRadio2" /><label class="iRadioLable" style="width:auto; max-width:auto;">现金支付</label>
+                            </span>
+                            <span class="items">
+                                <input type="radio" class="iRadio" name="testRadio2" /><label class="iRadioLable" style="width:auto; max-width:auto;">POS支付</label>
+                            </span>
+                            <span class="items">
+                                <input type="radio" class="iRadio" name="testRadio2" /><label class="iRadioLable" style="width:auto; max-width:auto;">支票支付</label>
+                            </span>
+                            <br />
+                            <span class="items">
+                                <input type="radio" class="iRadio" name="testRadio2" /><label class="iRadioLable" style="width:auto; max-width:auto;">转账</label>
+                            </span>
+                            <br />
+                            <span class="items">
+                                <input type="radio" class="iRadio" name="testRadio2" /><label class="iRadioLable" style="width:auto; max-width:auto;">礼品支付</label>
+                            </span>
+                            <br />
+                            <span class="items">
+                                <input type="radio" class="iRadio" name="testRadio2" /><label class="iRadioLable" style="width:auto; max-width:auto;">预付款</label>
+                            </span>
+                            <br />
+                            <span class="items">
+                                <input type="radio" class="iRadio" name="testRadio2" /><label class="iRadioLable" style="width:auto; max-width:auto;">周期付款</label>
+                            </span>
+                        </ul>   
+                    </div>
+                    <!-- 填写备注 开始 -->
+                    <h2 class="titleH2">填写备注</h2>
+                    <div class="fillIn_notes">
+                         <textarea class="form-control"></textarea>
+                         <p class="tip">提示客户：我们会努力按照您指示的时间配送，但因天气、交通等各类因素影响，您的订单有可能会有延误的现象！</p>
+                    </div>
+                    <!-- 商品清单 开始 -->
+                    <div class="clear">
+                        <h2 class="titleH2 fl">商品清单</h2>
+                        <div class="bootSelt220 mr5 ml15 fl">
+                        	<select class="selectpicker" multiple="multiple">
+                                <option selected="selected">娃娃菜</option>
+                                <option>圣女果</option>
+                                <option>水果玉米</option>
+                            </select>
+                        </div>
+                        <a class="btn btn-success fl ml15 mr5" data-toggle="modal" data-target="#addGoodModal" href="javascript:;">添加商品</a>
+                        <a class="btn btn-primary sortBtn" href="#"><img src="../images/commons/singleManage_ico2.jpg" /> 排序</a>
+                    </div>
+                    <div class="listGoods_con">
+                        <table class="tableModel thead" width="100%" cellpadding="0" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th width="6%"><span style="display:inline-block; line-height:40px;">序号</span></th>
+                                <th width="12%">商品</th>
+                                <th width="8%">规格</th>
+                                <th width="10%">原价</th>
+                                <th width="12%">单价</th>
+                                <th width="12%">数量</th>
+                                <th width="12%">小计</th>
+                                <th width="14%">备注</th>
+                                <th width="14%">操作</th>
+                            </tr>
+                            </thead>
+                        </table>
+                        <div class="tableFixed_scroll">
+                        <table class="tableModel tbody" width="100%" cellpadding="0" cellspacing="0">
+                            <tbody>
+                            <tr class="odd">
+                                <td width="6%">1</td>
+                                <td width="12%">平菇</td>
+                                <td width="8%">kg</td>
+                                <td width="10%">¥<span class="num_spyj">20</span></td>
+                                <td width="12%"><span class="num_spdj">¥<input type="text" class="form-control" /></span></td>
+                                <td width="12%">
+                                    <div class="numCount_block">
+                                        <span class="minusOne"></span>
+                                        <span class="inputText"><input type="text" class="form-control" /></span>
+                                        <span class="addOne"></span>
+                                    </div>
+                                </td>
+                                <td width="12%">¥<span class="num_dpzj">10.00</span></td>
+                                <td width="14%"><span class="num_spdj"><input type="text" class="form-control" style="width:120px;" /></span></td>
+                                <td width="14%">
+                                	<span class="delete">删除</span>
+                                    <span class="set_zp ml5">设为赠品</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>平菇</td>
+                                <td>kg</td>
+                                <td>¥<span class="num_spyj">20</span></td>
+                                <td><span class="num_spdj">¥<input type="text" class="form-control" /></span></td>
+                                <td>
+                                    <div class="numCount_block">
+                                        <span class="minusOne"></span>
+                                        <span class="inputText"><input type="text" class="form-control" /></span>
+                                        <span class="addOne"></span>
+                                    </div>
+                                </td>
+                                <td>¥<span class="num_dpzj">10.00</span></td>
+                                <td><span class="num_spdj"><input type="text" class="form-control" style="width:120px;" /></span></td>
+                                <td>
+                                	<span class="delete">删除</span>
+                                    <span class="set_zp ml5">设为赠品</span>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td>1</td>
+                                <td>平菇</td>
+                                <td>kg</td>
+                                <td>¥<span class="num_spyj">20</span></td>
+                                <td><span class="num_spdj">¥<input type="text" class="form-control" /></span></td>
+                                <td>
+                                    <div class="numCount_block">
+                                        <span class="minusOne"></span>
+                                        <span class="inputText"><input type="text" class="form-control" /></span>
+                                        <span class="addOne"></span>
+                                    </div>
+                                </td>
+                                <td>¥<span class="num_dpzj">10.00</span></td>
+                                <td><span class="num_spdj"><input type="text" class="form-control" style="width:120px;" /></span></td>
+                                <td>
+                                	<span class="delete">删除</span>
+                                    <span class="set_zp ml5">设为赠品</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>平菇</td>
+                                <td>kg</td>
+                                <td>¥<span class="num_spyj">20</span></td>
+                                <td><span class="num_spdj">¥<input type="text" class="form-control" /></span></td>
+                                <td>
+                                    <div class="numCount_block">
+                                        <span class="minusOne"></span>
+                                        <span class="inputText"><input type="text" class="form-control" /></span>
+                                        <span class="addOne"></span>
+                                    </div>
+                                </td>
+                                <td>¥<span class="num_dpzj">10.00</span></td>
+                                <td><span class="num_spdj"><input type="text" class="form-control" style="width:120px;" /></span></td>
+                                <td>
+                                	<span class="delete">删除</span>
+                                    <span class="set_zp ml5">设为赠品</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <div class="tfoot mb20">
+                            <div class="listGoods_total">
+                                <ul>
+                                    <li class="listGoods_li1">共<span class="num">1</span>件商品</li>
+                                    <li class="listGoods_li2">商品总额：<p style="display:inline-block; width:83px; text-align:right;"><span class="codeEle">¥</span><span class="num">10</span></p></li>
+                                    <li class="listGoods_li2">礼品卡金额：<p style="display:inline-block; width:83px; text-align:right;"><span class="codeEle">¥</span><span class="num">10</span></p></li>
+                                    <li class="listGoods_li4">
+                                        <div class="fr">
+                                            <span class="fl">运费：</span>
+                                            <span class="codeEle fl">+¥</span>
+                                            <span class="ml5 fr"><input type="text" class="form-control" /></span>
+                                        </div>
+                                    </li>
+                                    <li class="listGoods_li3">
+                                        <div class="fr">
+                                            <span class="fl">当前余额为：</span>
+                                            <span class="fl codeEle" style="line-height:36px;">¥</span>
+                                            <span class="fl num" style="line-height:36px;">10</span>
+                                            <span class="itemsCheckbox">
+                                                <input type="checkbox" class="iCheckbox" name="testCheckbox4" />
+                                            </span>
+                                            <span class="fl">使用余额：</span>
+                                            <span class="fl" style="width:83px;"><span class="codeEle">-&nbsp;¥</span><input type="text" class="form-control fr ml5" /></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="listGoods_li5 clear">
+                                <div class="fr">
+                                <span class="fl">应付总额：</span>
+                                <span class="codeEle fl">¥</span>
+                                <span class="num fl">1000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear">
+                            <a class="btn btn-primary fr ml5" href="#">保存</a>
+                            <a class="btn btn-default fr" href="#">返回</a>
+                        </div>
+                    </div>
+                    <!-- 商品清单 结束 -->
+                </div>
+                <!-- 下单管理内容 结束 -->
+            </div>
+            </td>    
+		</tr>  
+    
+   </table> 
+</div>
+
+
+<!-- 修改客户信息模态框 开始 -->
+<div class="modal fade" id="reciseCustomModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" style="width:670px; position:absolute; left:50%; margin-left:-335px; top:50%; margin-top:-230px; margin-bottom:0;">
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"></button>
+        <h4 class="modal-title revisionGrxx" id="myModalLabel">修改客户信息</h4>
+    </div>
+    <div class="modal-body" style="padding:30px 20px;">
+        <table class="modelTable" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="pr10" width="100" align="right"><i class="starColor">*</i>客户类型</td>
+                <td width="190">
+                    <span class="bootSelt190">
+                    <select class="selectpicker">
+
+                    <option>电商</option>
+                    <option>电商</option>
+                    <option>电商</option>
+                    </select>
+                    </span>
+                </td>
+                <td class="pr10" width="100" align="right"><i class="starColor">*</i>客户来源</td>
+                <td>
+                    <span class="bootSelt190">
+                    <select class="selectpicker">
+                    <option>来源</option>
+                    <option>来源</option>
+                    <option>来源</option>
+                    </select>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="pr10" width="100" align="right"><i class="starColor">*</i>客户姓名</td>
+                <td width="190">
+                    <span class="bootText190" >
+                    <input type="text" class="form-control" />
+                    </span> 
+                </td>
+                <td class="pr10" width="100" align="right"><i class="starColor">*</i>联系方式</td>
+                <td>
+                    <span class="bootText190" >
+                    <input type="text" class="form-control" />
+                    </span> 
+                </td>
+            </tr>
+            <tr>
+                <td class="pr10" width="100" align="right">工作地址</td>
+                <td colspan="3">
+                    <textarea class="form-control" style="width:482px; height:70px;"></textarea>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    <div class="modal-footer">
+        <a class="btn btn-success" data-dismiss="modal" href="#">提交</a>
+        <a class="btn btn-default" data-dismiss="modal" href="#">返回</a>
+    </div>
+</div>
+</div>
+</div>
+<!-- 修改客户信息模态框 结束 -->
+
+<!-- 添加商品模态框 开始 -->
+<div class="modal fade" id="addGoodModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" style="width:670px; position:absolute; left:50%; margin-left:-335px; top:50%; margin-top:-234px; margin-bottom:0;">
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"></button>
+        <h4 class="modal-title revisionGrxx" id="myModalLabel">添加商品</h4>
+    </div>
+    <div class="modal-body" style="position:relative; padding:20px; max-height:350px; overflow:auto;">
+    	<div class="mb20 clear">
+            <div class="input-group iptSeletAuto fl">
+                <select class="selectpicker">
+                <option>全部种类</option>
+                <option>种类1</option>
+                <option>种类2</option>
+                </select>
+                <div class="public-search" style="position:relative; margin-left:-1px;">
+                    <span class="octicon-search02"></span>
+                    <input type="text" class="form-control srarchfont" style="width:330px; padding-left:25px; border-radius:0 4px 4px 0;" value="请输入搜索条件" >
+                </div>
+            </div>
+            <button class="btn btn-primary fl ml5">搜索</button>
+        </div>
+        <div class="clear mb20">
+        	<a class="btn btn-primary" href="#">查看已勾选的商品</a>
+            <a class="btn btn-primary" href="#">已选择<span class="num">3</span>件商品</a>
+        </div>
+        <div class="seltShop_table" style="max-height:196px; overflow:auto;">
+        <table class="tableModel" width="100%" cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+            	<th width="8%"><input type="checkbox" class="iCheckbox" name="testCheckbox3" aa='uncheck' /></th>
+                <th width="20%">商品编号</th>
+                <th width="15%">商品名称</th>
+                <th width="12%">商品规格</th>
+                <th width="15%">商品库存</th> 
+                <th width="15%">商品原价</th> 
+                <th width="15%">商品单价</th>       
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            	<td><input type="checkbox" class="iCheckbox" name="testCheckbox" bb='uncheck' /></td>
+                <td>SP201422300033</td> 
+                <td>白芸豆</td>
+                <td>kg</td>
+                <td>123</td>
+                <td>¥<span class="num_spyj">10</span></td>
+                <td>¥<span class="num_spdj">10</span></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="iCheckbox" name="testCheckbox2" bb='uncheck' /></td>
+                <td>SP201422300033</td> 
+                <td>白芸豆</td>
+                <td>kg</td>
+                <td>123</td>
+                <td>¥<span class="num_spyj">10</span></td>
+                <td>¥<span class="num_spdj">10</span></td>           
+            </tr>
+            <tr class="odd">
+                <td><input type="checkbox" class="iCheckbox" name="testCheckbox2" bb='uncheck' /></td>
+                <td>SP201422300033</td> 
+                <td>白芸豆</td>
+                <td>kg</td>
+                <td>123</td>
+                <td>¥<span class="num_spyj">10</span></td>
+                <td>¥<span class="num_spdj">10</span></td>                  
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="iCheckbox" name="testCheckbox2" bb='uncheck' /></td>
+                <td>SP201422300033</td> 
+                <td>白芸豆</td>
+                <td>kg</td>
+                <td>123</td>
+                <td>¥<span class="num_spyj">10</span></td>
+                <td>¥<span class="num_spdj">10</span></td>         
+            </tr>
+            </tbody>
+        </table>  
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a class="btn btn-success" data-dismiss="modal" href="#">加入购物车</a>
+        <a class="btn btn-default" data-dismiss="modal" href="#">取消</a>
+    </div>
+</div>
+</div>
+</div>
+<!-- 添加商品模态框 结束 -->
+
+<!-- 添加新地址模态框 开始 -->
+<div class="modal fade" id="addNewAddrModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" style="width:560px; position:absolute; left:50%; margin-left:-280px; top:50%; margin-top:-197px; margin-bottom:0;">
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"></button>
+        <h4 class="modal-title revisionGrxx" id="myModalLabel">新增收货人信息</h4>
+    </div>
+    <div class="modal-body" style="padding:30px 0 20px;">
+        <table class="modelTable" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="pr10" width="110" align="right">收货人</td>
+                <td width="466">
+                    <span class="bootText220" >
+                    <input type="text" class="form-control" />
+                    </span> 
+                </td>
+            </tr>
+            <tr>
+                <td class="pr10" width="110" align="right">联系电话</td>
+                <td>
+                	<span class="bootText220" >
+                    <input type="text" class="form-control" />
+                    </span> 
+                </td>
+            </tr>
+            <tr>
+                <td class="pr10" align="right">工作地址</td>
+                <td>
+                    <span class="bootTextarea290" >
+                    <textarea class="form-control area_textarea"></textarea>
+                    </span> 
+                </td>
+            </tr>
+            <tr>
+                <td class="pr10" align="right">
+                </td>
+                <td>
+                	<ul class="timeRadio_list mt5">
+                        <li class="fl">
+                            <input type="checkbox" class="iCheckbox" name="testCheckbox3" /><label class="iRadioLable" style="width:auto; max-width:auto;">设置为默认</label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    <div class="modal-footer">
+        <a class="btn btn-success" data-dismiss="modal" href="#">保存并使用</a>
+        <a class="btn btn-default" data-dismiss="modal" href="#">取消</a>
+    </div>
+</div>
+</div>
+</div>
+<!-- 添加新地址模态框 结束 -->
+
+<script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
+<script type="text/javascript" src="../js/nicescroll/jquery.nicescroll.min.js"></script>
+
+<script type="text/javascript">
+jQuery = jQuery.noConflict();
+jQuery(function(){
+
+	//滚动条插件
+	jQuery(".tableFixed_scroll").niceScroll({
+		cursorcolor: "#52a9f3"
+	});
+
+	// 下拉框插件
+	jQuery('.selectpicker').selectpicker();  
+	
+	//时间插件
+	jQuery(".form_datetime").datetimepicker({
+		format: "yyyy mm dd",  
+		autoclose: true,
+		weekStart: 1,
+		language:  'zh-CN',
+		startView: 3,
+		minView: 2,
+		maxView: 2,		
+		pickerPosition: "bottom-left"
+	});
+	
+	//单选和复选插件
+	jQuery('input[class=iRadio]').iCheck({  
+		radioClass: 'iradio_minimal-blue',
+	 });
+	 jQuery('input[class=iCheckbox]').iCheck({ 
+		checkboxClass: 'icheckbox_minimal-blue',
+	 });
+	 //复选框全选和取消选择seepowerTable
+	jQuery('.seltShop_table th input[aa]').on('ifClicked', function(){
+		if (this.checked) {
+			jQuery(this).attr("aa","unchecked");
+			jQuery(this).parents('table').find('input[bb]').iCheck('uncheck');
+			jQuery(this).parents('table').find('input[bb]').attr("bb","unchecked");
+		} else {
+			jQuery(this).attr("aa","checked");
+			jQuery(this).parents('table').find('input[bb]').iCheck('check');
+			jQuery(this).parents('table').find('input[bb]').attr("bb","checked");
+		}
+	});
+	jQuery('.seltShop_table td input[bb]').on('ifClicked', function(){
+		if (this.checked) {
+			jQuery(this).attr("bb","unchecked");
+			jQuery(this).parents('table').find('input[aa]').iCheck('uncheck');
+			jQuery(this).parents('table').find('input[aa]').attr("aa","unchecked");
+		} else {
+			jQuery(this).attr("bb","checked");
+			var len = jQuery('.seltShop_table td').find('input[bb=checked]').length;
+			var num = jQuery('.seltShop_table tr').length;
+			if(len == num-1){
+				jQuery(this).parents('table').find('input[aa]').iCheck('check');
+				jQuery(this).parents('table').find('input[aa]').attr("aa","checked");		
+			}
+		}
+	});
+	
+	//文本域获取焦点失去焦点变化
+	jQuery('input[type=text]').focus(function(){  
+		var txt_value = jQuery(this).val();
+		if( txt_value == this.defaultValue ){
+			jQuery(this).val("");	
+		}	
+	});	
+	jQuery('input[type=text]').blur(function(){
+		var txt_value = jQuery(this).val();
+		if( txt_value == "" ){
+			jQuery(this).val(this.defaultValue);	
+		}	
+	});	
+	jQuery('textarea').focus(function(){  
+		var txt_value = jQuery(this).val();
+		if( txt_value == this.defaultValue ){
+			jQuery(this).val("");	
+		}	
+	});	
+	jQuery('textarea').blur(function(){
+		var txt_value = jQuery(this).val();
+		if( txt_value == "" ){
+			jQuery(this).val(this.defaultValue);	
+		}	
+	});	
+	
+	// 表格模板隔行换色
+	jQuery('.tableModel tbody tr').mouseover(function(){  
+		jQuery(this).addClass('hover');
+	});
+	jQuery('.tableModel tbody tr').mouseout(function(){
+		jQuery(this).removeClass('hover');
+	});	
+
+	//收货人地址点击和滑过的状态
+	jQuery('.W_addresses_list .inner').mouseover(function(){  
+		jQuery(this).addClass('addrHv').siblings().removeClass('addrHv');	
+	});	
+	jQuery('.W_addresses_list .inner').mouseout(function(){
+		jQuery(this).removeClass('addrHv');	
+	});	
+	//点击设为默认--设置为默认地址
+	jQuery('.W_addresses_list .addrItems .inner').click(function(){  
+		jQuery(this).parents('.addrItems').find('.inner').addClass('addrCur');
+		jQuery(this).parents('.addrItems').siblings().find('.inner').removeClass('addrCur');	
+	});	
+	//点击删除--删除点击的地址
+	jQuery('.W_addresses_list .addrItems .delete').click(function(){  
+		jQuery(this).parents('.addrItems').detach();	
+	});	
+	//红包券的点击效果
+	jQuery('.a_voucher').click(function(){
+		jQuery(this).hasClass('cur') ? jQuery(this).removeClass('cur') : jQuery(this).addClass('cur')
+			
+	});
+
+	
+});
+</script>
+</body>
+</html>
+

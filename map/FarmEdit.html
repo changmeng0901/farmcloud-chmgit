@@ -1,0 +1,479 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+    <title>农场信息编辑页</title>
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-datetimepicker.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/skinBlue.css" />
+    <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/map/FarmEdit.css" />
+
+</head>
+
+<body>
+<div class="top">
+	<div class="logo"><img src="../images/commons/logo_01.jpg" width="200" height="60" /></div>
+</div>
+
+<div class="content">
+    <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+    	<tr>
+        	<td class="left_c" valign="top" width="76">
+            <!--左边开始-->
+            <div class="left_c1">
+                <ul class="left_cul">
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_zy.png" width="77" height="69" /></a></li>
+                    <li class="left_culi on"><a href="#"><img src="../images/commons/left_jh.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_sc.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_xs.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_jiagong.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_lvli.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_fx.png" width="77" height="69" /></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!--左边结束-->
+            </td>
+            <td valign="top" width="210" style=" border-right:1px solid #e1e4eb;">
+                <div class="left_c2">
+                	<ul class="lt_c_ul" style=" min-height:200px; border-bottom:1px solid #e1e4eb;">
+                    	<li><a href="#"><img src="../images/commons/enterpriseInfoMation_03.png" width="10" height="10" />&nbsp;公司信息</a></li>
+                        <li>
+                        	<a class="fon_07" href="#"><strong><img src="../images/commons/jichu_03.png" width="12" height="12" />&nbsp;农场信息</strong></a>
+                        </li>
+                    	<li><a href="#"><img src="../images/commons/renyuan.png" width="10" height="10" />&nbsp;人员管理</a></li>
+                        <li><a href="#"><img src="../images/commons/jixie.png" width="10" height="10" />&nbsp;农机管理</a></li>
+                        <li><a href="#"><img src="../images/commons/dikuai.png" width="10" height="10" />&nbsp;地块信息</a></li>
+                    	
+                    </ul>
+                	<div class="clear"></div>
+                </div>
+            </td>
+            <td valign="top">
+            <div class="right_c clear" style="padding:20px 30px;">
+                <!-- 面包屑导航 开始 -->
+                <div class="r_title clear" style="margin-top:0;">
+                    <div class="r_t_l fl"><span>资源</span><em>&gt;</em><span>信息</span><em>&gt;</em><font size="3">农场信息</font></div>
+                </div>
+                <!-- 农场信息主体 开始 -->
+                <div class="edit-title-wap mt20 mb20">
+                	<h2 class="ttl-h2">基础信息<span>The Farm Information</span></h2>
+                </div>
+                <ul class="edit-table-wap clear">
+                	<li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">农场名称</td>
+                            <td class="td-rt"><input class="form-control fl" type="text" value="" /><span class="col-red">*</span></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">农场地址</td>
+                            <td class="td-rt"><input class="form-control fl" type="text" /><span class="col-red">*</span></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">联系人</td>
+                            <td class="td-rt"><input class="form-control fl" type="text" /><span class="col-red">*</span></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">联系电话</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">网址</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">邮箱</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">新浪微博账号</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">腾讯微博账号</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">新浪微博链接地址</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">腾讯微博链接地址</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">微信</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                </ul>
+                <div class="edit-table-wap clear">
+                	<table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt" valign="middle">农场地图</td>
+                            <td class="td-rt">
+                            	<ul class="iRadio-list">
+                                    <li class="iRadio-li" style="width:500px;">
+                                        <input type="checkbox" class="iChecked" name="testChecked" checked="checked" />
+                                        <label>显示</label>
+                                        <p class="fl col-red font12">(设置后在优品地图中可以查看地图模块中的内容)</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt" valign="middle">农场类型</td>
+                            <td class="td-rt">
+                            	<ul class="iRadio-list">
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>宅配农场<i class="tips_tooltip" data-toggle="tooltip" data-placement="top" title="每周固定像会员家中配送蔬菜的农场"></i></label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>F2C农场<i class="tips_tooltip" data-toggle="tooltip" data-placement="top" title="具备产地商品化能力，可以协助电商、微商代发快递的农场"></i></label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>订单农场<i class="tips_tooltip" data-toggle="tooltip" data-placement="top" title="能接受订单、按照订单约定生产、按约履行生产订单的农场"></i></label>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                        	<td class="td-lt" valign="top">服务</td>
+                            <td class="td-rt">
+                            	<ul class="iRadio-list">
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>旅游</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>采摘</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>食宿</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>农家院</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>wifi</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>会议室</label>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt" valign="top">热点</td>
+                            <td class="td-rt">
+                            	<ul class="iRadio-list">
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>有机农场</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>物联网农场</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>试点农场</label>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt" valign="top">配送能力</td>
+                            <td class="td-rt">
+                            	<ul class="iRadio-list">
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>预冷处理</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>分拣包装</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>冷库储存</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>冷链运输</label>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt" valign="top">物联网设备</td>
+                            <td class="td-rt">
+                            	<ul class="iRadio-list">
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>传感器</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>摄像头</label>
+                                    </li>
+                                    <li class="iRadio-li">
+                                        <input type="checkbox" class="iChecked" name="testChecked" />
+                                        <label>气象站</label>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt" valign="top">农场图片</td>
+                            <td class="td-rt">
+                                <div class="fileBtn" style="width:auto; height:auto;">
+                                	<img style="width:320px; height:145px; display:none;" src="../images/temp/FarmInfor_pic2.jpg" />
+                                    <img style="width:130px; height:130px;"src="../images/commons/fileImg_btn130.jpg" />
+                                    <input type="file" style="height:200px;" />
+                                </div>
+                                <p class="col-red font12 clear">图片标准 : 320X145 ( 像素 ) 支持格式：jpg,gif,png,jpeg,bmp,3gp</p>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt" valign="top">农场实景照片</td>
+                            <td class="td-rt">
+                            	<span class="fileImg">
+                                    <i class="file-btns"><img class="delet-btn" src="../images/commons/fileImg_delet5.jpg" /></i>
+                                    <img src="../images/temp/FarmInfor_pic2.jpg">
+                                </span>
+                                <div class="fileBtn">
+                                    <img src="../images/commons/fileImg_btn130.jpg">
+                                    <input type="file" />
+                                </div>
+                                <p class="col-red font12 clear">(支持格式: jpg,gif,png,jpeg,bmp,3gp)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt" valign="top">基地荣誉</td>
+                            <td class="td-rt">
+                            	<span class="fileImg">
+                                    <i class="file-btns"><img class="delet-btn" src="../images/commons/fileImg_delet5.jpg" /></i>
+                                    <img src="../images/temp/FarmInfor_pic2.jpg">
+                                </span>
+                                <div class="fileBtn">
+                                    <img src="../images/commons/fileImg_btn130.jpg">
+                                    <input type="file" />
+                                </div>
+                                <p class="col-red font12 clear">(支持格式: jpg,gif,png,jpeg,bmp,3gp)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt">常年供应</td>
+                            <td class="td-rt">
+                            	<textarea class="form-control"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt">简介</td>
+                            <td class="td-rt">
+                            	<textarea class="form-control"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt">农场介绍</td>
+                            <td class="td-rt">
+                            	<div class="excel-wap"><img src="../images/temp/text_img100.jpg" /></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 品控报告 -->
+                <div class="edit-title-wap mt20 mb20">
+                	<h2 class="ttl-h2">品控报告<span>The Quality Control Report</span></h2>
+                </div>
+                <div class="edit-table-wap clear">
+                	<table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                        	<td class="td-lt" valign="top">报告图片</td>
+                            <td class="td-rt">
+                            	<span class="fileImg">
+                                    <i class="file-btns"><img class="delet-btn" src="../images/commons/fileImg_delet5.jpg" /></i>
+                                    <img src="../images/temp/FarmInfor_pic2.jpg">
+                                </span>
+                                <div class="fileBtn">
+                                    <img src="../images/commons/fileImg_btn130.jpg">
+                                    <input type="file" />
+                                </div>
+                                <p class="col-red font12 clear">(支持格式: jpg,gif,png,jpeg,bmp,3gp)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt">其他说明</td>
+                            <td class="td-rt">
+                            	<textarea class="form-control"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 负责人信息 -->
+                <div class="edit-title-wap mt20 mb20">
+                	<h2 class="ttl-h2">负责人信息<span>Principal  Information</span></h2>
+                </div>
+                <ul class="edit-table-wap clear">
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">姓名</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">年龄</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">电话</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                    <li class="td-items td-items1">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                    	<tr>
+                        	<td class="td-lt">荣誉</td>
+                            <td class="td-rt"><input class="form-control" type="text" /></td>
+                        </tr>
+                    </table>
+                    </li>
+                </ul>
+                <div class="edit-table-wap clear">
+                	<table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                        	<td class="td-lt" valign="top">图片</td>
+                            <td class="td-rt">
+                            	<div class="fileBtn" style="width:auto; height:auto;">
+                                	<img style="width:158px; height:146px; display:none;" src="../images/commons/FarmInfor_pic2.jpg" />
+                                    <img style="width:130px; height:130px;"src="../images/commons/fileImg_btn130.jpg" />
+                                    <input type="file" style="height:200px;" />
+                                </div>
+                                <p class="col-red font12 clear">图片标准 : 158X146( 像素 ) 支持格式：jpg,gif,png,jpeg,bmp,3gp</p>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt" valign="top">农场主档案</td>
+                            <td class="td-rt">
+                            	<span class="fileImg">
+                                    <i class="file-btns"><img class="delet-btn" src="../images/commons/fileImg_delet5.jpg" /></i>
+                                    <img src="../images/temp/FarmInfor_pic2.jpg">
+                                </span>
+                                <div class="fileBtn">
+                                    <img src="../images/commons/fileImg_btn130.jpg">
+                                    <input type="file" />
+                                </div>
+                                <p class="col-red font12 clear">(支持格式: jpg,gif,png,jpeg,bmp,3gp)p)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt">农务感言</td>
+                            <td class="td-rt">
+                            	<textarea class="form-control"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td class="td-lt">个人信息</td>
+                            <td class="td-rt">
+                            	<textarea class="form-control"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="padding:50px 0;" class="mes_mailBtn">
+                	<a href="#" class="btn btn-primary">提交</a>
+                	<a href="#" class="btn btn-default">返回</a>
+                </div>
+                <!-- 农场信息主体 结束 -->
+            </div>
+            </td>    
+    	</tr>  
+   </table> 
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="../js/commons/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap-popver.js"></script>
+<script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
+
+<script type="text/javascript">
+jQuery = jQuery.noConflict();
+jQuery(function(){
+
+	jQuery('input[class=iChecked]').iCheck({  //单选按钮
+		checkboxClass: 'icheckbox_minimal'
+	});
+	
+	//tooltip提示插件
+	jQuery(".tips_tooltip").tooltip();
+	
+});
+
+</script>
