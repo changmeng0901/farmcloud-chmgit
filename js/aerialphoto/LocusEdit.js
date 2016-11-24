@@ -42,21 +42,24 @@ $(function(){
 	if( oWindowW < 1280 ){
 		$('.panorama_level').hide();
 		$('.panorama_content').addClass('hide_pano');
+		$('.panorama_content').outerWidth( $('body').width()-77-0 );
 		menuOnOff = false;
-		
 	}else{
 		$('.panorama_level').show();
 		$('.panorama_content').removeClass('hide_pano');
+		$('.panorama_content').outerWidth( $('body').width()-77-$('.panorama_level_wap').width() );
 		menuOnOff = true;	
 	}
 	$('.collapse_btn').click(function(){
 		if( menuOnOff == true ){
 			$('.panorama_level').hide();
 			$('.panorama_content').addClass('hide_pano');
+		$('.panorama_content').outerWidth( $('body').width()-77-0 );
 			menuOnOff = false;	
 		}else{
 			$('.panorama_level').show();
 			$('.panorama_content').removeClass('hide_pano');
+		$('.panorama_content').outerWidth( $('body').width()-77-$('.panorama_level_wap').width() );
 			menuOnOff = true;		
 		}	
 	});
@@ -73,12 +76,12 @@ $(function(){
 	}
 	$('.panorama_level').css({ 
 		'min-height' : oWindowH - 60 -IESpace,
-		    'height' : $(document).height() - 60  -IESpace
+		    'height' : $('.panorama_content').outerHeight()  -IESpace
 	});
 	$('.panorama_level').niceScroll({cursorcolor:"#919191",cursorwidth:10,cursoropacitymax:0.7,touchbehavior:false,autohidemode:false}); 
 	$('.panorama_main').css({ 
 		'min-height' : oWindowH - 60 -IESpace,
-		    'height' : $(document).height() - 60 -IESpace
+		    'height' : $('.panorama_content').outerHeight() -IESpace
 	});
 	$(".panorama_nodata").css({
 		"height" : $(".panorama_main").outerHeight()-45-64-20
@@ -210,11 +213,6 @@ $(function(){
 	
 	
 	
-	
-	
-	
-	
-	
 	$(window).resize(function(e) {
 		$(document).scrollTop(0);
 		//(3)四季田景下的左侧二级菜单
@@ -225,20 +223,24 @@ $(function(){
 			menuOnOff = false;
 			$('.panorama_level').hide();
 			$('.panorama_content').addClass('hide_pano');
+		    $('.panorama_content').outerWidth( $('body').width()-77-0 );
 			
 		}else{
 			menuOnOff = true;
 			$('.panorama_level').show();
 			$('.panorama_content').removeClass('hide_pano');	
+			$('.panorama_content').outerWidth( $('body').width()-77-$('.panorama_level_wap').width() );
 		}		
 		$('.collapse_btn').click(function(){
 			if( menuOnOff == true ){
 				$('.panorama_level').hide();
 				$('.panorama_content').addClass('hide_pano');
+			$('.panorama_content').outerWidth( $('body').width()-77-0 );
 				menuOnOff = false;	
 			}else{
 				$('.panorama_level').show();
 				$('.panorama_content').removeClass('hide_pano');
+			$('.panorama_content').outerWidth( $('body').width()-77-$('.panorama_level_wap').width() );
 				menuOnOff = true;		
 			}	
 		});
@@ -253,11 +255,11 @@ $(function(){
 		}
 		$('.panorama_level').css({ 
 			'min-height' : oWindowH - 60 -IESpace,
-				'height' : $(document).height() - 60 -IESpace
+				'height' : $('.panorama_content').outerHeight() -IESpace
 		});
 		$('.panorama_main').css({ 
 			'min-height' : oWindowH - 60 -IESpace,
-				'height' : $(document).height() - 60 -IESpace
+				'height' : $('.panorama_content').outerHeight() -IESpace
 		});
 		$(".panorama_nodata").css({
 			"height" : $(".panorama_main").outerHeight()-45-64-20
@@ -271,6 +273,11 @@ $(function(){
 		oWindowH < 500 ? $(".pano_dialog").addClass("pano_top") : 	$(".pano_dialog").removeClass("pano_top")
 		
     });
+	
+	
+	
+	
+	
 	
 	$(window).scroll(function(){
 		var oWindowH = $(window).height();

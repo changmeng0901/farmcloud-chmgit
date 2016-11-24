@@ -142,7 +142,10 @@ em{
 .panorama_content{
 	min-height:500px;
 	padding-left:179px-;
+	padding-left:30px;
+	padding-right:30px;
 	overflow:hidden;
+	box-sizing:border-box;
 	}
 .panorama_content.hide_pano{
 	padding-left:0-;

@@ -56,6 +56,9 @@ em{
 	font-size:12px;
 	}
 .panorama_level{
+	height:500px;
+	}
+.panorama_level{
 	display:inline-block;
 	min-height:865px-;
 	padding:20px 5px;
@@ -128,11 +131,17 @@ em{
 	background-image:url(../../images/inventory/InventoryFile_arrowr.png);
 	cursor:pointer;
 	}
+.collapse_btn{
+	top:400px;
+	}
 /*右侧主体内容*/
 .panorama_content{
 	min-height:500px;
 	padding-left:179px-;
+	padding-left:30px;
+	padding-right:30px;
 	overflow:hidden;
+	box-sizing:border-box;
 	}
 .panorama_content.hide_pano{
 	padding-left:0-;
