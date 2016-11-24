@@ -158,6 +158,15 @@ $(function(){
 		}
 		$(this).parents().find('.mater_name_bd').show();	
 	});
+	$('.mater_name_hd .add_mater').click(function(ev){
+		var e = ev || event;
+		if (e && e.stopPropagation) {
+			e.stopPropagation();
+		} else {
+			e.cancelBubble = true;
+		}
+		$('#AddMaterial').modal('show')
+	});
 	$('.mater_name_bd li').click(function(ev){
 		var e = ev || event;
 		if (e && e.stopPropagation) {
