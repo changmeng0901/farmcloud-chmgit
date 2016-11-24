@@ -1,0 +1,350 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+    <title>种子投入品信息</title>
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap-select.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/information/SeedInput.css" />
+
+</head>
+
+<body>
+<div class="top">
+	<div class="logo"><img src="../images/commons/logo_01.jpg" width="200" height="60" /></div>
+</div>
+
+<div class="content">
+    <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+    	<tr>
+        	<td class="left_c" valign="top" width="76">
+            <!--左边开始-->
+            <div class="left_c1">
+                <ul class="left_cul">
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_zy.png" width="77" height="69" /></a></li>
+                    <li class="left_culi on"><a href="#"><img src="../images/commons/left_jh.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_sc.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_xs.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_jiagong.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_lvli.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_fx.png" width="77" height="69" /></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!--左边结束-->
+            </td>           
+			<td width="210" valign="top" style=" border-right:1px solid #e1e4eb;">
+                <div class="left_c2">
+                	<ul style=" min-height:200px; border-bottom:1px solid #e1e4eb;" class="lt_c_ul">
+                    	<li><a href="#"><img width="12" height="12" src="../images/commons/biao_qysz.png">&nbsp;企业设置</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/community_23.png">&nbsp;角色管理</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/caishou_03.png">&nbsp;分组管理</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/1426160040_book.png">&nbsp;字段管理</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/wuliao.png">&nbsp;物料信息</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/product_info.png">&nbsp;商品信息</a></li>
+                        <li><a href="#" class="fon_07"><strong><img width="12" height="12" src="../images/commons/tourupin.png">&nbsp;投入品信息</a></strong></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/shebei2.png">&nbsp;设备信息</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/shipin2.png">&nbsp;视频信息</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/rfid.png">&nbsp;RFID卡管理</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/huishouzhantupian.png">&nbsp;回收站</a></li>
+                     </ul>
+                	<div class="clear"></div>
+                </div>
+            </td>
+            <td valign="top">
+            <div class="right_c" style="min-height:30px; padding-bottom:15px; padding-top:15px;">
+            	<!-- 面包屑导航 开始 -->
+                <div class="breadNav_wap mb15 clear">
+                    <div class="breadNav_lt"><strong>投入品信息</strong></div>
+                </div>
+                <!-- 农场信息主体 开始 -->
+                <div class="edit_title_wap mt20 mb20 clear">
+                	<h2 class="text_title">基础信息</h2>
+                </div>
+                <table class="edit_infor_table" cellpadding="0" cellpadding="0">
+                	<tr>
+                    	<td class="td_lt" style="width:125px;">投入品编号</td>
+                        <td class="td_rt" style="width:300px;">
+                        	<input class="form-control w220 fl" type="text" value="" />
+                            <span class="star_red">*</span>
+                        </td>
+                        <td class="td_lt">投入品名称</td>
+                        <td class="td_rt">
+                        	<input class="form-control w220 fl" type="text" value="" />
+                            <span class="star_red">*</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td class="td_lt">投入品类型</td>
+                        <td class="td_rt">
+                        	<div class="inline_block bootSelt220 fl">
+                                <select class="selectpicker">
+                                	<option>请选择</option>
+                                    <option>玉米种子1号</option>
+                                    <option>玉米种子2号</option>
+                                </select>
+                            </div>
+                            <span class="star_red">*</span>
+                        </td>
+                        <td class="td_lt">投入品规格</td>
+                        <td class="td_rt">
+                        	<div style="position:relative;">
+                        		<input class="form-control w80 mr5 fl" type="text" value="" />
+                                <div class="inline_block bootSelt80 fl">
+                                    <select class="selectpicker">
+                                        <option>个</option>
+                                    </select>
+                                </div>
+                                <span style="float:left;line-height:34px;padding:0 5px;">&frasl;</span>
+                                <input class="form-control w80 fl" type="text" value="" />
+                                <span class="star_red">*</span>
+                                <p style="position:absolute; left:275px; top:0;height:34px;line-height:16px; font-size:12px;">净含量<br />单位规格 &frasl; 包装规格</p>
+                                <p style="position:absolute; left:0px; top:34px; line-height:16px; font-size:12px; color:#f00;">投入品规格在提交投入品信息后不可修改！</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td class="td_lt">存储类型</td>
+                        <td class="td_rt">
+                        	<div class="inline_block bootSelt220 fl">
+                                <select class="selectpicker">
+                                	<option>请选择</option>
+                                    <option>类型1</option>
+                                </select>
+                            </div>
+                            <span class="star_red">*</span>
+                        </td>
+                        <td class="td_lt">保质期</td>
+                        <td class="td_rt">
+                            <input class="form-control w220 mr5 fl" type="text" value="" />
+                            <span style="float:left;line-height:34px;">月</span>
+                            <span class="star_red">*</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td class="td_lt">适用标准</td>
+                        <td class="td_rt">
+                        	<div class="inline_block bootSelt220">
+                                <select class="selectpicker">
+                                	<option>请选择</option>
+                                    <option>标准1</option>
+                                    <option>标准2</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="td_lt">亩用种量</td>
+                        <td class="td_rt">
+                            <input class="form-control w220 mr5 fl" type="text" value="" />
+                            <span style="float:left;line-height:34px;">粒</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td_lt">亩产</td>
+                        <td class="td_rt">
+                            <input class="form-control w220 mr5 fl" type="text" value="" />
+                            <span style="float:left;line-height:34px;">kg</span>
+                        </td>
+                        <td class="td_lt">种子处理</td>
+                        <td class="td_rt">
+                            <input class="form-control w220" type="text" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td class="td_lt">种子类别</td>
+                        <td class="td_rt" colspan="3">
+                        	<div class="inline_block bootSelt220">
+                                <select class="selectpicker">
+                                	<option>请选择</option>
+                                    <option>类别1</option>
+                                    <option>类别2</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td class="td_lt">图片</td>
+                        <td class="td_rt" colspan="3">
+                        	<div class="file_pic_wap" style="display:inline;">
+                                <span class="file_pic">
+                                    <i class="icon_btns"><img class="delete_btn" onClick="deleteFilePic(this,'.file_pic')" src="../images/information/fileImg_delet5.jpg" /></i>
+                                    <img src="../images/information/FarmInfor_pic2.jpg">
+                                </span>
+                                <span class="file_pic">
+                                    <i class="icon_btns"><img class="delete_btn" onClick="deleteFilePic(this,'.file_pic')" src="../images/information/fileImg_delet5.jpg" /></i>
+                                    <img src="../images/information/FarmInfor_pic3.jpg">
+                                </span>
+                            </div>
+                            <div class="file_btn">
+                                <img style="width:320px; height:145px; display:none;" src="../images/information/FarmInfor_pic2.jpg" />
+                                <img style="width:130px; height:130px;"src="../images/information/fileImg_btn130.jpg" />
+                                <input type="file" style="height:200px;" />
+                            </div>
+                            <div style="display:inline-block; padding-top:40px;box-sizing:border-box;">
+                            	<p>未选择任何文件</p>
+                            	<p style="color:#f00;">支持格式：jpg,gif,png,jpeg,bmp,3gp</p>
+                            </div>
+                        	
+                        </td>
+                    </tr>
+                </table>
+                <div class="edit_title_wap mt20 mb20 clear">
+                	<h2 class="text_title">品种特性</h2>
+                </div>
+                <table class="edit_infor_table" cellpadding="0" cellpadding="0">
+                	<tr>
+                    	<td class="td_lt" style="width:125px;">种植环境</td>
+                        <td class="td_rt" style="width:300px;">
+                        	<div class="inline_block bootSelt220 fl">
+                                <select class="selectpicker">
+                                	<option>请选择</option>
+                                    <option>环境1</option>
+                                    <option>环境2</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="td_lt" style="width:125px;">适合区域</td>
+                        <td class="td_rt">
+                        	<div class="inline_block bootSelt220 fl">
+                                <select class="selectpicker">
+                                	<option>请选择</option>
+                                    <option>区域1</option>
+                                    <option>区域2</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                	<tr>
+                    	<td class="td_lt">熟性</td>
+                        <td class="td_rt">
+                        	<div class="inline_block bootSelt220 fl">
+                                <select class="selectpicker">
+                                	<option>请选择</option>
+                                    <option>熟性1</option>
+                                    <option>熟性2</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="td_lt">茬口</td>
+                        <td class="td_rt">
+                        	<input class="form-control w220 fl" type="text" value="" />
+                            <span class="star_red">*</span>
+                        </td>
+                    </tr>
+                	<tr>
+                    	<td class="td_lt">抗性</td>
+                        <td class="td_rt" colspan="3">
+                        	<div class="textarea400">
+                            	<textarea class="form-control"></textarea>
+                                <span class="s_text">0 &frasl; 500</span>
+                            </div>
+                        </td>
+                    </tr>
+                	<tr>
+                    	<td class="td_lt">外观特征</td>
+                        <td class="td_rt" colspan="3">
+                        	<div class="textarea400">
+                            	<textarea class="form-control"></textarea>
+                                <span class="s_text">0 &frasl; 500</span>
+                            </div>
+                        </td>
+                    </tr>
+                	<tr>
+                    	<td class="td_lt">营养口感</td>
+                        <td class="td_rt" colspan="3">
+                        	<div class="textarea400">
+                            	<textarea class="form-control"></textarea>
+                                <span class="s_text">0 &frasl; 500</span>
+                            </div>
+                        </td>
+                    </tr>
+                	<tr>
+                    	<td class="td_lt">注意事项</td>
+                        <td class="td_rt" colspan="3">
+                        	<div class="textarea400">
+                            	<textarea class="form-control"></textarea>
+                                <span class="s_text">0 &frasl; 500</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="edit_title_wap mt20 mb20 clear">
+                	<h2 class="text_title">厂家信息</h2>
+                </div>
+                <table class="edit_infor_table" cellpadding="0" cellpadding="0">
+                	<tr>
+                    	<td class="td_lt" style="width:125px;">生产厂家</td>
+                        <td class="td_rt" style="width:300px;">
+                        	<input class="form-control w220 fl" type="text" value="" />
+                            <span class="star_red">*</span>
+                        </td>
+                        <td class="td_lt" style="width:125px;">网址</td>
+                        <td class="td_rt">
+                        	<input class="form-control w220" type="text" value="" />
+                        </td>
+                    </tr>
+                	<tr>
+                    	<td class="td_lt">联系人</td>
+                        <td class="td_rt">
+                        	<input class="form-control w220" type="text" value="" />
+                        </td>
+                        <td class="td_lt">联系方式</td>
+                        <td class="td_rt">
+                        	<input class="form-control w220" type="text" value="" />
+                        </td>
+                    </tr>
+                	<tr>
+                    	<td class="td_lt">地址</td>
+                        <td class="td_rt" colspan="3">
+                        	<input class="form-control w400 fl" type="text" value="" />
+                        </td>
+                    </tr>
+                </table>
+                <div style="padding:50px 0;text-align:center;">
+                	<a href="#" class="btn btn-primary">提交</a>
+                	<a href="#" class="btn btn-default">返回</a>
+                </div>
+                <!-- 农场信息主体 结束 -->
+            </div>
+            </td>    
+    	</tr>  
+   </table> 
+</div>
+
+
+<!-- 分机号码模态框 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" style="width:400px; left:50%; top:50%; margin:-100px 0 0 -200px;">
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">申请成功</h4>
+    </div>
+    <div class="modal-body" style="padding-bottom:20px;">
+		<div class="base_tipinfo">
+        	<img width="32" height="32" src="../images/commons/icon_success1.png" />
+            <img width="32" height="32" src="../images/commons/icon_fail1.png" />
+            <p class="p_text1">恭喜您，申请成功！</p>
+            <p class="p_text2">您的分机号码为：400-81996</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">确定</button>
+    </div>
+</div>
+</div>
+</div>
+<!-- 分机号码模态框 -->
+
+
+<script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="../js/information/SeedInput.js"></script>
+
+</body>
+</html>
+
+
