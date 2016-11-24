@@ -106,9 +106,33 @@
     
     <!--(3)视频主体-->
     <div class="video_main_wap">
-    	<div id="danmuarea">
+        <!-- 观学视频开始 -->
+        <div id="AerialPlayer">                           
+            <div class="video" id="HLSPlayer2">
+				<script type="text/javascript">
+                    var vID        = ""; 
+                    var vWidth     = "100%";                //播放器宽度设置
+                    var vHeight    = "100%";                   //播放器宽度设置
+                    var vPlayer    = "../ffdshow/player.swf"; //播放器文件
+                    var vHLSset    = "../ffdshow/HLS.swf";             //HLS配置
+                    var vPic       = "../images/commons/videosImg.jpg"; 
+                    var vCssurl    = "../style/ffdshow/mini.css";     //移动端CSS应用文件
+                    
+                    var  vHLSurl    = "http://dev.farmeasy.cn/video/555/playlist.m3u8";
+                    //-->
+                </script> 
+                <script type="text/javascript" src="../js/ffdshow/hls.min.js"></script>
+            </div>
+        </div>
+        <!--航拍地图-->
+        <div class="aerial_map">
+        	<div id="map_canvas" style="width:100%;height:100%"></div>
+        </div>
+        <!-- 弹幕 -->
+    	<div id="danmuarea" style="display:none;">
             <div id="danmu"></div>
         </div>
+        <!-- 弹幕 -->
     </div>
 
     <!--(4)航拍底部-->
@@ -122,7 +146,7 @@
         </div>
         <div class="barrage_set_block fl">
         	<button class="barrage_set">设置</button>
-        	<div class="barrage_setmodal">
+        	<div class="barrage_setmodal" style="display:none;">
             	<div class="barrage_lt">
                 	<strong class="text_h3">我的弹幕<span>编辑自己发送的弹幕</span></strong>
                     <dl class="font_block">
@@ -288,6 +312,7 @@
 <script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap/icheck.js"></script>
 <script type="text/javascript" src="../js/nicescroll/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="../js/danmu/jquery.danmu.min.js"></script>
 <script type="text/javascript" src="../js/map/AerialvideoView.js"></script>
 

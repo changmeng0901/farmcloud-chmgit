@@ -36,9 +36,13 @@ $(function(){
 		//"min-height" : $(document).height() - 98 -IESpace,
 		      "height" : oWindowH - 98  -IESpace
 	});
+	$("#HLSPlayer2").css({ 
+		  "min-height" : 500 - 98 -IESpace,
+		      "height" : oWindowH - 98  -IESpace
+	});
 	$("#danmuarea").css({ 
-		  "min-height" : 500 - 52 -IESpace,
-		      "height" : oWindowH - 52  -IESpace
+		  "min-height" : 500 - 98 -IESpace,
+		      "height" : oWindowH - 98  -IESpace
 	});
 	
 	$(".aerial_playlist").niceScroll({cursorcolor:"#919191",cursorwidth:6,cursoropacitymax:0.7,touchbehavior:false,autohidemode:false}); 
@@ -59,7 +63,7 @@ $(function(){
 	playlistAnimate();
 	
 	//(4)弹幕开关状态
-	resumer();
+	/*resumer();
 	var tmOnoff = true;
 	$(".switch_block .tanmu_bar").click(function(){
 		if( tmOnoff == true ){
@@ -73,7 +77,7 @@ $(function(){
 			resumer();
 			tmOnoff = true;
 		}
-	});
+	});*/
 	
 	//(5)复制链接
 	$(".btn_copy").click(function(){
@@ -81,9 +85,10 @@ $(function(){
 		//document.execCommand("Copy");
 	});
 	
+	
 	//(6)弹幕设置
 	//初始化
-	$("#danmu").danmu({
+	/*$("#danmu").danmu({
 		left:"1000px",
 		top:"40%",
 		height:"100%",
@@ -100,13 +105,16 @@ $(function(){
 		{ text:"这是滚动弹幕" ,color:"white",size:1,position:0,time:2},
 		//{ text:"这是顶部弹幕" ,color:"yellow" ,size:1,position:1,time:2},
 		//{ text:"这是底部弹幕" , color:"red" ,size:1,position:2,time:2}
-	]);
+	]);*/
 	
 	
 	
 	//----------------------------------------------------------------------------------
 	//----------------------------------------------------------------------------------
 	$(window).resize( resizeFn );	
+	$(window).load(function(){
+		initialize();
+	})
 	
 	
 });
@@ -128,9 +136,13 @@ function resizeFn(){
 		//"min-height" : $(document).height() - 98 -IESpace,
 			  "height" :  oWindowH - 98  -IESpace
 	});
+	$("#HLSPlayer2").css({ 
+		  "min-height" : 500 - 98 -IESpace,
+		      "height" : oWindowH - 98  -IESpace
+	});
 	$("#danmuarea").css({ 
-		  "min-height" : 500 - 52 -IESpace,
-		      "height" : oWindowH - 52  -IESpace
+		  "min-height" : 500 - 98 -IESpace,
+		      "height" : oWindowH - 98  -IESpace
 	});
 	$(".aerial_playlist").niceScroll({cursorcolor:"#919191",cursorwidth:6,cursoropacitymax:0.7,touchbehavior:false,autohidemode:false}); 
 	oWindowH < 500 ? $(".pano_dialog").addClass("pano_top") : 	$(".pano_dialog").removeClass("pano_top")
@@ -180,7 +192,7 @@ function playlistAnimate(){
 }
 	
 //---------------------------------------------------------------------------------------	
-//弹幕
+//(7)弹幕
   //一个定时器，监视弹幕时间并更新到页面上
   /*function timedCount(){
     $("#time").text($("#danmu").data("nowTime"));
@@ -191,7 +203,7 @@ function playlistAnimate(){
   timedCount();*/
 
 
-
+/*
   function starter(){
 	  //让弹幕开始运行
     $("#danmu").danmu("danmuStart");
@@ -274,3 +286,125 @@ function playlistAnimate(){
     t=parseInt(t)
     $("#danmu").danmu("setTime",t);
   }	
+  */
+  
+  
+//--------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------
+//(8)地图航线
+var FirstMarker;
+var LastMarker;
+var AnimateMarker;
+var playTimer;
+var flightPlanSite;
+
+function initialize() {
+	var myLatLng = new google.maps.LatLng(-27.46758, 153.027892);
+	var myOptions = {
+		zoom: 3,
+		center: myLatLng,
+		mapTypeId: google.maps.MapTypeId.TERRAIN
+	};
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);//初始化地图
+ 
+    flightPlanSite = {"trackData":[
+		{
+			"second": "00:00:01,000 --> 00:00:02,000",
+			"HOME": "(117.0990,40.2996)",
+			"time": "2016.06.16 14:45:12",
+			"GPS": "(117.0962,40.3008,18)",
+			"BAROMETER": ":60.0",
+			"ISO": ":100",
+			"Shutter": ":500",
+			"EV": "+1",
+			"Fnum": ":F2.8"
+		},
+		{
+			"second": "00:00:02,000 --> 00:00:03,000",
+			"HOME": "(117.0990,40.2996)",
+			"time": "2016.06.16 14:45:13",
+			"GPS": "(80.0962,30.3008,18)",
+			"BAROMETER": ":60.1",
+			"ISO": ":100",
+			"Shutter": ":500",
+			"EV": "+1",
+			"Fnum": ":F2.8"
+		},
+		{
+			"second": "00:00:44,000 --> 00:00:45,000",
+			"HOME": "(117.0990,40.2996)",
+			"time": "2016.06.16 14:45:55",
+			"GPS": "(50.0982,20.2998,18)",
+			"BAROMETER": ":59.9",
+			"ISO": ":100",
+			"Shutter": ":160",
+			"EV": "+1",
+			"Fnum": ":F2.8"
+		},
+		{
+			"second": "00:00:45,000 --> 00:00:46,000",
+			"HOME": "(117.0990,40.2996)",
+			"time": "2016.06.16 14:45:56",
+			"GPS": "(30.0980,10.2997,17)",
+			"BAROMETER": ":60.0",
+			"ISO": ":100",
+			"Shutter": ":160",
+			"EV": "+1",
+			"Fnum": ":F2.8"
+		}
+	]}
+	
+	var arr = [];
+	for( item in flightPlanSite.trackData ){
+		var gps = flightPlanSite.trackData[item].GPS;
+		gps = gps.replace(/[()]/g, "")	;
+		gps = gps.split(",");
+		
+		var temp = new google.maps.LatLng( parseFloat(gps[1]), parseFloat(gps[0]) );
+		arr.push( temp );
+	}
+	flightPlanSite = arr;
+	
+	
+    var flightPath = new google.maps.Polyline({//类型为直线的
+		path: flightPlanSite,
+		strokeColor: "#FF0000",
+		strokeOpacity: 1.0,
+		strokeWeight: 2
+    });
+ 
+
+	FirstMarker = new google.maps.Marker({  //起点
+			icon:"../images/commons/icon_plane2.png",
+			map: map,  
+			position:  flightPlanSite[0], 
+		});
+	LastMarker = new google.maps.Marker({  //终点
+			icon:"../images/commons/icon_plane3.png",
+			map: map,  
+			position:  flightPlanSite[flightPlanSite.length-1], 
+		});
+	AnimateMarker = new google.maps.Marker({  //动态滑动点
+			icon:"../images/commons/icon_plane3.png",
+			map: map,  
+		});
+	
+	flightPath.setMap( map );
+	
+	var index_ = 0;
+	function timeout(){
+		if( index_ < flightPlanSite.length ){
+			var aPosition = flightPlanSite[index_];
+			AnimateMarker.setPosition( aPosition );
+			index_++;
+		}else{
+			clearInterval( playTimer );
+		}
+	}
+	playTimer = setInterval(function(){
+		timeout();
+	},1000);
+
+	
+	
+}
