@@ -15,8 +15,10 @@ function ABPinit2(){
 		//判断是开启默认是开启或关闭弹幕
 		if($('.playlist_list').attr('danmuShow') == 'true'){
 			this.danmuShowControl.className = 'danmu_switch fl';
+			$('.tanmu_send_block').show();
 		}else{
 			this.danmuShowControl.className = 'danmu_switch fl onoff';
+			$('.tanmu_send_block').hide();
 		}
 		
 		
@@ -103,10 +105,12 @@ function ABPinit2(){
 					_this.cmManager.display=false;
 					_this.cmManager.clear();
 					_this.danmuShowControl.setAttribute("class","danmu_switch fl onoff");
+					$('.tanmu_send_block').hide();
 				}else{
 					_this.cmManager.display=true;
 					_this.cmManager.startTimer();
 					_this.danmuShowControl.setAttribute("class","danmu_switch fl");
+					$('.tanmu_send_block').show();
 				}
 			});
 			
