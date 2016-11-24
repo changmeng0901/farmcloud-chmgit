@@ -147,14 +147,13 @@ function ABPinit2(){
 				danmu_value = $('#text_tanmu').val();
 				$('#text_tanmu').val('');
 				danmu_site = parseInt($('#Site_Set .dq_bg').attr('data-barrage-site'));
-				
 				if(danmu_value!='发送弹幕一起high!' && danmu_value!=''){
 					//alert('位置'+$('#Site_Set .dq_bg').attr('data-barrage-site'));
 					$('#text_tanmu').focus();
 					someDanmakuAObj = {
 						"mode" : 1,// 弹幕类型，滚动danmu_site
 						"text" : danmu_value,//"3333这里是弹幕的内容"
-						"stime": Math.floor(video.currentTime * 1000),//视频开始时间（用于计算弹幕的碰撞位置）_this.cmManager.startTimer()
+						"stime": video.currentTime,//视频开始时间（用于计算弹幕的碰撞位置）_this.cmManager.startTimer()
 						"size" : $('#font_set .f_cur').attr('data-barrage-size'),//25普通大小
 						"color": $.fn.getHexBackgroundColor("#Color_XsSet","color"), //0xffffff
 						"pool" : '0',
@@ -165,7 +164,7 @@ function ABPinit2(){
 					ParameterMethod = FnMethod('aerial.barrage.set');
 					ParameterField = FnField(
 											"aerial_video_id",$('.playlist_list .item.icur').attr('data-id'),
-											"stime" , Math.floor(video.currentTime),
+											"stime" ,video.currentTime,
 											"mode" , 1,//"1"$('#Site_Set .dq_bg').attr('data-barrage-site')
 											"size" ,  $('#font_set .f_cur').attr('data-barrage-size'),//"25"
 											"color" , parseInt($.fn.getHexBackgroundColor("#Color_XsSet","color"),16),  //"16777215"
