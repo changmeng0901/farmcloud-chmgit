@@ -11,7 +11,14 @@ function ABPinit2(){
 
 		//$('.barrage_block').append('<div class="danmu_switch fl" id="danmu_switch"><div class="tanmu_bar"></div><span></span></div>');
 		this.danmuShowControl = document.getElementById('danmu_switch');
-		this.danmuShowControl.className = 'danmu_switch fl';
+
+		//判断是开启默认是开启或关闭弹幕
+		if($('.playlist_list').attr('danmuShow') == 'true'){
+			this.danmuShowControl.className = 'danmu_switch fl';
+		}else{
+			this.danmuShowControl.className = 'danmu_switch fl onoff';
+		}
+		
 		
 		this.danmuSend = document.getElementById('Send_Danmu');
 
@@ -20,7 +27,14 @@ function ABPinit2(){
 		///////////////////////////////////////////
 		if(typeof CommentManager !== "undefined"){
 			this.cmManager = new CommentManager(this.danmuDiv);
-			this.cmManager.display = true;
+
+			//判断是开启默认是开启或关闭弹幕
+			if($('.playlist_list').attr('danmuShow') == 'true'){
+				this.cmManager.display = true;
+			}else{
+				this.cmManager.display = false;
+			}
+			
 			this.cmManager.init();
 			this.cmManager.clear();
 

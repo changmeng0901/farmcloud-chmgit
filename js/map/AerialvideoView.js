@@ -203,6 +203,7 @@ var XmlData,
 						track_show : groupstr.track_show,  //轨迹显示或隐藏
 						assets_show : groupstr.assets_show,  //资源规划
 						logo_show : groupstr.logo_show,//是否显示企业LOGO
+						danmu_show : groupstr.danmu_show  //是否默认开启弹幕
 					 };
 					 
 					 
@@ -349,6 +350,12 @@ var XmlData,
 						"left" : 20
 					},500);
 				onoffBtn = true;
+			}
+			//如果danmu_show = 1为开启，0为关闭
+			if( data.danmu_show == "1" ){
+				$('.playlist_list').attr('danmuShow','true');
+			}else{
+				$('.playlist_list').attr('danmuShow','false');
 			}
 			
 			//头部计算

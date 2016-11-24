@@ -659,7 +659,7 @@ CommentManager.prototype.onTimerEvent = function(t, e) {
     for (var i = 0; i < e.runline.length; i++) {
         var o = e.runline[i];
         if (!o.hold) { //o.ttl -= t  ==>  o.ttl -= t*0.5
-            if (o.ttl -= t*0.5, 1 == o.mode || 2 == o.mode) o.style.left = o.ttl / o.dur * (e.stage.width + o.width) - o.width + "px";
+            if (o.ttl -= t, 1 == o.mode || 2 == o.mode) o.style.left = o.ttl / o.dur * (e.stage.width + o.width) - o.width + "px";
             else if (6 == o.mode) o.style.left = (1 - o.ttl / o.dur) * (e.stage.width + o.width) - o.width + "px";
             else if ((4 == o.mode || 5 == o.mode || o.mode >= 7) && (null == o.dur && (o.dur = 4e3), null != o.data.alphaFrom && null != o.data.alphaTo && (o.style.opacity = (o.data.alphaFrom - o.data.alphaTo) * (o.ttl / o.dur) + o.data.alphaTo), 7 == o.mode && o.data.movable)) {
                 var s = Math.min(Math.max(o.dur - o.data.moveDelay - o.ttl, 0), o.data.moveDuration) / o.data.moveDuration;
