@@ -58,9 +58,13 @@ body{
 	height:38px;
 	}
 .video_header_list .jd_cor{
+	display:inline-block;
+	width:70px;
 	color:#6cceff;
 	}
 .video_header_list .wd_cor{
+	display:inline-block;
+	width:70px;
 	color:#7cff62;
 	}
 .video_header_list .gd_cor{
@@ -184,7 +188,9 @@ body{
 .video_main_wap{
 	position:relative;
 	min-width:1000px;
-	min-height:454px;
+	min-height:454px-;
+	min-height:402px;
+	overflow:hidden;
 	}
 #HLSPlayer2,
 #HLSPlayer2 .video{
@@ -700,8 +706,9 @@ body.modal-open{
 	background:url(../../images/map/icon_closeH.png);
 	}
 .card_dialog .modal_body{
-	height:320px;
-	padding:20px;
+	height:310px;
+	margin-bottom:10px;
+	padding:20px 20px 0;
 	box-sizing:border-box;
 	}
 .card_dialog .modal-footer{
@@ -775,7 +782,8 @@ body.modal-open{
 .scene_dialog .modal_body{
 	height:388px;
 	margin-top:28px;
-	padding:0px 15px 15px 15px;
+	margin-bottom:10px;
+	padding:0px 15px 0 15px;
 	box-sizing:border-box;
 	font-size:14px;
 	color:#fff;
@@ -898,6 +906,12 @@ body.modal-open{
 	
 	
 @media screen and (max-width: 1200px) {
+.video_header_list .jd_cor{
+	width:66px;
+	}
+.video_header_list .wd_cor{
+	width:66px;
+	}
 .video_header_list .item1{
 	padding: 0 8px;
 	}
