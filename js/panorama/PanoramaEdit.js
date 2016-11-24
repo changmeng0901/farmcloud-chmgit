@@ -93,6 +93,7 @@ $(function(){
 	}else{
 		$('.collapse_btn').css( 'top' , parseInt(oWindowH/2) + $(window).scrollTop() );	
 	}
+	oWindowH < 500 ? $(".pano_dialog").addClass("pano_top") : 	$(".pano_dialog").removeClass("pano_top")
 	
 	
 	//(5)左侧二级导航的选择状态控制
@@ -232,6 +233,7 @@ $(function(){
 		}else{
 			$('.collapse_btn').css( 'top' , parseInt(oWindowH/2) + $(window).scrollTop() );	
 		}
+		oWindowH < 500 ? $(".pano_dialog").addClass("pano_top") : 	$(".pano_dialog").removeClass("pano_top")
 		
     });
 	
