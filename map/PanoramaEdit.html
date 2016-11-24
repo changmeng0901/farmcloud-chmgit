@@ -1,0 +1,445 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+    <title>四季田景后台编辑</title>
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap3.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/map/PanoramaEdit.css" />
+
+</head>
+
+<body>
+    <div class="pano_edit_wrap"></div>
+    <div class="fixed_btns_wrap">
+        <div class="fr clear">
+            <button type="button" class="btn btn_success fl mr20">保存</button>
+            <button type="button" class="btn btn_default">关闭</button>
+        </div>
+        <div class="fr mt40 clear">
+            <button type="button" class="btn btn_default">视角</button><br />
+            <button type="button" class="btn btn_success mt20">热点</button>
+        </div>
+    </div>
+
+
+    <!-- 悬浮热点 -->
+    <div class="hotspot_wrap">
+        <div class="hotspot_header">热点</div>
+        <div class="hotspot_body">
+            <div class="hotspot_cont">
+                <h4 class="hot_title">全景切换（<span id="switch_total">3</span>）</h4>
+                <ul class="hot_list">
+                    <li class="item iCur">
+                        <div class="item_con">
+                            <img class="pano_pic" src="../images/map/panorama_edit_pic2.jpg" />
+                            <p class="text_in">大棚入口</p>
+                            <div class="icon_hot"><i></i><img src="../images/map/hotspot_icon1.png" /></div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_con">
+                            <img class="pano_pic" src="../images/map/panorama_edit_pic2.jpg" />
+                            <p class="text_in">大棚入口</p>
+                            <div class="icon_hot"><i></i><img src="../images/map/hotspot_icon1.png" /></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="position_block mt20">
+                    <a href="javascript:;">定位</a>
+                    <a href="javascript:;">编辑</a>
+                    <a href="javascript:;" class="noline">删除</a>
+                </div>
+                <h4 class="hot_title">超链接（<span id="hyperlinks_total">3</span>）</h4>
+                <ul class="hot_list">
+                    <li class="item iCur">
+                        <div class="item_con">
+                            <p class="text_in2">大棚入口</p>
+                            <div class="icon_hot"><i></i><img src="../images/map/hotspot_icon1.png" /></div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_con">
+                            <p class="text_in2">大棚入口</p>
+                            <div class="icon_hot"><i></i><img src="../images/map/hotspot_icon1.png" /></div>
+                        </div>
+                    </li>
+                </ul>
+                <h4 class="hot_title">图片展示（<span id="picture_total">3</span>）</h4>
+                <ul class="hot_list">
+                    <li class="item iCur">
+                        <div class="item_con">
+                            <img class="pano_pic" src="../images/map/panorama_edit_pic2.jpg" />
+                            <p class="text_in">图片展示1</p>
+                            <div class="icon_hot"><i></i><img src="../images/map/hotspot_icon1.png" /></div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_con">
+                            <img class="pano_pic" src="../images/map/panorama_edit_pic2.jpg" />
+                            <p class="text_in">图片展示2</p>
+                            <div class="icon_hot"><i></i><img src="../images/map/hotspot_icon1.png" /></div>
+                        </div>
+                    </li>
+                </ul>
+                <h4 class="hot_title">文字介绍（<span id="textinstor_total">3</span>）</h4>
+                <ul class="hot_list">
+                    <li class="item iCur">
+                        <div class="item_con">
+                            <p class="text_in2">大棚入口</p>
+                            <div class="icon_hot"><i></i><img src="../images/map/hotspot_icon1.png" /></div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_con">
+                            <p class="text_in2">大棚入口</p>
+                            <div class="icon_hot"><i></i><img src="../images/map/hotspot_icon1.png" /></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="javascript:;" class="addhotspot_btn" onclick="ShowModal('#hottype_modal','')">添加热点</a>
+    </div>
+    <!-- 悬浮热点 -->
+
+
+<!-- (1-1)添加热点弹出 -->
+<div class="hotspot_mark"></div>
+<div class="hotspot_modal hottype_modal" id="hottype_modal" style="display:none;">
+    <div class="modal_header">
+        <h2>添加热点</h2>
+        <i class="mclose" onclick="HideModal('#hottype_modal')"><img src="../images/map/modal_close.jpg" /></i>
+    </div>
+    <div class="modal_body">
+        <div class="modal_content">
+            <p class="text_type">请选择您要添加的类型</p>
+            <ul class="hottype_list">
+                <li onoff="true" tomodal="ShowModal('#switch_modal','')">
+                    <a href="javascript:;" class="type_link aCur" data-toggle="tooltip" data-placement="top" title="增加全景切换热点，支持全景间跳转"><i class="icon0"></i>全景切换</a>
+                </li>
+                <li onoff="true" tomodal="ShowModal('#hyperlink_modal','')">
+                    <a href="javascript:;" class="type_link" data-toggle="tooltip" data-placement="top" title="支持点击跳转的链接"><i class="icon1"></i>超链接</a>
+                </li>
+                <li onoff="true" tomodal="ShowModal('#pictureshow_modal','')">
+                    <a href="javascript:;" class="type_link" data-toggle="tooltip" data-placement="top" title="支持点击后显示图片"><i class="icon2"></i>图片展示</a>
+                </li>
+                <li onoff="true" tomodal="ShowModal('#textinstro_modal','')">
+                    <a href="javascript:;" class="type_link" data-toggle="tooltip" data-placement="top" title="支持点击后显示文字介绍"><i class="icon3"></i>文字介绍</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal_footer">
+        <button type="button" class="btn btn_success" id="SelectType">下一步</button>
+    </div>
+</div>
+<!-- (2-1)全景切换--热点图标弹出 -->
+<div class="hotspot_modal switch_modal" id="switch_modal" style="display:none;">
+    <div class="modal_header">
+        <h2>添加热点</h2>
+        <i class="mclose" onclick="HideModal('#switch_modal')"><img src="../images/map/modal_close.jpg" /></i>
+    </div>
+    <div class="modal_body">
+        <div class="modal_content">
+            <img src="../images/map/hotspot_bg1.jpg" />
+            <div class="hoticon_list">
+                <span class="spIcur">
+                    <img class="micon" src="../images/map/hotspot_icon1.png" />
+                </span>
+                <span>
+                    <img class="micon" src="../images/map/hotspot_icon1.png" />
+                </span>
+                <br />
+                <span>
+                    <img class="micon" src="../images/map/hotspot_icon1.png" />
+                </span>
+                <span>
+                    <img class="micon" src="../images/map/hotspot_icon1.png" />
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="modal_footer">
+        <button type="button" class="btn btn_default mr5" onclick="ShowModal('#hottype_modal','#switch_modal')">上一步</button>
+        <button type="button" class="btn btn_success" onclick="ShowModal('#scene_modal','#switch_modal')">下一步</button>
+    </div>
+</div>
+<!-- (2-2)全景切换--场景图片弹出 -->
+<div class="hotspot_modal scene_modal" id="scene_modal" style="display:none;">
+    <div class="modal_header">
+        <h2>添加热点</h2>
+        <i class="mclose" onclick="HideModal('#scene_modal')"><img src="../images/map/modal_close.jpg" /></i>
+    </div>
+    <div class="modal_body">
+        <div class="modal_content">
+            <img src="../images/map/hotspot_bg2.jpg" />
+            <ul class="scenepic_list">
+                <li class="iIcur">
+                    <div class="sitem">
+                        <img src="../images/map/panorama_edit_pic2.jpg" />
+                        <p class="p_text">大棚出口</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="sitem">
+                        <img src="../images/map/panorama_edit_pic2.jpg" />
+                        <p class="p_text">大棚出口</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="sitem">
+                        <img src="../images/map/panorama_edit_pic2.jpg" />
+                        <p class="p_text">大棚出口</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="sitem">
+                        <img src="../images/map/panorama_edit_pic2.jpg" />
+                        <p class="p_text">大棚出口</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="sitem">
+                        <img src="../images/map/panorama_edit_pic2.jpg" />
+                        <p class="p_text">大棚出口</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="sitem">
+                        <img src="../images/map/panorama_edit_pic2.jpg" />
+                        <p class="p_text">大棚出口</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal_footer">
+        <button type="button" class="btn btn_default mr5" onclick="ShowModal('#switch_modal','#scene_modal')">上一步</button>
+        <button type="button" class="btn btn_success" onclick="HideModal('#scene_modal')">下一步</button>
+    </div>
+</div>
+<!-- (3-1)超链接弹出 -->
+<div class="hotspot_modal hyperlink_modal" id="hyperlink_modal" style="display:none;">
+    <div class="modal_header">
+        <h2>添加热点</h2>
+        <i class="mclose" onclick="HideModal('#hyperlink_modal')"><img src="../images/map/modal_close.jpg" /></i>
+    </div>
+    <div class="modal_body">
+        <div class="modal_content">
+            <img src="../images/map/hotspot_bg3.jpg" />
+            <table class="modale_table table_hyperlink">
+                <tr>
+                    <td class="tdlt">请输入热点名称</td>
+                    <td class="tdrt">
+                        <input type="text" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlt">请输入链接地址</td>
+                    <td class="tdrt">
+                        <input type="text" class="form-control" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal_footer">
+        <button type="button" class="btn btn_default mr5" onclick="ShowModal('#hottype_modal','#hyperlink_modal')">上一步</button>
+        <button type="button" class="btn btn_success" onclick="ShowModal('#switch_modal','#hyperlink_modal')">下一步</button>
+    </div>
+</div>
+<!-- (4-1)图片展示弹出 -->
+<div class="hotspot_modal pictureshow_modal" id="pictureshow_modal" style="display:none;">
+    <div class="modal_header">
+        <h2>添加热点</h2>
+        <i class="mclose" onclick="HideModal('#pictureshow_modal')"><img src="../images/map/modal_close.jpg" /></i>
+    </div>
+    <div class="modal_body">
+        <div class="modal_content">
+            <img src="../images/map/hotspot_bg4.jpg" />
+            <table class="modale_table table_pictureshow">
+                <tr>
+                    <td class="tdlt">请输入热点名称</td>
+                    <td class="tdrt">
+                        <input type="text" class="form-control" />
+                    </td>
+                </tr>
+            </table>
+            <!-- 图片展示区块 -->
+            <div class="random_slider_wrap" id="random_slider_wrap">
+            <div class="random_slider">
+                <div class="sitem sCur" onoff="false" onclick="ActiveCur(this,'sCur')">
+                    <div class="pic_con">
+                        <img src="../images/map/panorama_edit_pic2.jpg">
+                        <p class="text_delete" onclick="DeleteItem(this,'.sitem')">删除</p>
+                    </div>
+                    <p class="text_url">图片.jpg</p>
+                </div>
+                <div class="sitem" onoff="true" onclick="ActiveCur(this,'sCur')">
+                    <div class="pic_con">
+                        <img src="../images/map/panorama_edit_pic2.jpg">
+                        <p class="text_delete" onclick="DeleteItem(this,'.sitem')">删除</p>
+                    </div>
+                    <p class="text_url">图片.jpg</p>
+                </div>
+                <div class="sitem" onoff="true" onclick="ActiveCur(this,'sCur')">
+                    <div class="pic_con">
+                        <img src="../images/map/panorama_edit_pic2.jpg">
+                        <p class="text_delete" onclick="DeleteItem(this,'.sitem')">删除</p>
+                    </div>
+                    <p class="text_url">图片.jpg</p>
+                </div>
+                <div class="sitem" onoff="true" onclick="ActiveCur(this,'sCur')">
+                    <div class="pic_con">
+                        <img src="../images/map/panorama_edit_pic2.jpg">
+                        <p class="text_delete" onclick="DeleteItem(this,'.sitem')">删除</p>
+                    </div>
+                    <p class="text_url">图片.jpg</p>
+                </div>
+                <div class="sitem" onoff="true" onclick="ActiveCur(this,'sCur')">
+                    <div class="pic_con">
+                        <img src="../images/map/panorama_edit_pic2.jpg">
+                        <p class="text_delete" onclick="DeleteItem(this,'.sitem')">删除</p>
+                    </div>
+                    <p class="text_url">图片.jpg</p>
+                </div>
+                <div class="sitem" onoff="true" onclick="ActiveCur(this,'sCur')">
+                    <div class="pic_con">
+                        <img src="../images/map/panorama_edit_pic2.jpg">
+                        <p class="text_delete" onclick="DeleteItem(this,'.sitem')">删除</p>
+                    </div>
+                    <p class="text_url">图片.jpg</p>
+                </div>
+            </div>
+            </div>
+            <!-- 图片展示区块 -->
+            <div class="filepic_btn">上传图片
+                <input type="file" />
+            </div>
+        </div>
+    </div>
+    <div class="modal_footer">
+        <button type="button" class="btn btn_default mr5">上一步</button>
+        <button type="button" class="btn btn_success">下一步</button>
+    </div>
+</div>
+<!-- (5-1)文字介绍弹出 -->
+<div class="hotspot_modal textinstro_modal" id="textinstro_modal" style="display:none;">
+    <div class="modal_header">
+        <h2>添加热点</h2>
+        <i class="mclose" onclick="HideModal('#textinstro_modal')"><img src="../images/map/modal_close.jpg" /></i>
+    </div>
+    <div class="modal_body">
+        <div class="modal_content">
+            <img src="../images/map/hotspot_bg3.jpg" />
+            <table class="modale_table table_textinstro">
+                <tr>
+                    <td class="tdlt">请输入标题</td>
+                    <td class="tdrt">
+                        <input type="text" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlt">请输入内容</td>
+                    <td class="tdrt">
+                        <textarea class="form-control form_textarea"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal_footer">
+        <button type="button" class="btn btn_default mr5">上一步</button>
+        <button type="button" class="btn btn_success">下一步</button>
+    </div>
+</div>
+<!-- 弹出 -->
+</body>
+</html>
+<script type="text/javascript" src="../js/commons/jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap-popver.js"></script>
+<script type="text/javascript" src="../js/nicescroll/jquery.nicescroll.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+
+    ResizeModal();
+
+	//tooltip提示插件
+	$(".type_link").tooltip();
+ 
+    //图片展示弹框--中的焦点图
+    $('#random_slider_wrap').niceScroll({ cursorcolor: "#999999"});
+    $('#random_slider_wrap').getNiceScroll().resize();
+    $('.random_slider').css('width',(104+40)*$('.random_slider .sitem').length);
+
+    $('.hotspot_cont').niceScroll({ cursorcolor: "#999999"});
+    $('.hoticon_list').niceScroll({ cursorcolor: "#999999"});
+    $('.scenepic_list').niceScroll({ cursorcolor: "#999999"});
+    
+    
+
+    // 请选择您要添加的类型
+    $('.hottype_list li').each(function(index,elem){
+        $(elem).click(function(){
+            if($(this).attr('onoff') == 'true'){
+                $(this).addClass('aCur').siblings().removeClass('aCur');
+                $(this).attr('onoff','false').siblings().attr('onoff','true');
+                $('#SelectType').removeAttr('disabled');
+                $('#SelectType').attr('onclick',$(this).attr('tomodal'))
+            }else{
+                $(this).removeClass('aCur');
+                $(this).attr('onoff','true') ;
+                $('#SelectType').attr('disabled','true');
+                $('#SelectType').attr('onclick','')
+            }  
+        });
+    })
+
+	
+});
+$(window).resize(function(){
+    ResizeModal();
+    $(document).scrollTop(0);
+});
+
+// 封装屏幕缩放
+function ResizeModal(){
+    if($(window).height()<600){
+        $('.hotspot_wrap').addClass('relat_modal');
+        $('.hotspot_modal').addClass('relat_modal');
+    }else{
+        $('.hotspot_wrap').removeClass('relat_modal');
+        $('.hotspot_modal').removeClass('relat_modal');
+    }
+}
+// 封装弹出框显示
+function ShowModal(oParent,preParent){
+    $(oParent).show();
+    $('.hotspot_mark').show();
+    $(preParent).hide();
+}
+// 封装弹出框隐藏
+function HideModal(oParent){
+    $(oParent).hide();
+    $('.hotspot_mark').hide();
+    $('#hottype_modal').hide();
+}
+//封装删除事件
+function DeleteItem(obj,oParent){
+    $(obj).parents(oParent).remove();
+    $('.random_slider').css('width',(104+40)*$('.random_slider .sitem').length);
+}
+function ActiveCur(obj,iCur){
+    if($(obj).attr('onoff') == 'true'){
+        $(obj).addClass(iCur).siblings().removeClass(iCur);
+        $(obj).attr('onoff','false').siblings().attr('onoff','true');
+    }else{
+        $(obj).removeClass(iCur);
+        $(obj).attr('onoff','true') ;
+    }
+}
+</script>
