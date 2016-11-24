@@ -108,8 +108,10 @@ margin-top:3px; border:none; opacity:1; filter:alpha(opacity=100); float:right; 
 [class*=" datetimepicker-dropdown"]{	margin:12px 0 0 6px;	}
 [class*=" datetimepicker-dropdown"]::before{ right:6px; top:-7px;}
 [class*=" datetimepicker-dropdown"]::after{ right:7px; top:-6px;}
-[class^="icon-"], [class*=" icon-"] { background-image: url("../../images/bootstrap/glyphicons-halflings.png");	background-position: 14px 14px;	background-repeat: no-repeat;	
+[class^="icon-"], [class*=" icon-"] { background-image: url(../../images/bootstrap/glyphicons-halflings-white.png);	background-position: 14px 14px;	background-repeat: no-repeat;	
 display: inline-block;	height: 14px;	line-height: 14px;	margin-top: 1px; vertical-align: text-top;	width: 14px;	}
+.bootstrap-select.btn-group .dropdown-menu li a:hover i.check-mark,
+.bootstrap-select.btn-group .dropdown-menu li.selected i.check-mark{background-image:url(../../images/bootstrap/glyphicons-halflings.png);}
 .icon-arrow-left {	background-position: -240px -96px;	}
 .icon-arrow-right {	background-position: -264px -96px;	}
 .icon-ok{	background-position: -288px 0px;	}

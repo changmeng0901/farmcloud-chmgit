@@ -63,7 +63,7 @@ $(function(){
 	
 	//(4)计算主体高度及折叠按钮居中
 	var IESpace = 0;//为了解决ie8大屏出滚动条问题，html和body差4PX
-	if( $(document).height() > $(window).height() ){
+	if( $("html").height() > $(window).height() ){
 		IESpace	= 4;
 	}else{
 		IESpace	=0
@@ -218,7 +218,7 @@ $(function(){
 		
 		//(4)计算主体高度及折叠按钮居中
 		var IESpace = 0; //为了解决ie8大屏出滚动条问题，html和body差4PX
-		if( $(document).height() > $(window).height() ){
+		if( $("html").height() > $(window).height() ){
 			IESpace	= 4;
 		}else{
 			IESpace	=0
