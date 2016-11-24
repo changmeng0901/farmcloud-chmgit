@@ -148,6 +148,29 @@ $(function(){
 	});
 	
 	
+	//(10)物料名称点击时，出现下拉内容，并联动搜索
+	$('.mater_name_hd').click(function(ev){
+		var e = ev || event;
+		if (e && e.stopPropagation) {
+			e.stopPropagation();
+		} else {
+			e.cancelBubble = true;
+		}
+		$(this).parents().find('.mater_name_bd').show();	
+	});
+	$('.mater_name_bd li').click(function(ev){
+		var e = ev || event;
+		if (e && e.stopPropagation) {
+			e.stopPropagation();
+		} else {
+			e.cancelBubble = true;
+		}	
+		$(this).parents().find('.mater_name_bd').show();
+	});
+	$('body').click(function(){
+		$('.mater_name_bd').hide();	
+	});
+	
 	
 	
 	
