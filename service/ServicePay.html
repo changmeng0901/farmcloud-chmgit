@@ -68,7 +68,7 @@
                                 <img src="../images/service/ServicePay_zf_jd.jpg" />
                             </li>
                         </ul>
-                        <button type="button" class="pay_btn">立即支付</button>
+                        <button type="button" class="pay_btn" id="pay_btn">立即支付</button>
                     </div>   
                 </div>       
                 <!-- 支付 -->
@@ -79,6 +79,24 @@
     
    </table> 
 </div>
+
+<!-- 支付提醒弹框 -->
+<div class="paytip_modal" id="paytip_modal">
+<div class="paytip_content">
+	<div class="modal_header clear">
+    	<h3 class="m_title">网上支付提醒</h3>
+        <i class="m_close"><img src="../images/service/modal_close1.jpg" /></i>
+    </div>
+    <div class="modal_body">
+    	<p class="p_text1">付款完成前，请不要关闭此窗口<br />请在新开的网上支付页面完成付款后，再依据您的情况点击下列按钮：</p>
+        <p class="p_button">
+        	<button class="btn pay_success" type="button" onclick="window.open('ServiceBuy.html')">支付完成</button>
+            <a class="btn pay_again" href="ServicePay.html">重新支付</a>
+        </p>
+    </div>
+</div>
+</div>
+<!-- 支付提醒弹框 -->
 
 <script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../js/service/ServicePay.js"></script>
