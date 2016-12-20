@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>积分</title>
+	<link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/newpage/points.css" />
+    <script src="../js/newpage/excanvas.js"></script>
+    <script>
+    // IE function.bind polyfill
+    if (!Function.prototype.bind) {
+        Function.prototype.bind = function (oThis) {
+            if (typeof this !== "function") {
+                // closest thing possible to the ECMAScript 5 internal IsCallable function
+                throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+            }
+ 
+            var aArgs = Array.prototype.slice.call(arguments, 1),
+                fToBind = this,
+                fNOP = function () {},
+                fBound = function () {
+                    return fToBind.apply(this instanceof fNOP && oThis ? this : oThis,
+                aArgs.concat(Array.prototype.slice.call(arguments)));
+            };
+ 
+            fNOP.prototype = this.prototype;
+            fBound.prototype = new fNOP();
+ 
+            return fBound;
+        };
+    }
+    </script>
+</head>
+<body>
+<div class="top">
+	<div class="logo"><img src="../images/commons/logo_01.jpg" width="200" height="60" /></div>
+</div>
+
+<div class="content">
+    <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+    	<tr>
+        	<td class="left_c" valign="top" width="76">
+            <!--左边开始-->
+            <div class="left_c1">
+                <ul class="left_cul">
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_zy.png" width="77" height="69" /></a></li>
+                    <li class="left_culi on"><a href="#"><img src="../images/commons/left_jh.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_sc.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_xs.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_jiagong.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_lvli.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_fx.png" width="77" height="69" /></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!--左边结束-->
+            </td>           
+	
+            <td valign="top">
+            <div class="right_c">
+            	<!-- 面包屑导航 -->
+            	<div class="breadNav_wap clear">
+                    <div class="breadNav_lt"><span style="color:#333; font-size:14px;">当前位置：</span>个人中心<span>&gt;</span>任务积分</div>
+                </div>
+				<!-- 内容开始 -->
+				<table width="100%"; cellpadding="0" cellspacing="0" class="detailCase">
+					<tr>
+						<td width="70%">
+							<div class="detail">
+								<table width="100%"; cellpadding="0" cellspacing="0" class="newBox">
+									<tr class="topLine">
+										<td width="16%">
+											<div class="photo">
+												<img src="../images/newpage/photo.jpg" />
+											</div>
+										</td>
+										<td colspan="4">
+											<div class="line1 clear">
+												<p class="name fl">马德里<span>企业管理员</span></p>
+												<p class="how fr">如何获得积分<img src="../images/newpage/question.png"  /></p>
+											</div>
+											<div class="line2 clear">
+												<div class="sum fl">积分总计<span>5870</span></div>
+												<div class="fr change">兑换奖励>></div>
+											</div>
+											<div class="speedBar">
+												<div class="inner"></div>
+											</div>
+										</td>
+									</tr>
+									<tr class="bottomLine">
+										<td width="16%">
+											<p class="finish"><span></span>今日完成情况</p>
+										</td>
+										<td width="21%">
+											<div class="case">
+												<p class="item">获得积分</p>
+												<p class="nub nub1">50<span>分</span></p>
+											</div>
+										</td>
+										<td width="21%">
+											<div class="case">
+												<p class="item">完成量</p>
+												<p class="nub nub2">22<span>条</span></p>
+											</div>
+										</td>
+										<td width="21%">
+											<div class="case">
+												<p class="item">总任务条数</p>
+												<p class="nub nub3">65<span>条</span></p>
+											</div>
+										</td>
+										<td width="21%">
+											<div class="case">
+												<p class="item">本日进度</p>
+												<div class="piechart" data-percent="79">
+						                        	<p class="percent_text" style="position:absolute"></p> 
+						                        </div>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+						<td width="30%">
+							<div class="code">
+								<img src="../images/newpage/code.png" alt="">
+								<p>扫一扫关注公众号<br><span>20</span>积分立即领取！</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="record clear">
+					<div class="basewaper smallCard">
+	                    <table width="100%" cellpadding="0" cellspacing="0">
+	                        <tr>
+	                          <td width="150">
+	                            <div class="pic"><img src="../images/newpage/pic1.jpg" alt="" /></div>
+	                          </td>
+	                          <td>
+	                            <div class="addContent">
+	                              <h4>添加农事<span>共计5条任务</span></h4>
+	                              <p>每添加一条带图片或者投入品的农事记录可获得1积分，图片与投入品皆有可获得3分，每天可获得积分条数为5条！</p>
+	                            </div>
+	                          </td>
+	                        </tr>
+	                    </table>
+	                    <table width="100%" cellpadding="0" cellspacing="0">
+	                        <tr>
+	                          <td width="35%" class="ask">
+	                            <img src="../images/newpage/ask.png" style="padding-bottom:5px;"/>
+	                            <span>任务进度：</span>
+	                            <span>1/5</span>
+	                          </td>
+	                          <td width="35%" valign="center">
+	                            <img src="../images/newpage/active.png" style="padding-bottom:5px;" />
+	                            <span>累计积分：</span>
+	                            <span>+1</span>
+	                          </td>
+	                          <td class="doFinish">
+	                            <a href="#" class="btn btn-primary">去完成</a>
+	                          </td>
+	                        </tr>
+	                    </table>
+	                </div>
+	                <div class="basewaper smallCard">
+	                    <table width="100%" cellpadding="0" cellspacing="0">
+	                        <tr>
+	                          <td width="150">
+	                            <div class="pic"><img src="../images/newpage/pic2.jpg" alt="" /></div>
+	                          </td>
+	                          <td>
+	                            <div class="addContent">
+	                              <h4>添加农事<span>共计5条任务</span></h4>
+	                              <p>审核计划种植的内容，是否和实际种植情况相同，如有出入，按实际情况进行修改。完成一个审核任务，赠送1积分</p>
+	                            </div>
+	                          </td>
+	                        </tr>
+	                    </table>
+	                    <table width="100%" cellpadding="0" cellspacing="0">
+	                        <tr>
+	                          <td width="35%" class="ask">
+	                            <img src="../images/newpage/ask.png" style="padding-bottom:5px;"/>
+	                            <span>任务进度：</span>
+	                            <span>1/5</span>
+	                          </td>
+	                          <td width="35%" valign="center">
+	                            <img src="../images/newpage/active.png" style="padding-bottom:5px;" />
+	                            <span>累计积分：</span>
+	                            <span>+1</span>
+	                          </td>
+	                          <td class="doFinish">
+	                            <a href="#" class="btn btn-primary">去完成</a>
+	                          </td>
+	                        </tr>
+	                    </table>
+	                </div>
+	                <div class="basewaper smallCard">
+	                    <table width="100%" cellpadding="0" cellspacing="0">
+	                        <tr>
+	                          <td width="150">
+	                            <div class="pic"><img src="../images/newpage/pic1.jpg" alt="" /></div>
+	                          </td>
+	                          <td>
+	                            <div class="addContent">
+	                              <h4>添加农事<span>共计5条任务</span></h4>
+	                              <p>每添加一条带图片或者投入品的农事记录可获得1积分，图片与投入品皆有可获得3分，每天可获得积分条数为5条！</p>
+	                            </div>
+	                          </td>
+	                        </tr>
+	                    </table>
+	                    <table width="100%" cellpadding="0" cellspacing="0">
+	                        <tr>
+	                          <td width="35%" class="ask">
+	                            <img src="../images/newpage/ask.png" style="padding-bottom:5px;"/>
+	                            <span>任务进度：</span>
+	                            <span>1/5</span>
+	                          </td>
+	                          <td width="35%" valign="center">
+	                            <img src="../images/newpage/active.png" style="padding-bottom:5px;" />
+	                            <span>累计积分：</span>
+	                            <span>+1</span>
+	                          </td>
+	                          <td class="doFinish">
+	                            <a href="#" class="btn btn-primary">去完成</a>
+	                          </td>
+	                        </tr>
+	                    </table>
+	                </div>
+				</div>
+				<p class="copyRight">@2016 北京奥科美技术服务有限公司版权所有</p>
+            </div>
+            <!-- 内容结束 -->
+            </td>    
+		</tr>  
+    
+   </table> 
+</div>
+</body>
+
+<script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/newpage/easypiechart.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.piechart').easyPieChart({
+            barColor: '#67cdf3',
+            trackColor: '#f7f7f7',
+            scaleColor: false,
+            lineWidth: 6,
+            trackWidth: 6,
+            size :60,
+            lineCap: 'round',
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent_text').text(Math.round(percent)+"%");
+            }
+        });
+
+        $(".smallCard").css({width:"49%",marginRight:"1%"});
+	    $(".smallCard").each(function(index, el) {
+	      if(index%2!=0){
+	        $(this).css({marginRight:0,"float":"right"});
+	      }
+	    });
+	});
+</script>
+</html>

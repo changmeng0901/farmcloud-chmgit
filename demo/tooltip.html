@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+    <title>tooltip</title>
+    <link type="text/css" rel="stylesheet" href="../style/bootstrap/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
+    <style>
+    	.tooltip.in{filter:alpha(opacity=50);opacity:.5}
+    </style>
+
+</head>
+
+<body>
+<div class="top">
+	<div class="logo"><img src="../images/commons/logo_01.jpg" width="200" height="60" /></div>
+</div>
+
+<div class="content">
+    <table width="100%" height="100%" cellpadding="0" cellspacing="0">
+    	<tr>
+        	<td class="left_c" valign="top" width="76">
+            <!--左边开始-->
+            <div class="left_c1">
+                <ul class="left_cul">
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_zy.png" width="77" height="69" /></a></li>
+                    <li class="left_culi on"><a href="#"><img src="../images/commons/left_jh.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_sc.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_xs.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_jiagong.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_lvli.png" width="77" height="69" /></a></li>
+                    <li class="left_culi"><a href="#"><img src="../images/commons/left_fx.png" width="77" height="69" /></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!--左边结束-->
+            </td>           
+			<td width="210" valign="top" style=" border-right:1px solid #e1e4eb;">
+                <div class="left_c2">
+                	<ul style=" min-height:200px; border-bottom:1px solid #e1e4eb;" class="lt_c_ul">
+                    	<li><a href="#"><img width="12" height="12" src="../images/commons/biao_qysz.png">&nbsp;企业设置</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/icon_mokuai.png">&nbsp;模块配置</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/community_23.png">&nbsp;角色管理</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/caishou_03.png">&nbsp;分组管理</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/1426160040_book.png">&nbsp;字段管理</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/wuliao.png">&nbsp;物料信息</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/product_info.png">&nbsp;商品信息</a></li>
+                        <li><a href="#" class="fon_07"><strong><img width="12" height="12" src="../images/commons/tourupin.png">&nbsp;投入品信息</a></strong></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/shebei2.png">&nbsp;设备信息</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/shipin2.png">&nbsp;视频信息</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/rfid.png">&nbsp;RFID卡管理</a></li>
+                        <li><a href="#"><img width="12" height="12" src="../images/commons/huishouzhantupian.png">&nbsp;回收站</a></li>
+                     </ul>
+                	<div class="clear"></div>
+                </div>
+            </td>
+            <td valign="top">
+            <div class="right_c" style="min-height:30px; padding-bottom:15px; padding-top:15px;">
+            	<!-- 面包屑导航 开始 -->
+                <div class="breadNav_wap mb15 clear">
+                    <div class="breadNav_lt"><strong>投入品信息</strong></div>
+                </div>
+                <a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="今日已下过订单">
+                	<img src="../images/demo/custorminfo_icons02.jpg" />
+                </a>
+                <img src="../images/demo/custorminfo_icons01.jpg" />
+            </div>
+            </td>    
+    	</tr>  
+   </table> 
+</div>
+
+
+<script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+<script>
+$("[data-toggle='tooltip']").tooltip();  //工具提示
+</script>
+
+</body>
+</html>
+
+
