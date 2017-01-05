@@ -326,3 +326,472 @@ body{width: 100%; height: auto;}
 .dashboard ul li .inner .figure5{color: #8eeaf3;}
 .dashboard ul li .inner .figure6{color: #96eab9;}
 .dashboard ul li .inner .figure7{color: #63a8eb;}
+
+/*2017.0104修改*/
+.newIndex .business{
+	margin-bottom:14px;
+	background-image:url(../../images/newpage/bg_business.jpg);
+	background-size:100% auto;
+	background-repeat:no-repeat;
+	}
+.business .present{
+	background:#fff;
+	}
+.newIndex .business .iconB{
+	left:-5px;
+	width:100px;
+	height:96px;
+	}
+.dashboard ul li .inner .figure{
+	font-size:18px;
+	}
+.dashboard .inner .text1{
+	font-size:14px;
+	}
+.dashboard .inner .text2{
+	font-size:11px;
+	color:#ccc;
+	font-family: arial;
+	-webkit-transform: scale(0.9) rotate(0deg);
+	}
+.centerContent{
+	margin-right:0;
+	}
+.topContentLeft{
+	position:relative;
+	width:310px;
+	height:266px;
+	}
+.topContentLeft .iconBase{
+	position:absolute;
+	left:10px;
+	top:-5px;
+	width:110px;
+	height:32px;
+	background:url(../../images/newpage/icon_baseinfo.png) no-repeat;
+	}
+.topContentLeft .job{
+	height: 74px; 
+	line-height: 74px; 
+	text-align: center;
+	color: #4c4c4c;
+	font-size:22px;
+	}
+.topContentLeft .vip_info{
+	padding:9px 0;
+	overflow:hidden;
+	text-align:center;
+	background:url(../../images/newpage/icon_line1.png) no-repeat center center;
+	}
+.topContentLeft .vip_info .rank{
+	display: inline-block; 
+	width: 72px;
+	height: 22px; 
+	margin-right:24px;
+    background-image: url(../../images/newpage/sprite.png); 
+	background-repeat:no-repeat;
+	vertical-align:top;
+	}
+.topContentLeft .vip_info .rank.rank1{
+	background-position:0 -120px;
+	}
+.topContentLeft .vip_info .rank.rank2{
+	background-position:0 -90px;
+	}
+.topContentLeft .vip_info .rank.rank3{
+	background-position:0 -60px;
+	}
+.topContentLeft .vip_info .rank.rank4{
+	background-position:0 -30px;
+	}
+.topContentLeft .vip_info .rank.rank5{
+	background-position:0 0;
+	}
+.topContentLeft .vip_info .already{
+	display: inline-block; 
+	width: 86px; 
+	height: 17px; 
+	margin-top:2px;
+	background: url(../../images/newpage/sprite.png) 0 -150px no-repeat; 
+	vertical-align:top;
+	}
+.topContentLeft .vip_info .already.unalready{
+	background: url(../../images/newpage/sprite.png) 0 -180px no-repeat; 
+	}
+.topContentLeft .sign_block{
+	padding-top:16px;
+	}
+.topContentLeft .sign{
+	width:48px;
+	height:16px;
+	background-position:-12px -214px;
+	}
+.topContentLeft .sign.cur{
+	background-position: -12px -254px;
+	}
+.topContentLeft .sign .points{
+	left:0;
+	z-index:2;
+	width:58px;
+	padding:2px 0;
+	text-align:center;
+	}
+.topContentLeft .statu{
+	float: left;
+	height:16px;
+	line-height:16px;
+	}
+.topContentLeft .score{
+	float:left;
+	height:16px;
+	line-height:16px;
+	padding:0 10px 0 20px;
+	background:url(../../images/newpage/score.png) no-repeat 0 0;
+	}
+.topContent,
+.centerContent .datas .inner,
+.topContentMiddle{
+	height:266px;
+	}
+.topContentMiddle{
+	padding-left:325px;
+	}
+.topContent .service{
+	width:inherit;
+	height:266px;
+	margin-top:0;
+	}
+.topContent .service .btn_view{
+	display:block;
+	width:100px;
+	height:30px;
+	line-height:28px;
+	margin:28px auto 0;
+	border:1px solid #63a8eb;
+	border-radius:15px;
+	box-sizing:border-box;
+	font-size:12px;
+	color:#63a8eb;
+	text-align:center;
+	}
+.topContent .service .btn_view:hover{
+	box-shadow:0 2px 2px #9ad8ff;
+	}
+.progress_block{
+	height:50px;
+	margin:20px 0 0;
+	padding-top:34px;
+	box-sizing:border-box;
+	}
+.progress_block dt{
+	position:relative;
+	float:left;
+	width:56px;
+	font-size:12px;
+	font-weight:normal;
+	}
+.progress_block	dt .txt_date{
+	position:absolute;
+	left:0;
+	bottom:16px;
+	width:100%;
+	color:#999;
+	font-size:10px;
+	-webkit-transform:scale(.8);
+	}
+.progress_block	dd{
+	padding-left:56px;
+	}
+.progress_block	.progress_bar{
+	position:relative;
+	width:100%;
+	height:16px;
+	border-radius:8px;
+	box-shadow:inset 0 0 2px 3px #f1f1f1;
+	background:#f5f5f5;
+	}
+.progress_block .bar_inner{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:1;
+	max-width:100%;
+	height:16px;
+	border-radius:8px;
+	background:#9ad8ff;
+	}
+.progress_block .bar_val{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:1;
+	width:100%;
+	height:16px;
+	line-height:16px;
+	padding: 0 10px;
+	box-sizing:border-box;
+	font-size:10px;
+	color:#fff;
+	text-shadow: 0 0 1px #000;
+	}
+.progress_block .cycle{
+	position:absolute;
+	left:0;
+	bottom:30px;
+	z-index:1;
+	width:60px;
+	height:20px;
+	line-height:20px;
+	margin-left:-30px;
+	font-size:12px;
+	text-align:center;
+	color:#fff;
+	background:#9ad8ff;
+	border-radius:3px;
+	}
+.progress_block .cycle:after{
+	position:absolute;
+	left:50%;
+	bottom:-10px;
+	margin-left:-5px;
+	content:'';
+	border-style:solid solid solid solid;
+	border-width:5px 5px 5px 5px;
+	border-color:#9ad8ff transparent transparent transparent;
+	}
+/*天气样式*/
+.fixed_weather{
+	position:fixed;
+	right:20px;
+	bottom:20px;
+	z-index:2;
+	width:176px;
+	height:94px;
+	border-radius:5px;
+	background-position:0 0 ;
+	background-repeat:no-repeat;
+	color:#fff;
+	cursor:pointer;
+	box-shadow:0 1px 5px #dadada;
+	}
+.fixed_weather.bg_weat1{
+	background-image:url(../../images/newpage/weather1.jpg);
+	}
+.fixed_weather.bg_weat2{
+	background-image:url(../../images/newpage/weather2.jpg);
+	}
+.fixed_weather.bg_weat3{
+	background-image:url(../../images/newpage/weather3.jpg);
+	}
+.fixed_weather.bg_weat4{
+	background-image:url(../../images/newpage/weather4.jpg);
+	}
+.fixed_weather.bg_weat5{
+	background-image:url(../../images/newpage/weather5.jpg);
+	}
+.fixed_weather .weat_sign{
+	float:left;
+	width:86px;
+	height:94px;
+	padding-top:15px;
+	background-position:center center;
+	background-repeat:no-repeat;
+	box-sizing:border-box;
+	text-align:center;
+	}
+.fixed_weather.bg_weat1 .weat_sign{
+	background-image:url(../../images/newpage/icon_qingwh66.png);
+	}
+.fixed_weather.bg_weat2 .weat_sign{
+	background-image:url(../../images/newpage/icon_duoyunwh66.png);
+	}
+.fixed_weather.bg_weat3 .weat_sign{
+	background-image:url(../../images/newpage/icon_yuwh66.png);
+	}
+.fixed_weather.bg_weat4 .weat_sign{
+	background-image:url(../../images/newpage/icon_xuewh66.png);
+	}
+.fixed_weather.bg_weat5 .weat_sign{
+	background-image:url(../../images/newpage/icon_maiwh66.png);
+	}
+.fixed_weather .weat_site{
+	padding:10px 0 5px 0;
+	font-size:18px;
+	}
+.fixed_weather .weat_qiwen{
+	height:26px;
+	line-height:26px;
+	font-size:24px;
+	}
+.fixed_weather .weat_yunkuang{
+	height:30px;
+	line-height:30px;
+	font-size:18px;
+	}
+.topContentRight{
+	display:none;
+	position:fixed;
+	right:20px;
+	bottom:120px;
+	z-index:2;
+	width:764px;
+	height:262px;
+	margin:0;
+	padding:10px 0;
+	box-sizing:border-box;
+	background-position:0 0 ;
+	background-repeat:no-repeat;
+	color:#fff;
+	font-size:12px;
+	}
+.topContentRight .site_block{
+	height:20px;
+	line-height:20px;
+	margin-bottom:15px;
+	margin-left:15px;
+	}
+.topContentRight .site_block .area{
+	float:left;
+	padding-right:20px;
+	}
+.topContentRight .site_block .area img{
+	width:12px;
+	height:15px;
+	vertical-align:top;
+	margin:3px 5px 0 0;
+	}
+.topContentRight .site_block .area_time{
+	}
+.topContentRight.bg_weat1{
+	background-image:url(../../images/newpage/big_weather1.png);
+	}
+.topContentRight.bg_weat2{
+	background-image:url(../../images/newpage/big_weather2.png);
+	}
+.topContentRight.bg_weat3{
+	background-image:url(../../images/newpage/big_weather3.png);
+	}
+.topContentRight.bg_weat4{
+	background-image:url(../../images/newpage/big_weather4.png);
+	}
+.topContentRight.bg_weat5{
+	background-image:url(../../images/newpage/big_weather5.png);
+	}
+.topContentRight .weather_info{
+	float:left;
+	width:180px;
+	height:206px;
+	text-align:center;
+	}
+.topContentRight .weather_info .icon_img{
+	width:70px;
+	height:70px;
+	margin:4px 0;
+	vertical-align:top;
+	}
+.topContentRight .weather_info .txt1{
+	height:56px;
+	line-height:56px;
+	font-size:34px;
+	}
+.topContentRight .weather_info .txt1 sup{
+	font-size:20px;
+	top:-16px;
+	}
+.topContentRight .weather_info .txt2{
+	font-size:16px;
+	}
+.topContentRight .weather_info .txt3{
+	background: rgba(0, 0, 0, 0) url("../../images/newpage/shadow.png") repeat scroll 0 0;
+    border-radius: 15px;
+    height: 26px;
+    line-height: 26px;
+    margin: 20px auto 0;
+    text-align: center;
+    width: 116px
+	}
+.a_week_weather li{
+	float:left;
+	width:96px;
+	height:206px;
+	background:url(../../images/newpage/icon_line2.png) repeat-y 0 0;
+	box-sizing:border-box;
+	text-align:center;
+	}
+.a_week_weather .text_week{
+	height:16px;
+	line-height:16px;
+	}
+.a_week_weather .text_day{
+	height:16px;
+	line-height:16px;
+	margin:5px 0;
+	}
+.a_week_weather .text_img{
+	padding:12px 0 30px;
+	}
+.a_week_weather .text_img img{
+	width:58px;
+	height:58px;
+	vertical-align:top;
+	}
+.a_week_weather .text_qiwen{
+	height:16px;
+	line-height:16px;
+	}
+.a_week_weather .text_yunkuang{
+	height:22px;
+	line-height:22px;
+	margin-top:5px;
+	}
+.a_week_weather .text_wind{
+	height:22px;
+	line-height:22px;
+	}
+/*2017.01.05修改*/
+.topContent .service {
+	background-image:url(../../images/newpage/bg_service.png);
+	background-size:100% auto;
+	background-repeat:0 0;
+	}
+.topContent .service .btn_view.unclick{
+	border:1px solid #b3b4b3;
+	background:#b3b4b3;
+	color:#fff;
+	cursor:default;
+	}
+.topContent .service .btn_view.unclick:hover{
+	box-shadow:none;
+	}
+.topContentLeft .vip_info .rank{
+	line-height: 22px;
+	font-size:12px;
+	color:#fff;
+	text-indent:10px;
+	}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

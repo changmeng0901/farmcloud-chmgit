@@ -1,5 +1,14 @@
 // 进度条
 $(document).ready(function() {
+	
+	//右侧底部固定定位的天气事件
+	$('#fixed_weather').click(function(){
+		$('#topContentRight').slideDown();	
+	});
+	$('#fixed_weather').mouseout(function(){
+		$('#topContentRight').slideUp();		
+	});
+	
 	if(($('.blue').width()/$('.growth').width()*100)>80){
 	 	$('.manage').addClass('newRight');
 	};
