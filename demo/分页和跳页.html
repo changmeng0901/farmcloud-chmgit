@@ -1,0 +1,300 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>分页和跳页</title>
+
+<link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
+
+<style>
+	*,*:before,*:after{ box-sizing: border-box;}
+	.fl{ float:left;}
+	.fr{ float:right;}
+	/*表格样式*/
+	.tableModel {
+	    border-collapse: separate;
+	    border-left: 1px solid #e1e1e1;
+	    border-radius: 10px 10px 0 0;
+	    border-right: 1px solid #e1e1e1;
+	    border-top: 1px solid #e1e1e1;
+	    color: #6c6a6b;
+	    font-family: "微软雅黑";
+	}
+	.tableModel thead {
+	    border-radius: 10px 10px 0 0;
+	}
+	.tableModel thead th, .tableModel tbody td {
+	    border-bottom: 1px solid #e1e1e1;
+	    height: 38px;
+	    text-align: center;
+	}
+	.tableModel thead th {
+	    background: #f0f5fb none repeat scroll 0 0;
+	    font-size: 14px;
+	    font-weight: normal;
+	    height: 42px;
+	}
+	.tableModel thead th:first-child {
+	    border-radius: 10px 0 0;
+	}
+	.tableModel thead th:last-child {
+	    border-radius: 0 10px 0 0;
+	}
+	.tableModel tbody tr td {
+	    background: #fcfcfc none repeat scroll 0 0;
+	    font-size: 13px;
+	}
+	.tableModel tbody tr.odd td {
+	    background: #fbfcfe none repeat scroll 0 0;
+	}
+	.tableModel tbody tr.hover td {
+	    background: #ecf7e6 none repeat scroll 0 0;
+	}
+	.tableModel .icheckbox_minimal-blue, .tableModel .icheckbox_minimal-blue.checked {
+	    display: inline-block;
+	    float: none;
+	    margin: 0;
+	}
+	.tableModel .iradio_minimal-blue, .tableModel .iradio_minimal-blue.checked {
+	    display: inline-block;
+	    float: none;
+	    margin: 0;
+	}
+	/* 分页模板 */
+	.pageModel{ 
+		border:1px solid #e1e1e1; 
+		border-radius:5px; 
+		border-collapse:separate; 
+		font-size:12px;
+		}
+	.pageModel span{ 
+		float:left; 
+		height:32px; 
+		line-height:32px; 
+		border-right:1px solid #e1e1e1;
+		}
+	.pageModel span.page_first a{ 
+		border-radius:4px 0 0 4px;
+		}
+	.pageModel span.page_last{ 
+		border-right:0;
+		}
+	.pageModel a{ 
+		display:block; 
+		padding:0 13px; 
+		color:#9a9a9a;
+		text-decoration:none;
+		}
+	.pageModel a:link ,.pageModel a:hover ,.pageModel a:focus ,.pageModel a:visited{ 
+		text-decoration:none;
+		}
+	.pageModel .page_Cur a{ 
+		background:#f6f6f8; 
+		color:#0088d2;
+		}
+	.pageModel .pageCount a:hover{
+		color:#9a9a9a;
+		}
+	.pageModel .current{
+		background:#f6f6f8; 
+		color:#9a9a9a; 
+		padding:0 13px;
+		}
+	/*  分页模板新增的跳转样式 */
+	.pageModel-wap{ 
+		margin:40px auto;
+		}
+	.pageModel-wap .pageModel{ 
+		margin:0;
+		}
+	.page_jumpTo{ 
+		height:32px; 
+		line-height:32px; 
+		margin-left:10px; 
+		border:1px solid #e1e1e1; 
+		border-radius:5px; 
+		box-sizing:content-box;
+		text-align:center; 
+		color:#9a9a9a; 
+		overflow:hidden;
+		}
+	.page_jumpTo .txt_txt{ 
+		padding:0 13px;
+		}
+	.page_jumpTo .txt_ipt{ 
+		border-left:1px solid #e1e1e1; 
+		border-right:1px solid #e1e1e1;
+		}
+	.page_jumpTo .txt_ipt input{ 
+		width:60px; 
+		height:32px; 
+		border:none; 
+		text-align:center; 
+		font-size:12px; 
+		color:#6c6a6b;
+		}
+	.page_jumpTo .txt_btn .determine_btn{ 
+		display:block; 
+		width:50px; 
+		height:32px; 
+		border:0; 
+		background-color:#f6f6f8; 
+		font-size:12px; 
+		color:#9a9a9a; 
+		cursor:pointer;
+		}
+</style>
+</head>
+
+<body>
+
+<div class="right_c minW1000" style="margin-top:20px;">
+	
+    <table class="tableModel" width="100%" cellpadding="0" cellspacing="0">
+    	<thead>
+        <tr>
+            <th width="5%">ID</th>
+            <th width="14%">企业名称</th>
+            <th width="12%">用户名</th>
+            <th width="8%">联系人</th>
+            <th width="12%">联系电话</th>
+            <th width="8%">用户类型</th>
+            <th width="8%">企业认证</th>
+            <th width="8%">审核状态 </th>
+            <th width="10%">申请时间</th>
+            <th width="15%">操作</th>
+        </tr>
+        </thead>
+    	<tbody>
+        <tr class="odd">
+            <td>13</td>
+            <td>北京碧海原生态</td>
+            <td>admine</td>
+            <td>张先生</td>
+            <td>13913808523</td>
+            <td>未分级</td>
+            <td>否</td>
+            <td>未审核</td>
+            <td>2015-06-02</td>
+            <td>
+                <a href="javascript:;"><img width="16" height="15" src="images/cjsearch_bg.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_60.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_100.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_101.png"></a>
+                <a href="payStatues.html"><img width="16" height="15" src="images/02_102.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_62.png"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>北京碧海原生态</td>
+            <td>admine</td>
+            <td>张先生</td>
+            <td>13913808523</td>
+            <td>未分级</td>
+            <td>否</td>
+            <td>未审核</td>
+            <td>2015-06-02</td>
+            <td>
+                <a href="javascript:;"><img width="16" height="15" src="images/cjsearch_bg.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_60.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_100.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_101.png"></a>
+                <a href="payStatues.html"><img width="16" height="15" src="images/02_102.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_62.png"></a>
+            </td>
+        </tr>
+        <tr class="odd">
+            <td>15</td>
+            <td>北京碧海原生态</td>
+            <td>admine</td>
+            <td>张先生</td>
+            <td>13913808523</td>
+            <td>未分级</td>
+            <td>否</td>
+            <td>未审核</td>
+            <td>2015-06-02</td>
+            <td>
+                <a href="javascript:;"><img width="16" height="15" src="images/cjsearch_bg.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_60.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_100.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_101.png"></a>
+                <a href="payStatues.html"><img width="16" height="15" src="images/02_102.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_62.png"></a>
+            </td><strong></strong>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>北京碧海原生态</td>
+            <td>admine</td>
+            <td>张先生</td>
+            <td>13913808523</td>
+            <td>未分级</td>
+            <td>否</td>
+            <td>未审核</td>
+            <td>2015-06-02</td>
+            <td>
+                <a href="javascript:;"><img width="16" height="15" src="images/cjsearch_bg.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_60.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_100.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_101.png"></a>
+                <a href="payStatues.html"><img width="16" height="15" src="images/02_102.png"></a>
+                <a href="#"><img width="16" height="15" src="images/02_62.png"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- 表格 结束 -->
+    <!-- 分页 开始 -->
+    <table class="pageModel-wap" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <div style="width:auto;">
+                    <table class="pageModel" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>
+                                <span class="page_num page_first page_Cur"><a href="#">1</a></span>
+                                <span class="page_num "><a href="#">2</a></span>
+                                <span class="page_num "><a href="#">3</a> </span>
+                                <span class="page_num "><a href="#">4</a></span>
+                                <span class="page_num "><a href="#">5</a></span>
+                                <span class="page_num"><a href="#">&gt;&gt;</a></span>
+                                <span class="page_num"><a id="lastPage" href="#">尾页</a></span>
+                                <span class="page_num page_last" style="border-right:0" class="pageCount"><a>共35页</a></span
+                            ></td>
+                    </tr>
+                    </table>
+                </div>
+            </td>
+            <td>
+                <div class="page_jumpTo">
+                    <div class="txt_txt fl">跳转到</div>
+                    <div class="txt_ipt fl"><input type="text" value="" /></div>
+                    <div class="txt_btn fl"><a class="determine_btn" href="#">确定</a></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!-- 分页 结束 -->
+
+</div>  
+
+<script type="text/javascript" src="../js/commons/jquery.js"></script>
+<script type="text/javascript">
+jQuery = jQuery.noConflict();
+jQuery(function(){
+	
+	//表格隔行换色
+	jQuery('.tableModel tbody tr').mouseover(function(){
+		jQuery(this).addClass('hover');
+	});
+	jQuery('.tableModel tbody tr').mouseout(function(){
+		jQuery(this).removeClass('hover');
+	});
+	
+});
+
+</script>
+</body>
+</html>
+

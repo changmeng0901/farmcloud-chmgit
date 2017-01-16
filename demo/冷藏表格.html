@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+	<title>冷藏表格</title>
+	<link type="text/css" rel="stylesheet" href="../style/commons/style.css" />
+	<style type="text/css">
+		/* 统计表 */
+		.commonHd3{ padding:0 30px;}
+		.commonTable thead tr{ background:#ebf6ff;}
+		.commonTable th,.commonTable td{ border:1px solid #bbd4e8; border-collapse:collapse; line-height:38px; text-align:center; font-size:14px; font-family:'宋体'; font-weight:normal;}
+		.commonTable tbody tr{ background:#fff;}
+		.commonTable tbody tr.trCur{ background:#fbfcfe;}
+		.commonTable tbody tr.trHover{ background:#ecf7e6;}
+		
+		
+	</style>
+
+	<script type="text/javascript" src="../js/commons/jquery-1.10.2.min.js"></script>
+</head>
+
+<body style="width:800px; margin:20px auto;">
+<table cellpadding="0" cellspacing="0" width="100%;" class="commonTable" style="border-collapse:collapse;">
+    <thead>
+        <tr style="background:#fcfeff;">
+            <th colspan="6">冷藏 - 03</th>
+        </tr>
+        <tr>
+            <th width="15%">物料名称</th>
+            <th width="15%">日期</th>
+            <th width="15%">出入库类型</th>
+            <th width="15%">单位</th>
+            <th width="15%">数量 </th>
+            <th width="15%">所属组别</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="15%">有机黑豆</td>
+            <td width="15%">2014.09.29</td>
+            <td width="15%">采购入库</td>
+            <td width="15%">袋</td>
+            <td width="15%">120</td>
+            <td width="15%">一组</td>
+        </tr>
+        <tr class="trCur">
+            <td>有机黑豆</td>
+            <td>2014.09.29</td>
+            <td>采购入库</td>
+            <td>袋</td>
+            <td>120</td>
+            <td>一组</td>
+        </tr>
+        <tr>
+            <td>有机黑豆</td>
+            <td>2014.09.29</td>
+            <td>采购入库</td>
+            <td>袋</td>
+            <td>120</td>
+            <td>一组</td>
+        </tr>
+        <tr class="trCur">
+            <td>有机黑豆</td>
+            <td>2014.09.29</td>
+            <td>采购入库</td>
+            <td>袋</td>
+            <td>120</td>
+            <td>一组</td>
+        </tr>
+    </tbody>
+  </table>
+  <script>
+  jquery = jQuery.noConflict();
+  jquery(function(){
+    jquery('.commonTable tbody tr').hover(function(){
+        jquery(this).addClass('trHover')
+        .siblings().removeClass('trHover')	
+    },function(){
+        jquery(this).removeClass('trHover')	
+    });
+  });
+  </script>
+</body>
+</html>
+
+

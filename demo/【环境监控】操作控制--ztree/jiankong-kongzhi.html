@@ -1,0 +1,996 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>操作控制</title>
+<link type="text/css" rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap3.min.css" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap-select.min.css" />
+<link type="text/css" rel="stylesheet" href="css/zTreeStyle.css" />
+<link type="text/css" rel="stylesheet" href="css/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="css/jiankong.css" />
+<style>
+body{ min-width:1280px;}
+</style>
+</head>
+
+<body>
+<!-- 头部 开始 -->
+<div class="header_wp01 clear">
+	<a class="header_lt01" href="#"><img src="images/221logo2.png"></a>
+    <div class="header_rt01">
+    	<ul class="headerNav">
+        	<li class="cur"><a href="#"><img src="images/ico_headerSy.png">首页</a></li>
+            <li><a href="#"><img src="images/ico_headerYqgl.png">园区管理</a></li>
+            <li><a href="#"><img src="images/ico_headerTjfx.png">统计分析</a></li>
+            <li><a href="#"><img src="images/ico_221phonedown.png">掌上农场</a></li>
+            <li><a href="#"><img src="images/ico_headerXtgl.png">系统管理</a></li>
+        </ul>
+    	<ul class="headerMenu" >
+            <li class="headerMenu_li" id="menu2">
+            	<span class="headerMenu_user"><img src="images/ico_02.png">系统管理员</span>
+            	<div class="headerMenu2">
+                <ul>
+                	<li class="headerMenu2_li">
+                    <a class="headerMenu2_a" href="#"><img src="images/ico_set.png">企业设置</a>
+                    </li>
+                    <li class="headerMenu2_li">
+                    <a class="headerMenu2_a" href="#"><img src="images/ico_mess.png">系统消息</a>
+                    </li>
+                    <li class="headerMenu2_li">
+                    <a class="headerMenu2_a" href="#"><img src="images/ico_people.jpg">个人信息修改</a>
+                    </li>
+                    <li class="headerMenu2_li">
+                    <a class="headerMenu2_a" href="#"><img src="images/ico_key.jpg">密码修改</a>
+                    </li>
+                    <li class="headerMenu2_lino" style="margin:0;">
+                    <a class="headerMenu2_ano" href="#" style="height:36px; line-height:36px;"><img src="images/ico_close.jpg">退出</a>
+                    </li>
+                </ul>
+                </div>
+            </li>
+        </ul>
+        <!--<span class="phoneDown"><a href="#"><img src="images/ico_221phonedown.png"></a></span>-->
+    </div>
+</div>
+<!-- 头部 结束 -->
+
+
+
+<!-- 主体内容 开始 -->
+<div class="main_wp clear">
+<div>
+    	<div class="fixedTdLt fl" style="border-right:1px solid #ddd; background:#fff;position:absolute;">
+        <!-- 主体内容 左侧开始 -->
+        <div class="foldBtn" style="position:absolute; margin-top:-72px;"><img src="images/foldBtn.png" style="top:0; margin:0;"></div>
+        <div class="mainLt_wp" >
+        	
+       	    <div class="leftMainHd clear">
+                <span class="bootSelt01 mt8">
+                    <select class="selectpicker">
+                    <option>区县</option>
+                    <option>Ketchup</option>
+                    <option>Relish</option>
+                    </select>
+                </span>
+                <span class="bootSelt02 mt8 fl">
+                    <select class="selectpicker">
+                    <option>园区</option>
+                    <option>Ketchup</option>
+                    <option>Relish</option>
+                    </select>
+                </span>
+                <span class="bootSelt03 mt8 fr">
+                    <select class="selectpicker">
+                    <option>种植</option>
+                    <option>Ketchup</option>
+                    <option>Relish</option>
+                    </select>
+                </span>
+            </div>
+            <div class="leftMainBd mt8" style="overflow:hidden;">
+            	<ul id="tree" class="ztree" style="width:auto; padding:0; overflow:auto;"></ul>
+            </div>
+        </div>
+        <!-- 主体内容 左侧结束 -->
+        </div>
+        
+        <div class="fixedTdRt pl217" style="overflow:hidden; min-width:730px; padding-left:217px-;">
+        <!-- 主体内容 右侧整体板块 开始 -->
+        <div class="main-qxz-wap clear" style="padding-top:20px;">
+        	<div class="r_title clear">
+                <div class="r_titleLt fl clear">
+                    <h2 class="fl">环境监控</h2>
+                </div>
+            </div>
+            <table class="zuowuIntro" width="100%" cellpadding="0" cellspacing="0">
+            	<tr>
+                	<td valign="top" style="min-width:380px;">
+                    <!-- 作物生长环境 开始 -->
+                    <div class="cropGrowthWap">
+                    	<table width="100%" cellpadding="0" cellspacing="0">
+                        	<tr>
+                            	<td width="186" heeght="186" valign="top" style="padding-right:25px;">
+                                <div class="cropGrowthImg" >
+                                	<img class="mask" src="images/img_monitor02.png">
+                                    <img class="pic" src="images/img_monitor03.png">
+                                </div>
+                                </td>
+                                <td valign="top">
+                                	<div class="cropGrowtIntro clear">
+                                    	<h2>A1区00</h2>
+                                        <span class="jk_select" style="padding:0 10px 10px 0">
+                                        <select class="selectpicker">
+                                        <option>芥蓝-登峰芥蓝登峰芥蓝</option>
+                                        <option>圣女果</option>
+                                        <option>黄瓜</option>
+                                        </select>
+                                        </span>
+                                        <a class="btn btn-success" href="#">报警设置</a>
+                                    </div>
+                                    <p class="growthPeriod">生长期：秋冬茬&nbsp;&nbsp;总共90天，剩余41天</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="growthCycle">
+                    	<div class="curGrowthValue" style="left:63%">
+                        	<div class="tip">60天</div>
+                        </div>
+                        <table class="growthCycleJdt" width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="bgColor1" width="20%"><span class="text">发芽期</span><span class="growthDay">10天</span></td>
+                                <td width="35%" class="bgColor2"><span class="text">幼苗期  </span><span class="growthDay">35天</span></td>
+                                <td width="45%" class="bgColor3"><span class="text">成熟期</span><span class="growthDay">60天</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 作物生长环境 结束 -->
+                    </td>
+                    <td class="videoTd" valign="top" style="padding-left:50px;">
+                    <!-- 视频插件下载 开始 -->
+                    <div class="videoimg">
+                        <img src="images/nosp.png">
+                        <a class="Download" href="#">视频插件下载</a>
+                    </div>
+                    <!-- 视频插件下载 结束 -->
+                    </td>
+                </tr>
+            </table>
+            <!-- 生长环境 开始 -->
+            <div class="growthEnvirWap">
+            	<table width="100%" cellpadding="0" cellspacing="0">
+                	<tr>
+                    	<td class="tdEqual">
+                        	<span class="envirDepression">空气温度</span>
+                            <span class="envirPic"><img src="images/ico_jiankongKqwd.png"></span>
+                            <span class="envirValue">20.9°</span>
+                        </td>
+                        <td class="tdEqual">
+                        	<span class="envirDepression"><img class="warning" src="images/img_monitor04.png">空气湿度</span>
+                            <span class="envirPic"><img src="images/ico_jiankongKqsd.png"></span>
+                            <span class="envirValue colorWarn">15.1%</span>
+                        </td>
+                        <td class="tdEqual">
+                        	<span class="envirDepression"> 空气露点</span>
+                            <span class="envirPic"><img src="images/ico_jiankongKqld.png"></span>
+                            <span class="envirValue">16.4°</span>
+                        </td>
+                        <td class="tdEqual">
+                        	<span class="envirDepression">土壤温度</span>
+                            <span class="envirPic"><img src="images/ico_jiankongTrwd.png"></span>
+                            <span class="envirValue">15.1°</span>
+                        </td>
+                        <td class="tdEqual">
+                        	<span class="envirDepression">土壤水分</span>
+                            <span class="envirPic"><img src="images/ico_jiankongTrsf.png"></span>
+                            <span class="envirValue">209ppm</span>
+                        </td>
+                        <td class="tdEqual">
+                        	<span class="envirDepression">二氧化碳</span>
+                            <span class="envirPic"><img src="images/ico_jiankongEyht.png"></span>
+                            <span class="envirValue">209ppm</span>
+                        </td>
+                        <td class="tdEqual">
+                        	<span class="envirDepression">光照 </span>
+                            <span class="envirPic"><img src="images/ico_jiankongGz.png"></span>
+                            <span class="envirValue">7365olux</span>
+                        </td>
+                        <td class="tdEqual">
+                        	<span class="envirDepression">EC值</span>
+                            <span class="envirPic">EC</span>
+                            <span class="envirValue">0.7ms/cm</span>
+                        </td>
+                        <td class="tdEqual">
+                        	<span class="envirDepression">PH值</span>
+                            <span class="envirPic">PH</span>
+                            <span class="envirValue">7.0</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- 生长环境 结束 -->
+            <!-- 操作控制 开始 -->
+            <h3 class="his_temperatureHd" style="margin-top:24px;">操作控制</h3>
+            <div class="operation-control clear">
+            	<div class="operation-control-lt">
+                <!-- 操作控制左侧 开始 -->
+                    <div class="farmShed-wap fl">
+                        <div class="farm-LedMonitor">
+                            <em class="LedMonitor-hd">欢迎使用LED屏</em>
+                            <div id="LedMonitor-txt1" class="LedMonitor-bd">
+                                <div id="LedMonitor-txt">
+                                    <div id="LedMonitor-txt2">当前温度：20.6℃ 湿度：48.2%</div>
+                                    <div id="LedMonitor-txt3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="farmShed-con">
+                        	<img class="control_shedimg" src="images/control_shed.png" />
+                            <img class="control_water" src="images/control_water.png" />
+                            <div class="control_juanl">
+                            	<img class="control_rolle" src="images/control_jl0.png" />
+                            	<img class="control_rolle" src="images/control_jl1.png" />
+                                <img class="control_rolle" src="images/control_jl2.png" />
+                                <img class="control_rolle" src="images/control_jl3.png" />
+                                <img class="control_rolle" src="images/control_jl4.png" />
+                            </div>
+                        </div>
+                    </div>
+                <!-- 操作控制左侧 结束 -->
+                </div>
+                <div class="operation-control-rt">
+                <!-- 操作控制右侧 开始 -->
+                	<div class="tab-control-title clear">
+                    	<span class="v-leftbtn">&lt;&lt;</span>
+                        <div class="v-centercont">
+                        	<ul class="v-centerScroll">
+                            	<li class="cur"><a href="javascript:void(0)">滴灌控制</a></li>
+                                <li><a href="javascript:void(0)">卷帘控制</a></li>
+                                <li><a href="javascript:void(0)">LED控制</a></li>
+                            </ul>
+                        </div>
+                        <span class="v-rightbtn">&gt;&gt;</span>
+                    </div>
+                    <div class="tab-control-content">
+                    <!-- 操作控制选项卡内容 开始 -->
+                    	<div class="v-tab-content cur-block">
+                        	<div class="control-dripIrrigation">
+                            	<div class="led-screen-title">
+                                	<span class="led-screen-lt"><img src="images/control_ico1.png" />正常</span>
+                                    <span class="led-screen-rt"><img src="images/control_ico2.png" />30:14</span>
+                                </div>
+                                <ol class="imitate-table mt30">
+                                	<li>
+                                    <span class="imitate-table-td1">滴灌时间</span>
+                                    <span class="imitate-table-td2"><input class="form-control" type="text" /></span>
+                                    <span class="imitate-table-td3">分钟</span>
+                                    </li>
+                                    <li>
+                                    <span class="imitate-table-td1"><em class="closeDg-btn">关闭滴灌</em></span>
+                                    <span class="imitate-table-td2"><strong class="tapDg-ico"><img class="tapDg-closeSign" src="images/control_ico4.png" /><img class="tapDg-openSign" src="images/control_ico5.png" /></strong></span>
+                                    <span class="imitate-table-td3"><em class="openDg-btn">开启滴灌</em></span>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- 卷帘控制内容 开始 -->
+                        <div class="v-tab-content">
+                        	<div class="control-shutter">
+                            	<div class="led-screen-title">
+                                	<span class="led-screen-lt"><img src="images/control_ico1.png" />正常</span>
+                                    <span class="led-screen-rt"><img src="images/control_ico3.png" style="width:27px; height:27px; margin-top:11px;" /><span class="statuesVal">全关</span></span>
+                                </div>
+                                <div class="shutter-status">
+                                	<strong class="strong">卷帘状态</strong>
+                                    <p class="cur-picnum">
+                                      <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                    </p>
+                                    <div id="slider-range-max"></div>
+                                    <div class="control-jlstates"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- LED控制内容 开始 -->
+                        <div class="v-tab-content">
+                        	<div class="control-led">
+                            	<div class="led-screen-title">
+                                	<span class="led-screen-lt"><img src="images/control_ico1.png" />正常</span>
+                                    <span class="led-screen-rt">
+                                    	<img src="images/control_ico7.png" style="width:37px; height:21px; margin-top:13px;" />
+                                        <div class="updateTime"><span>03月15日</span><span>16点15分</span></div>
+                                    </span>
+                                </div>
+                                <div class="led-settext clear">
+                                	<strong class="strong">LED文字设置</strong>
+                                    <textarea class="form-control"></textarea>
+                                    <button class="btn btn-primary fr" type="button">启动</button>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- 操作控制选项卡内容 结束 -->
+                    </div>
+                <!-- 操作控制左侧 开始 -->
+                </div>
+            </div>
+            <!-- 操作控制 结束 -->
+            
+            <!-- 环境实况 开始 -->
+            <h3 class="his_temperatureHd" style="margin-top:24px;">环境实况</h3>
+            <div class="r_title clear" style="border:none;">
+                <div class="r_titleLt fl clear">
+                    <span class="jk_select" style="padding-top:0;">
+                    <select class="selectpicker">
+                    <option>温度</option>
+                    <option>湿度</option>
+                    <option>光照</option>
+                    </select>
+                    </span>
+                </div>
+                <ul class="ul_tabList">
+                    <li class="cur"><a href="javascript:;">当天</a><span>|</span></li>
+                    <li><a href="javascript:;">一周</a><span>|</span></li>
+                    <li><a href="javascript:;">一月</a><span>|</span></li>
+                    <li><a href="javascript:;">一年</a></li>
+                </ul>
+            </div> 
+            <div id="container_wenshiSk" style="position:relative; margin-top:20px; top:0; z-index:2; min-width:940px; min-height:300px; overflow:hidden;"></div>                   
+            <div style="overflow:hidden;">
+                <p class="his_moreCon"><span>气象观测方法-气温：气温是地面气象观测规定高度上的空气温度温度温度</span><a href="javascript:;" data-toggle="modal" data-target="#myModal_wenshiSk">更多>></a></p>
+            </div>
+            <!-- 环境实况 结束 -->
+            <!-- 病虫害预警 开始 -->
+            <h3 class="his_temperatureHd">病虫害预警</h3>
+            <div class="clear" style="margin-top:20px;">
+            	<table width="100%" cellpadding="0" cellspacing="0">
+                	<tr>
+                    	<td width="70%" style="padding-right:50px;">
+                         <div id="container_windLt" style="position:relative; top:0; z-index:2; min-width:600px; min-height:300px;"></div>
+                        </td>
+                        <td width="30%">
+                         <div id="container_windRt" style="position:relative; top:0; z-index:2; min-width:280px; min-height:300px;"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>        
+            <div style="overflow:hidden;">
+            	<p class="his_moreCon"><span>病虫害预警：病虫害预警是指在作物生长过程中...</span><a href="javascript:;" data-toggle="modal" data-target="#myModal_Bchyj">更多>></a></p>
+            </div>
+            <!-- 病虫害预警 结束 -->
+            <!-- 成熟度预测 开始 -->
+            <h3 class="his_temperatureHd">成熟度预测</h3>
+            <div id="container_Csdyc" style="position:relative; top:0; z-index:2; min-width:940px; min-height:300px; margin-top:20px;"></div>
+            <div style="overflow:hidden;">
+            	<p class="his_moreCon"><span>成熟度预测：成熟度预测是作物在生长周期...</span><a href="javascript:;" data-toggle="modal" data-target="#myModal_Csdyc">更多>></a></p>
+            </div>
+            <!-- 成熟度预测 结束 -->
+            
+        </div>
+        <!-- 主体内容 右侧整体板块 结束 -->
+        </div>
+
+</div>
+</div>
+<!-- 主体内容 结束 -->
+
+<!-- 更多环境实况模态框 开始 -->
+<div class="modal fade" id="myModal_wenshiSk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow:hidden;">
+<div class="modal-dialog" style="width:600px; margin:0; left:50%; margin-left:-300px; top:50%; margin-top:-230px;">
+<div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"> </button>
+      <h4 class="modal-title font14" id="myModalLabel">环境实况</h4>
+    </div>
+    <div class="modal-body">
+        <div class="modalheight">
+            <p class="modalSection">指对作物生长有影响的各种环境因子的实时数据，传感器实时、连续采集作物生长期间的空气温湿度、土壤温湿度、二氧化碳浓度、光照度等环境参数，
+            通过与适宜作物生长的对应环境数据的比对，可反映出改作物生长环境的优劣度，通过人为措施或借助自然条件调节改变不利的环境因素，使环境向着不利于病虫害的发生与为害，利于作物生长的方向变化。</p>
+        </div>
+    </div>   
+</div>
+</div>
+</div>
+<!-- 更多环境实况模态框 结束 -->
+
+<!-- 更多病虫害预警模态框 开始 -->
+<div class="modal fade" id="myModal_Bchyj" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow:hidden;">
+<div class="modal-dialog" style="width:600px; margin:0; left:50%; margin-left:-300px; top:50%; margin-top:-230px;">
+<div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"> </button>
+      <h4 class="modal-title font14" id="myModalLabel">病虫害预警</h4>
+    </div>
+    <div class="modal-body">
+        <div class="modalheight">
+            <p class="modalSection">病虫害预警是指通过对菜品生长环境数据的检测和采集，并与病虫害适宜发生的环境情况进行分析比较，
+            根据影响因子之间的相互关系对菜品的发病情况进行预测，并通过发病概率的方式进行预测，为农农事管理提供参考依据。</p>
+        </div>
+    </div>  
+</div>
+</div>
+</div>
+<!-- 更多病虫害预警模态框 结束 -->
+<!-- 更多成熟度预测模态框 开始 -->
+<div class="modal fade" id="myModal_Csdyc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow:hidden;">
+<div class="modal-dialog" style="width:600px; margin:0; left:50%; margin-left:-300px; top:50%; margin-top:-230px;">
+<div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"> </button>
+      <h4 class="modal-title font14" id="myModalLabel">成熟度预测</h4>
+    </div>
+    <div class="modal-body">
+        <div class="modalheight">
+			<p class="modalSection">成熟度预测是通过对种植蔬菜从定植开始，在自然状态下每日有效积温的累加，推断菜品的成熟程度，既能够及时提醒
+            农民提前采收或延后采收，又可用于指导消费者判断菜品是否使用催熟剂等生物化学用品。</p>
+        </div>
+    </div>   
+</div>
+</div>
+</div>
+<!-- 更多成熟度预测模态框 结束 -->
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/highcharts.js"></script>
+<script type="text/javascript" src="js/jquery.ztree.core-3.5.js"></script>
+<script type="text/javascript" src="js/jquery-ui2.js"></script>
+<script type="text/javascript">
+    jQuery.noConflict();
+</script>
+<script type="text/javascript">
+
+  <!--
+	var zTree;   
+	var demoIframe;
+
+	var setting = {
+		view: {
+			dblClickExpand: false,
+			showLine: true,
+			selectedMulti: false
+		},
+		data: {
+			simpleData: {
+				enable:true,
+				idKey: "id",
+				pIdKey: "pId",
+				rootPId: ""
+			}
+		},
+		callback: {
+			beforeClick: function(treeId, treeNode) {
+				var zTree = jQuery.fn.zTree.getZTreeObj("tree");
+				if (treeNode.isParent) {
+					zTree.expandNode(treeNode);
+					return false;
+				} else {
+					demoIframe.attr("src",treeNode.file + ".html");
+					return true;
+				}
+			}
+		}
+	};
+
+	var zNodes = [
+		{id:1, pId:0, name:"地区", open:false,url:"tianqiyb.html","iconOpen":"images/qu_20.png","iconClose":"images/qu_17.png"},  //一级
+		{id:2, pId:0, name:"地区", open:false,url:"tianqiyb.html","iconOpen":"images/qu_20.png","iconClose":"images/qu_17.png"},  //一级
+		{id:101, pId:1, name:"基地", url:"qixiangzhan.html","iconOpen":"images/base_26.png","iconClose":"images/base_25.png"},  //二级	
+		{id:102, pId:1, name:"基地", url:"qixiangzhan.html","iconOpen":"images/base_26.png","iconClose":"images/base_25.png"},   //二级	
+		{id:201, pId:2, name:"基地", url:"qixiangzhan.html","icon":"images/base_25.png"},   //二级	
+			
+		{id:1001, pId:101, name:"大田/地块/大棚", url:"jiankong.html","icon":"images/jiank_01.png"},  //三级
+		{id:1002, pId:102, name:"大田/地块/大棚", url:"jiankong.html","icon":"images/jiank_01.png"},  //三级
+		{id:1003, pId:102, name:"大田/地块/大棚", url:"jiankong.html","icon":"images/jiank_01.png"},  //三级
+	];
+
+	function loadReady() {
+		var bodyH = demoIframe.contents().find("body").get(0).scrollHeight,
+		htmlH = demoIframe.contents().find("html").get(0).scrollHeight,
+		maxH = Math.max(bodyH, htmlH), minH = Math.min(bodyH, htmlH),
+		h = demoIframe.height() >= maxH ? minH:maxH ;
+		if (h < 530) h = 530;
+		demoIframe.height(h);
+	}
+
+  //-->
+</script>
+<script>
+
+	
+
+jQuery(document).ready(function(){
+	
+	//var swithLeftType = 1;
+	
+	menue("menu2");
+	
+	shuaxin(); //后刷新数据
+	shedSize();
+	
+	jQuery('.selectpicker').selectpicker();	   //下拉菜单控件
+	
+	//zTree开始
+	var t = jQuery("#tree");
+	t = jQuery.fn.zTree.init(t, setting, zNodes);
+	demoIframe = jQuery("#testIframe");
+	demoIframe.bind("load", loadReady);
+	var zTree = jQuery.fn.zTree.getZTreeObj("tree");
+	zTree.selectNode(zTree.getNodeByParam("id", 1001));  //这句话删除的展开的那个节点闭合
+	//zTree结束
+	
+	//当天、周、月、年点击切换当前状态
+	jQuery('.ul_tabList li').click(function(){
+		jQuery(this).addClass('cur').siblings().removeClass('cur');	
+	});
+	
+	
+	var growthEnvir = jQuery('.growthEnvirWap').outerWidth();  // growthEnvirWap td 宽度的计算 
+	var tdEqualLength = jQuery('.growthEnvirWap .tdEqual').length;
+	var otdEqualWid2 = growthEnvir / tdEqualLength;
+	jQuery('.growthEnvirWap .tdEqual').css({width : otdEqualWid2});
+	
+	jQuery('.tab-control-title li').click(function(){  //操作控制选项卡切换
+		var _index = jQuery(this).index();
+		jQuery(this).addClass('cur')
+		.siblings().removeClass('cur');
+		jQuery('.tab-control-content').find('.v-tab-content').hide();
+		jQuery('.tab-control-content').find('.v-tab-content').eq(_index).show();
+	});
+	//操作控制选项卡下的滴灌控制开启和关闭
+	jQuery('.closeDg-btn').click(function(){  //关闭滴灌
+		jQuery('.tapDg-openSign').fadeOut();
+		jQuery('.tapDg-closeSign').fadeIn();
+		jQuery('.control_water').hide();
+	});
+	jQuery('.openDg-btn').click(function(){  //开启滴灌
+		jQuery('.tapDg-openSign').fadeIn();
+		jQuery('.tapDg-closeSign').fadeOut();	
+		jQuery('.control_water').show();
+	});
+	
+	//滑块控制开始
+	jQuery( "#slider-range-max" ).slider({  //滑块控制控件
+		range: "max",
+		min: 0,
+		max: 4,
+		value : 0,
+		step: 1,
+		slide: function( event, ui ) {
+			jQuery( "#amount" ).val( ui.value );
+			jQuery( ".control_juanl .control_rolle" ).hide();
+			jQuery( ".control_juanl .control_rolle" ).eq(jQuery( "#amount" ).val()).show();
+			if(jQuery( "#amount" ).val() == 0 ){
+				jQuery(".led-screen-rt .statuesVal").text("全关");	
+			}else if(jQuery( "#amount" ).val() == 1 ){
+				jQuery(".led-screen-rt .statuesVal").text("1/4开");	
+			}else if(jQuery( "#amount" ).val() == 2 ){
+				jQuery(".led-screen-rt .statuesVal").text("半开");	
+			}else if(jQuery( "#amount" ).val() == 3 ){
+				jQuery(".led-screen-rt .statuesVal").text("3/4开");	
+			}else if(jQuery( "#amount" ).val() == 4 ){
+				jQuery(".led-screen-rt .statuesVal").text("全开");	
+			}
+		}
+	});
+	jQuery( "#amount" ).val( jQuery( "#slider-range-max" ).slider( "value" ) );
+	jQuery( ".control_juanl .control_rolle" ).eq(jQuery( "#amount" ).val()).show();
+	if(jQuery( "#amount" ).val() == 0 ){
+		jQuery(".led-screen-rt .statuesVal").text("全关");	
+	}else if(jQuery( "#amount" ).val() == 1 ){
+		jQuery(".led-screen-rt .statuesVal").text("1/4开");	
+	}else if(jQuery( "#amount" ).val() == 2 ){
+		jQuery(".led-screen-rt .statuesVal").text("半开");	
+	}else if(jQuery( "#amount" ).val() == 3 ){
+		jQuery(".led-screen-rt .statuesVal").text("3/4开");	
+	}else if(jQuery( "#amount" ).val() == 4 ){
+		jQuery(".led-screen-rt .statuesVal").text("全开");	
+	}
+	
+	//LED显示屏无间隙滚动控制
+	var LedMonitor1 = document.getElementById("LedMonitor-txt1");
+	var LedMonitor2 = document.getElementById("LedMonitor-txt2");
+	var LedMonitor3 = document.getElementById("LedMonitor-txt3");
+	LedMonitor3.innerHTML=document.getElementById("LedMonitor-txt2").innerHTML;
+	function Marquee(){
+		if(LedMonitor1.scrollLeft-LedMonitor3.offsetWidth>=0){
+			LedMonitor1.scrollLeft-=LedMonitor2.offsetWidth;
+		}
+		else{
+			LedMonitor1.scrollLeft++;
+		}
+	};
+	var myvar=setInterval(Marquee,30);
+	LedMonitor1.onmouseout=function (){myvar=setInterval(Marquee,30);}
+	LedMonitor1.onmouseover=function(){clearInterval(myvar);}
+	
+	//大棚整体及卷帘等控制
+	function shedSize(){
+		var aShedwt = jQuery(".farmShed-wap").width() -40;
+		var aShedht = ( jQuery(".farmShed-wap").width() - 40 )*0.42;
+		jQuery(".control_shedimg").css({  //大棚整体控制
+			"width" : aShedwt,
+			"height" :	aShedht
+		});
+		jQuery(".control_water").css({  //水滴控制
+			"width" : aShedwt,
+			"height" :	aShedht
+		});
+		jQuery(".control_juanl .control_rolle").css({  // 卷帘控制
+			"width" : aShedwt,
+			"height" :	aShedht
+		});
+		jQuery(".v-tab-content").css({  //右侧选项卡内容高度
+			"height" :	jQuery(".farmShed-wap ").height() -100
+		});		
+	};
+	
+	//滑块控制图片结束
+	
+	
+	
+	
+	
+	
+	
+	
+	var hHead = jQuery('.header_wp01').height();
+	var hLeftMainHd = jQuery('.leftMainHd').height();
+	var mainQxzwap = jQuery('.main-qxz-wap').height();
+	jQuery('.foldBtn').css({top:jQuery(window).height()/2});
+	jQuery(window).scroll(function(){
+		jQuery('.foldBtn').css({top:jQuery(window).scrollTop()+jQuery(window).height()/2});	
+	});
+	jQuery('.leftMainBd').css({height:jQuery('.fixedTdRt').height()-hLeftMainHd+20-36});
+	jQuery("#tree").css({height:jQuery('.fixedTdRt').height()-hLeftMainHd+20-44});
+	
+
+	var oClictWid = jQuery(window).width();
+	var oClictHei = jQuery(window).height();
+	if(oClictWid < 1280){
+		jQuery('.videoTd').css({width:315});
+		jQuery('.videoimg img').css({width:315,height:240});
+		jQuery('.cropGrowtIntro').css({marginTop : 10});
+			jQuery('.fixedTdLt').addClass('ml-217');
+			jQuery('.fixedTdRt').removeClass('pl217');
+			//swithLeftType = 2;
+			shedSize();
+			shuaxin();
+	}else{
+		jQuery('.videoTd').css({width:400});
+		jQuery('.videoimg img').css({width:400,height:300});	
+		jQuery('.cropGrowtIntro').css({marginTop : 50});
+			jQuery('.fixedTdLt').removeClass('ml-217');
+			jQuery('.fixedTdRt').addClass('pl217');
+			//swithLeftType = 1;
+	}
+	
+	jQuery('.foldBtn img').click(function(){  // 左侧菜单 折叠按钮点击事件 		
+		if(jQuery('.fixedTdLt').hasClass('ml-217')){
+			alert(1);
+			jQuery('.fixedTdLt').removeClass('ml-217');
+			jQuery('.fixedTdRt').addClass('pl217');
+			//swithLeftType = 2;
+		}else{
+			alert(2);
+			jQuery('.fixedTdLt').addClass('ml-217');
+			jQuery('.fixedTdRt').removeClass('pl217');
+			//swithLeftType = 1;
+		};
+		shedSize();
+		alert(3);
+		//shuaxin();
+		jQuery('.leftMainBd').css({height:jQuery('.fixedTdRt').height()-hLeftMainHd+20-36});
+		jQuery("#tree").css({height:jQuery('.fixedTdRt').height()-hLeftMainHd+20-44});
+	});	
+	
+	jQuery(window).resize(function(){
+		jQuery('.foldBtn').css({top:jQuery(window).height()/2});
+		var oClictWid = jQuery(window).width();
+		var oClictHei = jQuery(window).height();
+		/*if(oClictWid < 1280){
+				jQuery('.fixedTdLt').addClass('ml-217');
+			jQuery('.fixedTdRt').removeClass('pl217');
+		}else{
+				jQuery('.fixedTdLt').removeClass('ml-217');
+			jQuery('.fixedTdRt').addClass('pl217');
+		}*/
+		shedSize();
+		shuaxin();	
+		jQuery('.leftMainBd').css({height:jQuery('.fixedTdRt').height()-hLeftMainHd+20-36});
+		jQuery("#tree").css({height:jQuery('.fixedTdRt').height()-hLeftMainHd+20-44});
+	});
+	
+
+
+	
+
+});
+
+
+	
+// 头部右侧菜单 
+function menue(id){
+	jQuery("#"+id).click(function(){
+		jQuery(".headerMenu2").hide();
+		jQuery(this).find(".headerMenu2").show();
+	});
+
+	jQuery(".headerMenu2").hover(function(){},
+	 function(){
+		jQuery(this).hide();
+	});
+
+	 jQuery(".headerMenu2 li").on("mouseover",function(){
+		 jQuery(this).siblings().find(".navLevel3").hide();
+		 jQuery(this).find(".navLevel3").show();
+	 });
+	 jQuery(".headerMenu2 li").on("mouseout",function(){
+		 jQuery(this).siblings().find(".navLevel3").hide();
+		 jQuery(this).find(".navLevel3").hide();
+	 });	
+};
+
+function shuaxin(){
+	/* 温度实况 */
+    jQuery('#container_wenshiSk').highcharts({
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        subtitle: {
+            text: '',
+            x: -20
+        },
+        xAxis: {
+            categories: ['20', '15', '16', '17', '18', '10','12', '13', '14', '25', '26', '27']
+        },
+        yAxis: {
+            title: {
+                text: ''
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }],
+			labels: {
+                formatter: function() {
+                    return this.value +'°'
+                }
+            }
+        },
+        tooltip: {
+            valueSuffix: '°C'
+        },noData: {
+		            style: {    
+		                fontWeight: 'bold',     
+		                fontSize: '15px', 
+		                color: '#FFFFFF'        
+		            }
+		        },
+        legend: {
+            layout: '',
+            align: '',
+            verticalAlign: '',
+            borderWidth: 0,
+			x : 50,
+			y : 30,
+			itemStyle: {
+                color: "#32c3fd",
+                fontSize: "12px",
+                fontWeight: "bold"
+            }
+        },
+        series: [{
+            name: 'Tokyo',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }],
+		colors: "#32c3fd".split(",")
+    });
+	
+	/* 病虫害预警 左侧图表 */
+	jQuery('#container_windLt').highcharts({                                           
+        chart: {                                                           
+            type: 'bar'                                                    
+        },                                                                 
+        title: {                                                           
+            text: ''                    
+        },                                                                 
+        subtitle: {                                                        
+            text: ''                                  
+        },                                                                 
+        xAxis: {                                                           
+            categories: ['多虫病', '白斑病', '炭疽病', '叶斑病', '脐腐病'],
+            title: {                                                       
+                text: null                                                 
+            }                                                              
+        },                                                                 
+        yAxis: {                                                           
+            min: 0,                                                        
+            title: {                                                       
+                text: '',                             
+                align: 'high'                                              
+            },                                                             
+            labels: {                                                      
+                overflow: 'justify'                                        
+            }                                                              
+        },                                                                 
+        tooltip: {                                                         
+            valueSuffix: ' millions'                                       
+        },                                                                 
+        plotOptions: {                                                     
+            bar: {                                                         
+                dataLabels: {                                              
+                    enabled: true                                          
+                }                                                          
+            }                                                              
+        },                                                                 
+        legend: {                                                          
+            layout: 'vertical',                                            
+            align: 'right',                                                
+            verticalAlign: 'top',                                          
+            x: -40,                                                        
+            y: -5000,                                                        
+            floating: true,                                                
+            borderWidth: 1,                                                
+            backgroundColor: '#FFFFFF',                                    
+            shadow: true                                                   
+        },                                                                 
+        credits: {                                                         
+            enabled: false                                                 
+        },                                                                 
+        series: [{                                                         
+            name: 'Year 1800',                                             
+            data: [107, 31, 635, 203, 20]  ,
+			borderColor: "#fc9b75"                                 
+        }] ,
+		colors: "#fc9b75,#90ed7d,#ffb577,#ff85a2,#8085e9,#f15c80,#e4d354,#8085e8,#8d4653,#91e8e1".split(",")                                                                
+    });  
+	
+	/* 病虫害预警 右侧图表 */
+	jQuery('#container_windRt').highcharts({                                           
+        chart: {                                                           
+            type: 'bar'                                                    
+        },                                                                 
+        title: {                                                           
+            text: ''                    
+        },                                                                 
+        subtitle: {                                                        
+            text: ''                                  
+        },                                                                 
+        xAxis: {                                                           
+            categories: ['多虫病', '白斑病', '炭疽病', '叶斑病', '脐腐病'],
+            title: {                                                       
+                text: null                                                 
+            }                                                              
+        },                                                                 
+        yAxis: {                                                           
+            min: 0,                                                        
+            title: {                                                       
+                text: '',                             
+                align: 'high'                                              
+            },                                                             
+            labels: {                                                      
+                overflow: 'justify'                                        
+            }                                                              
+        },                                                                 
+        tooltip: {                                                         
+            valueSuffix: ' millions'                                       
+        },                                                                 
+        plotOptions: {                                                     
+            bar: {                                                         
+                dataLabels: {                                              
+                    enabled: true                                          
+                }                                                          
+            }                                                              
+        },                                                                 
+        legend: {                                                          
+            layout: 'vertical',                                            
+            align: 'right',                                                
+            verticalAlign: 'top',                                          
+            x: -40,                                                        
+            y: -5000,                                                        
+            floating: true,                                                
+            borderWidth: 1,                                                
+            backgroundColor: '#FFFFFF',                                    
+            shadow: true                                                   
+        },                                                                 
+        credits: {                                                         
+            enabled: false                                                 
+        },                                                                 
+        series: [{                                                         
+            name: 'Year 1800',                                             
+            data: [107, 31, 635, 203, 30]  ,
+			borderColor: "#90d4e7"                                 
+        }] ,
+		colors: "#90d4e7,#90ed7d,#ffb577,#ff85a2,#8085e9,#f15c80,#e4d354,#8085e8,#8d4653,#91e8e1".split(",")                                                                
+    });  
+	
+	/* 成熟度预测 */
+	jQuery('#container_Csdyc').highcharts({
+        chart: {
+            zoomType: 'xy'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: [{
+            categories: ['3/2', '3/16', '3/17', '4/1', '4/5', '4/8',
+                '4/10', '5/2', '5/10', '5/11', '5/12', '5/18']
+        }],
+        yAxis: [{ // Primary yAxis
+            labels: {
+                format: '{value}°C',
+                style: {
+                    color: '#fff'
+                }
+            },
+            title: {
+                text: '',
+                style: {
+                    color: '#89A54E'
+                }
+            }
+        }, { // Secondary yAxis
+            title: {
+                text: '',
+                style: {
+                    color: '#4572A7'
+                }
+            },
+            labels: {
+                format: '{value} °C',
+                style: {
+                    color: '#fff'
+                }
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: true
+        },
+        legend: {
+            layout: '',
+            align: '',
+            x: 50,
+            verticalAlign: '',
+            y: 30,
+            floating: true,
+            backgroundColor: 'rgba(255,255,255,0)',
+			itemStyle: {
+                color: "#fff",
+                fontSize: "12px",
+                fontWeight: "normal"
+            }
+        },
+        series: [{
+            name: '积温曲线',
+            color: '#f78db3',
+			borderColor: "#f78db3",
+            type: 'column',
+            yAxis: 1,
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+            tooltip: {
+                valueSuffix: ' °C'
+            }
+
+        }, {
+            name: '日积温',
+            color: '#dddaeb',
+            type: 'line',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+            tooltip: {
+                valueSuffix: '°C'
+            }
+        }],
+		colors: "#f00,#90ed7d,#ffb577,#ff85a2,#8085e9,#f15c80,#e4d354,#8085e8,#8d4653,#91e8e1".split(","),
+    });
+		
+}
+
+</script>				

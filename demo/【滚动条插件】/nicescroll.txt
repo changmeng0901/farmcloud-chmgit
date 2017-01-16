@@ -1,0 +1,1 @@
+jQuery(".滚动条层").niceScroll({cursorcolor:"#919191",cursorwidth:4,cursoropacitymax:0.7,touchbehavior:false,autohidemode:false});  //滚动条控件

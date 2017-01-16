@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* CSS Document */
+body{ font-family:'微软雅黑'; font-size:12px;}
+a:link,a:visited, a:hover, a:active, a:focus{ text-decoration:none;} 
+.mt8{ margin-top:8px;}
+.mb8{ margin-bottom:8px;}
+
+
+/* 公用头部 */
+.header_wp01{ width:100%; min-width:1002px; height:60px; background:url(../images/bg_header.jpg) repeat-x left bottom;}
+.header_lt01{ float:left; margin:17px 0 0 25px;}
+.header_rt01{ float:right; display:inline; height:29px; margin:15px 30px 0 0-;}
+.headerNav{ float:left; margin-bottom:0;}
+.headerNav li{ float:left; line-height:60px;}
+.headerNav li.cur{ background:url(../images/ico_headerCur.png) no-repeat center bottom;}
+.headerNav li a{ display:block; padding:0 16px; font-family:'微软雅黑'; font-size:12px; color:#e9f1ff; background:url(../images/bg_header2.jpg) no-repeat right top;}
+.headerNav li img{ float:left; width:24px; height:21px; margin:20px 10px 19px 0;}
+.header_rtpoRt { position:absolute; right:0;}
+.header_rtpoRt .headerNav li a{ width:30px; height:60px; text-indent:-5000px;}
+.header_rtpoRt .headerNav li img{ width:30px; height:25px; margin:17px 0 16px 0;}
+.header_rtpoRt .headerMenu_user:before{ border:0; }
+.header_rtpoRt .headerMenu_user:after{ border:0; }
+.header_rtpoRt .headerMenu_user{ width:30px; padding-right:0; text-indent:-5000px; }
+.header_rtpoRt .headerMenu_user img{ width:25px; height:25px; margin:0;}
+.header_rtpoRt .headerMenu{ margin:17px 16px 16px;}
+.headerMenu{ float:left; margin:15px 15px 15px 24px;}
+.navLevel_1{ float:left; position:relative; cursor:pointer;}
+.navLevelbg{ float:left; width:50px; height:29px; background:url(../images/bg_header2.jpg) no-repeat center top;}
+.headerMenu_user{ display:block; height:29px; line-height:29px; position:relative; padding-right:14px; font-size:13px; color:#cfe3fe;}
+.headerMenu_user:after{ position:absolute; right:2px; top:12px; content:""; border-style:solid solid solid solid; border-width:5px 4px 5px 4px; border-color:#cbdefe transparent transparent transparent;}
+.headerMenu_user img{ float:left; width:22px; height:22px; margin:4px 6px 0 0;}
+
+.headerMenu_li{ position:relative; z-index:4; float:left; cursor:pointer;}
+.headerMenu_li a{ font-size:12px; color:#2b2b2b;}
+.headerMenu2{ display:none; position:absolute; right:0; top:44px; min-width:136px; padding-top:12px; background:#fbfcff; border:1px solid #ababab; border-radius:5px;}
+.headerMenu2:before{ position:absolute; right:14px; top:-16px; content:""; border-style:solid solid solid solid; border-width:8px 8px 8px 8px; border-color:transparent transparent #ababab transparent;}
+.headerMenu2:after{ position:absolute; right:16px; top:-12px; content:""; border-style:solid solid solid solid; border-width:6px 6px 6px 6px; border-color:transparent transparent #fff transparent;}
+.headerMenu2_li{ position:relative; padding-bottom:8px;}
+.headerMenu2_lino{ margin:0; border-top:1px solid #ccc;}
+.headerMenu2_a{ display:block; overflow:hidden; height:29px; line-height:29px;}
+.headerMenu2_ano{ display:block; overflow:hidden; height:36px; line-height:36px;}
+.headerMenu2_a:hover{ background:#eff2f9;}
+.headerMenu2_a img{ float:left; display:inline; margin:9px 5px 0 14px; }
+.headerMenu2_ano img{  float:left; display:inline; margin:13px 5px 0 14px;}
+
+.phoneDown{ float:left; width:53px; height:60px; background:url(../images/bg_header2.jpg) no-repeat left top; text-align:center;}
+.phoneDown a{ display:inline-block; width:13px; height:20px; margin-top:20px;}
+
+
+/* 主体内容 左侧 */
+.main_wp{ min-width:1002px; background:#e9ecee;}
+.mainLt_wp{ width:208px; margin-left:8px; margin-top:8px; background:#fff;}
+.leftMainHd{ width:178px; margin:0 auto;}
+.leftMainBd{ overflow:hidden;}
+.foldBtn{ position:absolute; width:18px; margin-top:8px; border-left:1px solid #e4e4e4; left:216px; top:60px; z-index:10;}
+.foldBtn img{ position:absolute; left:-1px; top:50%; margin-top:-41px; width:18px; height:82px; cursor:pointer;}
+.bootSelt01, .bootSelt02, .bootSelt03, .bootSelt04, .bootSelt05{ display:inline-block; }
+.bootSelt01 .bootstrap-select{ width:178px;}
+.bootSelt02 .bootstrap-select{ width:100px;}
+.bootSelt03 .bootstrap-select{ width:76px;}
+.bootSelt04 .bootstrap-select{ width:92px;}
+.bootSelt05 .bootstrap-select{ width:92px;}
+.bootSelt06 .bootstrap-select{ width:122px;}
+
+.bootSelt01 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:178px;}
+.bootSelt02 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:100px;}
+.bootSelt03 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:76px;}
+.bootSelt04 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:92px;}
+.bootSelt05 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){width:92px;}
+.bootSelt06 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:122px;}
+
+.bootSelt01 .btn-group .btn, .bootSelt02 .btn-group .btn, .bootSelt03 .btn-group .btn, .bootSelt04 .btn-group .btn, .bootSelt05 .btn-group .btn, .bootSelt06 .btn-group .btn{ padding:2px 25px 2px 12px; font-size:11px;}
+
+
+/* 天气预报 气象 */
+a:link, a:visited, a:hover, a:active, a:focus{ text-decoration:none; outline:none;}
+.center-pd30{ padding:0 30px;}
+.main-qxz-wap{ padding:0 30px; background:url(../images/bg_qizBig.jpg) no-repeat left bottom fixed; color:#fff;}
+.font14{ font-size:14px;}
+.r_title{ border-bottom:none; border-bottom:1px solid #d0d0d0;}
+.r_titleLt h2{ margin:0; color:#fff; font-size:16px; font-family:'黑体'; line-height:45px;}
+.qxz_select{ float:left; padding:10px 0 0 27px;}
+.qxz_select .bootstrap-select > .btn{ background:transparent; color:#fff; border-radius:8px;}
+.qxz_select .btn-default:hover, .qxz_select .btn-default:focus, .qxz_select .btn-default:active, .qxz_select .btn-default.active, .qxz_select .open > .dropdown-toggle.btn-default{ border-color:#ccc;}
+.qxz_select .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:108px;}
+.qxz_select .bootstrap-select{ width:108px;}
+.meteorCon_wp{}
+.meteorCon_ttl{ height:48px; line-height:48px; margin-top:10px; font-size:16px;}
+/* 今天 */
+.todayCon_head{ height:108px; margin-top:24px;}
+.todayCon_head .temperature{ display:inline-block; height:108px; line-height:108px; padding-right:12px; background:url(../images/tianqi_img07.png) no-repeat right 14px; font-size:80px; font-family:'微软雅黑';}
+.air_quality{ display:inline-block; height:30px; line-height:30px; padding:0 15px; background:url(../images/tianqi_bg01.png); border-radius:8px; font-size:14px; font-family:'微软雅黑';}
+.tianqi_situation{ display:inline-block; margin-top:10px; font-size:16px; font-family:'宋体';}
+.colorPm1{ color:#00e700;}
+.colorPm2{ color:#ffeb32;}
+.todayCon_body{ text-align:right; padding:6px; margin-bottom:15px;}
+.todayCon_body2{ height:82px; font-family:'宋体'; font-size:12px;}
+.todayCon_body2 > table{ border-top:1px solid #C0D0E0; border-bottom:1px solid #C0D0E0;}
+.todayCon_body2 p{ height:22px; line-height:22px;}
+.todayCon_body2 p font{ float:left; padding-right:8px; font-size:12px;}
+.todayCon_body2 p span{ float:left; font-size:15px; font-family:"微软雅黑";}
+.todayCon_foot{ height:52px; font-family:'宋体';}
+.humidity_pro{ width:60%;}
+.humidity_pro .progress{ height:15px; line-height:15px; margin-bottom:0; font-size:12px; border-radius:8px;}
+.humidity_pro .progress-bar{ line-height:15px;}
+
+/* 明后天 */
+.tomorrowCon{ width:100%; height:316px;}
+.tomorrowCon > table{ border-left:1px solid #C0D0E0; border-top:1px solid #C0D0E0;}
+.tomorrowCon > table > tbody>tr>td{ border-right:1px solid #C0D0E0; border-bottom:1px solid #C0D0E0;}
+.tomorrowCon_table{ text-align:center;}
+.tomorrowCon_table td{ font-size:12px; font-family:'宋体';}
+.tomorrowCon_table .temperature{ display:inline-block; height:25px; line-height:25px; padding-right:12px; background:url(../images/tianqi_img05.png) no-repeat right top; font-size:30px; font-family:'宋体';}
+.sunrise{ display:inline-block; width:18px; height:13px; margin-top:-3px;}
+.sunriseTime{ display:inline-block; padding:0 20px 0 5px; height:15px; line-height:15px; font-size:14px; font-family:'宋体';}
+.sunset{ display:inline-block; width:18px; height:13px; margin-top:-3px;}
+.sunsetTime{ display:inline-block; padding:0 20px 0 5px; height:15px; line-height:15px; font-size:14px; font-family:'宋体';}
+
+/* 历史天气 */
+.position_table{ border-left:1px solid #9392c5; border-top:1px solid #97a0d4; border-bottom:1px solid #97a0d4;}
+.position_table td{ border-right:1px solid #9392c5; text-align:center; vertical-align:middle;}
+.his_temperatureTab{ overflow:hidden;}
+.position_table img{ width:24px; height:24px;}
+.his_rainTab{ overflow:hidden;}
+.his_windBd{ min-height:305px;}
+.his_rainBd{min-height:305px;}
+
+/* 通用的更多弹出框和风力风向标题 */
+.his_temperatureHd{ width:214px; height:30px; line-height:30px; margin:20px auto; border:1px solid #C0D0E0; border-radius:8px; text-align:center; font-size:16px; font-family:"微软雅黑"; color:#fff;}
+.his_moreCon{ float:right; height:40px; line-height:40px; margin:0; text-align:right;}
+.his_moreCon span{ float:left; width:360px; white-space:nowrap; text-overflow: ellipsis; overflow:hidden; font-size:12px; font-family:'宋体'; color:#fff;}
+.his_moreCon a{ float:left; font-size:12px; font-family:'宋体'; color:#84e1ff;}
+.his_temperatureBd{ min-height:305px; position:relative;}
+.ul_tabList{ float:right; overflow:hidden; height:18px; line-height:18px; overflow:hidden; margin-top:5px; margin-bottom:0; font-family:"微软雅黑"; font-size:15px; text-align:right;}
+.ul_tabList li{ float:left;}
+.ul_tabList li a{ padding:0 12px; color:#fff;}
+.ul_tabList li span{ color:#fff;}
+.ul_tabList li.cur a{ color:#84e1ff;}
+.ul_tabDiv{ clear:both;}
+/* 通用三个更多模态框 */
+.modal-dialog{ position:absolute;}
+.modal .modal-header .close, .modal .modal-header .close:link{background: url(../images/farmingIco16.jpg) no-repeat; margin-top:5px; border:none; opacity:1; filter:alpha(opacity=100); float:right; width:11px; height:11px;}
+.modal .modal-header .close:hover, .modal-header .close:focus{ background:url(../images/farmingIco17.jpg) no-repeat; opacity:1.0; filter:alpha(opacity=100);}
+.modal .modal-header{ padding:15px;}
+.modal .modal-header h4{ font-size:14px; color:#1448ad;}
+.modal .modal-header h4 span{ font-size:14px; font-family:'Arial'; color:#939393;}
+.modal .modal-body{ padding:0; height:406px; overflow-y:auto;}
+.modalheight{ margin:10px 20px;}
+.modalH3{ height:30px; line-height:30px; padding-left:15px; background-repeat:no-repeat; background-image:url(../images/bg_tqyubao01.png); background-position:0 -12px; font-size:14px; font-family:'微软雅黑'; color:#3b3b3b;}
+.modalH4{ padding:5px 0 8px 0; border-bottom:1px dashed #c3c3c3; font-size:12px; font-family:'宋体';}
+.modalSection{ font-size:12px; font-family:'宋体'; line-height:24px; color:#5d5d5d;}
+.modalComdl{ margin:12px 0; overflow:hidden;}
+.modalComdl dt{ float:left; border:1px solid #bcbcbc; border-radius:5px;}
+.modalComdl dt img{ width:118px; height:118px; border-radius:5px;}
+.modalComdl dd{ float:right; width:410px; line-height:22px; font-size:12px; font-family:'宋体';}
+.content_topp .table{ margin:10px 0; border-left:1px solid #e8e8e8; border-top:1px solid #e8e8e8; line-height:22px; font-size:12px; font-family:'Arial'; text-align:center;}
+.content_topp .table td{ padding:4px; border-right:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8; background:#fafafa;}

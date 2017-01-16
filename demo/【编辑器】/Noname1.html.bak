@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  	<script type="text/javascript" src="kindeditor/kindeditor.js"></script>
+	<script type="text/javascript" src="js/kindeditor/lang/zh_CN.js"></script> 
+ </head>
+ <body>
+  <form>
+	<textarea style="width: 350px;" rows="5" cols="60" size="30" id="information"></textarea>
+  </form>
+ </body>
+</html>
+<script type="text/javascript">
+	/* 富文本编辑器 */
+	KindEditor.ready(function(K){
+ 		editor = K.create('textarea[name="mainForm:information"]', {
+ 			resizeType : 0,
+			allowPreviewEmoticons : false,
+			uploadJson : '../js/kindeditor/upload_json.jsp?directoryType=0&businessType=3&enterpriseId=',
+			allowImageUpload : true,
+			items : [ 
+			 		'source', '|', 'undo', 'redo', '|', 'code', 'cut', 'copy', 'paste',
+			 		'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+			 		'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+			 		'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+			 		'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+			 		'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+			 		'anchor', 'link', 'unlink',
+			 	]
+ 	 	}); 
+	});
+	</script>

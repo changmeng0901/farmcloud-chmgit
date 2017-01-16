@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+body{ font-family:'微软雅黑'; font-size:12px;}
+a:link,a:visited, a:hover, a:active, a:focus{ text-decoration:none;} 
+.mt8{ margin-top:8px;}
+.mb8{ margin-bottom:8px;}
+
+
+/* 公用头部 */
+.header_wp01{ width:100%; min-width:1020px; height:60px; background:url(../images/bg_header.jpg) repeat-x left bottom;}
+.header_lt01{ float:left; margin:17px 0 0 25px;}
+.header_rt01{ float:right; display:inline; height:29px; margin:15px 30px 0 0-;}
+.headerMenu{ float:left; margin:15px 15px 15px 24px;}
+.navLevel_1{ float:left; position:relative; cursor:pointer;}
+.navLevelbg{ float:left; width:50px; height:29px; background:url(../images/bg_header2.jpg) no-repeat center top;}
+.headerMenu_user{ display:block; height:29px; line-height:29px; position:relative; padding-right:14px; font-size:13px; color:#cfe3fe;}
+.headerMenu_user:after{ position:absolute; right:2px; top:12px; content:""; border-style:solid solid solid solid; border-width:5px 4px 5px 4px; border-color:#cbdefe transparent transparent transparent;}
+.headerMenu_user img{ float:left; margin:4px 6px 0 0;}
+
+.headerMenu_li{ position:relative; z-index:4; float:left; cursor:pointer;}
+.headerMenu_li a{ font-size:12px; color:#2b2b2b;}
+.headerMenu2{ display:none; position:absolute; right:0; top:44px; min-width:136px; padding-top:12px; background:#fbfcff; border:1px solid #ababab; border-radius:5px;}
+.headerMenu2:before{ position:absolute; right:14px; top:-16px; content:""; border-style:solid solid solid solid; border-width:8px 8px 8px 8px; border-color:transparent transparent #ababab transparent;}
+.headerMenu2:after{ position:absolute; right:16px; top:-12px; content:""; border-style:solid solid solid solid; border-width:6px 6px 6px 6px; border-color:transparent transparent #fff transparent;}
+.headerMenu2_li{ position:relative; padding-bottom:8px;}
+.headerMenu2_lino{ margin:0; border-top:1px solid #ccc;}
+.headerMenu2_a{ display:block; overflow:hidden; height:29px; line-height:29px;}
+.headerMenu2_ano{ display:block; overflow:hidden; height:36px; line-height:36px;}
+.headerMenu2_a:hover{ background:#eff2f9;}
+.headerMenu2_a img{ float:left; display:inline; margin:9px 5px 0 14px; }
+.headerMenu2_ano img{  float:left; display:inline; margin:13px 5px 0 14px;}
+
+.phoneDown{ float:left; width:53px; height:60px; background:url(../images/bg_header2.jpg) no-repeat left top; text-align:center;}
+.phoneDown a{ display:inline-block; width:13px; height:20px; margin-top:20px;}
+
+
+.headerNav{ float:left; margin-bottom:0;}
+.headerNav li{ float:left; line-height:60px;}
+.headerNav li.cur{ background:url(../images/ico_headerCur.png) no-repeat center bottom;}
+.headerNav li a{ display:block; padding:0 16px; font-family:'微软雅黑'; font-size:12px; color:#e9f1ff; background:url(../images/bg_header2.jpg) no-repeat right top;}
+.headerNav li img{ float:left; margin:20px 10px 19px 0;}
+
+/* 主体内容 左侧 */
+.main_wp{ min-width:1020px; background:#e9ecee;}
+.mainLt_wp{ width:208px; margin-left:8px; margin-top:8px; background:#fff;}
+.leftMainHd{ width:178px; margin:0 auto;}
+.leftMainBd{ overflow:hidden;}
+.foldBtn{ position:absolute; width:18px; margin-top:8px; border-left:1px solid #e4e4e4; left:216px; top:60px; z-index:10;}
+.foldBtn img{ position:absolute; left:-1px; top:50%; margin-top:-41px; width:18px; height:82px; cursor:pointer;}
+.bootSelt01, .bootSelt02, .bootSelt03, .bootSelt04, .bootSelt05{ display:inline-block; }
+.bootSelt01 .bootstrap-select{ width:178px;}
+.bootSelt02 .bootstrap-select{ width:100px;}
+.bootSelt03 .bootstrap-select{ width:76px;}
+.bootSelt04 .bootstrap-select{ width:92px;}
+.bootSelt05 .bootstrap-select{ width:92px;}
+.bootSelt06 .bootstrap-select{ width:122px;}
+
+.bootSelt01 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:178px;}
+.bootSelt02 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:100px;}
+.bootSelt03 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:76px;}
+.bootSelt04 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:92px;}
+.bootSelt05 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){width:92px;}
+.bootSelt06 .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width:122px;}
+
+.bootSelt01 .btn-group .btn, .bootSelt02 .btn-group .btn, .bootSelt03 .btn-group .btn, .bootSelt04 .btn-group .btn, .bootSelt05 .btn-group .btn, .bootSelt06 .btn-group .btn{ padding:2px 25px 2px 12px; font-size:11px;}
+
