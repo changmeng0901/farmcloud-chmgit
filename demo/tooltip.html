@@ -8,7 +8,11 @@
     <link type="text/css" rel="stylesheet" href="../style/commons/style.css"/>
     <link type="text/css" rel="stylesheet" href="../style/commons/commons.css"/>
     <style>
-    	.tooltip.in{filter:alpha(opacity=50);opacity:.5}
+    	.tooltip.in{ filter:alpha(opacity=50);opacity:.5}
+    	.gly_tooltip{ width: 100px; background: #f1f1f1; border: 1px solid #333;}
+    	.gly_tooltip .tooltip.in{ filter:alpha(opacity=80);opacity:.8}
+    	.gly_tooltip .tooltip-inner{ max-width:240px; background: #5099c3;}
+    	.gly_tooltip .tooltip.bottom .tooltip-arrow {border-bottom-color:#5099c3}
     </style>
 
 </head>
@@ -66,6 +70,9 @@
                 	<img src="../images/demo/custorminfo_icons02.jpg" />
                 </a>
                 <img src="../images/demo/custorminfo_icons01.jpg" />
+                <div class="gly_tooltip">
+                	<a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title='如果"使用部门"和"使用人"为空，系统将自动设置资产状态为"闲置"。'>管理员</a>
+                </div>
             </div>
             </td>    
     	</tr>  
