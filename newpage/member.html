@@ -596,6 +596,8 @@
 		slider("#carsouel1",0);
 		slider("#carsouel2",1);
 		slider("#carsouel3",2);
+		
+		$('.sliderBox .pic').css('height',$('.sliderBox .pic').width()*0.4)
 	});
 
 	function slider(name,index){
@@ -633,6 +635,12 @@
 		slider("#carsouel1",0);
 		slider("#carsouel2",1);
 		slider("#carsouel3",2);
+		$('.sliderBox .pic').css('height',$('.sliderBox .pic').width()*0.4);
+		
+		$('.sliderBox').each(function(index,elem){
+			//$('.sliderBox').css('height',$('.sliderBox .pic').height()+)
+			$(elem).find('')
+		});
 	});
 </script>
 </html>

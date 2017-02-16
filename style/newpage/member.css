@@ -77,3 +77,12 @@ body{width: 100%; height: auto;}
 .memberPop .count tbody td{border-bottom: 1px solid #ededed;}
 .nw130{width: 130px;}
 [class^="icon-"], [class*=" icon-"]{background-image: url(../../images/bootstrap/glyphicons-halflings.png);}
+
+/*2017.01.12修改样式*/
+.sliderBox .btns .leftBtn,
+.sliderBox .btns .rightBtn{top:50%;margin-top: -22px;}
+.sliderBox .inner .phone{top:100%;margin-top: -277px;}
+.zoom_in {
+    transform: scale(0.48, 0.48);
+    transform-origin: 0 0 0;
+}
