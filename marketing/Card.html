@@ -423,8 +423,8 @@
 												</dl>
 											</div>
 											<div class="product_right">
-												<div style="height: 100%; overflow: auto; padding: 0 10px;">
-													<div class="base_pane_box">
+												<div style="height:100%;overflow-y:auto;overflow-x:hidden;padding: 0 10px;">
+													<div class="base_pane_box" style="min-width: 510px;">
 														<!-- 产品添加 -->
 														<div class="title_head clear">
 															<h4 class="txt_h4 fl">产品添加</h4>
@@ -434,47 +434,53 @@
 														<table width="100%" cellspacing="0" cellpadding="0">
 															<tr>
 																<th width="80">商品名称</th>
-																<td width="240">
-																	<input type="text" class="form-control ipt_txt220 fl" value="" />
+																<td width="190">
+																	<input type="text" class="form-control ipt_txt170 fl" value="" />
 																	<span class="red_star">*</span>
 																</td>
 																<th width="80">作物种类</th>
 																<td>
-																	<select style="display: none;" class="selectpicker" multiple="multiple">
-																	    <option>种类一</option>
-																	</select>
+																	<div class="select170">
+																		<select style="display: none;" class="selectpicker" multiple="multiple">
+																		    <option>种类一</option>
+																		</select>
+																	</div>
 																</td>
 															</tr>
 															<tr>
 																<th>作物品种</th>
-																<td width="240">
-																	<select style="display: none;" class="selectpicker" multiple="multiple">
-																	    <option>品种一</option>
-																	</select>
+																<td>
+																	<div class="select170">
+																		<select style="display: none;" class="selectpicker" multiple="multiple">
+																		    <option>品种一</option>
+																		</select>
+																	</div>
 																</td>
 																<th >产品标准</th>
 																<td>
-																	<select style="display: none;" class="selectpicker" multiple="multiple">
-																	    <option selected="selected">无公害</option>
-																	    <option>有机</option>
-																	</select>
+																	<div class="select170">
+																		<select style="display: none;" class="selectpicker" multiple="multiple">
+																		    <option selected="selected">无公害</option>
+																		    <option>有机</option>
+																		</select>
+																	</div>
 																</td>
 															</tr>
 															<tr>
 																<th>总供货量</th>
 																<td colspan="3">
-																	<input type="text" class="form-control ipt_txt220 fl" value="" />
+																	<input type="text" class="form-control ipt_txt170 fl" value="" />
 																</td>
 															</tr>
 															<tr>
 																<th>供货日期</th>
 																<td colspan="3">
-																	<div class="input-append date form_datetime datetime_220 fl">
+																	<div class="input-append date form_datetime datetime_170 fl">
 															            <input size="26" type="text" value="2013-05-10" readonly>
 															            <span class="add-on"><i class="icon-th"></i></span>
 															        </div>
 															        <span style="float: left;height: 34px; line-height: 34px; padding: 0 5px;">--</span>
-															        <div class="input-append date form_datetime datetime_220 fl">
+															        <div class="input-append date form_datetime datetime_170 fl">
 															            <input size="26" type="text" value="2013-05-10" readonly>
 															            <span class="add-on"><i class="icon-th"></i></span>
 															        </div>
@@ -490,7 +496,7 @@
 															</tr>
 														</table>
 													</div>
-													<div class="base_pane_box" id="more_product_sz" style="display: none;">
+													<div class="base_pane_box" id="more_product_sz" style="display: none;min-width:510px;">
 														<table width="100%" cellspacing="0" cellpadding="0">
 															<tr>
 																<th width="80">产品介绍</th>
@@ -548,7 +554,7 @@
 														<div class="title_head center_head" style="overflow: hidden;">
 															<h4 class="txt_h4 fl">产品追溯</h4>
 														</div>
-														<div class="new_trace_box">
+														<div class="new_trace_box" style="min-width: 510px;">
 															<i class="btn_close" onclick="DeleteNewTrace(this)"></i>
 															<table width="100%" cellspacing="0" cellpadding="0">
 																<tr>

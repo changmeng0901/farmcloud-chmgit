@@ -1298,96 +1298,30 @@ body{
 	margin-top: 20px;
 	padding: 20px 0;
 }
+/*2017-03-09修改*/
+body{
+	min-width: 1500px;
+}
+.base_pane_box .ipt_txt170{
+	width: 170px;
+}
+.select170{
+	width: 170px;
+}
+.select170 .bootstrap-select:not([class*=span]):not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+	width: 100%;
+}
+.base_pane_box .datetime_170{
+	width: 170px;
+}
+.LivePreview_box{
+	height: 784px;
+}
+.card_set_cont .tab-content{
+	height: 438px;
+}
 
-/*屏幕小于1200时数字名片页面样式*/
-.small_css .inbentory_search_wap{
-	padding: 0 18px 0;
-}
-.small_css .card_table {
-	padding-right: 352px;
-}
-.small_css .card_code_body{
-	padding: 14px 10px;
-}
-.small_css .card_code_body dl{
-	padding-left: 140px;
-}
-.small_css .card_code_body dt{
-	width: 130px;
-	height: 130px;
-	padding: 4px;
-}
-.small_css .code_list .item_share{
-	position: absolute;
-	left: 5px;
-	bottom: 0;
-	padding-left: 0;
-}
-.small_css .code_list .item_share .img_code{
-	width: 120px;
-	height: 120px;
-}
-.small_css .card_right{
-	width: 342px;
-}
-.small_css .LivePreview_box{
-	padding: 20px 10px;
-}
-.small_css .code_list li{
-	padding-left: 54px;
-}
-.small_css .code_list li .name{
-	font-size: 12px;
-}
-.small_css .code_list li .form-control{
-	padding-left: 5px;
-	padding-right: 5px;
-	font-size: 12px;
-}
-.small_css .code_list .item_link{
-	padding-right: 65px;
-}
-.small_css .code_list .item_link .copy_link{
-	width: 60px;
-	font-size: 12px;
-}
-.small_css .card_set_cont .nav-tabs>li>a{
-	padding-left: 5px;
-	padding-right: 5px;
-}
-.small_css .card_code_body .icon_edit{
-	width: 40px;
-	height: 40px;
-}
-.small_css .card_code_body .btn_edit{
-	margin-top: -32px;
-}
-.small_css .card_code_body .mark_b{
-	left: 4px;
-	right: 4px;
-	top: 4px;
-	bottom: 4px;
-}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-.small_css{}
-	
+
 	
 	
 	

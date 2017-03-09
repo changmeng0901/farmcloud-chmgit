@@ -157,18 +157,6 @@
 		});
 	});
 	
-	// (12)计算数字名片和实时预览的高度
-	function EffectiveHeight(){
-		var wap_height = $('.inbentory_file_main').height();
-		var bread_height = $('.breadNav_wap').height()+20;
-		var btns_height = $('.btns_center').outerHeight()+1+20;
-		var code_height = $('.card_code_cont').height()+14+2;
-		$('.LivePreview_box').height(wap_height-bread_height-btns_height-44-2);
-		$('.card_set_cont .tab-content').height(wap_height-bread_height-btns_height-code_height-46-2);
-		//console.log('a:'+wap_height+'b:'+bread_height+'a:'+btns_height+'a:'+code_height);
-		
-	}
-	EffectiveHeight();
 	
 	// (13)地图等更多设置及收起功能
 	function SlideDownUpFn(obj,_list){
@@ -345,21 +333,6 @@
 		
 		//当窗口改变时，执行大小屏幕样式的切换
 		changeStyleFn();
-		//EffectiveHeight();
-		var wap_height = $('.inbentory_file_main').height();
-		var bread_height = $('.breadNav_wap').height()+20;
-		var btns_height = $('.btns_center').outerHeight()+1+20;
-		var code_height = $('.card_code_cont').height()+14+2;
-		//$('.LivePreview_box').height(wap_height-bread_height-btns_height-44-2);
-		//$('.card_set_cont .tab-content').height(wap_height-bread_height-btns_height-code_height-46-2);
-		$('.LivePreview_box').css({ 
-			'min-height' : oWindowH - 60 -IESpace-bread_height-btns_height-44-2,
-				'height' : $(document).height() - 60 -IESpace-bread_height-btns_height-44-2
-		});
-		$('.card_set_cont .tab-content').css({ 
-			'min-height' : oWindowH - 60 -IESpace-bread_height-btns_height-code_height-46-2,
-				'height' : $(document).height() - 60 -bread_height-btns_height-code_height-46-2
-		});
 		
     });
 	
